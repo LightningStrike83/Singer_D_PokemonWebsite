@@ -13,10 +13,6 @@ hr {
     margin-bottom: 30px;
 }
 
-#container {
-    margin: 0 auto;
-}
-
 p, li {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -26,6 +22,34 @@ p, li {
 
 img {
     max-height: 250px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+#main_header {
+    background-color: red;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#header_links {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 #about_site {
@@ -40,7 +64,6 @@ img {
 #about_text p {
     padding-bottom: 20px;
 }
-
 
 #about_title, #about_devs h3 {
     font-family: 'Silkscreen';

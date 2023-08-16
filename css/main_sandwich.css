@@ -18,12 +18,46 @@ p {
     color: white;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
 .scarlet {
     color: #FF2400;
 }
 
 .violet {
     color: #8F00FF;
+}
+
+#main_header {
+    background-color: red;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+#header_links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#header_links li {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 25px;
+    list-style-type: none;
+    font-size: 18px;
+    margin-bottom: 0px;
 }
 
 #title {
@@ -60,6 +94,7 @@ p {
     flex-direction: row;
     justify-content: center;
     cursor: pointer;
+    align-items: center;
 }
 
 #legend {

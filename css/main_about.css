@@ -1,0 +1,144 @@
+body {
+    background-color: rgb(24, 24, 24);
+}
+
+.hidden {
+    display: none;
+}
+
+hr {
+    height: 1px;
+    width: 100%;
+    color: white;
+    margin-bottom: 30px;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+p, li {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 12px;
+    line-height: 25px;
+}
+
+img {
+    max-height: 250px;
+}
+
+#about_site {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#about_text {
+    text-align: left;
+}
+
+#about_text p {
+    padding-bottom: 20px;
+}
+
+
+#about_title, #about_devs h3 {
+    font-family: 'Silkscreen';
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: white;
+    background-color: rgb(24, 24, 24);
+}
+
+.dev_name {
+    text-align: center;
+    padding-top: 0px!important;
+}
+
+#about_devs {
+    background-color: rgb(24, 24, 24);
+}
+
+#lightning_div, #flan_div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+#lightning_text p, #flan_text p {
+    margin-bottom: 30px;
+}
+
+#lightning_text {
+    padding-left: 20px;
+}
+
+#flan_text {
+    padding-right: 20px;
+}
+
+#pokemon_l, #pokemon_f {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#lightning_team, #flan_team {
+    margin-bottom: 30px;
+}
+
+#lightning_team p, #flan_team p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pokemon_member {
+    max-height: 10%;
+    background-image: url(../images/about/pokeball-full.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bottom {
+    text-align: center;
+}
+
+#bottom p {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 428px) {
+    p, li {
+        font-size: 17px;
+    }
+
+    #about_title, #about_devs h3 {
+        font-size: 27px;
+    }
+
+    img {
+        max-height: 275px;
+    }
+
+    .pokemon_member {
+        max-height: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    p, li {
+        font-size: 18px;
+    }
+
+    #about_title, #about_devs h3 {
+        font-size: 30px;
+    }
+
+    img {
+        max-height: 350px;
+    }
+}

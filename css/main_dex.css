@@ -1,0 +1,222 @@
+body {
+    background-color: rgb(24, 24, 24);
+}
+
+#container {
+    margin: 0 auto;
+}
+
+h2 {
+    color: white;
+    background-color: red;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+li {
+    list-style: circle;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#main_title {
+    font-family: 'Silkscreen';
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+#instructions_text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+#tips {
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+#pokedex_tips, #usage_tips {
+    text-align: left;
+}
+
+#tips_area {
+    margin-bottom: 20px;
+}
+
+.tip_text {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+}
+
+#tips_box {
+    display: none;
+    border: 1px solid black;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#tips_click {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#question_symbol {
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+#usage_tips {
+    margin-bottom: 20px;
+    color: black;
+}
+
+#box_title, #pokedex_title {
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.pokedex_box {
+    border: 1px solid black;
+    height: 120px;
+    width: 100px;
+    background-color: white;
+}
+
+#pokedex_display_modern, #pokedex_display_legends, #pokedex_display_classic {
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+#pokemon_sprites, #alolan_sprites, #galarian_sprites, #hisuian_sprites, #paldean_sprites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
+    border: 1px solid black;
+    text-align: center;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: white;
+}
+
+.pokemon_name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    order: 2;
+    color: black;
+}
+
+.pokedex_number {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: black;
+}
+
+#regional {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.regional_text {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#size {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+    flex-wrap: wrap;
+}
+
+#filter {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    font-size: 18px;
+    flex-wrap: wrap;
+}
+
+#filter p {
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+
+#filter p:not(#filter_title) {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    text-shadow: 1px 1px black;
+}
+
+#size p:not(#size_text) {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    text-shadow: 1px 1px black;
+}
+
+#bottom {
+    background-color: red;
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#bottom p {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}

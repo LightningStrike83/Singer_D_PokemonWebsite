@@ -80,6 +80,10 @@ a:hover {
     padding-top: 0px!important;
 }
 
+.cc_ref {
+    text-decoration: underline;
+}
+
 #about_devs {
     background-color: rgb(24, 24, 24);
 }

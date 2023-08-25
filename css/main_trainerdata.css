@@ -1,0 +1,208 @@
+body {
+    background-color: rgb(24, 24, 24);
+}
+
+.hidden {
+    display: none;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+p, li {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+#main_header {
+    background-color: red;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+#header_links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#header_links li {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    line-height: 25px;
+    list-style-type: none;
+    font-size: 18px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#instructions {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+
+#main_title {
+    font-family: 'Silkscreen';
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: white;
+    background-color: red;
+}
+
+#instructions_text {
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 30px;
+}
+
+li {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+li p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+li div {
+    display: flex;
+    flex-direction: row;
+}
+
+#games {
+    margin-bottom: 10px;
+}
+
+#rbg_chars, #y_chars, #gsc_chars, #c_chars, #rs_chars, #frlg_chars, #e_chars, #dp_chars, #hgss_chars, #pt_chars, #bw_chars, #b2w2_chars, #b2w2c_chars, #xy_chars, #oras_chars, #sm_chars, #usum_chars, #lgpe_chars, #swsh_chars, #bdsp_chars, #sv_chars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid white;
+    padding-top: 10px;
+    display: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.character_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.character_name p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#spoilers {
+    color: red;
+}
+
+#note {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#table {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#trainer_image {
+    height: 300px;
+    width: 200px;
+    border: 1px solid white;
+}
+
+#pokemon {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 100px;
+}
+
+.pokemon_image {
+    height: 100px;
+    border: 1px solid white;
+}
+
+.text {
+    height: 30px;
+    width: 150px;
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.text p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 5px;
+}
+
+#bottom {
+    background-color: red;
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#bottom p {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#trainer_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#trainer_image img {
+    height: 200px;
+}
+
+.pokemon_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon_image img {
+    height: 90px;
+}

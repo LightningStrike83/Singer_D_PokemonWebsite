@@ -180,6 +180,7 @@ a:hover {
 }
 
 .pokemon_name {
+    font-size: 16px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding-left: 4px;
@@ -189,9 +190,11 @@ a:hover {
 }
 
 .pokedex_number {
+    font-size: 16px;
     margin-left: 5px;
     margin-top: 5px;
     color: black;
+    line-height: 10px;
 }
 
 #regional {

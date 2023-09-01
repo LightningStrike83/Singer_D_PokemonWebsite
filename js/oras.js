@@ -464,7 +464,7 @@ let oras_trainers = [
         spdd : "Spd: U/A",
         move1d : "-Crunch",
         move2d : "-Poison Fang",
-        move3d : "-Crunch",
+        move3d : "-Slash",
         move4d : "-Scary Face",
     },
 
@@ -1105,10 +1105,10 @@ let oras_trainers = [
         spatkc : "Sp. Atk: U/A",
         spdefc : "Sp. Def: U/A",
         spdc : "Spd: U/A",
-        move1c : "-",
-        move2c : "-",
-        move3c : "-",
-        move4c : "-",
+        move1c : "-Dragon Pulse",
+        move2c : "-Moonblast",
+        move3c : "-Flamethrower",
+        move4c : "-Hyper Voice",
 
         named : "Noivern",
         leveld : "LV: 60",

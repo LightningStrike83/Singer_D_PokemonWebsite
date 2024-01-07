@@ -11,20 +11,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="js/main.js"></script>
 </head>
 <body>
     <div id="container">
-        <header id="main_header" class="grid-con">
-            <div class="col-span-full">
+        <div id="full-length" class="full-width-grid-con">
+            <header id="main_header" class="grid-con">
+            <div id="hamburger-menu" class="col-start-4 col-end-5">
+                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.83 22">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #ffffff;
+                          stroke: #ffffff;
+                          stroke-miterlimit: 10;
+                          stroke-width: 2px;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Layer_2-2" data-name="Layer 2">
+                      <line class="cls-1" y1="1" x2="51.83" y2="1"/>
+                      <line class="cls-1" y1="11" x2="51.83" y2="11"/>
+                      <line class="cls-1" y1="21" x2="51.83" y2="21"/>
+                    </g>
+                  </svg>
+            </div>
+            <div id="nav-menu" class="col-start-4 col-end-5 m-col-span-full">
                 <ul id="header_links">
                     <li><a href="index.html">Home</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="about_page.html">About</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="custom_pokedex.html">Make Your Own Pokedex</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="trainer_data.html">Trainer Data</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="sandwich.html">S/V Sandwich Filter</a></li>
                 </ul>
             </div>
         </header>
+    </div>
 
         <section id="about_site" class="grid-con">
             <h3 id="about_title" class="col-span-full">About The Site</h3>
@@ -96,13 +122,15 @@
             <hr class="col-span-full">
         </section>
 
-        <section id="bottom" class="grid-con">
-            <h2 class="hidden">Copyright Information</h2>
-            <p class="col-span-full">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.</p>
-
-            <p class="col-span-full">Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.</p>
-
-            <p class="col-span-full">© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+        <section id="bottom" class="full-width-grid-con">
+            <div id="footer-info" class="grid-con">
+                <h2 class="hidden">Copyright Information</h2>
+                <p class="col-span-full">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.</p>
+    
+                <p class="col-span-full">Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.</p>
+    
+                <p class="col-span-full">© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+            </div>       
         </section>
     </div>
 </body>

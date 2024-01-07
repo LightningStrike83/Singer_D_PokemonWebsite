@@ -7,33 +7,86 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main_trainerdata.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="js/rbg.js"></script>
+    <script defer src="js/y.js"></script>
+    <script defer src="js/gsc.js"></script>
+    <script defer src="js/rs.js"></script>
+    <script defer src="js/frlg.js"></script>
+    <script defer src="js/e.js"></script>
+    <script defer src="js/dp.js"></script>
+    <script defer src="js/hgss.js"></script>
+    <script defer src="js/pt.js"></script>
+    <script defer src="js/bw.js"></script>
+    <script defer src="js/b2w2.js"></script>
+    <script defer src="js/b2w2c.js"></script>
+    <script defer src="js/xy.js"></script>
+    <script defer src="js/oras.js"></script>
+    <script defer src="js/sm.js"></script>
+    <script defer src="js/usum.js"></script>
+    <script defer src="js/lgpe.js"></script>
+    <script defer src="js/swsh.js"></script>
+    <script defer src="js/bdsp.js"></script>
+    <script defer src="js/sv.js"></script>
+    <script defer src="js/main_trainerdata.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 <body>
-    <div id="container" class="grid-con">
-        <header id="main_header" class="col-span-full">
-            <div class="col-span-full">
+    <div id="container">
+        <div id="full-length" class="full-width-grid-con">
+            <header id="main_header" class="grid-con">
+            <div id="hamburger-menu" class="col-start-4 col-end-5">
+                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.83 22">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #ffffff;
+                          stroke: #ffffff;
+                          stroke-miterlimit: 10;
+                          stroke-width: 2px;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Layer_2-2" data-name="Layer 2">
+                      <line class="cls-1" y1="1" x2="51.83" y2="1"/>
+                      <line class="cls-1" y1="11" x2="51.83" y2="11"/>
+                      <line class="cls-1" y1="21" x2="51.83" y2="21"/>
+                    </g>
+                  </svg>
+            </div>
+            <div id="nav-menu" class="col-start-4 col-end-5 m-col-span-full">
                 <ul id="header_links">
                     <li><a href="index.html">Home</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="about_page.html">About</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="custom_pokedex.html">Make Your Own Pokedex</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="trainer_data.html">Trainer Data</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="sandwich.html">S/V Sandwich Filter</a></li>
                 </ul>
             </div>
         </header>
+    </div>
 
-        <section id="main_title" class="col-span-full">
+    <section id="title-trainer" class="grid-con">
+        <div id="main_title" class="col-span-full">
             <h3>Pokemon League Data</h3>
-        </section>
+        </div>
+    </section>
 
-        <section id="instructions" class="col-span-full">
+    <section id="instructions-trainer" class="grid-con">
+        <div id="instructions" class="col-span-full">
             <p id="instructions_text">Nuzlocking? Speedrunning? Challenge-running? Just wanna get a 1-up on your foe? Look no further!<br>Click on a game below and select the trainer you want information about, and the table below will be populated with the data!<br><span id="spoilers">SPOILERS: The trainer lists do contain spoilers for who you fight in the games.</span></p>
-        </section>
+        </div>
+    </section>
 
-        <section id="games" class="col-span-full">
+    <section id="games-trainer" class="grid-con">
+        <div id="games" class="col-span-full">
             <ul>
                 <li><div id="rbg" class="game"><input type="checkbox" class="game_checkbox"><p>Pokemon Red/Blue/Green</p></div></li>
                 <li><div id="y" class="game"><input type="checkbox" class="game_checkbox"><p>Pokemon Yellow</p></div></li>
@@ -476,9 +529,11 @@
             <div class="character_name" data-member="25" id="arven1"><input type="checkbox" class="custom_checkbox"><p>Arven</p></div>
             <div class="character_name" data-member="26" id="sada1"><input type="checkbox" class="custom_checkbox"><p>AI Sada</p></div>
             <div class="character_name" data-member="27" id="turo1"><input type="checkbox" class="custom_checkbox"><p>AI Turo</p></div>
-        </section>
+        </div>
+    </section>    
 
-        <section id="table" class="col-span-full">
+    <section id="grid-trainer" class="grid-con">
+        <div id="table" class="col-span-full">
             <div id="trainer_image"></div>
             <div id="pokemon_1" class="pokemon">
                 <div class="pokemon_image" id="pokemon_1_image"></div>
@@ -593,37 +648,19 @@
                 <div class="text"><p id="move3_6"></p></div>
                 <div class="text"><p id="move4_6"></p></div>
             </div>
-        </section>
+        </div>
+    </section>    
 
-        <section id="bottom" class="col-span-full">
-            <h2 class="hidden">Copyright Information</h2>
-            <p>All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.</p>
-
-            <p>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.</p>
-
-            <p>© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+        <section id="bottom" class="full-width-grid-con">
+            <div id="footer-info" class="grid-con">
+                <h2 class="hidden">Copyright Information</h2>
+                <p class="col-span-full">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.</p>
+    
+                <p class="col-span-full">Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.</p>
+    
+                <p class="col-span-full">© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+            </div>       
         </section>
     </div>
-    <script src="js/rbg.js"></script>
-    <script src="js/y.js"></script>
-    <script src="js/gsc.js"></script>
-    <script src="js/rs.js"></script>
-    <script src="js/frlg.js"></script>
-    <script src="js/e.js"></script>
-    <script src="js/dp.js"></script>
-    <script src="js/hgss.js"></script>
-    <script src="js/pt.js"></script>
-    <script src="js/bw.js"></script>
-    <script src="js/b2w2.js"></script>
-    <script src="js/b2w2c.js"></script>
-    <script src="js/xy.js"></script>
-    <script src="js/oras.js"></script>
-    <script src="js/sm.js"></script>
-    <script src="js/usum.js"></script>
-    <script src="js/lgpe.js"></script>
-    <script src="js/swsh.js"></script>
-    <script src="js/bdsp.js"></script>
-    <script src="js/sv.js"></script>
-    <script src="js/main_trainerdata.js"></script>
 </body>
 </html>

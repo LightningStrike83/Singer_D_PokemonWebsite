@@ -12,31 +12,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/main_dex.js"></script>
+    <script defer src="js/filter.js"></script>
 </head>
 <body>
-    <div id="container" class="grid-con">
-        <header id="main_header" class="col-span-full">
-            <div>
+    <div id="container">
+        <div id="full-length" class="full-width-grid-con">
+            <header id="main_header" class="grid-con">
+            <div id="hamburger-menu" class="col-start-4 col-end-5">
+                <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.83 22">
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #ffffff;
+                          stroke: #ffffff;
+                          stroke-miterlimit: 10;
+                          stroke-width: 2px;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Layer_2-2" data-name="Layer 2">
+                      <line class="cls-1" y1="1" x2="51.83" y2="1"/>
+                      <line class="cls-1" y1="11" x2="51.83" y2="11"/>
+                      <line class="cls-1" y1="21" x2="51.83" y2="21"/>
+                    </g>
+                  </svg>
+            </div>
+            <div id="nav-menu" class="col-start-4 col-end-5 m-col-span-full">
                 <ul id="header_links">
                     <li><a href="index.html">Home</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="about_page.html">About</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="custom_pokedex.html">Make Your Own Pokedex</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="trainer_data.html">Trainer Data</a></li>
+                    <li class="line-spacer"></li>
                     <li><a href="sandwich.html">S/V Sandwich Filter</a></li>
                 </ul>
             </div>
         </header>
+    </div>
 
-        <section class="col-span-full" id="title">
+    <section id="title-pokedex" class="grid-con">
+        <div class="col-span-full" id="title">
             <h2 id="main_title">Create Your Own Custom Pokedex</h2>
-        </section>
+        </div>
+    </section>
 
-        <section class="col-span-full" id="instructions">
+    <section id="instructions-pokedex" class="grid-con">
+        <div class="col-span-full" id="instructions">
             <h2 class="hidden">Instructions</h2>
             <p id="instructions_text">Select a size of Pokedex you want! <br> Drag and drop the models on the left to the Pokedex area on the right. Fill out your own custom Pokedex!</p>
-        </section>
+        </div>
+    </section>
 
-        <section id="tips_area" class="col-start-4 col-end-5 m-col-start-9 m-col-end-13">
+    <section id="tips-pokedex" class="grid-con">
+        <div id="tips_area" class="col-start-4 col-end-5 m-col-start-9 m-col-end-13">
             <h2 class="hidden">Tips Area</h2>
             <div id="tips_click">
                 <span id="question_symbol">?</span>
@@ -70,9 +103,11 @@
 
                 </ul>
             </div>
-        </section>
-
-        <section class="col-start-1 col-end-3 m-col-start-1 m-col-end-7" id="sprite_area">
+        </div>
+    </section>
+    
+    <section id="pokedex-area" class="grid-con">
+        <div class="col-start-1 col-end-3 m-col-start-1 m-col-end-7" id="sprite_area">
             <h2 class="hidden">Pokemon Model Area</h2>
             <div id="sprite_box">
                 <h3 id="box_title">Models</h3>
@@ -1191,9 +1226,9 @@
                     <div class="sprite_item regionals"><img src="images/custom_pokedex/194p.png" alt="Paldean Wooper"><p class="pokemon_name">Paldean Wooper</p></div>
                 </div>
             </div>
-        </section>
-
-        <section class="col-start-3 col-end-5 m-col-start-7 m-col-end-13" id="pokedex_area">
+        </div>
+ 
+        <div class="col-start-3 col-end-5 m-col-start-7 m-col-end-13" id="pokedex_area">
             <h2 class="hidden">Drop Areas</h2>
             <div id="pokedex">
                 <h3 id="pokedex_title">Pokedex</h3>
@@ -2005,18 +2040,22 @@
                     <div class="pokedex_box"><p class="pokedex_number">#400</p></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>    
 
-        <section id="bottom" class="col-span-full">
+        
+
+    <section id="bottom" class="full-width-grid-con">
+        <div id="footer-info" class="grid-con">
             <h2 class="hidden">Copyright Information</h2>
-            <p>All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.</p>
+            <p class="col-span-full">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.</p>
 
-            <p>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.</p>
+            <p class="col-span-full">Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.</p>
 
-            <p>© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc.</p>
-        </section>
+            <p class="col-span-full">© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+        </div>       
+    </section>
     </div>
-    <script src="js/main_dex.js"></script>
-    <script src="js/filter.js"></script>
+    
 </body>
 </html>

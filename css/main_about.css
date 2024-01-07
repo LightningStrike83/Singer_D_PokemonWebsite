@@ -54,7 +54,7 @@ a:hover {
 
 #about_site {
     text-align: center;
-    margin-bottom: 20px;
+    background-color: rgb(24, 24, 24);
 }
 
 #about_text {

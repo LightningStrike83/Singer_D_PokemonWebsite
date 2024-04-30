@@ -1,0 +1,48 @@
+@use "../abstracts/colours" as c;
+
+body {
+    background-color: c.$black;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+#full-length {
+    background-color: c.$red;
+}
+
+.line-spacer {
+    border-bottom: 1px solid white;
+}
+
+#instructions {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: c.$white;
+}
+
+#instructions_text {
+    text-align: center;
+    background-color: white;
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 30px;
+}
+
+#main_title {
+    font-family: 'Silkscreen';
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    color: white;
+    background-color: c.$red;
+}
+
+img {
+    max-height: 250px;
+}

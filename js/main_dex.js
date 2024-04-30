@@ -12,7 +12,7 @@ const dropAreas = document.querySelectorAll(".pokedex_box");
 
 function openTips() {
   var tipsBox = document.querySelector("#tips_box");
-  tipsBox.style.display = (tipsBox.style.display === 'block') ? 'none' : 'block';
+  tipsBox.style.display = (tipsBox.style.display === 'flex') ? 'none' : 'flex';
 }
 
 function openClassicDex() {

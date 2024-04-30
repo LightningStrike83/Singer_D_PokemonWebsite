@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class TrainerLine extends Model
 {
      /**
      * The attributes that are mass assignable.

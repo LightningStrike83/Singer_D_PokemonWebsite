@@ -1,60 +1,8 @@
-body {
-    background-color: rgb(24, 24, 24);
-}
-
-.hidden {
-    display: none;
-}
-
-hr {
-    height: 1px;
-    width: 100%;
-    color: white;
-    margin-bottom: 30px;
-}
-
-p, li {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 12px;
-    line-height: 25px;
-}
-
-img {
-    max-height: 250px;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:visited {
-    color: white;
-}
-
-a:hover {
-    color: blue;
-    text-decoration: underline;
-}
-
-#container {
-    margin: 0 auto;
-}
-
-#main_header {
-    background-color: red;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-#header_links {
-    display: flex;
-    justify-content: space-evenly;
-}
+@use "../abstracts/colours" as c;
 
 #about_site {
     text-align: center;
-    background-color: rgb(24, 24, 24);
+    background-color: c.$black;
 }
 
 #about_text {
@@ -72,7 +20,7 @@ a:hover {
     padding-bottom: 30px;
     text-align: center;
     color: white;
-    background-color: rgb(24, 24, 24);
+    background-color: c.$black;
 }
 
 .dev_name {
@@ -85,7 +33,7 @@ a:hover {
 }
 
 #about_devs {
-    background-color: rgb(24, 24, 24);
+    background-color: c.$black;
 }
 
 #lightning_div, #flan_div {
@@ -128,25 +76,7 @@ a:hover {
     background-position: center;
 }
 
-#bottom {
-    text-align: center;
-}
-
-#bottom p {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-}
-
 @media screen and (min-width: 428px) {
-    p, li {
-        font-size: 17px;
-    }
-
-    #about_title, #about_devs h3 {
-        font-size: 27px;
-    }
-
     img {
         max-height: 275px;
     }
@@ -157,14 +87,6 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
-    p, li {
-        font-size: 18px;
-    }
-
-    #about_title, #about_devs h3 {
-        font-size: 30px;
-    }
-
     img {
         max-height: 350px;
     }

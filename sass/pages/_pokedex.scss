@@ -1,122 +1,35 @@
-body {
-    background-color: rgb(24, 24, 24);
-}
-
-#container {
-    margin: 0 auto;
-}
-
-h2 {
-    color: white;
-    background-color: red;
-}
-
-h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-p {
-    color: white;
-}
-
-li {
-    list-style: circle;
-    margin-bottom: 10px;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:visited {
-    color: white;
-}
-
-a:hover {
-    color: blue;
-    text-decoration: underline;
-}
-
-.hidden {
-    display: none;
-}
-
-#main_header {
-    background-color: red;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
-}
-
-#header_links {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#header_links li {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    line-height: 25px;
-    list-style-type: none;
-    font-size: 18px;
-    margin-bottom: 0px;
-}
-
-#main_title {
-    font-family: 'Silkscreen';
-    font-size: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-}
-
-#instructions_text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    padding-bottom: 30px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
+@use "../abstracts/colours" as c;
 
 #tips {
     font-size: 18px;
     margin-bottom: 10px;
     cursor: pointer;
-    color: blue;
+    color: c.$blue;
     text-decoration: underline;
     text-align: center;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px c.$black;
 }
 
 #pokedex_tips, #usage_tips {
     text-align: left;
 }
 
-#tips_area {
-    margin-bottom: 20px;
-}
-
 .tip_text {
     margin-bottom: 10px;
     font-weight: bold;
     text-decoration: underline;
-    color: black;
+    color: c.$black;
 }
 
 #tips_box {
     display: none;
-    border: 1px solid black;
-    background-color: white;
+    flex-direction: column;
+    border: 1px solid c.$black;
+    background-color: c.$white;
     padding-top: 10px;
-    padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 20px;
 }
 
 #tips_click {
@@ -128,19 +41,19 @@ a:hover {
 
 #question_symbol {
     margin-right: 10px;
-    border: 1px solid black;
+    border: 1px solid c.$black;
     border-radius: 20px;
     padding-top: 3.5px;
     padding-bottom: 3.5px;
     padding-left: 7px;
     padding-right: 7px;
     margin-bottom: 10px;
-    background-color: white;
+    background-color: c.$white;
 }
 
 #usage_tips {
     margin-bottom: 20px;
-    color: black;
+    color: c.$black;
 }
 
 #box_title, #pokedex_title {
@@ -150,10 +63,10 @@ a:hover {
 }
 
 .pokedex_box {
-    border: 1px solid black;
+    border: 1px solid c.$black;
     height: 120px;
     width: 100px;
-    background-color: white;
+    background-color: c.$white;
 }
 
 #pokedex_display_modern, #pokedex_display_legends, #pokedex_display_classic {
@@ -170,13 +83,13 @@ a:hover {
 }
 
 .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
-    border: 1px solid black;
+    border: 1px solid c.$black;
     text-align: center;
     width: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: white;
+    background-color: c.$white;
 }
 
 .pokemon_name {
@@ -186,14 +99,14 @@ a:hover {
     padding-left: 4px;
     padding-right: 4px;
     order: 2;
-    color: black;
+    color: c.$black;
 }
 
 .pokedex_number {
     font-size: 16px;
     margin-left: 5px;
     margin-top: 5px;
-    color: black;
+    color: c.$black;
     line-height: 10px;
 }
 
@@ -233,27 +146,20 @@ a:hover {
 
 #filter p:not(#filter_title) {
     cursor: pointer;
-    color: blue;
+    color: c.$blue;
     text-decoration: underline;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px c.$black;
 }
 
 #size p:not(#size_text) {
     cursor: pointer;
-    color: blue;
+    color: c.$blue;
     text-decoration: underline;
-    text-shadow: 1px 1px black;
+    text-shadow: 1px 1px c.$black;
 }
 
-#bottom {
-    background-color: red;
-    margin-top: 30px;
-    padding-top: 20px;
-    text-align: center;
-}
-
-#bottom p {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+.pd-tip {
+    list-style: disc;
+    line-height: 25px;
+    padding: 0;
 }

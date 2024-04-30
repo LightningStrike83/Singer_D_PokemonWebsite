@@ -1,0 +1,110 @@
+@use "../abstracts/colours" as c;
+
+#games {
+    margin-bottom: 10px;
+}
+
+#rbg_chars, #y_chars, #gsc_chars, #c_chars, #rs_chars, #frlg_chars, #e_chars, #dp_chars, #hgss_chars, #pt_chars, #bw_chars, #b2w2_chars, #b2w2c_chars, #xy_chars, #oras_chars, #sm_chars, #usum_chars, #lgpe_chars, #swsh_chars, #bdsp_chars, #sv_chars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid c.$white;
+    padding-top: 10px;
+    display: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.character_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+.character_name p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#spoilers {
+    color: c.$red;
+}
+
+#note {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#table {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#trainer_image {
+    height: 300px;
+    width: 200px;
+    border: 1px solid c.$white;
+}
+
+#pokemon {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 100px;
+}
+
+.pokemon_image {
+    height: 100px;
+    border: 1px solid c.$white;
+}
+
+.text {
+    height: 30px;
+    width: 150px;
+    border: 1px solid c.$white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.text p {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 5px;
+}
+
+#bottom {
+    background-color: c.$red;
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#bottom p {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#trainer_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#trainer_image img {
+    height: 200px;
+}
+
+.pokemon_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon_image img {
+    height: 90px;
+}

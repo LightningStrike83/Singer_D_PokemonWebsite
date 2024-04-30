@@ -17,3 +17,5 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get("/lines", "LineController@getAll");
+$router->get("/lines/{id}", "LineController@getOne");

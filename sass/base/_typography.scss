@@ -61,6 +61,13 @@ h3 {
     color: c.$white;
 }
 
+#main_title {
+    h3 {
+        font-size: 30px;
+        font-family: 'Silkscreen', Arial, Helvetica, sans-serif;
+    }
+}
+
 @media screen and (min-width: 428px) {
     p, li {
         font-size: 17px;

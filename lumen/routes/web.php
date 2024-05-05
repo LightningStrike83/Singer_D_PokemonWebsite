@@ -20,3 +20,4 @@ $router->get('/', function () use ($router) {
 $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");
 $router->get("/trainer-lines", "TrainerLineController@getAll");
+$router->get("/trainer-lines/{id}", "TrainerLineController@getTrainer");

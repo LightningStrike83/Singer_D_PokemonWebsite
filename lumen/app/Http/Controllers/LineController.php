@@ -15,7 +15,7 @@ class LineController extends Controller {
      */
 
      public function getAll() {
-        $line = Line::select('id', 'species')->orderBy('id', 'asc')->get();
+        $line = Line::select('id', 'species')->orderBy('species', 'asc')->get();
         return response()->json($line);
     }
 

@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <script defer src="js/main.js"></script>
+    <script defer src="js/main_guess_who.js"></script>
 </head>
 <body>
     <div id="container">
@@ -50,6 +51,70 @@
             </div>
         </header>
     </div>
+
+    <section id="title-guess-who" class="grid-con">
+      <div class="col-span-full" id="title">
+          <h3 id="main_title">Pokemon Guess Who</h3>
+      </div>
+  </section>
+
+  <section id="instructions-sandwich" class="grid-con">
+      <div class="col-span-full" id="instructions">
+          <h2 class="hidden">Instructions</h2>
+          <p id="instructions_text">Wanna play a round of Guess Who with your friends? Generate a set of Pokemon you like, then send the id code to your friend to generate the same list! Select your Pokemon from the drop down menu on the left, and "mark off" any Pokemon by tapping on their image on the right. <br>Have fun trainers!</p>
+      </div>
+  </section>
+
+  <section id="code-con" class="grid-con">
+    <div class="col-span-full">
+        <p id="code-text">Input Applicable Code Here:</p>
+        <div id="code-box">
+            <input type="number" required>
+            <button>Submit</button>
+        </div>
+    </div>
+  </section>
+
+  <section id="guess-who-area" class="grid-con">
+    <div id="pokemon-con" class="col-span-1 m-col-span-4">
+        <p>Your Pokemon:</p>
+        <p id="gw-pokemon-name"></p>
+        <img id="" src="">
+    </div>
+
+    <div id="board-con" class="col-span-3 m-col-span-8">
+        <p>Your Board:</p>
+
+        <button id="gw-generate">Generate</button>
+        <div id="gw-board">
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+            <div class="board-piece"></div>
+        </div>
+    </div>
+  </section>
 
     <section id="bottom" class="full-width-grid-con">
         <div id="footer-info" class="grid-con">

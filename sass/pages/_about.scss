@@ -76,6 +76,11 @@
     background-position: center;
 }
 
+.trainer_favs {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 428px) {
     img {
         max-height: 275px;

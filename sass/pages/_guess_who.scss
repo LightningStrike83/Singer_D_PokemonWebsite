@@ -1,0 +1,41 @@
+@use "../abstracts/colours" as c;
+
+#code-con {
+    display: flex;
+    justify-content: center;
+}
+
+#code-text {
+    margin-bottom: 5px;
+}
+
+#guess-who-area {
+    margin-top: 20px;
+}
+
+#pokemon-con, #board-con {
+    display: flex;
+    flex-direction: column;
+    p {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.board-piece {
+    background-color: white;
+    width: 20%;
+    height: 150px;
+    border: 1px solid black;
+}
+
+#gw-board {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gw-generate {
+    width: 100px;
+    align-self: center;
+    margin-bottom: 10px;
+}

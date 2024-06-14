@@ -21,3 +21,4 @@ $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");
 $router->get("/trainer-lines", "TrainerLineController@getAll");
 $router->get("/trainer-lines/{id}", "TrainerLineController@getTrainer");
+$router->get("/species", "SpeciesController@getAll");

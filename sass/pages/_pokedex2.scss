@@ -182,7 +182,7 @@
     margin-bottom: 20px;
 }
 
-.pd-size {
+.pd-size:not(#custom) {
     cursor: pointer;
     text-decoration: underline;
     transition: all ease-in-out 0.5s;

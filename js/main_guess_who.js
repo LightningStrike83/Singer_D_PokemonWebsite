@@ -13,6 +13,8 @@ function generateBoard() {
         boardPiece.forEach(piece => {
             piece.innerHTML = ""
 
+            piece.style.opacity = "1"
+
             let img = document.createElement("img")
             let name = document.createElement("p")
             let key = document.createElement("p")
@@ -33,6 +35,17 @@ function generateBoard() {
 
         saveGame()
         selectList()
+    })
+    .catch(error => {
+        console.log("boo")
+        const gameToken = document.querySelector("#gw-token")
+
+        gameToken.innerHTML = ""
+
+        let errortext = document.createElement("p")
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`
+
+        gameToken.appendChild(errortext)
     })
 }
 
@@ -106,9 +119,22 @@ function saveGame() {
         const gameToken = document.querySelector("#gw-token")
         const p = document.createElement("p")
 
+        gameToken.innerHTML = ""
+
         p.textContent = `Your game id is ${response.id}`
 
         gameToken.appendChild(p)
+    })
+    .catch(error => {
+        console.log("boo")
+        const gameToken = document.querySelector("#gw-token")
+
+        gameToken.innerHTML = ""
+
+        let errortext = document.createElement("p")
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`
+
+        gameToken.appendChild(errortext)
     })
 }
 
@@ -128,6 +154,13 @@ function loadGame(){
     .then(response => response.json())
     .then(function(response) {
         console.log(response)
+        const gameToken = document.querySelector("#gw-token")
+        loadMessage = document.createElement("p")
+
+        gameToken.innerHTML = ""
+        loadMessage.textContent = `Your game id is ${gameNumber}`
+        
+        gameToken.appendChild(loadMessage)
 
         i = 0
 
@@ -154,6 +187,17 @@ function loadGame(){
         })
 
         selectList()
+    })
+    .catch(error => {
+        console.log("boo")
+        const gameToken = document.querySelector("#gw-token")
+
+        gameToken.innerHTML = ""
+
+        let errortext = document.createElement("p")
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`
+
+        gameToken.appendChild(errortext)
     })
 }
 

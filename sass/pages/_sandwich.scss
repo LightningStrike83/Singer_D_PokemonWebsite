@@ -1,11 +1,11 @@
 @use "../abstracts/colours" as c;
 
 .scarlet {
-    color: c.$scarlet
+    color: c.$scarlet!important
 }
 
 .violet {
-    color: c.$violet
+    color: c.$violet!important
 }
 
 #legend_click {

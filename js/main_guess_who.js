@@ -37,7 +37,6 @@ function generateBoard() {
         selectList()
     })
     .catch(error => {
-        console.log("boo")
         const gameToken = document.querySelector("#gw-token")
 
         gameToken.innerHTML = ""

@@ -1,12 +1,10 @@
 console.log('Welcome to the world of Pokemon!');
 
-let tips = document.querySelector("#tips_click");
-let classicDex = document.querySelector("#classic");
-let legendsDex = document.querySelector("#legends");
-let modernDex = document.querySelector("#modern");
-let pokemonSprites = document.querySelector("#pokemon_sprites");
-
-
+const tips = document.querySelector("#tips_click");
+const classicDex = document.querySelector("#classic");
+const legendsDex = document.querySelector("#legends");
+const modernDex = document.querySelector("#modern");
+const pokemonSprites = document.querySelector("#pokemon_sprites");
 const dragImages = document.querySelectorAll(".sprite_item img");
 const dropAreas = document.querySelectorAll(".pokedex_box");
 

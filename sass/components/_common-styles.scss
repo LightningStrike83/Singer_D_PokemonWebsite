@@ -1,5 +1,9 @@
 @use "../abstracts/colours" as c;
 
+.hidden {
+    display: none!important;
+}
+
 body {
     background-color: c.$black;
 }

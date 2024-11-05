@@ -65,12 +65,12 @@
 .pokedex_box {
     border: 1px solid c.$black;
     height: 130px;
-    width: 20%;
+    width: 33.3%;
     background-color: c.$white;
 }
 
-#pokedex_display_modern, #pokedex_display_legends, #pokedex_display_classic {
-    display: none;
+#pokedex_display {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -85,7 +85,7 @@
 .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
     border: 1px solid c.$black;
     text-align: center;
-    width: 20%;
+    width: 33.3%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -126,10 +126,21 @@
 #size {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 10px;
     font-size: 18px;
     flex-wrap: wrap;
+    input {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 70px;
+    }
+}
+
+#download {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 #filter {
@@ -163,4 +174,29 @@
     list-style: disc;
     line-height: 25px;
     padding: 0;
+}
+
+#sprite_area {
+    overflow: scroll;
+    position: sticky;
+    height: 650px;
+    top: 50px;
+}
+
+#filter {
+    position: sticky;
+    top: -1px;
+    background-color: c.$black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .pokedex_box {
+        width: 20%;
+    }
+
+    .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
+        width: 20%;
+    }
 }

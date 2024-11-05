@@ -1,46 +1,71 @@
 console.log('Welcome to the world of Pokemon!');
 
 const tips = document.querySelector("#tips_click");
-const classicDex = document.querySelector("#classic");
-const legendsDex = document.querySelector("#legends");
-const modernDex = document.querySelector("#modern");
 const pokemonSprites = document.querySelector("#pokemon_sprites");
 const dragImages = document.querySelectorAll(".sprite_item img");
-const dropAreas = document.querySelectorAll(".pokedex_box");
+const submitbutton = document.querySelector("#pd-submit-button")
+const downloadButton = document.querySelector("#pd-download")
+let count = 0
 
 function openTips() {
   var tipsBox = document.querySelector("#tips_box");
   tipsBox.style.display = (tipsBox.style.display === 'flex') ? 'none' : 'flex';
 }
 
-function openClassicDex() {
-  var classicDex = document.querySelector("#pokedex_display_classic");
-  var legendsDex = document.querySelector("#pokedex_display_legends");
-  var modernDex = document.querySelector("#pokedex_display_modern");
+function populateBoxArea() {
+  const pokedexBoxArea = document.querySelector("#pokedex_display")
+  const input = document.querySelector("#pd-input")
+  let inputValue = parseInt(input.value)
+  const box = document.querySelectorAll(".pokedex_box")
 
-  classicDex.style.display = classicDex.classList.contains("open") ? "none" : "flex";
-  legendsDex.style.display = "none";
-  modernDex.style.display = "none";
-}
+  if (inputValue < count) {
+    const boxesToRemove = count - inputValue;
+    
+    for (let i = 0; i < boxesToRemove; i++) {
+      const lastBox = pokedexBoxArea.lastChild; // Get the last child
+      if (lastBox) {
+        if(lastBox.hasChildNodes()) {
+          if (lastBox.childNodes.length > 1) {
+            lastBox.childNodes[1].classList.add("dragging")
 
-function openLegendsDex() {
-  var legendsDex = document.querySelector("#pokedex_display_legends");
-  var classicDex = document.querySelector("#pokedex_display_classic");
-  var modernDex = document.querySelector("#pokedex_display_modern");
+            const draggedPokemon = document.querySelector(".dragging");
+            const originalPositionKey = draggedPokemon.dataset.key;
+            const originalPosition = document.querySelector(`.sprite_item[data-key="${originalPositionKey}"]`);
+          
+            if (draggedPokemon && originalPosition) {
+              const currentDropArea = draggedPokemon.parentNode;
+              currentDropArea.removeChild(draggedPokemon);
+              originalPosition.appendChild(draggedPokemon);
+              draggedPokemon.classList.remove("dragging");
+            }
+          }
+        }
+        pokedexBoxArea.removeChild(lastBox); // Remove the last child
+      }
+    }
+    count = inputValue; 
+    return;
+  }
+  
+  for (let n = count + 1; n <= inputValue; n++) {
+    const div = document.createElement("div")
+    const p = document.createElement("p")
 
-  legendsDex.style.display = legendsDex.classList.contains("open") ? "none" : "flex";
-  classicDex.style.display = "none";
-  modernDex.style.display = "none";
-}
+    div.setAttribute("class", "pokedex_box")
+    p.setAttribute("class", "pokedex_number")
+    p.textContent = n
 
-function openModernDex() {
-  var modernDex = document.querySelector("#pokedex_display_modern");
-  var classicDex = document.querySelector("#pokedex_display_classic");
-  var legendsDex = document.querySelector("#pokedex_display_legends");
+    div.appendChild(p)
+    pokedexBoxArea.appendChild(div)
 
-  modernDex.style.display = modernDex.classList.contains("open") ? "none" : "flex";
-  classicDex.style.display = "none";
-  legendsDex.style.display = "none";
+    div.addEventListener("dragover", dragOver);
+    div.addEventListener("dragenter", dragEnter);
+    div.addEventListener("dragleave", dragLeave);
+    div.addEventListener("drop", drop);
+  }
+
+  count = inputValue
+
 }
 
 
@@ -112,23 +137,29 @@ function returnToOriginalPosition(event) {
   }
 
 tips.addEventListener("click", openTips);
-classicDex.addEventListener("click", openClassicDex);
-legendsDex.addEventListener("click", openLegendsDex);
-modernDex.addEventListener("click", openModernDex);
 
 dragImages.forEach(function (image) {
   image.addEventListener("dragstart", dragStart);
   image.addEventListener("dragend", dragEnd);
 });
 
-dropAreas.forEach((area) => {
-  area.addEventListener("dragover", dragOver);
-  area.addEventListener("dragenter", dragEnter);
-  area.addEventListener("dragleave", dragLeave);
-  area.addEventListener("drop", drop);
-});
+function exportDivToImage() {
+  const divExport = document.querySelector("#pokedex_display");
+  console.log(divExport)
+
+  html2canvas(divExport).then((canvas) => {
+    const dataUrl = canvas.toDataURL("image/png");
+
+    const link = document.createElement("a");
+    link.href = dataUrl;
+    link.download = "my-pokedex.png"; 
+    link.click();
+  });
+}
 
 pokemonSprites.addEventListener("dragover", dragOver);
 pokemonSprites.addEventListener("dragenter", dragEnter);
 pokemonSprites.addEventListener("dragleave", dragLeave);
 pokemonSprites.addEventListener("drop", returnToOriginalPosition);
+submitbutton.addEventListener("click", populateBoxArea)
+downloadButton.addEventListener("click", exportDivToImage)

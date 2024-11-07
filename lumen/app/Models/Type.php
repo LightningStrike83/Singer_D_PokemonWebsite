@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Species extends Model
+class Type extends Model
 {
      /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ["id", "number", "name", "generation"];
+    protected $fillable = ["id", "type"];
 
     /**
      * The attributes excluded from the model's JSON form.

@@ -104,37 +104,57 @@
 
     <div id="board-con" class="col-span-3 m-col-span-8">
         <p>Your Board:</p>
-
+        <select id="gw-select">
+          <option selected disabled value="">Please Select A Generation, Type, Or Mode</option>
+          <option disabled>--Generations--</option>
+          <option value="all">All Generations</option>
+          <option value="1">Generation 1</option>
+          <option value="2">Generation 2</option>
+          <option value="3">Generation 3</option>
+          <option value="4">Generation 4</option>
+          <option value="5">Generation 5</option>
+          <option value="6">Generation 6</option>
+          <option value="7">Generation 7</option>
+          <option value="8">Generation 8</option>
+          <option value="9">Generation 9</option>
+          <option></option>
+          <option disabled>--Types--</option>
+          <option value="grass">Grass Only</option>
+          <option value="fire">Fire Only</option>
+          <option value="water">Water Only</option>
+          <option value="electric">Electric Only</option>
+          <option value="normal">Normal Only</option>
+          <option value="rock">Rock Only</option>
+          <option value="ground">Ground Only</option>
+          <option value="fighting">Fighting Only</option>
+          <option value="ghost">Ghost Only</option>
+          <option value="psychic">Psychic Only</option>
+          <option value="flying">Flying Only</option>
+          <option value="poison">Poison Only</option>
+          <option value="bug">Bug Only</option>
+          <option value="ice">Ice Only</option>
+          <option value="dragon">Dragon Only</option>
+          <option value="steel">Steel Only</option>
+          <option value="dark">Dark Only</option>
+          <option value="fairy">Fairy Only</option>
+          <option></option>
+          <option disabled>--Games--</option>
+          <option value="sw-sh">In Sword and Shield Only</option>
+          <option value="la">In Legends Arceus Only</option>
+          <option value="scar-vio">In Scarlet and Violet Only</option>
+          <option></option>
+          <option disabled>--Special Modes--</option>
+          <option value="regional">Regional Forms Only</option>
+          <option value="starter">First Partner Pokemon Only</option>
+          <option value="legendary">Legendary and Mythic Only</option>
+          <option value="mega">Megas Only Mode</option>
+          <option value="gmax">G-Max Only Mode</option>
+          <option value="dev-fav">Developer's Favourites Mode</option>
+        </select>
         <button id="gw-generate">Generate</button>
 
         <div id="gw-token"></div>
-        <div id="gw-board">
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-            <div class="board-piece" style="opacity: 1"></div>
-        </div>
+        <div id="gw-board"></div>
     </div>
   </section>
 

@@ -19,6 +19,11 @@ class SpeciesController extends Species {
         return response()->json($species);
     }
 
+    public function getAllNoAlt() {
+        $species = Species::select('number', 'name')->where('is_alt', '=', 'n')->orderBy('number', 'asc')->get();
+        return response()->json($species);
+    }
+
     public function getSWSH() {
         $species = Species::select('number', 'name')->where('in_SwSh', '=', 'y')->orderBy('number', 'asc')->get();
         return response()->json($species);
@@ -46,6 +51,11 @@ class SpeciesController extends Species {
 
     public function getLegendaries() {
         $species = Species::select('number', 'name')->where('is_legendary', '=', 'y')->orderBy('number', 'asc')->get();
+        return response()->json($species);
+    }
+
+    public function getAshPokes() {
+        $species = Species::select('number', 'name')->where('ash_own', '=', 'y')->orderBy('number', 'asc')->get();
         return response()->json($species);
     }
 

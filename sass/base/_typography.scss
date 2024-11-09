@@ -1,6 +1,6 @@
 @use "../abstracts/colours" as c;
 
-p, li:not(#usage_tips li, #pokedex_tips li) {
+p, label, li:not(#usage_tips li, #pokedex_tips li) {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 18px;

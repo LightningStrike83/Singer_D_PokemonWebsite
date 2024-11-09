@@ -107,17 +107,17 @@
         <select id="gw-select">
           <option selected disabled value="">Please Select A Generation, Type, Or Mode</option>
           <option disabled>--Generations--</option>
-          <option value="all">All Generations</option>
-          <option value="all-no-alt">All Generations (No Alt Forms)</option>
-          <option value="1">Generation 1</option>
-          <option value="2">Generation 2</option>
-          <option value="3">Generation 3</option>
-          <option value="4">Generation 4</option>
-          <option value="5">Generation 5</option>
-          <option value="6">Generation 6</option>
-          <option value="7">Generation 7</option>
-          <option value="8">Generation 8</option>
-          <option value="9">Generation 9</option>
+          <option value="gen/all">All Generations</option>
+          <option value="gen/all-no-alt">All Generations (No Alt Forms)</option>
+          <option value="gen/1">Generation 1</option>
+          <option value="gen/2">Generation 2</option>
+          <option value="gen/3">Generation 3</option>
+          <option value="gen/4">Generation 4</option>
+          <option value="gen/5">Generation 5</option>
+          <option value="gen/6">Generation 6</option>
+          <option value="gen/7">Generation 7</option>
+          <option value="gen/8">Generation 8</option>
+          <option value="gen/9">Generation 9</option>
           <option></option>
           <option disabled>--Types--</option>
           <option value="types/grass">Grass Only</option>
@@ -140,20 +140,26 @@
           <option value="types/fairy">Fairy Only</option>
           <option></option>
           <option disabled>--Games--</option>
-          <option value="sw-sh">In Sword and Shield Only</option>
-          <option value="la">In Legends Arceus Only</option>
-          <option value="scar-vio">In Scarlet and Violet Only</option>
+          <option value="game/sw-sh">In Sword and Shield Only</option>
+          <option value="game/la">In Legends Arceus Only</option>
+          <option value="game/scar-vio">In Scarlet and Violet Only</option>
           <option></option>
           <option disabled>--Special Modes--</option>
-          <option value="regional">Regional Forms Only</option>
-          <option value="starter">First Partner Pokemon Only</option>
-          <option value="legendary">Legendary and Mythic Only</option>
-          <option value="mega">Megas Only Mode</option>
-          <option value="gmax">G-Max Only Mode</option>
-          <option value="ash">Ash's Pokemon Only Mode</option>
-          <option value="dev-fav">Developer's Favourites Mode</option>
+          <option value="custom/regional">Regional Forms Only</option>
+          <option value="custom/starter">First Partner Pokemon Only</option>
+          <option value="custom/legendary">Legendary and Mythic Only</option>
+          <option value="custom/mega">Megas Only Mode</option>
+          <option value="custom/gmax">G-Max Only Mode</option>
+          <option value="custom/ash">Ash's Pokemon Only Mode</option>
+          <option value="custom/dev-fav">Developer's Favourites Mode</option>
         </select>
+        <div id="shiny-checkbox-con">
+          <input type="checkbox" id="shiny-checkbox" name="shiny-checkbox">
+          <label for="shiny-checkbox">Make Pokemon Shiny?</label>
+        </div>
         <button id="gw-generate">Generate</button>
+
+        <p class="hidden" id="shiny-check">n</p>
 
         <div id="gw-token"></div>
         <div id="gw-board"></div>

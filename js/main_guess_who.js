@@ -1,16 +1,37 @@
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const generateButton = document.querySelector("#gw-generate")
-const boardPiece = document.querySelectorAll(".board-piece")
 const loadButton = document.querySelector("#gw-submit")
 const yourName = document.querySelector("#gw-pokemon-name")
+const imageSelection = document.querySelector("#select-image")
+const shinyCheck = document.querySelector("#shiny-checkbox")
+const shinyCheckCon = document.querySelector("#shiny-checkbox-con")
+const shinyText = document.querySelector("#shiny-check")
 
 function generateBoard() {
-    fetch(`${baseURL}species`)
+    const gameSelect = document.querySelector("#gw-select")
+    const selectValue = gameSelect.value
+
+    imageSelection.src = ""
+
+    fetch(`${baseURL}${selectValue}`)
     .then(response => response.json())
     .then(function(response){
-        console.log(response)
+        let n = Math.min(response.length, 25);
+        let usedCharacters = new Set();
+        const gwBoard = document.querySelector("#gw-board");
 
-        boardPiece.forEach(piece => {
+        gwBoard.innerHTML = ""
+
+        for (let l = 0; l < n; l++) {
+            const div = document.createElement("div");
+            div.setAttribute("class", "board-piece");
+            div.style.opacity = "1";
+            gwBoard.appendChild(div);
+        }
+
+        const boardPieces = document.querySelectorAll(".board-piece");
+
+        boardPieces.forEach(piece => {
             piece.innerHTML = ""
 
             piece.style.opacity = "1"
@@ -18,19 +39,34 @@ function generateBoard() {
             let img = document.createElement("img")
             let name = document.createElement("p")
             let key = document.createElement("p")
-            const number = Math.floor(Math.random() * response.length)
+            let number;
+
+            do {
+                number = Math.floor(Math.random() * response.length);
+            } while (
+                usedCharacters.has(number)
+            );
+
+            usedCharacters.add(number);
 
             img.setAttribute("class", "gw-image")
             name.setAttribute("class", "gw-name")
             key.setAttribute("class", "gw-key")
 
-            img.src = `images/custom_pokedex/${response[number].number}.png`
+            if (shinyCheck.checked === true) {
+                img.src = `images/custom_pokedex/shiny_forms/${response[number].number}.png`
+            } else {
+                img.src = `images/custom_pokedex/${response[number].number}.png`
+            }
+
             name.textContent = response[number].name
             key.textContent = response[number].number
 
             piece.appendChild(img)
             piece.appendChild(name)
             piece.appendChild(key)
+
+            piece.addEventListener("click", deselectPiece)
         })
 
         saveGame()
@@ -71,13 +107,18 @@ function imageSelect() {
     const selectImage = document.querySelector("#select-image")
     const selectedValue = yourName.value
     
-    selectImage.src = `images/custom_pokedex/${selectedValue}.png`
+    if (shinyText.textContent === "y") {
+        selectImage.src = `images/custom_pokedex/shiny_forms/${selectedValue}.png`
+    } else {
+        selectImage.src = `images/custom_pokedex/${selectedValue}.png`
+    }
 }
 
 function saveGame() {
     const number = document.querySelectorAll(".gw-key")
 
     const gameData = {
+        shiny: shinyText.textContent,
         pokemon1: number[0].innerHTML,
         pokemon2: number[1].innerHTML,
         pokemon3: number[2].innerHTML,
@@ -105,6 +146,8 @@ function saveGame() {
         pokemon25: number[24].innerHTML,
     }
 
+    console.log(gameData)
+
     fetch (`${baseURL}guess-who/add`, {
         method: "POST",
         headers: {
@@ -125,7 +168,7 @@ function saveGame() {
         gameToken.appendChild(p)
     })
     .catch(error => {
-        console.log("boo")
+        console.log(error)
         const gameToken = document.querySelector("#gw-token")
 
         gameToken.innerHTML = ""
@@ -145,62 +188,98 @@ function deselectPiece() {
     }
 }
 
-function loadGame(){
-    const game = document.querySelector("#gw-input")
-    const gameNumber = game.value
+function loadGame() {
+    const game = document.querySelector("#gw-input");
+    const gameNumber = game.value;
+
+    imageSelection.src = ""
 
     fetch(`${baseURL}guess-who/${gameNumber}`)
     .then(response => response.json())
     .then(function(response) {
-        console.log(response)
-        const gameToken = document.querySelector("#gw-token")
-        loadMessage = document.createElement("p")
+        const gwBoard = document.querySelector("#gw-board");
+        const gameToken = document.querySelector("#gw-token");
+        const p = document.createElement("p");
 
-        gameToken.innerHTML = ""
-        loadMessage.textContent = `Your game id is ${gameNumber}`
-        
-        gameToken.appendChild(loadMessage)
+        gwBoard.innerHTML = "";
+        gameToken.innerHTML = "";
 
-        i = 0
+        p.textContent = `Your game id is ${gameNumber}`;
+        gameToken.appendChild(p);
 
-        boardPiece.forEach(piece => {
-            piece.innerHTML = ""
+        for (let l = 1; l <= 25; l++) {
+            const div = document.createElement("div");
+            div.setAttribute("class", "board-piece");
+            div.style.opacity = "1";
+            gwBoard.appendChild(div);
+        }
 
-            let img = document.createElement("img")
-            let name = document.createElement("p")
-            let key = document.createElement("p")
+        const boardPieces = document.querySelectorAll(".board-piece");
 
-            img.setAttribute("class", "gw-image")
-            name.setAttribute("class", "gw-name")
-            key.setAttribute("class", "gw-key")
+        if (response.shiny === "y") {
+            shinyCheck.checked = true
+        } else {
+            shinyCheck.checked = false
+        }
+        shinyText.textContent = response.shiny
 
-            img.src = `images/custom_pokedex/${response[i].number}.png`
-            name.textContent = response[i].name
-            key.textContent = response[i].number
+        boardPieces.forEach((piece, index) => {
+            const pokemonKey = `pokemon${index + 1}`;
+            const pokemonData = response[pokemonKey];
 
-            piece.appendChild(img)
-            piece.appendChild(name)
-            piece.appendChild(key)
+            if (pokemonData) {
+                piece.innerHTML = "";
+                piece.style.opacity = "1";
 
-            i++
-        })
+                const img = document.createElement("img");
+                const name = document.createElement("p");
+                const key = document.createElement("p");
 
-        selectList()
+                img.setAttribute("class", "gw-image");
+                name.setAttribute("class", "gw-name");
+                key.setAttribute("class", "gw-key");
+
+                if (response.shiny === "y") {
+                    img.src = `images/custom_pokedex/shiny_forms/${pokemonData.number}.png`;
+                } else {
+                    img.src = `images/custom_pokedex/${pokemonData.number}.png`;
+                }
+
+                name.textContent = pokemonData.name;
+                key.textContent = pokemonData.number;
+
+                piece.appendChild(img);
+                piece.appendChild(name);
+                piece.appendChild(key);
+
+                piece.addEventListener("click", deselectPiece);
+            }
+        });
+
+        selectList();
     })
     .catch(error => {
-        console.log("boo")
-        const gameToken = document.querySelector("#gw-token")
+        const gameToken = document.querySelector("#gw-token");
 
-        gameToken.innerHTML = ""
+        gameToken.innerHTML = "";
 
-        let errortext = document.createElement("p")
-        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`
+        const errortext = document.createElement("p");
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`;
 
-        gameToken.appendChild(errortext)
-    })
+        gameToken.appendChild(errortext);
+    });
+}
+
+
+function shinyData() {
+    if (shinyCheck.checked === true) {
+        shinyText.textContent = "y"
+    } else {
+        shinyText.textContent = "n"
+    }
 }
 
 generateButton.addEventListener("click", generateBoard)
-boardPiece.forEach(piece => piece.addEventListener("click", deselectPiece))
 loadButton.addEventListener("click", loadGame)
 yourName.addEventListener("change", imageSelect)
+shinyCheckCon.addEventListener("click", shinyData)

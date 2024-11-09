@@ -14,7 +14,7 @@ class GuessWhoGameController extends Controller {
      * @return void
      */
 
-     public function getOne($id){
+     public function getOne($id) {
         $guesswho = GuessWhoGame::where('id', $id)->first();
         
         if (!$guesswho) {
@@ -27,22 +27,28 @@ class GuessWhoGameController extends Controller {
         // Loop through each number in the GuessWhoGame record and retrieve corresponding Pokemon data
         for ($i = 1; $i <= 25; $i++) {
             $pokemonNumber = $guesswho->{"pokemon$i"};
-            $pokemon = SpeciesController::where('number', $pokemonNumber)->first();
+            $pokemon = SpeciesController::where('number', $pokemonNumber)->first(); // using your original variable name
             
             if ($pokemon) {
-                $pokemonData[] = [
+                $pokemonData["pokemon$i"] = [  // keeping your structure intact
                     'number' => $pokemon->number,
                     'name' => $pokemon->name
                 ];
             }
         }
-        
-        return response()->json($pokemonData);
+    
+        // Include shiny data at the root level, and keep pokemonData as separate entries
+        return response()->json(array_merge(
+            ['shiny' => $guesswho->shiny],
+            $pokemonData
+        ));
     }
+    
     
 
     public function save(Request $request) {
         $this->validate($request, [
+            'shiny' => 'required',
             'pokemon1' => 'required',
             'pokemon2' => 'required',
             'pokemon3' => 'required',

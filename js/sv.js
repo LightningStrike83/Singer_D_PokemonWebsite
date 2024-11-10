@@ -26,6 +26,13 @@ let cassiopeiaSV = document.querySelector ("#cassiopeia1");
 let arvenSV = document.querySelector ("#arven1");
 let sadaSV = document.querySelector ("#sada1");
 let turoSV = document.querySelector ("#turo1");
+let kieranSV = document.querySelector("#kieran1")
+let carmineSV = document.querySelector("#carmine")
+let crispinSV = document.querySelector("#crispin")
+let amarysSV = document.querySelector("#amarys")
+let laceySV = document.querySelector("#lacey")
+let draytonSV = document.querySelector("#drayton")
+let kieranCSV = document.querySelector("#kieran2")
 
 let sv_trainers = [
     {
@@ -2178,6 +2185,382 @@ let sv_trainers = [
         move2f : "-Brick Break",
         move3f : "-Spirit Break",
         move4f : "-Poison Jab",
+    },
+
+    {
+        namea : "",
+        levela : "LV: ",
+        typea : "Type: ",
+        abilitya: "Ability: ",
+        itema : "Item: ",
+        hpa : "HP: ",
+        atka : "Atk: ",
+        defa : "Def: ",
+        spatka : "Sp. Atk: ",
+        spdefa : "Sp. Def: ",
+        spda : "Spd: ",
+        move1a : "-",
+        move2a : "-",
+        move3a : "-",
+        move4a : "-",
+
+        nameb : "",
+        levelb : "LV: ",
+        typeb : "Type: ",
+        abilityb: "Ability: ",
+        itemb : "Item: ",
+        hpb : "HP: ",
+        atkb : "Atk: ",
+        defb : "Def: ",
+        spatkb : "Sp. Atk: ",
+        spdefb : "Sp. Def: ",
+        spdb : "Spd: ",
+        move1b : "-",
+        move2b : "-",
+        move3b : "-",
+        move4b : "-",
+
+        namec : "",
+        levelc : "LV: ",
+        typec : "Type: ",
+        abilityc: "Ability: ",
+        itemc : "Item: ",
+        hpc : "HP: ",
+        atkc : "Atk: ",
+        defc : "Def: ",
+        spatkc : "Sp. Atk:",
+        spdefc : "Sp. Def: ",
+        spdc : "Spd:",
+        move1c : "-",
+        move2c : "-",
+        move3c : "-",
+        move4c : "-",
+
+        named : "",
+        leveld : "LV: ",
+        typed : "Type: ",
+        abilityd: "Ability: ",
+        itemd : "Item: ",
+        hpd : "HP: ",
+        atkd : "Atk: ",
+        defd : "Def: ",
+        spatkd : "Sp. Atk: ",
+        spdefd : "Sp. Def: ",
+        spdd : "Spd: ",
+        move1d : "-",
+        move2d : "-",
+        move3d : "-",
+        move4d : "-",
+
+        namee : "",
+        levele : "LV: ",
+        typee : "Type: ",
+        abilitye: "Ability: ",
+        iteme : "Item: ",
+        hpe : "HP: ",
+        atke : "Atk: ",
+        defe : "Def: ",
+        spatke : "Sp. Atk: ",
+        spdefe : "Sp. Def: ",
+        spde : "Spd: ",
+        move1e : "-",
+        move2e : "-",
+        move3e : "-",
+        move4e : "-",
+
+        namef : "",
+        levelf : "LV: ",
+        typef : "Type: ",
+        abilityf: "Ability: ",
+        itemf : "Item: ",
+        hpf : "HP: ",
+        atkf : "Atk: ",
+        deff : "Def: ",
+        spatkf : "Sp. Atk: ",
+        spdeff : "Sp. Def: ",
+        spdf : "Spd: ",
+        move1f : "-",
+        move2f : "-",
+        move3f : "-",
+        move4f : "-",
+    },
+
+    {
+        namea : "",
+        levela : "LV: ",
+        typea : "Type: ",
+        abilitya: "Ability: ",
+        itema : "Item: ",
+        hpa : "HP: ",
+        atka : "Atk: ",
+        defa : "Def: ",
+        spatka : "Sp. Atk: ",
+        spdefa : "Sp. Def: ",
+        spda : "Spd: ",
+        move1a : "-",
+        move2a : "-",
+        move3a : "-",
+        move4a : "-",
+
+        nameb : "",
+        levelb : "LV: ",
+        typeb : "Type: ",
+        abilityb: "Ability: ",
+        itemb : "Item: ",
+        hpb : "HP: ",
+        atkb : "Atk: ",
+        defb : "Def: ",
+        spatkb : "Sp. Atk: ",
+        spdefb : "Sp. Def: ",
+        spdb : "Spd: ",
+        move1b : "-",
+        move2b : "-",
+        move3b : "-",
+        move4b : "-",
+
+        namec : "",
+        levelc : "LV: ",
+        typec : "Type: ",
+        abilityc: "Ability: ",
+        itemc : "Item: ",
+        hpc : "HP: ",
+        atkc : "Atk: ",
+        defc : "Def: ",
+        spatkc : "Sp. Atk:",
+        spdefc : "Sp. Def: ",
+        spdc : "Spd:",
+        move1c : "-",
+        move2c : "-",
+        move3c : "-",
+        move4c : "-",
+
+        named : "",
+        leveld : "LV: ",
+        typed : "Type: ",
+        abilityd: "Ability: ",
+        itemd : "Item: ",
+        hpd : "HP: ",
+        atkd : "Atk: ",
+        defd : "Def: ",
+        spatkd : "Sp. Atk: ",
+        spdefd : "Sp. Def: ",
+        spdd : "Spd: ",
+        move1d : "-",
+        move2d : "-",
+        move3d : "-",
+        move4d : "-",
+
+        namee : "",
+        levele : "LV: ",
+        typee : "Type: ",
+        abilitye: "Ability: ",
+        iteme : "Item: ",
+        hpe : "HP: ",
+        atke : "Atk: ",
+        defe : "Def: ",
+        spatke : "Sp. Atk: ",
+        spdefe : "Sp. Def: ",
+        spde : "Spd: ",
+        move1e : "-",
+        move2e : "-",
+        move3e : "-",
+        move4e : "-",
+    },
+
+    {
+        namea : "Rotom (Heat)",
+        levela : "LV: 77",
+        typea : "Type: Electric/Fire",
+        abilitya: "Ability: Levitate",
+        itema : "Item: Rocky Helmet",
+        hpa : "HP: 234",
+        atka : "Atk: 94",
+        defa : "Def: 212",
+        spatka : "Sp. Atk: 192",
+        spdefa : "Sp. Def: 193",
+        spda : "Spd: 209",
+        move1a : "-Will-O-Wisp",
+        move2a : "-Overheat",
+        move3a : "-Thunderbolt",
+        move4a : "-Hex",
+
+        nameb : "Talonflame",
+        levelb : "LV: 77",
+        typeb : "Type: Fire/Flying",
+        abilityb: "Ability: Flame Body",
+        itemb : "Item: Focus Sash",
+        hpb : "HP: ",
+        atkb : "Atk: ",
+        defb : "Def: ",
+        spatkb : "Sp. Atk: ",
+        spdefb : "Sp. Def: ",
+        spdb : "Spd: ",
+        move1b : "-Sunny Day",
+        move2b : "-Brave Bird",
+        move3b : "-Flare Blitz",
+        move4b : "-Roost",
+
+        namec : "Exeggutor",
+        levelc : "LV: 78",
+        typec : "Type: Grass/Psychic",
+        abilityc: "Ability: Harvest",
+        itemc : "Item: Sitrus Berry",
+        hpc : "HP: ",
+        atkc : "Atk: ",
+        defc : "Def: ",
+        spatkc : "Sp. Atk:",
+        spdefc : "Sp. Def: ",
+        spdc : "Spd:",
+        move1c : "-Leech Seed",
+        move2c : "-Psyshock",
+        move3c : "-Protect",
+        move4c : "-Solar Beam",
+
+        named : "Camerupt",
+        leveld : "LV: 78",
+        typed : "Type: Fire/Ground",
+        abilityd: "Ability: Solid Rock",
+        itemd : "Item: Expert Belt",
+        hpd : "HP: ",
+        atkd : "Atk: ",
+        defd : "Def: ",
+        spatkd : "Sp. Atk: ",
+        spdefd : "Sp. Def: ",
+        spdd : "Spd: ",
+        move1d : "-Earth Power",
+        move2d : "-Heat Wave",
+        move3d : "-Ancient Power",
+        move4d : "-Zen Headbutt",
+
+        namee : "Magmortar",
+        levele : "LV: 78",
+        typee : "Type: Fire",
+        abilitye: "Ability: Flame Body",
+        iteme : "Item: Passho Berry",
+        hpe : "HP: ",
+        atke : "Atk: ",
+        defe : "Def: ",
+        spatke : "Sp. Atk: ",
+        spdefe : "Sp. Def: ",
+        spde : "Spd: ",
+        move1e : "-Psychic",
+        move2e : "-Thunderbolt",
+        move3e : "-Heat Wave",
+        move4e : "-Sunny Day",
+
+        namef : "Blaziken",
+        levelf : "LV: 79",
+        typef : "Type: Fire/Fighting",
+        abilityf: "Ability: Speed Boost",
+        itemf : "Item: Assault Vest",
+        hpf : "HP: ",
+        atkf : "Atk: ",
+        deff : "Def: ",
+        spatkf : "Sp. Atk: ",
+        spdeff : "Sp. Def: ",
+        spdf : "Spd: ",
+        move1f : "-Stone Edge",
+        move2f : "-Focus Blast",
+        move3f : "-Temper Flare",
+        move4f : "-Shadow Claw",
+    },
+
+    {
+        namea : "Skarmory",
+        levela : "LV: 78",
+        typea : "Type: Steel/Flying",
+        abilitya: "Ability: Sturdy",
+        itema : "Item: Rocky Helmet",
+        hpa : "HP: ",
+        atka : "Atk: ",
+        defa : "Def: ",
+        spatka : "Sp. Atk: ",
+        spdefa : "Sp. Def: ",
+        spda : "Spd: ",
+        move1a : "-Stealth Rock",
+        move2a : "-Whirlwind",
+        move3a : "-Body Press",
+        move4a : "-Dual Wingbeat",
+
+        nameb : "Alolan Dugtrio",
+        levelb : "LV: 78",
+        typeb : "Type: Ground/Steel",
+        abilityb: "Ability: Tangling Hair",
+        itemb : "Item: Focus Sash",
+        hpb : "HP: ",
+        atkb : "Atk: ",
+        defb : "Def: ",
+        spatkb : "Sp. Atk: ",
+        spdefb : "Sp. Def: ",
+        spdb : "Spd: ",
+        move1b : "-Earthquake",
+        move2b : "-Sucker Punch",
+        move3b : "-Iron Head",
+        move4b : "-Stone Edge",
+
+        namec : "Scizor",
+        levelc : "LV: 79",
+        typec : "Type: Bug/Steel",
+        abilityc: "Ability: Technician",
+        itemc : "Item: Occa Berry",
+        hpc : "HP: ",
+        atkc : "Atk: ",
+        defc : "Def: ",
+        spatkc : "Sp. Atk:",
+        spdefc : "Sp. Def: ",
+        spdc : "Spd:",
+        move1c : "-Bullet Punch",
+        move2c : "-Trailblaze",
+        move3c : "-Pounce",
+        move4c : "-Aerial Ace",
+
+        named : "Reuniclus",
+        leveld : "LV: 79",
+        typed : "Type: Psychic",
+        abilityd: "Ability: Magic Guard",
+        itemd : "Item: Leftovers",
+        hpd : "HP: ",
+        atkd : "Atk: ",
+        defd : "Def: ",
+        spatkd : "Sp. Atk: ",
+        spdefd : "Sp. Def: ",
+        spdd : "Spd: ",
+        move1d : "-Trick Room",
+        move2d : "-Protect",
+        move3d : "-Energy Ball",
+        move4d : "-Psychic",
+
+        namee : "Empoleon",
+        levele : "LV: 79",
+        typee : "Type: Water/Steel",
+        abilitye: "Ability: Torrent",
+        iteme : "Item: Mystic Water",
+        hpe : "HP: ",
+        atke : "Atk: ",
+        defe : "Def: ",
+        spatke : "Sp. Atk: ",
+        spdefe : "Sp. Def: ",
+        spde : "Spd: ",
+        move1e : "-Ice Beam",
+        move2e : "-Hydro Pump",
+        move3e : "-Flash Cannon",
+        move4e : "-Grass Knot",
+
+        namef : "Metagross",
+        levelf : "LV: 80",
+        typef : "Type: Steel/Psychic",
+        abilityf: "Ability: Clear Body",
+        itemf : "Item: Expert Belt",
+        hpf : "HP: ",
+        atkf : "Atk: ",
+        deff : "Def: ",
+        spatkf : "Sp. Atk: ",
+        spdeff : "Sp. Def: ",
+        spdf : "Spd: ",
+        move1f : "-Hard Press",
+        move2f : "-Ice Punch",
+        move3f : "-Zen Headbutt",
+        move4f : "-Brick Break",
     }
 ]
 
@@ -2330,12 +2713,38 @@ function showPokemonSVImages(trainerId) {
     imgPokemon5.src = "images/pokemon/sv/" + trainerId + "_5.png";
     imgPokemon6.src = "images/pokemon/sv/" + trainerId + "_6.png";
 
+    imgPokemon1.onerror = function() {
+        imgPokemon1.src = "images/pokemon/blank.png"; 
+    };
+
+    imgPokemon2.onerror = function() {
+        imgPokemon2.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon3.onerror = function() {
+        imgPokemon3.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon4.onerror = function() {
+        imgPokemon4.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon5.onerror = function() {
+        imgPokemon5.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon6.onerror = function() {
+        imgPokemon6.src = "images/pokemon/blank.png";
+    };
+
     pokemon1Picture.appendChild(imgPokemon1);
     pokemon2Picture.appendChild(imgPokemon2);
     pokemon3Picture.appendChild(imgPokemon3);
     pokemon4Picture.appendChild(imgPokemon4);
     pokemon5Picture.appendChild(imgPokemon5);
     pokemon6Picture.appendChild(imgPokemon6);
+
+    clearDivs()
 }
 
 katySV.addEventListener('click', displaySVTrainers);
@@ -2366,3 +2775,10 @@ cassiopeiaSV.addEventListener('click', displaySVTrainers);
 arvenSV.addEventListener('click', displaySVTrainers);
 sadaSV.addEventListener('click', displaySVTrainers);
 turoSV.addEventListener('click', displaySVTrainers);
+kieranSV.addEventListener('click', displaySVTrainers);
+carmineSV.addEventListener('click', displaySVTrainers);
+crispinSV.addEventListener('click', displaySVTrainers);
+amarysSV.addEventListener('click', displaySVTrainers);
+laceySV.addEventListener('click', displaySVTrainers);
+draytonSV.addEventListener('click', displaySVTrainers);
+kieranCSV.addEventListener('click', displaySVTrainers);

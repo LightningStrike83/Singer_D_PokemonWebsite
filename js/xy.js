@@ -960,12 +960,38 @@ function showPokemonXYImages(trainerId) {
     imgPokemon5.src = "images/pokemon/xy/" + trainerId + "_5.png";
     imgPokemon6.src = "images/pokemon/xy/" + trainerId + "_6.png";
 
+    imgPokemon1.onerror = function() {
+        imgPokemon1.src = "images/pokemon/blank.png"; 
+    };
+
+    imgPokemon2.onerror = function() {
+        imgPokemon2.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon3.onerror = function() {
+        imgPokemon3.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon4.onerror = function() {
+        imgPokemon4.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon5.onerror = function() {
+        imgPokemon5.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon6.onerror = function() {
+        imgPokemon6.src = "images/pokemon/blank.png";
+    };
+
     pokemon1Picture.appendChild(imgPokemon1);
     pokemon2Picture.appendChild(imgPokemon2);
     pokemon3Picture.appendChild(imgPokemon3);
     pokemon4Picture.appendChild(imgPokemon4);
     pokemon5Picture.appendChild(imgPokemon5);
     pokemon6Picture.appendChild(imgPokemon6);
+
+    clearDivs()
 }
 
 violaXY.addEventListener('click', displayXYTrainers);

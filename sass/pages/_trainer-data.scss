@@ -39,14 +39,17 @@
 
 #table {
     display: flex;
-    flex-direction: row;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 #trainer_image {
     height: 300px;
-    width: 200px;
     border: 1px solid c.$white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #pokemon {
@@ -63,7 +66,6 @@
 
 .text {
     height: 30px;
-    width: 150px;
     border: 1px solid c.$white;
     display: flex;
     flex-wrap: wrap;
@@ -90,9 +92,7 @@
 }
 
 #trainer_image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 15px;
 }
 
 #trainer_image img {
@@ -107,4 +107,28 @@
 
 .pokemon_image img {
     height: 90px;
+}
+
+.pokemon {
+    width: 50%;
+}
+
+@media screen and (min-width:768px) {
+    .text {
+        width: 150px;
+    }
+
+    #table {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .pokemon {
+        width: auto;
+        flex-direction: column;
+    }
+
+    #trainer_image {
+        width: 200px;
+    }
 }

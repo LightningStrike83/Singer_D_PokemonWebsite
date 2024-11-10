@@ -1047,13 +1047,14 @@ function showPokemonYImages(trainerId) {
     var pokemon4Picture = document.querySelector("#pokemon_4_image");
     var pokemon5Picture = document.querySelector("#pokemon_5_image");
     var pokemon6Picture = document.querySelector("#pokemon_6_image");
+
     var imgPokemon1 = document.createElement("img");
     var imgPokemon2 = document.createElement("img");
     var imgPokemon3 = document.createElement("img");
     var imgPokemon4 = document.createElement("img");
     var imgPokemon5 = document.createElement("img");
     var imgPokemon6 = document.createElement("img");
-    
+
     pokemon1Picture.innerHTML = "";
     pokemon2Picture.innerHTML = "";
     pokemon3Picture.innerHTML = "";
@@ -1061,7 +1062,6 @@ function showPokemonYImages(trainerId) {
     pokemon5Picture.innerHTML = "";
     pokemon6Picture.innerHTML = "";
 
-    
     imgPokemon1.src = "images/pokemon/y/" + trainerId + "_1.png";
     imgPokemon2.src = "images/pokemon/y/" + trainerId + "_2.png";
     imgPokemon3.src = "images/pokemon/y/" + trainerId + "_3.png";
@@ -1069,13 +1069,40 @@ function showPokemonYImages(trainerId) {
     imgPokemon5.src = "images/pokemon/y/" + trainerId + "_5.png";
     imgPokemon6.src = "images/pokemon/y/" + trainerId + "_6.png";
 
+    imgPokemon1.onerror = function() {
+        imgPokemon1.src = "images/pokemon/blank.png"; 
+    };
+
+    imgPokemon2.onerror = function() {
+        imgPokemon2.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon3.onerror = function() {
+        imgPokemon3.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon4.onerror = function() {
+        imgPokemon4.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon5.onerror = function() {
+        imgPokemon5.src = "images/pokemon/blank.png";
+    };
+
+    imgPokemon6.onerror = function() {
+        imgPokemon6.src = "images/pokemon/blank.png";
+    };
+
     pokemon1Picture.appendChild(imgPokemon1);
     pokemon2Picture.appendChild(imgPokemon2);
     pokemon3Picture.appendChild(imgPokemon3);
     pokemon4Picture.appendChild(imgPokemon4);
     pokemon5Picture.appendChild(imgPokemon5);
     pokemon6Picture.appendChild(imgPokemon6);
+
+    clearDivs()
 }
+
 
 brockY.addEventListener('click', displayYTrainers);
 mistyY.addEventListener('click', displayYTrainers);

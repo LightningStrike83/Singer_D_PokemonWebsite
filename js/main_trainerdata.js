@@ -151,6 +151,28 @@ function uncheckAllGameCheckboxes() {
     });
 }
 
+function clearDivs() {
+  console.log("Starting clearDivs");
+  const pokemonDivs = document.querySelectorAll(".pokemon");
+
+  pokemonDivs.forEach(pDiv => {
+    console.log("Checking div:", pDiv);
+    const image = pDiv.querySelector("img");
+
+    if (image) {
+      image.onload = function() {
+        if (image.getAttribute('src') === "images/pokemon/blank.png") {
+          pDiv.style.display = "none";
+        } else {
+          pDiv.style.display = "flex";
+        }
+      };
+    }
+  });
+}
+
+
+
 
 rbgGame.addEventListener('click', openRBG);
 yGame.addEventListener('click', openY);

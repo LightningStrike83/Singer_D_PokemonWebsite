@@ -59,6 +59,11 @@ class SpeciesController extends Species {
         return response()->json($species);
     }
 
+    public function getChampion() {
+        $species = Species::select('number', 'name')->where('champion', '=', 'y')->orderBy('number', 'asc')->get();
+        return response()->json($species);
+    }
+
     public function getMegas() {
         $species = Species::select('number', 'name')->where('is_mega', '=', 'y')->orderBy('number', 'asc')->get();
         return response()->json($species);

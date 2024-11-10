@@ -143,7 +143,7 @@ function uncheckAllCheckboxes() {
 }
 
 function uncheckAllGameCheckboxes() {
-    gameDivs.forEach(div => { // Use gameDivs instead of characterDivs
+    gameDivs.forEach(div => {
         const checkbox = div.querySelector('.game_checkbox');
         if (checkbox) {
             checkbox.checked = false;

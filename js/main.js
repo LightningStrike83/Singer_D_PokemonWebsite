@@ -1,18 +1,24 @@
-const hamMenu = document.querySelector("#hamburger-menu")
+const hamClose = document.querySelectorAll(".close-button")
 const infoMenu = document.querySelector("#game-info-menu")
 const activityMenu = document.querySelector("#activity-menu")
 const infoButton = document.querySelector("#game-info-button")
 const activityButton = document.querySelector("#activity-button")
+const gameinfoMobile = document.querySelector("#gameinfo-mobile-menu")
+const activityMobile = document.querySelector("#activity-mobile-menu")
+const gameinfoMobileButton = document.querySelector(".gameinfo-mobile-button")
+const activityMobileButton = document.querySelector(".activity-mobile-button")
+const hamMenu = document.querySelector("#hamburger-menu")
+const mainMenu = document.querySelector("#main-mobile-menu")
 
-function openHamMenu() {
-    var navMenu = document.querySelector("#nav-menu")
+function hamburgerOpen() {
+    mainMenu.style.visibility = "visible"
+    mainMenu.style.opacity = "1"
+}
 
-    if (navMenu.style.display === "grid") {
-        navMenu.style.display = "none"
-        hamMenu.style.marginBottom = "0"
-    } else {
-        navMenu.style.display = "grid"
-        hamMenu.style.marginBottom = "20px"
+function hamBurgerClose() {
+    if (this.parentNode.parentNode.style.visibility = "visible") {
+        this.parentNode.parentNode.style.opacity = "0",
+        this.parentNode.parentNode.style.visibility = "hidden"
     }
 }
 
@@ -40,6 +46,16 @@ function openActivityMenu() {
     }
 }
 
+function openGameInfoMobileMenu() {
+    gameinfoMobile.style.visibility = "visible"
+    gameinfoMobile.style.opacity = "1"
+}
+
+function openActivityMobileMenu() {
+    activityMobile.style.visibility = "visible"
+    activityMobile.style.opacity = "1"
+}
+
 function setDefault() {
     activityMenu.style.display = "none"
     infoMenu.style.display = "none"
@@ -47,6 +63,9 @@ function setDefault() {
 
 setDefault()
 
-hamMenu.addEventListener("click", openHamMenu)
 infoButton.addEventListener("click", openInfoMenu)
 activityButton.addEventListener("click", openActivityMenu)
+hamMenu.addEventListener("click", hamburgerOpen)
+hamClose.forEach(close => close.addEventListener("click", hamBurgerClose))
+gameinfoMobileButton.addEventListener("click", openGameInfoMobileMenu)
+activityMobileButton.addEventListener("click", openActivityMobileMenu)

@@ -64,9 +64,12 @@
 
 .pokedex_box {
     border: 1px solid c.$black;
-    height: 130px;
-    width: 33.3%;
+    min-height: 130px;
+    width: 20%;
     background-color: c.$white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 #pokedex_display {
@@ -181,6 +184,7 @@
     position: sticky;
     height: 650px;
     top: 50px;
+    display: none;
 }
 
 #filter {
@@ -191,12 +195,39 @@
     padding-bottom: 10px;
 }
 
+.mobile_select {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.mobile_image {
+    margin-bottom: 20px;
+}
+
+#cd_desktop_tablet {
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
-    .pokedex_box {
-        width: 20%;
-    }
 
     .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
         width: 20%;
+    }
+
+    .mobile_select {
+        display: none;
+    }
+
+    #cd_mobile {
+        display: none;
+    }
+
+    #cd_desktop_tablet {
+        display: block;
+    }
+
+    #sprite_area {
+        display: block;
     }
 }

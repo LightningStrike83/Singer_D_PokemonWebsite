@@ -24,6 +24,11 @@ class SpeciesController extends Species {
         return response()->json($species);
     }
 
+    public function getAllNoAltDex() {
+        $species = Species::select('number', 'name')->where('is_alt', '=', 'n')->orderBy('id', 'asc')->get();
+        return response()->json($species);
+    }
+
     public function getSWSH() {
         $species = Species::select('number', 'name')->where('in_SwSh', '=', 'y')->orderBy('number', 'asc')->get();
         return response()->json($species);

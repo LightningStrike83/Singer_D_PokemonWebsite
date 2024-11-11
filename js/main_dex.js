@@ -5,6 +5,7 @@ const pokemonSprites = document.querySelector("#pokemon_sprites");
 const dragImages = document.querySelectorAll(".sprite_item img");
 const submitbutton = document.querySelector("#pd-submit-button")
 const downloadButton = document.querySelector("#pd-download")
+const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 let count = 0
 
 function openTips() {
@@ -50,6 +51,10 @@ function populateBoxArea() {
   for (let n = count + 1; n <= inputValue; n++) {
     const div = document.createElement("div")
     const p = document.createElement("p")
+    const mobileList = document.createElement("select")
+    const blankOption = document.createElement("option")
+    const allOption = document.createElement("option")
+    const regionalOption = document.createElement("option")
 
     div.setAttribute("class", "pokedex_box")
     p.setAttribute("class", "pokedex_number")
@@ -62,10 +67,65 @@ function populateBoxArea() {
     div.addEventListener("dragenter", dragEnter);
     div.addEventListener("dragleave", dragLeave);
     div.addEventListener("drop", drop);
+
+    allOption.disabled = true
+    regionalOption.disabled = true
+    allOption.selected = true
+
+    allOption.innerHTML = "--Select A Pokemon--"
+    regionalOption.innerHTML = "--Regional Forms--"
+
+    mobileList.setAttribute("class", "mobile_select")
+
+    Promise.all([
+      fetch(`${baseURL}gen/all-no-alt/dex`)
+      .then(response => response.json()),
+      fetch(`${baseURL}custom/regional`)
+      .then(response => response.json())
+    ]).then(([allData, regionalData]) => {
+      mobileList.appendChild(allOption)
+
+      allData.forEach(pokemon => {
+          const mobileBaseOption = document.createElement("option");
+          mobileBaseOption.textContent = pokemon.name;
+          mobileBaseOption.value = pokemon.number;
+
+          mobileList.appendChild(mobileBaseOption);
+      });
+
+      mobileList.appendChild(blankOption)
+      mobileList.appendChild(regionalOption)
+
+      regionalData.forEach(pokemon => {
+          const mobileRegionalOption = document.createElement("option");
+          mobileRegionalOption.textContent = pokemon.name;
+          mobileRegionalOption.value = pokemon.number;
+          mobileList.appendChild(mobileRegionalOption);
+      });
+
+      div.appendChild(mobileList);
+
+      mobileList.addEventListener("change", addPokemonImage)
+  });
+    
   }
 
   count = inputValue
+}
 
+function addPokemonImage(){
+  const box = this.parentNode
+  const img = document.createElement("img")
+  const source = this.value
+  let imgCheck = box.querySelector("img")
+
+  if (imgCheck) {
+    imgCheck.src = `images/custom_pokedex/${source}.png`
+  } else {
+    img.src = `images/custom_pokedex/${source}.png`
+    box.appendChild(img)
+    img.setAttribute("class", "mobile_image")
+  }
 }
 
 
@@ -145,7 +205,12 @@ dragImages.forEach(function (image) {
 
 function exportDivToImage() {
   const divExport = document.querySelector("#pokedex_display");
-  console.log(divExport)
+  const mobileSelect = document.querySelectorAll(".mobile_select")
+  const pokedexBox = document.querySelectorAll(".pokedex_box")
+  const mobileImage = document.querySelectorAll(".mobile_image")
+
+  mobileSelect.forEach(list => list.remove())
+  mobileImage.forEach(image => image.style.marginBottom = "0")
 
   html2canvas(divExport).then((canvas) => {
     const dataUrl = canvas.toDataURL("image/png");
@@ -155,6 +220,57 @@ function exportDivToImage() {
     link.download = "my-pokedex.png"; 
     link.click();
   });
+
+  pokedexBox.forEach(box => {
+    const mobileList = document.createElement("select")
+    const blankOption = document.createElement("option")
+    const allOption = document.createElement("option")
+    const regionalOption = document.createElement("option")
+
+    allOption.disabled = true
+    regionalOption.disabled = true
+    allOption.selected = true
+
+    allOption.innerHTML = "--Select A Pokemon--"
+    regionalOption.innerHTML = "--Regional Forms--"
+
+    mobileList.setAttribute("class", "mobile_select")
+
+    Promise.all([
+      fetch(`${baseURL}gen/all-no-alt/dex`)
+      .then(response => response.json()),
+      fetch(`${baseURL}custom/regional`)
+      .then(response => response.json())
+    ]).then(([allData, regionalData]) => {
+      mobileList.appendChild(allOption)
+
+      allData.forEach(pokemon => {
+          const mobileBaseOption = document.createElement("option");
+          mobileBaseOption.textContent = pokemon.name;
+          mobileBaseOption.value = pokemon.number;
+
+          mobileList.appendChild(mobileBaseOption);
+      });
+
+      mobileList.appendChild(blankOption)
+      mobileList.appendChild(regionalOption)
+
+      regionalData.forEach(pokemon => {
+          const mobileRegionalOption = document.createElement("option");
+          mobileRegionalOption.textContent = pokemon.name;
+          mobileRegionalOption.value = pokemon.number;
+          mobileList.appendChild(mobileRegionalOption);
+      });
+
+      box.appendChild(mobileList);
+
+      mobileList.addEventListener("change", addPokemonImage)
+    });
+
+  mobileImage.forEach(image => image.style.marginBottom = "20px")
+  })
+
+
 }
 
 pokemonSprites.addEventListener("dragover", dragOver);

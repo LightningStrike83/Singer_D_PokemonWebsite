@@ -23,6 +23,7 @@ $router->get("/trainer-lines", "TrainerLineController@getAll");
 $router->get("/trainer-lines/{id}", "TrainerLineController@getTrainer");
 $router->get("/gen/all", "SpeciesController@getAll");
 $router->get("/gen/all-no-alt", "SpeciesController@getAllNoAlt");
+$router->get("/gen/all-no-alt/dex", "SpeciesController@getAllNoAltDex");
 $router->get("/game/sw-sh", "SpeciesController@getSWSH");
 $router->get("/game/la", "SpeciesController@getLA");
 $router->get("/game/scar-vio", "SpeciesController@getScarVio");

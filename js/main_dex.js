@@ -2,6 +2,7 @@ console.log('Welcome to the world of Pokemon!');
 
 const tips = document.querySelector("#tips_click");
 const pokemonSprites = document.querySelector("#pokemon_sprites");
+const spriteArea = document.querySelector("#sprite_area")
 const dragImages = document.querySelectorAll(".sprite_item img");
 const submitbutton = document.querySelector("#pd-submit-button")
 const downloadButton = document.querySelector("#pd-download")
@@ -273,9 +274,9 @@ function exportDivToImage() {
 
 }
 
-pokemonSprites.addEventListener("dragover", dragOver);
-pokemonSprites.addEventListener("dragenter", dragEnter);
-pokemonSprites.addEventListener("dragleave", dragLeave);
-pokemonSprites.addEventListener("drop", returnToOriginalPosition);
+spriteArea.addEventListener("dragover", dragOver);
+spriteArea.addEventListener("dragenter", dragEnter);
+spriteArea.addEventListener("dragleave", dragLeave);
+spriteArea.addEventListener("drop", returnToOriginalPosition);
 submitbutton.addEventListener("click", populateBoxArea)
 downloadButton.addEventListener("click", exportDivToImage)

@@ -10,10 +10,18 @@ body {
 
 #container {
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #full-length {
     background-color: c.$red;
+}
+
+section {
+    width: 100%;
 }
 
 .line-spacer {

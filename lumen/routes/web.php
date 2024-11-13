@@ -19,8 +19,14 @@ $router->get('/', function () use ($router) {
 
 $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");
-$router->get("/trainer-lines", "TrainerLineController@getAll");
-$router->get("/trainer-lines/{id}", "TrainerLineController@getTrainer");
+$router->get("/trainer-lines/main", "TrainerLineController@getAll");
+$router->get("/trainer-lines/main/{id}", "TrainerLineController@getTrainer");
+$router->get("/trainer-lines/main-orre", "TrainerOrreLineController@getAll");
+$router->get("/trainer-lines/main-orre/{id}", "TrainerOrreLineController@getTrainer");
+$router->get("/trainer-lines/all", "TrainerFullLineController@getAll");
+$router->get("/trainer-lines/all/{id}", "TrainerFullLineController@getTrainer");
+$router->get("/trainer-lines/all-orre", "TrainerFullOrreLineController@getAll");
+$router->get("/trainer-lines/all-orre/{id}", "TrainerFullOrreLineController@getTrainer");;
 $router->get("/gen/all", "SpeciesController@getAll");
 $router->get("/gen/all-no-alt", "SpeciesController@getAllNoAlt");
 $router->get("/gen/all-no-alt/dex", "SpeciesController@getAllNoAltDex");

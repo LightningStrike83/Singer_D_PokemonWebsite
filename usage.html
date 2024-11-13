@@ -84,11 +84,20 @@
 
     <section class="grid-con">
         <div id="line-home" class="col-span-1 m-col-span-3">
+            <select id="usage-select">
+                <option value="main">Story Fights Only</option>
+                <option value="main-orre">Story Fights + Orre Story Fights</option>
+                <option value="all">All Notable Uses</option>
+                <option value="all-orre">All Notable Uses + Notable Orre Uses</option>
+            </select>
             <ul id="line-selection"></ul>
         </div>
 
         <div id="display-usage-con" class="col-span-3 m-col-span-9">
-            <h3 id="usage-title">Select A Line On The Left</h3>
+            <div id="usage-info">
+                <img id="usage-icon" src="" alt="">
+                <h3 id="usage-title">Select A Line On The Left</h3>
+            </div>
 
             <div id="display-usage"></div>
         </div>

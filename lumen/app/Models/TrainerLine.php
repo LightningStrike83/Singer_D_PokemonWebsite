@@ -11,7 +11,7 @@ class TrainerLine extends Model
      *
      * @var array
      */
-    protected $fillable = ["trainer", "line"];
+    protected $fillable = ["id", "trainer", "line"];
 
     /**
      * The attributes excluded from the model's JSON form.

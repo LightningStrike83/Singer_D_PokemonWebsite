@@ -19,6 +19,8 @@
     }
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 12px!important;
+    line-height: 15px!important;
 }
 
 #display-usage ul {
@@ -35,6 +37,23 @@
 #display-usage-con {
     text-align: center;
     margin-top: 20px;
+    border-left: 3px solid white;
+}
+
+#usage-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#usage-icon {
+    margin-right: 10px;
+    width: 60px;
+}
+
+#usage-select {
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -44,5 +63,11 @@
 
     #display-usage-con {
         margin-top: 30px;
+        border-left: none;
+    }
+
+    .pokemon-line {
+        font-size: inherit!important;
+        line-height: inherit!important;
     }
 }

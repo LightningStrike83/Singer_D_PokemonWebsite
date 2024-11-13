@@ -1,4 +1,6 @@
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const usageSelect = document.querySelector("#usage-select")
+let request = usageSelect.value
 
 function linePopulation() {
     fetch(`${baseURL}lines`)
@@ -20,7 +22,7 @@ function linePopulation() {
 function displayTrainers(e) {
     const lineNumber = this.dataset.line
 
-    fetch(`${baseURL}trainer-lines/${lineNumber}`)
+    fetch(`${baseURL}trainer-lines/${request}/${lineNumber}`)
     .then(response => response.json())
     .then(function(response){
         console.log(e.target.textContent)
@@ -28,6 +30,9 @@ function displayTrainers(e) {
         const ul = document.createElement("ul")
         const usageTitle = document.querySelector("#usage-title")
         const lineName = e.target.textContent
+        const icon = document.querySelector("#usage-icon")
+
+        icon.src = `images/usage/${lineNumber}.png`
 
         displayUsage.innerHTML = ""
         usageTitle.textContent = `The ${lineName} has been used ${response.length} times`
@@ -44,3 +49,11 @@ function displayTrainers(e) {
 }
 
 linePopulation()
+
+function newValue() {
+    request = usageSelect.value
+
+    console.log(request)
+}
+
+usageSelect.addEventListener("change", newValue)

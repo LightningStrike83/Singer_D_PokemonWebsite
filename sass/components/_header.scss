@@ -3,8 +3,6 @@
 #main_header {
     grid-column: 2/3;
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 #hamburger-menu {
@@ -46,7 +44,7 @@ header {
 #activity-menu {
     display: none;
     position: absolute;
-    top: 80%;
+    top: 125px;
     left: 60%;
     z-index: 10;
     background-color: c.$red;
@@ -62,7 +60,7 @@ header {
 #game-info-menu {
     display: none;
     position: absolute;
-    top: 80%;
+    top: 125px;
     left: 37.5%;
     z-index: 10;
     background-color: c.$red;
@@ -80,7 +78,22 @@ header {
     flex-direction: column;
 }
 
+#logo-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-logo {
+    max-height: 60px;
+}
+
 @media screen and (min-width: 768px) {
+    #logo-con {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
     #hamburger-menu {
         display: none!important;
     }
@@ -94,7 +107,6 @@ header {
     }
 
     .line-spacer {
-        border-right: 1px solid white;
         border-bottom: 0;
     }
 

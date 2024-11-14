@@ -17,6 +17,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get("/updates", "SiteUpdateController@getThree");
 $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");
 $router->get("/trainer-lines/main", "TrainerLineController@getAll");

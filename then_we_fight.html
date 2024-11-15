@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Usage- Littleroot Dreams</title>
+    <title>Then We Fight Prompt Generator- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    <script defer src="js/main_usage.js"></script>
+    <script defer src="js/main_twf.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 <body>
@@ -106,36 +106,47 @@
             </header>
     </div>
 
-    <section id="title-usage" class="grid-con">
+    <section id="title-twf" class="grid-con">
         <div id="main_title" class="col-span-full">
-            <h3>Trainer Usage Data</h3>
+            <h3>Then We Fight Prompt Generator</h3>
         </div>
     </section>
 
-    <section id="instructions-usage" class="grid-con">
+    <section id="instructions-twf" class="grid-con">
         <div id="instructions" class="col-span-full">
-            <p id="instructions_text">Curious how many times a Pokemon line has been used by notable trainers? Look no further! Select a Pokemon line on the left and it will display how many times each line has been used in non-optional fights by every gym leader, rival, champion, etc. in the main series games.</p>
+            <p id="instructions_text">Looking to spice up battles with a friend? Click the button below to generate a prompt to shake things up a bit! These prompts are sourced by the Pokemon community.</p>
+        </div>
+    </section>
+
+    <section id="disclaimer" class="grid-con">
+        <p class="col-span-full"><b>Disclaimer:</b> These prompts are sourced by the community where credit is required. The credit is added at the time of submission and may be prone to error. Please <a id="twf-contact" href="contact.html">contact the dev</a> if you believe a prompt was miscredited. Thank you for your patience.</p>
+    </section>
+
+    <section id="prompt-area" class="grid-con">
+        <div id="button-con" class="col-span-full">
+            <p id="prompt-count"></p>
+            <button id="generate-button">Generate Prompt</button>
+        </div>
+
+        <div id="prompt-generate">
+            <p>-The prompt will appear here-</p>
+        </div>
+    </section>
+
+    <section id="full-list-con" class="grid-con">
+        <div class="col-span-full">
+            <p id="full-list">Tired of random prompts? View the full list <a class="outsource">here</a>!</p>
         </div>
     </section>
 
     <section class="grid-con">
-        <div id="line-home" class="col-span-1 m-col-span-3">
-            <select id="usage-select">
-                <option value="main">Story Fights Only</option>
-                <option value="main-orre">Story Fights + Orre Story Fights</option>
-                <option value="all">All Notable Uses</option>
-                <option value="all-orre">All Notable Uses + Notable Orre Uses</option>
-            </select>
-            <ul id="line-selection"></ul>
-        </div>
+        <div class="col-span-full horizontal-line"></div>
+    </section>
 
-        <div id="display-usage-con" class="col-span-3 m-col-span-9">
-            <div id="usage-info">
-                <img id="usage-icon" src="" alt="">
-                <h3 id="usage-title">Select A Line On The Left</h3>
-            </div>
-
-            <div id="display-usage"></div>
+    <section id="prompt-submit-con" class="grid-con">
+        <div id="prompt-submit" class="col-start-2 col-end-4 m-col-start-5 m-col-end-9">
+            <h3>Got A Prompt You Want To Submit?</h3>
+            <p id="fill">Fill out a quick form for the web developer to review!</p>
         </div>
     </section>
 
@@ -187,5 +198,9 @@
           <p class="close-button">X</p>
       </div>
   </section>
+
+  <section id="full-list-popup-con" class="full-width-grid-con twf-lightbox"></section>
+
+  <section id="prompt-submission" class="full-width-grid-con twf-lightbox"></section>
 </div>
 </body>

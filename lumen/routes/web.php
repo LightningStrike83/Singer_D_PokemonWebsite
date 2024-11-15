@@ -17,6 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get("/prompts/all", "TWFPromptController@getAll");
+// $router->get("/prompts/submit", "TWFSuggestionController@save");
 $router->get("/updates", "SiteUpdateController@getThree");
 $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");

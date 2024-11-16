@@ -84,3 +84,78 @@
 #full-list {
     text-align: center;
 }
+
+.twf-lightbox {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: c.$transparentblack;
+}
+
+.lb-title {
+    text-align: center;
+    background-color: c.$red;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#full-list-popup-con {
+    display: none;
+    padding-left: 10px;
+}
+
+#prompt-submission {
+    display: none;
+    padding-left: 10px;
+}
+
+.lb-prompt-home {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: c.$red;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        opacity: 80%;
+    }
+}
+
+#full-list-home {
+    overflow: scroll;
+    margin-top: 20px;
+    height: 87vh;
+}
+
+.lb-credit {
+    margin-top: 10px;
+}
+
+#lb-submission {
+    margin-top: 10px;
+}
+
+.lb-prompt-field {
+    width: 50%;
+}
+
+#lb-desc {
+    height: 100px;
+}
+
+.lb-prompt-label {
+    margin-bottom: 5px;
+}
+
+#lb-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#submit-confirm {
+    margin-top: 10px;
+}

@@ -5,6 +5,8 @@ function updatePopulation() {
     fetch(`${baseURL}/updates`)
     .then(response => response.json())
     .then(function(response){
+        siteUpdate.innerHTML = ""
+
         response.forEach(update => {
             const li = document.createElement("li")
             const heading = document.createElement("h3")
@@ -27,6 +29,13 @@ function updatePopulation() {
             li.appendChild(text)
             siteUpdate.appendChild(li)
         })
+    })
+    .catch(error => {
+        const p = document.createElement("p")
+
+        p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+        siteUpdate.appendChild(p)
     })
 }
 

@@ -50,6 +50,7 @@ function generateBoard() {
             usedCharacters.add(number);
 
             img.setAttribute("class", "gw-image")
+            img.setAttribute("alt", `Image of ${response[number].name}`)
             name.setAttribute("class", "gw-name")
             key.setAttribute("class", "gw-key")
 
@@ -78,7 +79,7 @@ function generateBoard() {
         gameToken.innerHTML = ""
 
         let errortext = document.createElement("p")
-        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
 
         gameToken.appendChild(errortext)
     })
@@ -112,6 +113,8 @@ function imageSelect() {
     } else {
         selectImage.src = `images/custom_pokedex/${selectedValue}.png`
     }
+
+    selectImage.setAttribute("alt", `Your Selected Pokemon: Pokemon Number ${selectedValue}`)
 }
 
 function saveGame() {
@@ -174,7 +177,7 @@ function saveGame() {
         gameToken.innerHTML = ""
 
         let errortext = document.createElement("p")
-        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
 
         gameToken.appendChild(errortext)
     })
@@ -236,6 +239,7 @@ function loadGame() {
                 const key = document.createElement("p");
 
                 img.setAttribute("class", "gw-image");
+                img.setAttribute("alt", `Image of ${pokemonData.name}`)
                 name.setAttribute("class", "gw-name");
                 key.setAttribute("class", "gw-key");
 
@@ -264,7 +268,7 @@ function loadGame() {
         gameToken.innerHTML = "";
 
         const errortext = document.createElement("p");
-        errortext.textContent = `Sorry, something went wrong. Please refresh the page or double check the content requested, then try again. ${error}`;
+        errortext.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`;
 
         gameToken.appendChild(errortext);
     });

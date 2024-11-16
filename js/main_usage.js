@@ -7,6 +7,9 @@ function linePopulation() {
     .then(response => response.json())
     .then(function(response){
         const lineSelect = document.querySelector("#line-selection")
+
+        lineSelect.innerHTML = ""
+
         response.forEach(line => {
             const li = document.createElement("li")
 
@@ -16,6 +19,14 @@ function linePopulation() {
             li.addEventListener("click", displayTrainers)
             lineSelect.appendChild(li)
         })
+    })
+    .catch(error => {
+        const lineSelect = document.querySelector("#line-selection")
+        const p = document.createElement("p")
+
+        p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+        lineSelect.appendChild(p)
     })
 }
 
@@ -40,11 +51,17 @@ function displayTrainers(e) {
         response.forEach(trainer => {
             const li = document.createElement("li")
 
+            li.setAttribute("class", "usage-trainer-name")
+
             li.textContent = trainer.name
             ul.appendChild(li)
         })
 
         displayUsage.appendChild(ul)
+    })
+    .catch(error => {
+        const usageTitle = document.querySelector("#usage-title")
+        usageTitle.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
     })
 }
 

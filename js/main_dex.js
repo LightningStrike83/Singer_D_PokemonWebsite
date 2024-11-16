@@ -7,6 +7,7 @@ const dragImages = document.querySelectorAll(".sprite_item img");
 const submitbutton = document.querySelector("#pd-submit-button")
 const downloadButton = document.querySelector("#pd-download")
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const errorHandle = document.querySelector("#error-handle")
 let count = 0
 
 function openTips() {
@@ -24,7 +25,7 @@ function populateBoxArea() {
     const boxesToRemove = count - inputValue;
     
     for (let i = 0; i < boxesToRemove; i++) {
-      const lastBox = pokedexBoxArea.lastChild; // Get the last child
+      const lastBox = pokedexBoxArea.lastChild;
       if (lastBox) {
         if(lastBox.hasChildNodes()) {
           if (lastBox.childNodes.length > 1) {
@@ -84,6 +85,8 @@ function populateBoxArea() {
       fetch(`${baseURL}custom/regional`)
       .then(response => response.json())
     ]).then(([allData, regionalData]) => {
+      errorHandle.textContent = ""
+
       mobileList.appendChild(allOption)
 
       allData.forEach(pokemon => {
@@ -106,12 +109,18 @@ function populateBoxArea() {
 
       div.appendChild(mobileList);
 
-      mobileList.addEventListener("change", addPokemonImage)
-  });
-    
+      mobileList.addEventListener("change", addPokemonImage);
+      })
+      .catch(error => {
+        const p = document.createElement("p")
+
+        p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+        errorHandle.appendChild(p)
+      });
   }
 
-  count = inputValue
+  count = inputValue;
 }
 
 function addPokemonImage(){
@@ -126,6 +135,7 @@ function addPokemonImage(){
     img.src = `images/custom_pokedex/${source}.png`
     box.appendChild(img)
     img.setAttribute("class", "mobile_image")
+    img.setAttribute("alt", `Image of Pokemon ${source}`)
   }
 }
 
@@ -243,6 +253,8 @@ function exportDivToImage() {
       fetch(`${baseURL}custom/regional`)
       .then(response => response.json())
     ]).then(([allData, regionalData]) => {
+      errorHandle.textContent = ""
+
       mobileList.appendChild(allOption)
 
       allData.forEach(pokemon => {
@@ -266,7 +278,14 @@ function exportDivToImage() {
       box.appendChild(mobileList);
 
       mobileList.addEventListener("change", addPokemonImage)
-    });
+    })
+    .catch(error => {
+      const p = document.createElement("p")
+
+      p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+      errorHandle.appendChild(p)
+    })
 
   mobileImage.forEach(image => image.style.marginBottom = "20px")
   })

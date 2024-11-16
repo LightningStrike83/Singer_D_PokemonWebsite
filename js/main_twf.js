@@ -12,6 +12,9 @@ function displayLength() {
     .then(function(response){
         promptCount.textContent = `There is currently ${response.length} prompts in the database.`
     })
+    .catch(error => {
+        promptCount.textContent = `Sorry, something went wrong. Please refresh and try again. ${error}`
+    })
 }
 
 displayLength()
@@ -47,6 +50,14 @@ function generatePrompt() {
             promptGenerate.appendChild(rDiv)
         }
     })
+    .catch(error => {
+        const promptGenerate = document.querySelector("#prompt-generate")
+        const p = document.createElement("p")
+
+        p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+        promptGenerate.appendChild(p)
+    })
 }
 
 function openAllPrompts() {
@@ -55,6 +66,8 @@ function openAllPrompts() {
     .then(function(response){
         const list = document.querySelector("#full-list-home")
         const listHome = document.querySelector("#full-list-popup-con")
+
+        list.innerHTML = ""
 
         listHome.style.display = "grid"
         listHome.style.visibility = "visible"
@@ -88,6 +101,14 @@ function openAllPrompts() {
             list.appendChild(div)
         })
     })
+    .catch(error => {
+        const list = document.querySelector("#full-list-home")
+        const p = document.createElement("p")
+
+        p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+        list.appendChild(p)
+    })
 }
 
 function openFullDetails() {
@@ -112,10 +133,9 @@ function openSubmissionBox() {
 }
 
 function sendSubmission(event) {
-    event.preventDefault(); // Prevents the default form submission
+    event.preventDefault();
     console.log("hi");
 
-    // Ensure 'this' refers to the form element
     const formData = {
         prompt: this.elements.prompt.value,
         description: this.elements.description.value,
@@ -127,9 +147,9 @@ function sendSubmission(event) {
     fetch(`${baseURL}prompts/submit`, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json" // Content type is JSON
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData) // Convert the formData object to a JSON string
+        body: JSON.stringify(formData)
     })
     .then(response => response.json())
     .then(function(response) {
@@ -146,7 +166,7 @@ function sendSubmission(event) {
     .catch(function(error) {
         const submitConfirm = document.querySelector("#submit-confirm")
 
-        submitConfirm.textContent = `Sorry, something went wrong. ${error}`
+        submitConfirm.textContent = `Sorry, something went wrong. Please refresh and try again. ${error}`
     });
 }
 

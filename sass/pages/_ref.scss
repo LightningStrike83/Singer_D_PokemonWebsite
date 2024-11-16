@@ -1,0 +1,23 @@
+#ref-con {
+    margin-top: 20px;
+}
+
+#ref-list, #pic-list {
+    display: flex;
+    flex-direction: column;
+}
+
+#ref-links, #pic-list, #image-credit-con {
+    margin-top: 10px;
+}
+
+.ref-credit {
+    margin-left: 20px;
+    list-style-type: disc;
+    a {
+        text-decoration: underline;
+        font-size: 14px!important;
+    }
+
+    font-size: 14px!important;
+}

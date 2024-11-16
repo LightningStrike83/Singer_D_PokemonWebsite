@@ -162,8 +162,8 @@ let lgpe_trainers = [
         spdb : "Spd: 44",
         move1b : "-Mega Drain",
         move2b : "-Poison Jab",
-        move3b : "-",
-        move4b : "-",
+        move3b : "",
+        move4b : "",
 
         namec : "Vileplume",
         levelc : "LV: 34",
@@ -178,8 +178,8 @@ let lgpe_trainers = [
         spdc : "Spd: 42",
         move1c : "-Mega Drain",
         move2c : "-Moonblast",
-        move3c : "-",
-        move4c : "-",
+        move3c : "",
+        move4c : "",
     },
 
     {
@@ -295,7 +295,7 @@ let lgpe_trainers = [
         move1c : "-Psychic",
         move2c : "-Lovely Kiss",
         move3c : "-Ice Punch",
-        move4c : "-",
+        move4c : "",
 
         named : "Alakazam",
         leveld : "LV: 44",
@@ -360,7 +360,7 @@ let lgpe_trainers = [
         spdc : "Spd: 113",
         move1c : "-Fire Blast",
         move2c : "-Quick Attack",
-        move3c : "-",
+        move3c : "",
         move4c : "",
 
         named : "Arcanine",

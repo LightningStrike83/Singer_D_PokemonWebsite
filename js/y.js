@@ -201,9 +201,9 @@ let y_trainers = [
         spa : "Special: 118",
         spda : "Speed: 103",
         move1a : "-Flash",
-        move2a : "-",
-        move3a : "-",
-        move4a : "-",
+        move2a : "",
+        move3a : "",
+        move4a : "",
 
         nameb : "Kadabra",
         levelb : "LV: 50",

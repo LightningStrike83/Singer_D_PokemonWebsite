@@ -1823,10 +1823,10 @@ let sv_trainers = [
         spatkb : "Sp. Atk: 153",
         spdefb : "Sp. Def: 135",
         spdb : "Spd: 98",
-        move1b : "-",
+        move1b : "-Hydro Pump",
         move2b : "-Quick Attack",
         move3b : "-Baby-Doll Eyes",
-        move4b : "-",
+        move4b : "-Aurora Beam",
 
         namec : "Jolteon",
         levelc : "LV: 62",

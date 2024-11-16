@@ -43,9 +43,13 @@ Piers data calculated from: doipy hooves https://www.smogon.com/forums/threads/p
 BDSP data calculated from: Hematite/HemaH2O and Kaphotics https://heystacks.com/doc/1042/bdsp-trainer-data 
 
 S/V data calculated from: Hematite/HemaH2O https://docs.google.com/spreadsheets/d/16XSoEjfAyWhvqUV8t2TZR_RD8Qceb4RVYbR5njS8aHk/htmlview
+Teal Mask data calculated from Hemetite/HemaH20 https://docs.google.com/spreadsheets/d/1gyFwKzf8a3kTmBEhqISTF0qnPdSmNBNQR2fMBQk-nfU/edit?gid=1606508293#gid=1606508293  
+Indigo Disk data calculated from: sora10pls https://gist.github.com/sora10pls/b12d9a1cf1b4696585ba04281a016b61  
 
 XY/ORAS/SM/USUM/LGPE/SWSH/BDSP/SV Pokemon images from: serebii
 
 RBG/Y/GSC/RS/FRLG/E/DP/PT/HGSS/BW/B2W2 Pokemon images from: bulbapedia
 
-Trainer Images from: bulbapedia
+Trainer Images and Usage icons from: bulbapedia
+
+Custom Pokedex and Guess Who images from: Spriters Resource https://www.spriters-resource.com/nintendo_switch/pokemonhome/  

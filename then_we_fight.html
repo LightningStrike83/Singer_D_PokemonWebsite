@@ -135,7 +135,7 @@
 
     <section id="full-list-con" class="grid-con">
         <div class="col-span-full">
-            <p id="full-list">Tired of random prompts? View the full list <a class="outsource">here</a>!</p>
+            <p id="full-list">Tired of random prompts? View the full list <a class="outsource" id="open-list">here</a>!</p>
         </div>
     </section>
 
@@ -199,8 +199,44 @@
       </div>
   </section>
 
-  <section id="full-list-popup-con" class="full-width-grid-con twf-lightbox"></section>
+  <section id="full-list-popup-con" class="full-width-grid-con twf-lightbox">
+    <section class="col-start-2 col-span-1">
+      <h3 class="lb-title">Full List Of Prompts</h3>
+      <div id="full-list-home"></div>
+    </section>
+    <div class="col-span-1 mobile-close">
+      <p class="close-button">X</p>
+  </div>
+  </section>
 
-  <section id="prompt-submission" class="full-width-grid-con twf-lightbox"></section>
+  <section id="prompt-submission" class="full-width-grid-con twf-lightbox">
+    <section class="col-start-2 col-span-1">
+      <h3 class="lb-title">Prompt Submissions</h3>
+      <div id="lb-submission">
+        <form id="lb-form">
+          <p class="lb-prompt-label">Prompt:</p>
+          <label for="prompt"></label>
+          <input required class="lb-prompt-field" name="prompt" type="text" placeholder="Please title the prompt"><br>
+
+          <p class="lb-prompt-label">Description</p>
+          <label for="description"></label>
+          <textarea required id="lb-desc" class="lb-prompt-field" name="description" placeholder="Please give a short description of the prompt"></textarea><br>
+
+          <p class="lb-prompt-label">Credit:</p>
+          <label for="submitter"></label>
+          <input required class="lb-prompt-field" name="submitter" type="text" placeholder="Please give credit to the person who thought of this idea"><br><br>
+          
+          <button id="lb-submit" type="submit">Submit</button>
+
+          <div>
+            <p id="submit-confirm"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="col-span-1 mobile-close">
+      <p class="close-button">X</p>
+    </div>
+  </section>
 </div>
 </body>

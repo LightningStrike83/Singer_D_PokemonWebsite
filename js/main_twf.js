@@ -1,5 +1,8 @@
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const generateButton = document.querySelector("#generate-button")
+const openListButton = document.querySelector("#open-list")
+const promptSubmit = document.querySelector("#prompt-submit")
+const lbForm = document.querySelector("#lb-form")
 
 function displayLength() {
     const promptCount = document.querySelector("#prompt-count")
@@ -46,4 +49,109 @@ function generatePrompt() {
     })
 }
 
+function openAllPrompts() {
+    fetch(`${baseURL}/prompts/all`)
+    .then(response => response.json())
+    .then(function(response){
+        const list = document.querySelector("#full-list-home")
+        const listHome = document.querySelector("#full-list-popup-con")
+
+        listHome.style.display = "grid"
+        listHome.style.visibility = "visible"
+        listHome.style.opacity = "1"
+        scrollTo(0,0)
+
+        response.forEach(prompt => {
+            const div = document.createElement("div")
+            const title = document.createElement("h3")
+            const desc = document.createElement("p")
+            const credit = document.createElement("p")
+            const hideDiv = document.createElement("div")
+            
+            title.textContent = `${prompt.id}. ${prompt.prompt}`
+            desc.innerHTML = prompt.description
+            credit.textContent = `Credit: ${prompt.credit}`
+
+            div.setAttribute("class", "lb-prompt-home")
+            hideDiv.setAttribute("class", "extra-prompt-detail")
+            hideDiv.style.display = "none"
+            credit.setAttribute("class", "lb-credit")
+            title.setAttribute("class", "lb-prompt")
+
+            div.appendChild(title)
+            hideDiv.appendChild(desc)
+            hideDiv.appendChild(credit)
+            div.appendChild(hideDiv)
+
+            div.addEventListener("click", openFullDetails)
+
+            list.appendChild(div)
+        })
+    })
+}
+
+function openFullDetails() {
+    const extraDetail = this.querySelector(".extra-prompt-detail")
+    const prompt = this.querySelector(".lb-prompt")
+    
+    if (extraDetail.style.display === "none") {
+        extraDetail.style.display = "block"
+        prompt.style.marginBottom = "10px"
+    } else {
+        extraDetail.style.display = "none"
+        prompt.style.marginBottom = "0"
+    }
+}
+
+function openSubmissionBox() {
+    const lbSubmit = document.querySelector("#prompt-submission")
+    lbSubmit.style.display = "grid"
+    lbSubmit.style.visibility = "visible"
+    lbSubmit.style.opacity = "1"
+    scrollTo(0,0)
+}
+
+function sendSubmission(event) {
+    event.preventDefault(); // Prevents the default form submission
+    console.log("hi");
+
+    // Ensure 'this' refers to the form element
+    const formData = {
+        prompt: this.elements.prompt.value,
+        description: this.elements.description.value,
+        submitter: this.elements.submitter.value
+    };
+
+    console.log(formData)
+
+    fetch(`${baseURL}prompts/submit`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json" // Content type is JSON
+        },
+        body: JSON.stringify(formData) // Convert the formData object to a JSON string
+    })
+    .then(response => response.json())
+    .then(function(response) {
+        const submitConfirm = document.querySelector("#submit-confirm")
+        const lbField = document.querySelectorAll(".lb-prompt-field")
+        console.log(response)
+
+        submitConfirm.textContent = "Thank you the suggestion! It has been submitted successfully!"
+
+        lbField.forEach(field => {
+            field.value = ""
+        })
+    })
+    .catch(function(error) {
+        const submitConfirm = document.querySelector("#submit-confirm")
+
+        submitConfirm.textContent = `Sorry, something went wrong. ${error}`
+    });
+}
+
+
 generateButton.addEventListener("click", generatePrompt)
+openListButton.addEventListener("click", openAllPrompts)
+promptSubmit.addEventListener("click", openSubmissionBox)
+lbForm.addEventListener("submit", sendSubmission)

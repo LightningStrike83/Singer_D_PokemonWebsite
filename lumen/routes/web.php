@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get("/prompts/all", "TWFPromptController@getAll");
-// $router->get("/prompts/submit", "TWFSuggestionController@save");
+$router->post("/prompts/submit", "TWFSuggestionController@save");
 $router->get("/updates", "SiteUpdateController@getThree");
 $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");

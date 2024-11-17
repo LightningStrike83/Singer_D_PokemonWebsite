@@ -65,3 +65,7 @@ section {
 img {
     max-height: 250px;
 }
+
+img:not([alt]) {
+    border: 5px solid green;
+}

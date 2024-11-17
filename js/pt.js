@@ -1142,6 +1142,7 @@ function showPTImages(trainerId) {
 
     var imgTrainer = document.createElement("img");
     imgTrainer.src = "images/trainers/pt/" + trainerId + ".png";
+    imgTrainer.setAttribute("alt", `Image of ${trainerId}`)
     trainerPicture.appendChild(imgTrainer);
 }
 

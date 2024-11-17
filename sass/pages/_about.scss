@@ -3,10 +3,13 @@
 #about_site {
     text-align: center;
     background-color: c.$black;
+    margin-top: 10px;
 }
 
 #about_text {
     text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #about_text p {
@@ -16,23 +19,34 @@
 #about_title, #about_devs h3 {
     font-family: 'Silkscreen';
     font-size: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     text-align: center;
     color: white;
-    background-color: c.$black;
+}
+
+#about_title, #dev_title {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: c.$red;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .dev_name {
     text-align: center;
     padding-top: 0px!important;
+    margin-bottom: 10px;
 }
 
 .cc_ref {
     text-decoration: underline;
 }
 
-#about_devs {
+#site_con, #dev_con {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    border-radius: 20px;
     background-color: c.$black;
 }
 
@@ -40,6 +54,8 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #lightning_text p, #flan_text p {

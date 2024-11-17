@@ -45,7 +45,7 @@ function generatePrompt() {
         if (response[randomPrompt].random === "y") {
             const rDiv = document.createElement("div")
 
-            rDiv.innerHTML = '<p id="redirect">Need a way to randomize your choices? Use the randomizer from <a class="outsource" href="https://randompokemon.com/">Random Pokemon!</a></p>'
+            rDiv.innerHTML = '<p id="redirect">Need a way to randomize your choices? Use the randomizer from <a target="_blank" class="outsource" href="https://randompokemon.com/">Random Pokemon!</a></p>'
 
             promptGenerate.appendChild(rDiv)
         }

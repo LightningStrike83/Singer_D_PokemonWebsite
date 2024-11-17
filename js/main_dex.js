@@ -11,8 +11,15 @@ const errorHandle = document.querySelector("#error-handle")
 let count = 0
 
 function openTips() {
-  var tipsBox = document.querySelector("#tips_box");
-  tipsBox.style.display = (tipsBox.style.display === 'flex') ? 'none' : 'flex';
+  const tipsBox = document.querySelector("#tips_box")
+
+  if (tipsBox.style.visibility === "visible") {
+    tipsBox.style.opacity = "0",
+    tipsBox.style.visibility = "hidden"
+  } else (
+      tipsBox.style.opacity = "1",
+      tipsBox.style.visibility = "visible"
+  )
 }
 
 function populateBoxArea() {
@@ -207,8 +214,6 @@ function returnToOriginalPosition(event) {
     }
   }
 
-tips.addEventListener("click", openTips);
-
 dragImages.forEach(function (image) {
   image.addEventListener("dragstart", dragStart);
   image.addEventListener("dragend", dragEnd);
@@ -299,3 +304,4 @@ spriteArea.addEventListener("dragleave", dragLeave);
 spriteArea.addEventListener("drop", returnToOriginalPosition);
 submitbutton.addEventListener("click", populateBoxArea)
 downloadButton.addEventListener("click", exportDivToImage)
+tips.addEventListener("click", openTips)

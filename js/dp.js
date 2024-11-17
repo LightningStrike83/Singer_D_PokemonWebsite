@@ -1123,6 +1123,7 @@ function showDPImages(trainerId) {
 
     var imgTrainer = document.createElement("img");
     imgTrainer.src = "images/trainers/dp/" + trainerId + ".png";
+    imgTrainer.setAttribute("alt", `Image of ${trainerId}`)
     trainerPicture.appendChild(imgTrainer);
 }
 
@@ -1154,6 +1155,12 @@ function showPokemonDPImages(trainerId) {
     imgPokemon4.src = "images/pokemon/dp/" + trainerId + "_4.png";
     imgPokemon5.src = "images/pokemon/dp/" + trainerId + "_5.png";
     imgPokemon6.src = "images/pokemon/dp/" + trainerId + "_6.png";
+    imgPokemon1.setAttribute("alt", `Image of Pokemon 1`)
+    imgPokemon2.setAttribute("alt", `Image of Pokemon 2`)
+    imgPokemon3.setAttribute("alt", `Image of Pokemon 3`)
+    imgPokemon4.setAttribute("alt", `Image of Pokemon 4`)
+    imgPokemon5.setAttribute("alt", `Image of Pokemon 5`)
+    imgPokemon6.setAttribute("alt", `Image of Pokemon 6`)
 
     imgPokemon1.onerror = function() {
         imgPokemon1.src = "images/pokemon/blank.png"; 

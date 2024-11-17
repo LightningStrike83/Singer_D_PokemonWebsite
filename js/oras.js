@@ -1259,6 +1259,7 @@ function showORASImages(trainerId) {
 
     var imgTrainer = document.createElement("img");
     imgTrainer.src = "images/trainers/oras/" + trainerId + ".png";
+    imgTrainer.setAttribute("alt", `Image of ${trainerId}`)
     trainerPicture.appendChild(imgTrainer);
 }
 

@@ -1,18 +1,28 @@
 console.log('Welcome to the world of Pokemon!');
 
-let grassy = document.querySelector('#grassy');
-let watery = document.querySelector('#watery');
-let caves = document.querySelector('#caves');
-let rocky = document.querySelector('#rocky');
-let underground = document.querySelector('#underground');
-let hidden = document.querySelector('#hidden');
-let legendArea = document.querySelector('#legend_click');
-var grassyCheckbox = document.querySelector('#grassy_checkbox');
-var wateryCheckbox = document.querySelector('#watery_checkbox');
-var cavesCheckbox = document.querySelector('#caves_checkbox');
-var rockyCheckbox = document.querySelector('#rocky_checkbox');
-var undergroundCheckbox = document.querySelector('#underground_checkbox');
-var hiddenCheckbox = document.querySelector('#hidden_checkbox');
+const upperGrassy = document.querySelector('#upper_grassy');
+const upperRocky = document.querySelector('#upper_rocky');
+const upperWatery = document.querySelector('#upper_watery');
+const lowerGrassy = document.querySelector('#lower_grassy');
+const lowerRocky = document.querySelector('#lower_rocky');
+const lowerWatery = document.querySelector('#lower_watery');
+const smallCave = document.querySelector("#small-cave")
+const station3Cave = document.querySelector("#station_3_cave")
+const waterfallCave = document.querySelector("#waterfall_cave")
+const hidden = document.querySelector("#hidden")
+const depths = document.querySelector("#depths")
+const azCheckbox = document.querySelectorAll(".az-checkbox")
+const upperGrassyCheckbox = document.querySelector('#upper_grassy_checkbox');
+const upperRockyCheckbox = document.querySelector('#upper_rocky_checkbox');
+const upperWateryCheckbox = document.querySelector('#upper_watery_checkbox');
+const lowerGrassyCheckbox = document.querySelector('#lower_grassy_checkbox');
+const lowerRockyCheckbox = document.querySelector('#lower_rocky_checkbox');
+const lowerWateryCheckbox = document.querySelector('#lower_watery_checkbox');
+const smallCaveCheckbox = document.querySelector("#small-cave_checkbox")
+const station3CaveCheckbox = document.querySelector("#station_3_cave_checkbox")
+const waterfallCaveCheckbox = document.querySelector("#waterfall_cave_checkbox")
+const hiddenCheckbox = document.querySelector("#hidden_checkbox")
+const depthsCheckbox = document.querySelector("#depths_checkbox")
 
 function grassyPokemon() {
     var girafarig = document.querySelectorAll('.girafarig');
@@ -323,7 +333,7 @@ function rockyPokemon() {
     });
 }
 
-function undergroundPokemon() {
+function depthsPokemon() {
     var dunsparce = document.querySelectorAll('.dunsparce');
     var dudunsparce = document.querySelectorAll('.dudunsparce');
     var garganacl = document.querySelectorAll('.garganacl');
@@ -345,86 +355,86 @@ function undergroundPokemon() {
     var ironHands = document.querySelectorAll('.iron_hands');
     var ironJugulis = document.querySelectorAll('.iron_jugulis');
 
-    undergroundCheckbox.checked = !undergroundCheckbox.checked;
+    depthsCheckbox.checked = !depthsCheckbox.checked;
 
     dunsparce.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     dudunsparce.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     garganacl.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     espathra.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     gible.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     gabite.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     dugtrio.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     glimmet.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     glimmora.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     zweilous.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     greatTusk.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     screamTail.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     bruteBonnet.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     flutterMane.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     dreepy.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     drakloak.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     ironTreads.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     ironBundle.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     ironHands.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 
     ironJugulis.forEach(function(element) {
-        element.classList.toggle("underground_show");
+        element.classList.toggle("depths_show");
     });
 }
 
@@ -538,57 +548,22 @@ function hiddenPokemon() {
     });
 }
 
-function grassyCheckboxClicked(event) {
-    grassyCheckbox.checked = !grassyCheckbox.checked;
-    grassyPokemon();
-    event.stopPropagation();
-}
-
-function rockyCheckboxClicked(event) {
-    rockyCheckbox.checked = !rockyCheckbox.checked;
-    rockyPokemon();
-    event.stopPropagation();
-}
-
-function wateryCheckboxClicked(event) {
-    wateryCheckbox.checked = !wateryCheckbox.checked;
-    wateryPokemon();
-    event.stopPropagation();
-}
-
-function cavesCheckboxClicked(event) {
-    cavesCheckbox.checked = !cavesCheckbox.checked;
-    cavesPokemon();
-    event.stopPropagation();
-}
-
-function undergroundCheckboxClicked(event) {
-    undergroundCheckbox.checked = !undergroundCheckbox.checked;
-    undergroundPokemon();
-    event.stopPropagation();
-}
-
-function hiddenCheckboxClicked(event) {
-    hiddenCheckbox.checked = !hiddenCheckbox.checked;
-    hiddenPokemon();
-    event.stopPropagation();
-}
-
 function legendDisplay() {
     let legendInfo = document.querySelector('#legend_info');
     legendInfo.style.display = (legendInfo.style.display === 'block') ? 'none' : 'block';
 }
 
-grassy.addEventListener('click', grassyPokemon);
-grassyCheckbox.addEventListener('click', grassyCheckboxClicked);
-watery.addEventListener('click', wateryPokemon);
-wateryCheckbox.addEventListener('click', wateryCheckboxClicked);
-caves.addEventListener('click', cavesPokemon);
-cavesCheckbox.addEventListener('click', cavesCheckboxClicked);
-rocky.addEventListener('click', rockyPokemon);
-rockyCheckbox.addEventListener('click', rockyCheckboxClicked);
-underground.addEventListener('click', undergroundPokemon);
-undergroundCheckbox.addEventListener('click', undergroundCheckboxClicked);
-hidden.addEventListener('click', hiddenPokemon);
-hiddenCheckbox.addEventListener('click', hiddenCheckboxClicked);
-legendArea.addEventListener('click', legendDisplay);
+function checkboxClicked(event) {
+    event.target.checked = !event.target.checked;
+    if (event.target.id === "hidden_checkbox") {
+        hiddenPokemon()
+    } else if (event.target.id === "depths_checkbox") {
+        depthsPokemon()
+    }
+
+    event.stopPropagation()
+}
+
+hidden.addEventListener("click", hiddenPokemon)
+depths.addEventListener("click", depthsPokemon)
+azCheckbox.forEach(checkbox => checkbox.addEventListener("click", checkboxClicked))

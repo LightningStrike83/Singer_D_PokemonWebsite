@@ -12,6 +12,7 @@ function generateBoard() {
     const selectValue = gameSelect.value
 
     imageSelection.src = ""
+    imageSelection.setAttribute("alt", "")
 
     fetch(`${baseURL}${selectValue}`)
     .then(response => response.json())
@@ -166,7 +167,7 @@ function saveGame() {
 
         gameToken.innerHTML = ""
 
-        p.textContent = `Your game id is ${response.id}`
+        p.textContent = `Your Game ID is ${response.id}`
 
         gameToken.appendChild(p)
     })

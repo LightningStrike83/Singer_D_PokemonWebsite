@@ -44,6 +44,7 @@ $router->get("/custom/gmax", "SpeciesController@getGMax");
 $router->get("/custom/dev-fav", "SpeciesController@getDevFavs");
 $router->get("/gen/{generation}", "SpeciesController@getGeneration");
 $router->get("/custom/ash", "SpeciesController@getAshPokes");
+$router->get("/custom/gift", "SpeciesController@getGifts");
 $router->get("/custom/champion", "SpeciesController@getChampion");
 $router->get("/types/{type}", "SpeciesController@getTypes");
 $router->post("/guess-who/add", "GuessWhoGameController@save");

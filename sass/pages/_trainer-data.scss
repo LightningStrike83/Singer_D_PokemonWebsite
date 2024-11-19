@@ -19,9 +19,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 10px;
     padding-bottom: 10px;
     padding-left: 5px;
+    width: 25%;
+    align-items: baseline;
 }
 
 .character_name p {
@@ -78,19 +79,6 @@
     padding-left: 5px;
 }
 
-#bottom {
-    background-color: c.$red;
-    margin-top: 30px;
-    padding-top: 20px;
-    text-align: center;
-}
-
-#bottom p {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-}
-
 #trainer_image img {
     height: 200px;
 }
@@ -112,6 +100,22 @@
 
 #td-redirect {
     text-decoration: underline;
+}
+
+.game_title {
+    width: 33%;
+}
+
+#td_title {
+    width: 100%;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#td_credit {
+    text-align: center;
 }
 
 @media screen and (min-width:768px) {

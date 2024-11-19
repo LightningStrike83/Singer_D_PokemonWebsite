@@ -64,6 +64,11 @@ class SpeciesController extends Species {
         return response()->json($species);
     }
 
+    public function getGifts() {
+        $species = Species::select('number', 'name')->where('gift', '=', 'y')->orderBy('number', 'asc')->get();
+        return response()->json($species);
+    }
+
     public function getChampion() {
         $species = Species::select('number', 'name')->where('champion', '=', 'y')->orderBy('number', 'asc')->get();
         return response()->json($species);

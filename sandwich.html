@@ -115,782 +115,958 @@
     <section id="instructions-sandwich" class="grid-con full-length">
         <div class="col-span-full" id="instructions">
             <h2 class="hidden">Instructions</h2>
-            <p id="instructions_text">Got a sandwich with a little extra time left over? Where better to hunt than Area Zero! Use the chart down below to select where you want to hunt and see which Pokemon spawn there. On the prowl? Select multiple locations! Might come in handy if you go a little out of bounds.</p>
+            <p id="instructions_text">Got a sandwich with a little extra time left over? Where better to hunt than Area Zero! Select the type boost that's active and check the chart for what Pokemon spawns in the areas of Area Zero!</p>
         </div>
     </section>
 
     <section id="legend-sandwich" class="grid-con">
-        <div id="legend_area" class="col-start-4 col-end-5 m-col-start-9 m-col-end-13">
+        <div id="legend_area" class="col-start-4 col-end-5 m-col-start-10 m-col-end-12">
             <h2 class="hidden">Legend Area</h2>
             <div id="legend_click">
                 <span id="question_symbol">?</span>
                 <p id="legend">Legend</p>
             </div>
-            <div id="legend_info">
-                <p>* = Post-story only. (After the credits)</p>
-                <p>(S) or <span class="scarlet">Red Text</span> = Pokemon Scarlet only.</p>
-                <p>(V) or <span class="violet">Purple Text</span> = Pokemon Violet only.</p>
-            </div>
+        </div>
+        <div id="legend_info" class="col-start-4 col-end-5 m-col-start-9 m-col-end-13">
+            <p>* = Post-story only. (After the credits)</p>
+            <p>(S) or <span class="scarlet">Red Text</span> = Pokemon Scarlet only.</p>
+            <p>(V) or <span class="violet">Purple Text</span> = Pokemon Violet only.</p>
         </div>
     </section>
 
-    <section id="selector-sandwich" class="grid-con">
+    <section id="active-sandwich-con" class="grid-con">
         <h1 class="hidden">Location Selector</h1>
         <section id="area_names" class="col-span-full">
-            <h2 class="hidden">Location Selector</h2>
-            <p id="choose">Choose Your Location:</p>
-            <div id="upper_grassy" class="area_checkbox">
-                <input type="checkbox" id="upper_grassy_checkbox" class="az-checkbox">
-                <p class="area_name">Upper Field (Grassy Terrain)</p>
-            </div>
-            <div id="upper_rocky" class="area_checkbox">
-                <input type="checkbox" id="upper_rocky_checkbox" class="az-checkbox">
-                <p class="area_name">Upper Field (Rocky Terrain)</p>
-            </div>
-            <div id="upper_watery" class="area_checkbox">
-                <input type="checkbox" id="upper_watery_checkbox" class="az-checkbox">
-                <p class="area_name">Upper Field (Watery Terrain)</p>
-            </div>
-            <div id="lower_grassy" class="area_checkbox">
-                <input type="checkbox" id="lower_grassy_checkbox" class="az-checkbox">
-                <p class="area_name">Lower Field (Grassy Terrain)</p>
-            </div>
-            <div id="lower_rocky" class="area_checkbox">
-                <input type="checkbox" id="lower_rocky_checkbox" class="az-checkbox">
-                <p class="area_name">Lower Field (Rocky Terrain)</p>
-            </div>
-            <div id="lower_watery" class="area_checkbox">
-                <input type="checkbox" id="lower_watery_checkbox" class="az-checkbox">
-                <p class="area_name">Lower Field (Watery Terrain)</p>
-            </div>
-            <div id="small_cave" class="area_checkbox">
-                <input type="checkbox" id="small_cave_checkbox" class="az-checkbox">
-                <p class="area_name">Small Cave</p>
-            </div>
-            <div id="station_3_cave" class="area_checkbox">
-                <input type="checkbox" id="station_3_cave_checkbox" class="az-checkbox">
-                <p class="area_name">Station 3 Cave</p>
-            </div>
-            <div id="waterfall_cave" class="area_checkbox">
-                <input type="checkbox" id="waterfall_cave_checkbox" class="az-checkbox">
-                <p class="area_name">Waterfall Cave</p>
-            </div>
-            <div id="hidden" class="area_checkbox">
-                <input type="checkbox" id="hidden_checkbox" class="az-checkbox">
-                <p class="area_name">Area Zero Hidden Cave</p>
-            </div>
-            <div id="depths" class="area_checkbox">
-                <input type="checkbox" id="depths_checkbox" class="az-checkbox">
-                <p class="area_name">Area Zero Depths</p>
-            </div>
+            <select id="active-sandwich">
+                <option disabled selected>--Select The Type Boost--</option>
+                <option value="bug">Bug</option>
+                <option value="dark">Dark</option>
+                <option value="dragon">Dragon</option>
+                <option value="electric">Electric</option>
+                <option value="fairy">Fairy</option>
+                <option value="fighting">Fighting</option>
+                <option value="fire">Fire</option>
+                <option value="flying">Flying</option>
+                <option value="ghost">Ghost</option>
+                <option value="grass">Grass</option>
+                <option value="ground">Ground</option>
+                <option value="ice">Ice</option>
+                <option value="normal">Normal</option>
+                <option value="poison">Poison</option>
+                <option value="psychic">Psychic</option>
+                <option value="rock">Rock</option>
+                <option value="steel">Steel</option>
+                <option value="water">Water</option>
+            </select>
         </section>
     </section>
 
     <section id="grid-sandwich" class="grid-con">
-        <div id="type_table" class="col-span-full">
+        <div id="location_table" class="col-span-full">
             <h2 class="hidden">Type Tables</h2>
-            <div class="type_box" id="type_1">
-                <div class="type_title">
-                    <p class="type_name" id="bug">Bug</p>
+            <div class="location_box" id="location_1">
+                <div class="location_title">
+                    <p class="location_name" id="upper_field_prarie">Upper Field Prarie</p>
+                    <p data-button="0" class="location-button">Location?</p>
                 </div>
                 <div class="images">
-                    <div class="venomoth">
-                        <img src="images/sandwich/venomoth.png" alt="Venomoth">
-                        <p class="sf_pokemon_name">Venomoth</p>
-                    </div>
-
-                    <div class="masquerain">
-                        <img src="images/sandwich/masquerain.png" alt="Masquerain">
-                        <p class="sf_pokemon_name">Masquerain</p>
-                    </div>
-
-                    <div class="volcarona">
-                        <img src="images/sandwich/volcarona.png" alt="Volcarona">
-                        <p class="sf_pokemon_name">Volcarona</p>
-                    </div>
-
-                    <div class="lokix">
-                        <img src="images/sandwich/lokix.png" alt="Lokix">
-                        <p class="sf_pokemon_name">Lokix</p>
-                    </div>
-
-                    <div class="slither_wing">
-                        <img src="images/sandwich/slither_wing.png" alt="Slither Wing">
-                        <p class="sf_pokemon_name scarlet">Slither Wing* (S)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_2">
-                <div class="type_title">
-                    <p class="type_name" id="dark">Dark</p>
-                </div>
-                <div class="images">
-                    <div class="umbreon">
-                        <img src="images/sandwich/umbreon.png" alt="Umbreon">
-                        <p class="sf_pokemon_name">Umbreon</p>
-                    </div>
-
-                    <div class="murkrow">
-                        <img src="images/sandwich/murkrow.png" alt="Murkrow">
-                        <p class="sf_pokemon_name">Murkrow</p>
-                    </div>
-
-                    <div class="sneasel">
-                        <img src="images/sandwich/sneasel.png" alt="Sneasel">
-                        <p class="sf_pokemon_name">Sneasel</p>
-                    </div>
-
-                    <div class="sableye">
-                        <img src="images/sandwich/sableye.png" alt="Sableye">
-                        <p class="sf_pokemon_name">Sableye</p>
-                    </div>
-                    
-                    <div class="honchkrow">
-                        <img src="images/sandwich/honchkrow.png" alt="Honchkrow">
-                        <p class="sf_pokemon_name">Honchkrow</p>
-                    </div>
-
-                    <div class="weavile">
-                        <img src="images/sandwich/weavile.png" alt="Weavile">
-                        <p class="sf_pokemon_name">Weavile</p>
-                    </div>
-
-                    <div class="bisharp">
-                        <img src="images/sandwich/bisharp.png" alt="Bisharp">
-                        <p class="sf_pokemon_name">Bisharp</p>
-                    </div>
-
-                    <div class="zweilous">
-                        <img src="images/sandwich/zweilous.png" alt="Zweilous">
-                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
-                    </div>
-
-                    <div class="lokix">
-                        <img src="images/sandwich/lokix.png" alt="Lokix">
-                        <p class="sf_pokemon_name">Lokix</p>
-                    </div>
-
-                    <div class="brute_bonnet">
-                        <img src="images/sandwich/brute_bonnet.png" alt="Brute Bonnet">
-                        <p class="sf_pokemon_name scarlet">Brute Bonnet (S)</p>
-                    </div>
-
-                    <div class="iron_jugulis">
-                        <img src="images/sandwich/iron_jugulis.png" alt="Iron Jugulis">
-                        <p class="sf_pokemon_name violet">Iron Jugulis* (V)</p>
-                    </div>
-
-                    <div class="roaring_moon">
-                        <img src="images/sandwich/roaring_moon.png" alt="Roaring Moon">
-                        <p class="sf_pokemon_name scarlet">Roaring Moon* (S)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_3">
-                <div class="type_title">
-                    <p class="type_name" id="dragon">Dragon</p>
-                </div>
-                <div class="images">
-                    <div class="altaria">
-                        <img src="images/sandwich/altaria.png" alt="Altaria">
-                        <p class="sf_pokemon_name">Altaria</p>
-                    </div>
-
-                    <div class="gible">
-                        <img src="images/sandwich/gible.png" alt="Gible">
-                        <p class="sf_pokemon_name">Gible</p>
-                    </div>
-
-                    <div class="gabite">
-                        <img src="images/sandwich/gabite.png" alt="Gabite">
-                        <p class="sf_pokemon_name">Gabite</p>
-                    </div>
-
-                    <div class="zweilous">
-                        <img src="images/sandwich/zweilous.png" alt="Zweilous">
-                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
-                    </div>
-
-                    <div class="dreepy">
-                        <img src="images/sandwich/dreepy.png" alt="Dreepy">
-                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
-                    </div>
-
-                    <div class="drakloak">
-                        <img src="images/sandwich/drakloak.png" alt="Drakloak">
-                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
-                    </div>
-
-                    <div class="roaring_moon">
-                        <img src="images/sandwich/roaring_moon.png" alt="Roaring Moon">
-                        <p class="sf_pokemon_name scarlet">Roaring Moon* (S)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_4">
-                <div class="type_title">
-                    <p class="type_name" id="electric">Electric</p>
-                </div>
-                <div class="images">
-                    <div class="raichu">
-                        <img src="images/sandwich/raichu.png" alt="Raichu">
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/026.png" alt="Raichu">
                         <p class="sf_pokemon_name">Raichu</p>
                     </div>
-
-                    <div class="pawmi">
-                        <img src="images/sandwich/pawmi.png" alt="Pawmi">
-                        <p class="sf_pokemon_name">Pawmi</p>
-                    </div>
-
-                    <div class="pawmo">
-                        <img src="images/sandwich/pawmo.png" alt="Pawmo">
-                        <p class="sf_pokemon_name">Pawmo</p>
-                    </div>
-
-                    <div class="tadbulb">
-                        <img src="images/sandwich/tadbulb.png" alt="Tadbulb">
-                        <p class="sf_pokemon_name">Tadbulb</p>
-                    </div>
-
-                    <div class="bellibolt">
-                        <img src="images/sandwich/bellibolt.png" alt="Bellibolt">
-                        <p class="sf_pokemon_name">Bellibolt</p>
-                    </div>
-
-                    <div class="sandy_shocks">
-                        <img src="images/sandwich/sandy_shocks.png" alt="Sandy Shocks">
-                        <p class="sf_pokemon_name scarlet">Sandy Shocks* (S)</p>
-                    </div>
-
-                    <div class="iron_hands">
-                        <img src="images/sandwich/iron_hands.png" alt="Iron Hands">
-                        <p class="sf_pokemon_name violet">Iron Hands* (V)</p>
-                    </div>
-
-                    <div class="iron_thorns">
-                        <img src="images/sandwich/iron_thorns.png" alt="Iron Thorns">
-                        <p class="sf_pokemon_name violet">Iron Thorns* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_5">
-                <div class="type_title">
-                    <p class="type_name" id="fairy">Fairy</p>
-                </div>
-                <div class="images">
-                    <div class="floette">
-                        <img src="images/sandwich/floette-red.png" alt="Floette">
-                        <p class="sf_pokemon_name">Floette</p>
-                    </div>
-
-                    <div class="scream_tail">
-                        <img src="images/sandwich/scream_tail.png" alt="Scream Tail">
-                        <p class="sf_pokemon_name scarlet">Scream Tail* (S)</p>
-                    </div>
-
-                    <div class="flutter_mane">
-                        <img src="images/sandwich/flutter_mane.png" alt="Flutter Mane">
-                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
-                    </div>
-
-                    <div class="iron_valiant">
-                        <img src="images/sandwich/iron_valiant.png" alt="Iron Valiant">
-                        <p class="sf_pokemon_name violet">Iron Valiant* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_6">
-                <div class="type_title">
-                    <p class="type_name" id="fighting">Fighting</p>
-                </div>
-                <div class="images">
-                    <div class="meditite">
-                        <img src="images/sandwich/meditite.png" alt="Meditite">
-                        <p class="sf_pokemon_name">Meditite</p>
-                    </div>
-
-                    <div class="medicham">
-                        <img src="images/sandwich/medicham.png" alt="Medicham">
-                        <p class="sf_pokemon_name">Medicham</p>
-                    </div>
-
-                    <div class="hawlucha">
-                        <img src="images/sandwich/hawlucha.png" alt="Hawlucha">
-                        <p class="sf_pokemon_name">Hawlucha</p>
-                    </div>
-
-                    <div class="pawmo">
-                        <img src="images/sandwich/pawmo.png" alt="Pawmo">
-                        <p class="sf_pokemon_name">Pawmo</p>
-                    </div>
-
-                    <div class="flamigo">
-                        <img src="images/sandwich/flamigo.png" alt="Flamigo">
-                        <p class="sf_pokemon_name">Flamigo</p>
-                    </div>
-
-                    <div class="great_tusk">
-                        <img src="images/sandwich/great_tusk.png" alt="Great Tusk">
-                        <p class="sf_pokemon_name scarlet">Great Tusk* (S)</p>
-                    </div>
-
-                    <div class="slither_wing">
-                        <img src="images/sandwich/slither_wing.png" alt="Slither Wing">
-                        <p class="sf_pokemon_name scarlet">Slither Wing* (S)</p>
-                    </div>
-
-                    <div class="iron_hands">
-                        <img src="images/sandwich/iron_hands.png" alt="Iron Hands">
-                        <p class="sf_pokemon_name violet">Iron Hands* (V)</p>
-                    </div>
-
-                    <div class="iron_valiant">
-                        <img src="images/sandwich/iron_valiant.png" alt="Iron Valiant">
-                        <p class="sf_pokemon_name violet">Iron Valiant* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_7">
-                <div class="type_title">
-                    <p class="type_name" id="fire">Fire</p>
-                </div>
-                <div class="images">
-                    <div class="volcarona">
-                        <img src="images/sandwich/volcarona.png" alt="Volcarona">
-                        <p class="sf_pokemon_name">Volcarona</p>
-                    </div>
-
-                    <div class="talonflame">
-                        <img src="images/sandwich/talonflame.png" alt="Talonflame">
-                        <p class="sf_pokemon_name">Talonflame</p>
-                    </div>
-
-                    <div class="iron_moth">
-                        <img src="images/sandwich/iron_moth.png" alt="Iron Moth">
-                        <p class="sf_pokemon_name violet">Iron Moth* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_8">
-                <div class="type_title">
-                    <p class="type_name" id="flying">Flying</p>
-                </div>
-                <div class="images">
-                    <div class="jumpluff">
-                        <img src="images/sandwich/jumpluff.png" alt="Jumpluff">
-                        <p class="sf_pokemon_name">Jumpluff</p>
-                    </div>
-
-                    <div class="murkrow">
-                        <img src="images/sandwich/murkrow.png" alt="Murkrow">
-                        <p class="sf_pokemon_name">Murkrow</p>
-                    </div>
-
-                    <div class="masquerain">
-                        <img src="images/sandwich/masquerain.png" alt="Masquerain">
-                        <p class="sf_pokemon_name">Masquerain</p>
-                    </div>
-
-                    <div class="altaria">
-                        <img src="images/sandwich/altaria.png" alt="Altaria">
-                        <p class="sf_pokemon_name">Altaria</p>
-                    </div>
-                    
-                    <div class="honchkrow">
-                        <img src="images/sandwich/honchkrow.png" alt="Honchkrow">
-                        <p class="sf_pokemon_name">Honchkrow</p>
-                    </div>
-
-                    <div class="braviary">
-                        <img src="images/sandwich/braviary.png" alt="Braviary">
-                        <p class="sf_pokemon_name">Braviary</p>
-                    </div>
-
-                    <div class="talonflame">
-                        <img src="images/sandwich/talonflame.png" alt="Talonflame">
-                        <p class="sf_pokemon_name">Talonflame</p>
-                    </div>
-
-                    <div class="hawlucha">
-                        <img src="images/sandwich/hawlucha.png" alt="Hawlucha">
-                        <p class="sf_pokemon_name">Hawlucha</p>
-                    </div>
-
-                    <div class="corviknight">
-                        <img src="images/sandwich/corviknight.png" alt="Corviknight">
-                        <p class="sf_pokemon_name">Corviknight</p>
-                    </div>
-
-                    <div class="flamigo">
-                        <img src="images/sandwich/flamigo.png" alt="Flamigo">
-                        <p class="sf_pokemon_name">Flamigo</p>
-                    </div>
-
-                    <div class="iron_jugulis">
-                        <img src="images/sandwich/iron_jugulis.png" alt="Iron Jugulis">
-                        <p class="sf_pokemon_name violet">Iron Jugulis* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_9">
-                <div class="type_title">
-                    <p class="type_name" id="ghost">Ghost</p>
-                </div>
-                <div class="images">
-                    <div class="sableye">
-                        <img src="images/sandwich/sableye.png" alt="Sableye">
-                        <p class="sf_pokemon_name">Sableye</p>
-                    </div>
-
-                    <div class="dreepy">
-                        <img src="images/sandwich/dreepy.png" alt="Dreepy">
-                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
-                    </div>
-
-                    <div class="drakloak">
-                        <img src="images/sandwich/drakloak.png" alt="Drakloak">
-                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
-                    </div>
-
-                    <div class="greavard">
-                        <img src="images/sandwich/greavard.png" alt="Greavard">
-                        <p class="sf_pokemon_name">Greavard</p>
-                    </div>
-
-                    <div class="houndstone">
-                        <img src="images/sandwich/houndstone.png" alt="Houndstone">
-                        <p class="sf_pokemon_name">Houndstone</p>
-                    </div>
-
-                    <div class="flutter_mane">
-                        <img src="images/sandwich/flutter_mane.png" alt="Flutter Mane">
-                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_10">
-                <div class="type_title">
-                    <p class="type_name" id="grass">Grass</p>
-                </div>
-                <div class="images">
-                    <div class="jumpluff">
-                        <img src="images/sandwich/jumpluff.png" alt="Jumpluff">
-                        <p class="sf_pokemon_name">Jumpluff</p>
-                    </div>
-
-                    <div class="gogoat">
-                        <img src="images/sandwich/gogoat.png" alt="Gogoat">
-                        <p class="sf_pokemon_name">Gogoat</p>
-                    </div>
-
-                    <div class="brute_bonnet">
-                        <img src="images/sandwich/brute_bonnet.png" alt="Brute Bonnet">
-                        <p class="sf_pokemon_name scarlet">Brute Bonnet* (S)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_11">
-                <div class="type_title">
-                    <p class="type_name" id="ground">Ground</p>
-                </div>
-                <div class="images">
-                    <div class="dugtrio">
-                        <img src="images/sandwich/dugtrio.png" alt="Dugtrio">
-                        <p class="sf_pokemon_name">Dugtrio</p>
-                    </div>
-
-                    <div class="phanpy">
-                        <img src="images/sandwich/phanpy.png" alt="Phanpy">
-                        <p class="sf_pokemon_name">Phanpy</p>
-                    </div>
-
-                    <div class="donphan">
-                        <img src="images/sandwich/donphan.png" alt="Donphan">
-                        <p class="sf_pokemon_name">Donphan</p>
-                    </div>
-
-                    <div class="gible">
-                        <img src="images/sandwich/gible.png" alt="Gible">
-                        <p class="sf_pokemon_name">Gible</p>
-                    </div>
-
-                    <div class="gabite">
-                        <img src="images/sandwich/gabite.png" alt="Gabite">
-                        <p class="sf_pokemon_name">Gabite</p>
-                    </div>
-
-                    <div class="great_tusk">
-                        <img src="images/sandwich/great_tusk.png" alt="Great Tusk">
-                        <p class="sf_pokemon_name scarlet">Great Tusk* (S)</p>
-                    </div>
-
-                    <div class="sandy_shocks">
-                        <img src="images/sandwich/sandy_shocks.png" alt="Sandy Shocks">
-                        <p class="sf_pokemon_name scarlet">Sandy Shocks* (S)</p>
-                    </div>
-
-                    <div class="iron_treads">
-                        <img src="images/sandwich/iron_treads.png" alt="Iron Treads">
-                        <p class="sf_pokemon_name violet">Iron Treads* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_12">
-                <div class="type_title">
-                    <p class="type_name" id="ice">Ice</p>
-                </div>
-                <div class="images">
-                    <div class="sneasel">
-                        <img src="images/sandwich/sneasel.png" alt="Sneasel">
-                        <p class="sf_pokemon_name">Sneasel</p>
-                    </div>
-
-                    <div class="weavile">
-                        <img src="images/sandwich/weavile.png" alt="Weavile">
-                        <p class="sf_pokemon_name">Weavile</p>
-                    </div>
-
-                    <div class="iron_bundle">
-                        <img src="images/sandwich/iron_bundle.png" alt="Iron Bundle">
-                        <p class="sf_pokemon_name violet">Iron Bundle* (V)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_13">
-                <div class="type_title">
-                    <p class="type_name" id="normal">Normal</p>
-                </div>
-                <div class="images">
-                    <div class="chansey">
-                        <img src="images/sandwich/chansey.png" alt="Chansey">
-                        <p class="sf_pokemon_name">Chansey</p>
-                    </div>
-
-                    <div class="girafarig">
-                        <img src="images/sandwich/girafarig.png" alt="girafarig">
-                        <p class="sf_pokemon_name">Girafarig</p>
-                    </div>
-
-                    <div class="dunsparce">
-                        <img src="images/sandwich/dunsparce.png" alt="Dunsparce">
-                        <p class="sf_pokemon_name">Dunsparce</p>
-                    </div>
-                    
-                    <div class="braviary">
-                        <img src="images/sandwich/braviary.png" alt="Braviary">
-                        <p class="sf_pokemon_name">Braviary</p>
-                    </div>
-                    
-                    <div class="farigiraf">
-                        <img src="images/sandwich/farigiraf.png" alt="Farigiraf">
-                        <p class="sf_pokemon_name">Farigiraf</p>
-                    </div>
-
-                    <div class="dudunsparce">
-                        <img src="images/sandwich/dudunsparce_two.png" alt="Dudunsparce">
-                        <p class="sf_pokemon_name">Dudunsparce</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_14">
-                <div class="type_title">
-                    <p class="type_name" id="poison">Poison</p>
-                </div>
-                <div class="images">
-                    <div class="venomoth">
-                        <img src="images/sandwich/venomoth.png" alt="Venomoth">
+                    <div class="az_pokemon bug poison">
+                        <img src="images/pokemon_images/049.png" alt="Venomoth">
                         <p class="sf_pokemon_name">Venomoth</p>
                     </div>
-
-                    <div class="glimmet">
-                        <img src="images/sandwich/glimmet.png" alt="Glimmet">
-                        <p class="sf_pokemon_name">Glimmet</p>
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/113.png" alt="Chansey">
+                        <p class="sf_pokemon_name">Chansey</p>
                     </div>
-
-                    <div class="glimmora">
-                        <img src="images/sandwich/glimmora.png" alt="Glimmora">
-                        <p class="sf_pokemon_name">Glimmora</p>
+                    <div class="az_pokemon grass flying">
+                        <img src="images/pokemon_images/189.png" alt="Jumpluff">
+                        <p class="sf_pokemon_name">Jumpluff</p>
                     </div>
-
-                    <div class="iron_moth">
-                        <img src="images/sandwich/iron_moth.png" alt="Iron Moth">
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/196.png" alt="Espeon">
+                        <p class="sf_pokemon_name">Espeon</p>
+                    </div>
+                    <div class="az_pokemon normal psychic">
+                        <img src="images/pokemon_images/203.png" alt="Girafarig">
+                        <p class="sf_pokemon_name">Girafarig</p>
+                    </div>
+                    <div class="az_pokemon psychic fighting">
+                        <img src="images/pokemon_images/307.png" alt="Meditite">
+                        <p class="sf_pokemon_name">Meditite</p>
+                    </div>
+                    <div class="az_pokemon psychic fighting">
+                        <img src="images/pokemon_images/308.png" alt="Medicham">
+                        <p class="sf_pokemon_name">Medicham</p>
+                    </div>
+                    <div class="az_pokemon normal flying">
+                        <img src="images/pokemon_images/628.png" alt="Braviary">
+                        <p class="sf_pokemon_name">Braviary</p>
+                    </div>
+                    <div class="az_pokemon fairy">
+                        <img src="images/pokemon_images/670w.png" alt="Floette">
+                        <p class="sf_pokemon_name">Floette</p>
+                    </div>
+                    <div class="az_pokemon flying steel">
+                        <img src="images/pokemon_images/823.png" alt="Corviknight">
+                        <p class="sf_pokemon_name">Corviknight</p>
+                    </div>
+                    <div class="az_pokemon bug ice">
+                        <img src="images/pokemon_images/873.png" alt="Frosmoth">
+                        <p class="sf_pokemon_name">Frosmoth</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/921.png" alt="Pawmi">
+                        <p class="sf_pokemon_name">Pawmi</p>
+                    </div>
+                    <div class="az_pokemon electric fighting">
+                        <img src="images/pokemon_images/922.png" alt="Pawmo">
+                        <p class="sf_pokemon_name">Pawmo</p>
+                    </div>
+                    <div class="az_pokemon normal psychic">
+                        <img src="images/pokemon_images/981.png" alt="Farigiraf">
+                        <p class="sf_pokemon_name">Farigiraf</p>
+                    </div>
+                    <div class="az_pokemon psychic fairy">
+                        <img src="images/pokemon_images/985.png" alt="Scream Tail">
+                        <p class="sf_pokemon_name scarlet">Scream Tail* (S)</p>
+                    </div>
+                    <div class="az_pokemon bug fighting">
+                        <img src="images/pokemon_images/988.png" alt="Slither Wing">
+                        <p class="sf_pokemon_name scarlet">Slither Wing* (S)</p>
+                    </div>
+                    <div class="az_pokemon water ice">
+                        <img src="images/pokemon_images/991.png" alt="Iron Bundle">
+                        <p class="sf_pokemon_name violet">Iron Bundle* (V)</p>
+                    </div>
+                    <div class="az_pokemon fighting electric">
+                        <img src="images/pokemon_images/992.png" alt="Iron Hands">
+                        <p class="sf_pokemon_name violet">Iron Hands* (V)</p>
+                    </div>
+                    <div class="az_pokemon fire poison">
+                        <img src="images/pokemon_images/994.png" alt="Iron Moth">
                         <p class="sf_pokemon_name violet">Iron Moth* (V)</p>
                     </div>
                 </div>
             </div>
 
-            <div class="type_box" id="type_15">
-                <div class="type_title">
-                    <p class="type_name" id="psychic">Psychic</p>
+            <div class="location_box" id="location_2">
+                <div class="location_title">
+                    <p class="location_name" id="upper_field_riverside">Upper Field Riverside</p>
+                    <p data-button="1" class="location-button">Location?</p>
                 </div>
                 <div class="images">
-                    <div class="espeon">
-                        <img src="images/sandwich/espeon.png" alt="Espeon">
-                        <p class="sf_pokemon_name">Espeon</p>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/055.png" alt="Golduck">
+                        <p class="sf_pokemon_name">Golduck</p>
                     </div>
-
-                    <div class="girafarig">
-                        <img src="images/sandwich/girafarig.png" alt="girafarig">
-                        <p class="sf_pokemon_name">Girafarig</p>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/134.png" alt="Vaporeon">
+                        <p class="sf_pokemon_name">Vaporeon</p>
                     </div>
-
-                    <div class="meditite">
-                        <img src="images/sandwich/meditite.png" alt="Meditite">
-                        <p class="sf_pokemon_name">Meditite</p>
+                    <div class="az_pokemon normal flying">
+                        <img src="images/pokemon_images/333.png" alt="Swablu">
+                        <p class="sf_pokemon_name">Swablu</p>
                     </div>
-
-                    <div class="medicham">
-                        <img src="images/sandwich/medicham.png" alt="Medicham">
-                        <p class="sf_pokemon_name">Medicham</p>
+                    <div class="az_pokemon dragon flying">
+                        <img src="images/pokemon_images/334.png" alt="Altaria">
+                        <p class="sf_pokemon_name">Altaria</p>
                     </div>
-
-                    <div class="espathra">
-                        <img src="images/sandwich/espathra.png" alt="Espathra">
-                        <p class="sf_pokemon_name">Espathra</p>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/418.png" alt="Buizel">
+                        <p class="sf_pokemon_name">Buizel</p>
                     </div>
-
-                    <div class="farigiraf">
-                        <img src="images/sandwich/farigiraf.png" alt="Farigiraf">
-                        <p class="sf_pokemon_name">Farigiraf</p>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/419.png" alt="Floatzel">
+                        <p class="sf_pokemon_name">Floatzel</p>
                     </div>
-
-                    <div class="scream_tail">
-                        <img src="images/sandwich/scream_tail.png" alt="Scream Tail">
-                        <p class="sf_pokemon_name scarlet">Scream Tail* (S)</p>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/885.png" alt="Dreepy">
+                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/886.png" alt="Drakloak">
+                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
+                    </div>
+                    <div class="az_pokemon fighting flying">
+                        <img src="images/pokemon_images/973.png" alt="Flamigo">
+                        <p class="sf_pokemon_name">Flamigo</p>
                     </div>
                 </div>
             </div>
 
-            <div class="type_box" id="type_16">
-                <div class="type_title">
-                    <p class="type_name" id="rock">Rock</p>
+            <div class="location_box" id="location_3">
+                <div class="location_title">
+                    <p class="location_name" id="upperfield_rocky">Upper Field Rocky Area</p>
+                    <p data-button="2" class="location-button">Location?</p>
                 </div>
                 <div class="images">
-                    <div class="lycanroc">
-                        <img src="images/sandwich/lycanroc.png" alt="Lycanroc Midday Form">
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/231.png" alt="Phanpy">
+                        <p class="sf_pokemon_name">Phanpy</p>
+                    </div>
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/232.png" alt="Donphan">
+                        <p class="sf_pokemon_name">Donphan</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/198.png" alt="Murkrow">
+                        <p class="sf_pokemon_name">Murkrow</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/430.png" alt="Honchkrow">
+                        <p class="sf_pokemon_name">Honchkrow</p>
+                    </div>
+                    <div class="az_pokemon normal flying">
+                        <img src="images/pokemon_images/628.png" alt="Braviary">
+                        <p class="sf_pokemon_name">Braviary</p>
+                    </div>
+                    <div class="az_pokemon fire flying">
+                        <img src="images/pokemon_images/663.png" alt="Talonflame">
+                        <p class="sf_pokemon_name">Talonflame</p>
+                    </div>
+                    <div class="az_pokemon grass">
+                        <img src="images/pokemon_images/673.png" alt="Gogoat">
+                        <p class="sf_pokemon_name">Gogoat</p>
+                    </div>
+                    <div class="az_pokemon fighting flying">
+                        <img src="images/pokemon_images/701.png" alt="Hawlucha">
+                        <p class="sf_pokemon_name">Hawlucha</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/745.png" alt="Lycanroc Midday">
                         <p class="sf_pokemon_name">Lycanroc (Midday)</p>
                     </div>
-
-                    <div class="lycanroc">
-                        <img src="images/sandwich/lycanroc_m.png" alt="Lycanroc Midnight Form">
-                        <p class="sf_pokemon_name">Lycanroc (Midnight)</p>
+                    <div class="az_pokemon steel">
+                        <img src="images/pokemon_images/878.png" alt="Cufant">
+                        <p class="sf_pokemon_name">Cufant</p>
                     </div>
-
-                    <div class="nacli">
-                        <img src="images/sandwich/nacli.png" alt="Nacli">
+                    <div class="az_pokemon steel">
+                        <img src="images/pokemon_images/879.png" alt="Copperajah">
+                        <p class="sf_pokemon_name">Copperajah</p>
+                    </div>
+                    <div class="az_pokemon">
+                        <img src="images/pokemon_images/920.png" alt="Lokix">
+                        <p class="sf_pokemon_name">Lokix</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/932.png" alt="Nacli">
                         <p class="sf_pokemon_name">Nacli</p>
                     </div>
-
-                    <div class="naclstack">
-                        <img src="images/sandwich/naclstack.png" alt="Naclstack">
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/933.png" alt="Naclstack">
                         <p class="sf_pokemon_name">Naclstack</p>
                     </div>
-
-                    <div class="garganacl">
-                        <img src="images/sandwich/garganacl.png" alt="Garganacl">
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/934.png" alt="Garganacl">
                         <p class="sf_pokemon_name">Garganacl</p>
                     </div>
-
-                    <div class="glimmet">
-                        <img src="images/sandwich/glimmet.png" alt="Glimmet">
-                        <p class="sf_pokemon_name">Glimmet</p>
+                    <div class="az_pokemon electric ground">
+                        <img src="images/pokemon_images/989.png" alt="Sandy Shocks">
+                        <p class="sf_pokemon_name scarlet">Sandy Shocks* (S)</p>
                     </div>
-
-                    <div class="glimmora">
-                        <img src="images/sandwich/glimmora.png" alt="Glimmora">
-                        <p class="sf_pokemon_name">Glimmora</p>
-                    </div>
-
-                    <div class="iron_thorns">
-                        <img src="images/sandwich/iron_thorns.png" alt="Iron Thorns">
+                    <div class="az_pokemon rock electric">
+                        <img src="images/pokemon_images/995.png" alt="Iron Thorns">
                         <p class="sf_pokemon_name violet">Iron Thorns* (V)</p>
                     </div>
                 </div>
             </div>
 
-            <div class="type_box" id="type_17">
-                <div class="type_title">
-                    <p class="type_name" id="steel">Steel</p>
+            <div class="location_box" id="location_4">
+                <div class="location_title">
+                    <p class="location_name" id="lower_field_prarie">Lower Field Prarie</p>
+                    <p data-button="3" class="location-button">Location?</p>
                 </div>
                 <div class="images">
-                    <div class="bisharp">
-                        <img src="images/sandwich/bisharp.png" alt="Bisharp">
-                        <p class="sf_pokemon_name">Bisharp</p>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/026.png" alt="Raichu">
+                        <p class="sf_pokemon_name">Raichu</p>
                     </div>
-
-                    <div class="corviknight">
-                        <img src="images/sandwich/corviknight.png" alt="Corviknight">
+                    <div class="az_pokemon bug poison">
+                        <img src="images/pokemon_images/049.png" alt="Venomoth">
+                        <p class="sf_pokemon_name">Venomoth</p>
+                    </div>
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/113.png" alt="Chansey">
+                        <p class="sf_pokemon_name">Chansey</p>
+                    </div>
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/196.png" alt="Espeon">
+                        <p class="sf_pokemon_name">Espeon</p>
+                    </div>
+                    <div class="az_pokemon normal psychic">
+                        <img src="images/pokemon_images/203.png" alt="Girafarig">
+                        <p class="sf_pokemon_name">Girafarig</p>
+                    </div>
+                    <div class="az_pokemon normal flying">
+                        <img src="images/pokemon_images/628.png" alt="Braviary">
+                        <p class="sf_pokemon_name">Braviary</p>
+                    </div>
+                    <div class="az_pokemon bug fire">
+                        <img src="images/pokemon_images/637.png" alt="Volcarona">
+                        <p class="sf_pokemon_name">Volcarona</p>
+                    </div>
+                    <div class="az_pokemon fairy">
+                        <img src="images/pokemon_images/670w.png" alt="Floette">
+                        <p class="sf_pokemon_name">Floette</p>
+                    </div>
+                    <div class="az_pokemon flying steel">
+                        <img src="images/pokemon_images/823.png" alt="Corviknight">
                         <p class="sf_pokemon_name">Corviknight</p>
                     </div>
-
-                    <div class="cufant">
-                        <img src="images/sandwich/cufant.png" alt="Cufant">
-                        <p class="sf_pokemon_name">Cufant</p>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/921.png" alt="Pawmi">
+                        <p class="sf_pokemon_name">Pawmi</p>
                     </div>
-
-                    <div class="copperajah">
-                        <img src="images/sandwich/copperajah.png" alt="Copperajah">
-                        <p class="sf_pokemon_name">Copperajah</p>
+                    <div class="az_pokemon electric fighting">
+                        <img src="images/pokemon_images/922.png" alt="Pawmo">
+                        <p class="sf_pokemon_name">Pawmo</p>
                     </div>
-
-                    <div class="iron_treads">
-                        <img src="images/sandwich/iron_treads.png" alt="Iron Treads">
-                        <p class="sf_pokemon_name violet">Iron Treads* (V)</p>
+                    <div class="az_pokemon normal psychic">
+                        <img src="images/pokemon_images/981.png" alt="Farigiraf">
+                        <p class="sf_pokemon_name">Farigiraf</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="type_box" id="type_18">
-                <div class="type_title">
-                    <p class="type_name" id="water">Water</p>
-                </div>
-                <div class="images">
-                    <div class="golduck">
-                        <img src="images/sandwich/golduck.png" alt="Golduck">
-                        <p class="sf_pokemon_name">Golduck</p>
+                    <div class="az_pokemon psychic fairy">
+                        <img src="images/pokemon_images/985.png" alt="Scream Tail">
+                        <p class="sf_pokemon_name scarlet">Scream Tail* (S)</p>
                     </div>
-
-                    <div class="vaporeon">
-                        <img src="images/sandwich/vaporeon.png" alt="Vaporeon">
-                        <p class="sf_pokemon_name">Vaporeon</p>
+                    <div class="az_pokemon grass dark">
+                        <img src="images/pokemon_images/986.png" alt="Brute Bonnet">
+                        <p class="sf_pokemon_name scarlet">Brute Bonnet* (S)</p>
                     </div>
-
-                    <div class="buizel">
-                        <img src="images/sandwich/buizel.png" alt="Buizel">
-                        <p class="sf_pokemon_name">Buizel</p>
-                    </div>
-
-                    <div class="floatzel">
-                        <img src="images/sandwich/floatzel.png" alt="Floatzel">
-                        <p class="sf_pokemon_name">Floatzel</p>
-                    </div>
-
-                    <div class="iron_bundle">
-                        <img src="images/sandwich/iron_bundle.png" alt="Iron Bundle">
+                    <div class="az_pokemon water ice">
+                        <img src="images/pokemon_images/991.png" alt="Iron Bundle">
                         <p class="sf_pokemon_name violet">Iron Bundle* (V)</p>
                     </div>
+                    <div class="az_pokemon fighting electric">
+                        <img src="images/pokemon_images/992.png" alt="Iron Hands">
+                        <p class="sf_pokemon_name violet">Iron Hands* (V)</p>
+                    </div>
                 </div>
             </div>
+
+            <div class="location_box" id="location_5">
+                <div class="location_title">
+                    <p class="location_name" id="lower_field_riverside">Lower Field Riverside</p>
+                    <p data-button="4" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/055.png" alt="Golduck">
+                        <p class="sf_pokemon_name">Golduck</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/134.png" alt="Vaporeon">
+                        <p class="sf_pokemon_name">Vaporeon</p>
+                    </div>
+                    <div class="az_pokemon bug flying">
+                        <img src="images/pokemon_images/284.png" alt="Masquerain">
+                        <p class="sf_pokemon_name">Masquerain</p>
+                    </div>
+                    <div class="az_pokemon normal flying">
+                        <img src="images/pokemon_images/333.png" alt="Swablu">
+                        <p class="sf_pokemon_name">Swablu</p>
+                    </div>
+                    <div class="az_pokemon dragon flying">
+                        <img src="images/pokemon_images/334.png" alt="Altaria">
+                        <p class="sf_pokemon_name">Altaria</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/418.png" alt="Buizel">
+                        <p class="sf_pokemon_name">Buizel</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/419.png" alt="Floatzel">
+                        <p class="sf_pokemon_name">Floatzel</p>
+                    </div>
+                    <div class="az_pokemon dark steel">
+                        <img src="images/pokemon_images/624.png" alt="Pawniard">
+                        <p class="sf_pokemon_name">Pawniard</p>
+                    </div>
+                    <div class="az_pokemon dark steel">
+                        <img src="images/pokemon_images/625.png" alt="Bisharp">
+                        <p class="sf_pokemon_name">Bisharp</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/885.png" alt="Dreepy">
+                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/886.png" alt="Drakloak">
+                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/938.png" alt="Tadbulb">
+                        <p class="sf_pokemon_name">Tadbulb</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/939.png" alt="Bellibolt">
+                        <p class="sf_pokemon_name">Bellibolt</p>
+                    </div>
+                    <div class="az_pokemon fighting flying">
+                        <img src="images/pokemon_images/973.png" alt="Flamigo">
+                        <p class="sf_pokemon_name">Flamigo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location_box" id="location_6">
+                <div class="location_title">
+                    <p class="location_name" id="lower_field_rocky">Lower Field Rocky Area</p>
+                    <p data-button="5" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/231.png" alt="Phanpy">
+                        <p class="sf_pokemon_name">Phanpy</p>
+                    </div>
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/232.png" alt="Donphan">
+                        <p class="sf_pokemon_name">Donphan</p>
+                    </div>
+                    <div class="az_pokemon fire ground">
+                        <img src="images/pokemon_images/322.png" alt="Numel">
+                        <p class="sf_pokemon_name">Numel</p>
+                    </div>
+                    <div class="az_pokemon fire ground">
+                        <img src="images/pokemon_images/323.png" alt="Camerupt">
+                        <p class="sf_pokemon_name">Camerupt</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/198.png" alt="Murkrow">
+                        <p class="sf_pokemon_name">Murkrow</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/430.png" alt="Honchkrow">
+                        <p class="sf_pokemon_name">Honchkrow</p>
+                    </div>
+                    <div class="az_pokemon normal flying">
+                        <img src="images/pokemon_images/628.png" alt="Braviary">
+                        <p class="sf_pokemon_name">Braviary</p>
+                    </div>
+                    <div class="az_pokemon fire flying">
+                        <img src="images/pokemon_images/663.png" alt="Talonflame">
+                        <p class="sf_pokemon_name">Talonflame</p>
+                    </div>
+                    <div class="az_pokemon grass">
+                        <img src="images/pokemon_images/673.png" alt="Gogoat">
+                        <p class="sf_pokemon_name">Gogoat</p>
+                    </div>
+                    <div class="az_pokemon fighting flying">
+                        <img src="images/pokemon_images/701.png" alt="Hawlucha">
+                        <p class="sf_pokemon_name">Hawlucha</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/745.png" alt="Lycanroc Midday">
+                        <p class="sf_pokemon_name">Lycanroc (Midday)</p>
+                    </div>
+                    <div class="az_pokemon">
+                        <img src="images/pokemon_images/920.png" alt="Lokix">
+                        <p class="sf_pokemon_name">Lokix</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/932.png" alt="Nacli">
+                        <p class="sf_pokemon_name">Nacli</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/933.png" alt="Naclstack">
+                        <p class="sf_pokemon_name">Naclstack</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/934.png" alt="Garganacl">
+                        <p class="sf_pokemon_name">Garganacl</p>
+                    </div>
+                    <div class="az_pokemon electric ground">
+                        <img src="images/pokemon_images/989.png" alt="Sandy Shocks">
+                        <p class="sf_pokemon_name scarlet">Sandy Shocks* (S)</p>
+                    </div>
+                    <div class="az_pokemon rock electric">
+                        <img src="images/pokemon_images/995.png" alt="Iron Thorns">
+                        <p class="sf_pokemon_name violet">Iron Thorns* (V)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location_box" id="location_7">
+                <div class="location_title">
+                    <p class="location_name" id="small_cave">Small Cave</p>
+                    <p data-button="6" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/113.png" alt="Chansey">
+                        <p class="sf_pokemon_name">Chansey</p>
+                    </div>
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/196.png" alt="Espeon">
+                        <p class="sf_pokemon_name">Espeon</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/921.png" alt="Pawmi">
+                        <p class="sf_pokemon_name">Pawmi</p>
+                    </div>
+                    <div class="az_pokemon electric fighting">
+                        <img src="images/pokemon_images/922.png" alt="Pawmo">
+                        <p class="sf_pokemon_name">Pawmo</p>
+                    </div>
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/051.png" alt="Dugtrio">
+                        <p class="sf_pokemon_name">Dugtrio</p>
+                    </div>
+                    <div class="az_pokemon dark">
+                        <img src="images/pokemon_images/197.png" alt="Umbreon">
+                        <p class="sf_pokemon_name">Umbreon</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/215.png" alt="Sneasel">
+                        <p class="sf_pokemon_name">Sneasel</p>
+                    </div>
+                    <div class="az_pokemon dark ghost">
+                        <img src="images/pokemon_images/302.png" alt="Sableye">
+                        <p class="sf_pokemon_name">Sableye</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/443.png" alt="Gible">
+                        <p class="sf_pokemon_name">Gible</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/444.png" alt="Gabite">
+                        <p class="sf_pokemon_name">Gabite</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/461.png" alt="Weavile">
+                        <p class="sf_pokemon_name">Weavile</p>
+                    </div>
+                    <div class="az_pokemon dragon dark">
+                        <img src="images/pokemon_images/633.png" alt="Deino">
+                        <p class="sf_pokemon_name scarlet">Deino (S)</p>
+                    </div>
+                    <div class="az_pokemon dragon dark">
+                        <img src="images/pokemon_images/634.png" alt="Zweilous">
+                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/745mn.png" alt="Lycanroc (Midnight)">
+                        <p class="sf_pokemon_name">Lycanroc (Midnight)</p>
+                    </div>
+                    <div class="az_pokemon fire poison">
+                        <img src="images/pokemon_images/757.png" alt="Salandit">
+                        <p class="sf_pokemon_name">Salandit</p>
+                    </div>
+                    <div class="az_pokemon fire poison">
+                        <img src="images/pokemon_images/758.png" alt="Salazzle">
+                        <p class="sf_pokemon_name">Salazzle</p>
+                    </div>
+                    <div class="az_pokemon rock poison">
+                        <img src="images/pokemon_images/969.png" alt="Glimmet">
+                        <p class="sf_pokemon_name">Glimmet</p>
+                    </div>
+                    <div class="az_pokemon fairy ghost">
+                        <img src="images/pokemon_images/987.png" alt="Flutter Mane">
+                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/993.png" alt="Iron Jugulis">
+                        <p class="sf_pokemon_name violet">Iron Jugulis (V)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location_box" id="location_8">
+                <div class="location_title">
+                    <p class="location_name" id="station_3_cave">Station 3 Cave</p>
+                    <p data-button="7" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/113.png" alt="Chansey">
+                        <p class="sf_pokemon_name">Chansey</p>
+                    </div>
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/196.png" alt="Espeon">
+                        <p class="sf_pokemon_name">Espeon</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/921.png" alt="Pawmi">
+                        <p class="sf_pokemon_name">Pawmi</p>
+                    </div>
+                    <div class="az_pokemon electric fighting">
+                        <img src="images/pokemon_images/922.png" alt="Pawmo">
+                        <p class="sf_pokemon_name">Pawmo</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/055.png" alt="Golduck">
+                        <p class="sf_pokemon_name">Golduck</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/134.png" alt="Vaporeon">
+                        <p class="sf_pokemon_name">Vaporeon</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/418.png" alt="Buizel">
+                        <p class="sf_pokemon_name">Buizel</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/419.png" alt="Floatzel">
+                        <p class="sf_pokemon_name">Floatzel</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/885.png" alt="Dreepy">
+                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/886.png" alt="Drakloak">
+                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
+                    </div>
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/051.png" alt="Dugtrio">
+                        <p class="sf_pokemon_name">Dugtrio</p>
+                    </div>
+                    <div class="az_pokemon dark">
+                        <img src="images/pokemon_images/197.png" alt="Umbreon">
+                        <p class="sf_pokemon_name">Umbreon</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/215.png" alt="Sneasel">
+                        <p class="sf_pokemon_name">Sneasel</p>
+                    </div>
+                    <div class="az_pokemon dark ghost">
+                        <img src="images/pokemon_images/302.png" alt="Sableye">
+                        <p class="sf_pokemon_name">Sableye</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/443.png" alt="Gible">
+                        <p class="sf_pokemon_name">Gible</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/444.png" alt="Gabite">
+                        <p class="sf_pokemon_name">Gabite</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/461.png" alt="Weavile">
+                        <p class="sf_pokemon_name">Weavile</p>
+                    </div>
+                    <div class="az_pokemon dragon dark">
+                        <img src="images/pokemon_images/634.png" alt="Zweilous">
+                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/745mn.png" alt="Lycanroc (Midnight)">
+                        <p class="sf_pokemon_name">Lycanroc (Midnight)</p>
+                    </div>
+                    <div class="az_pokemon rock poison">
+                        <img src="images/pokemon_images/969.png" alt="Glimmet">
+                        <p class="sf_pokemon_name">Glimmet</p>
+                    </div>
+                    <div class="az_pokemon fairy ghost">
+                        <img src="images/pokemon_images/987.png" alt="Flutter Mane">
+                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/993.png" alt="Iron Jugulis">
+                        <p class="sf_pokemon_name violet">Iron Jugulis (V)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location_box" id="location_9">
+                <div class="location_title">
+                    <p class="location_name" id="waterfall_cave">Waterfall Cave</p>
+                    <p data-button="8" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/113.png" alt="Chansey">
+                        <p class="sf_pokemon_name">Chansey</p>
+                    </div>
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/196.png" alt="Espeon">
+                        <p class="sf_pokemon_name">Espeon</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/921.png" alt="Pawmi">
+                        <p class="sf_pokemon_name">Pawmi</p>
+                    </div>
+                    <div class="az_pokemon electric fighting">
+                        <img src="images/pokemon_images/922.png" alt="Pawmo">
+                        <p class="sf_pokemon_name">Pawmo</p>
+                    </div>
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/051.png" alt="Dugtrio">
+                        <p class="sf_pokemon_name">Dugtrio</p>
+                    </div>
+                    <div class="az_pokemon dark">
+                        <img src="images/pokemon_images/197.png" alt="Umbreon">
+                        <p class="sf_pokemon_name">Umbreon</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/215.png" alt="Sneasel">
+                        <p class="sf_pokemon_name">Sneasel</p>
+                    </div>
+                    <div class="az_pokemon dark ghost">
+                        <img src="images/pokemon_images/302.png" alt="Sableye">
+                        <p class="sf_pokemon_name">Sableye</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/443.png" alt="Gible">
+                        <p class="sf_pokemon_name">Gible</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/444.png" alt="Gabite">
+                        <p class="sf_pokemon_name">Gabite</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/461.png" alt="Weavile">
+                        <p class="sf_pokemon_name">Weavile</p>
+                    </div>
+                    <div class="az_pokemon dragon dark">
+                        <img src="images/pokemon_images/634.png" alt="Zweilous">
+                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/745mn.png" alt="Lycanroc (Midnight)">
+                        <p class="sf_pokemon_name">Lycanroc (Midnight)</p>
+                    </div>
+                    <div class="az_pokemon rock poison">
+                        <img src="images/pokemon_images/969.png" alt="Glimmet">
+                        <p class="sf_pokemon_name">Glimmet</p>
+                    </div>
+                    <div class="az_pokemon fairy ghost">
+                        <img src="images/pokemon_images/987.png" alt="Flutter Mane">
+                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/993.png" alt="Iron Jugulis">
+                        <p class="sf_pokemon_name violet">Iron Jugulis (V)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location_box" id="location_10">
+                <div class="location_title">
+                    <p class="location_name" id="grassy_cave">Hidden Grassy Cave</p>
+                    <p data-button="9" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/113.png" alt="Chansey">
+                        <p class="sf_pokemon_name">Chansey</p>
+                    </div>
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/196.png" alt="Espeon">
+                        <p class="sf_pokemon_name">Espeon</p>
+                    </div>
+                    <div class="az_pokemon electric">
+                        <img src="images/pokemon_images/921.png" alt="Pawmi">
+                        <p class="sf_pokemon_name">Pawmi</p>
+                    </div>
+                    <div class="az_pokemon electric fighting">
+                        <img src="images/pokemon_images/922.png" alt="Pawmo">
+                        <p class="sf_pokemon_name">Pawmo</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/055.png" alt="Golduck">
+                        <p class="sf_pokemon_name">Golduck</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/134.png" alt="Vaporeon">
+                        <p class="sf_pokemon_name">Vaporeon</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/418.png" alt="Buizel">
+                        <p class="sf_pokemon_name">Buizel</p>
+                    </div>
+                    <div class="az_pokemon water">
+                        <img src="images/pokemon_images/419.png" alt="Floatzel">
+                        <p class="sf_pokemon_name">Floatzel</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/885.png" alt="Dreepy">
+                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/886.png" alt="Drakloak">
+                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
+                    </div>
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/051.png" alt="Dugtrio">
+                        <p class="sf_pokemon_name">Dugtrio</p>
+                    </div>
+                    <div class="az_pokemon dark">
+                        <img src="images/pokemon_images/197.png" alt="Umbreon">
+                        <p class="sf_pokemon_name">Umbreon</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/215.png" alt="Sneasel">
+                        <p class="sf_pokemon_name">Sneasel</p>
+                    </div>
+                    <div class="az_pokemon dark ghost">
+                        <img src="images/pokemon_images/302.png" alt="Sableye">
+                        <p class="sf_pokemon_name">Sableye</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/443.png" alt="Gible">
+                        <p class="sf_pokemon_name">Gible</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/444.png" alt="Gabite">
+                        <p class="sf_pokemon_name">Gabite</p>
+                    </div>
+                    <div class="az_pokemon dark ice">
+                        <img src="images/pokemon_images/461.png" alt="Weavile">
+                        <p class="sf_pokemon_name">Weavile</p>
+                    </div>
+                    <div class="az_pokemon dragon dark">
+                        <img src="images/pokemon_images/634.png" alt="Zweilous">
+                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/745mn.png" alt="Lycanroc (Midnight)">
+                        <p class="sf_pokemon_name">Lycanroc (Midnight)</p>
+                    </div>
+                    <div class="az_pokemon rock poison">
+                        <img src="images/pokemon_images/969.png" alt="Glimmet">
+                        <p class="sf_pokemon_name">Glimmet</p>
+                    </div>
+                    <div class="az_pokemon ghost">
+                        <img src="images/pokemon_images/971.png" alt="Greavard">
+                        <p class="sf_pokemon_name">Greavard</p>
+                    </div>
+                    <div class="az_pokemon ghost">
+                        <img src="images/pokemon_images/972.png" alt="Houndstone">
+                        <p class="sf_pokemon_name">Houndstone</p>
+                    </div>
+                    <div class="az_pokemon fairy ghost">
+                        <img src="images/pokemon_images/987.png" alt="Flutter Mane">
+                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/993.png" alt="Iron Jugulis">
+                        <p class="sf_pokemon_name violet">Iron Jugulis (V)</p>
+                    </div>
+                    <div class="az_pokemon dark dragon">
+                        <img src="images/pokemon_images/1005.png" alt="Roaring Moon">
+                        <p class="sf_pokemon_name scarlet">Roaring Moon* (S)</p>
+                    </div>
+                    <div class="az_pokemon fighting fairy">
+                        <img src="images/pokemon_images/1006.png" alt="Iron Valiant">
+                        <p class="sf_pokemon_name violet">Iron Valiant* (V)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location_box" id="location_11">
+                <div class="location_title">
+                    <p class="location_name" id="depths">Area Zero Depths</p>
+                    <p data-button="10" class="location-button">Location?</p>
+                </div>
+                <div class="images">
+                    <div class="az_pokemon ground">
+                        <img src="images/pokemon_images/051.png" alt="Dugtrio">
+                        <p class="sf_pokemon_name">Dugtrio</p>
+                    </div>
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/206.png" alt="Dunsparce">
+                        <p class="sf_pokemon_name">Dunsparce</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/443.png" alt="Gible">
+                        <p class="sf_pokemon_name">Gible</p>
+                    </div>
+                    <div class="az_pokemon dragon ground">
+                        <img src="images/pokemon_images/444.png" alt="Gabite">
+                        <p class="sf_pokemon_name">Gabite</p>
+                    </div>
+                    <div class="az_pokemon dragon dark">
+                        <img src="images/pokemon_images/634.png" alt="Zweilous">
+                        <p class="sf_pokemon_name scarlet">Zweilous (S)</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/885.png" alt="Dreepy">
+                        <p class="sf_pokemon_name violet">Dreepy (V)</p>
+                    </div>
+                    <div class="az_pokemon ghost dragon">
+                        <img src="images/pokemon_images/886.png" alt="Drakloak">
+                        <p class="sf_pokemon_name violet">Drakloak (V)</p>
+                    </div>
+                    <div class="az_pokemon rock">
+                        <img src="images/pokemon_images/934.png" alt="Garganacl">
+                        <p class="sf_pokemon_name">Garganacl</p>
+                    </div>
+                    <div class="az_pokemon psychic">
+                        <img src="images/pokemon_images/956.png" alt="Espathra">
+                        <p class="sf_pokemon_name">Espathra</p>
+                    </div>
+                    <div class="az_pokemon rock poison">
+                        <img src="images/pokemon_images/969.png" alt="Glimmet">
+                        <p class="sf_pokemon_name">Glimmet</p>
+                    </div>
+                    <div class="az_pokemon rock poison">
+                        <img src="images/pokemon_images/970.png" alt="Glimmora">
+                        <p class="sf_pokemon_name">Glimmora</p>
+                    </div>
+                    <div class="az_pokemon normal">
+                        <img src="images/pokemon_images/982t.png" alt="Dudunsparce">
+                        <p class="sf_pokemon_name">Dudunsparce (Two Segment)</p>
+                    </div>
+                    <div class="az_pokemon fighting ground">
+                        <img src="images/pokemon_images/984.png" alt="Great Tusk">
+                        <p class="sf_pokemon_name scarlet">Great Tusk* (S)</p>
+                    </div>
+                    <div class="az_pokemon grass dark">
+                        <img src="images/pokemon_images/986.png" alt="Brute Bonnet">
+                        <p class="sf_pokemon_name scarlet">Brute Bonnet* (S)</p>
+                    </div>
+                    <div class="az_pokemon fairy psychic">
+                        <img src="images/pokemon_images/985.png" alt="Scream Tail">
+                        <p class="sf_pokemon_name scarlet">Scream Tail* (S)</p>
+                    </div>
+                    <div class="az_pokemon fairy ghost">
+                        <img src="images/pokemon_images/987.png" alt="Flutter Mane">
+                        <p class="sf_pokemon_name scarlet">Flutter Mane* (S)</p>
+                    </div>
+                    <div class="az_pokemon steel ground">
+                        <img src="images/pokemon_images/990.png" alt="Iron Treads">
+                        <p class="sf_pokemon_name violet">Iron Treads* (V)</p>
+                    </div>
+                    <div class="az_pokemon water ice">
+                        <img src="images/pokemon_images/991.png" alt="Iron Bundle">
+                        <p class="sf_pokemon_name violet">Iron Bundle (V)</p>
+                    </div>
+                    <div class="az_pokemon fighting electric">
+                        <img src="images/pokemon_images/992.png" alt="Iron Hands">
+                        <p class="sf_pokemon_name violet">Iron Hands* (V)</p>
+                    </div>
+                    <div class="az_pokemon dark flying">
+                        <img src="images/pokemon_images/993.png" alt="Iron Jugulis">
+                        <p class="sf_pokemon_name violet">Iron Jugulis (V)</p>
+                    </div>
+                    <div class="az_pokemon dark dragon">
+                        <img src="images/pokemon_images/1005.png" alt="Roaring Moon">
+                        <p class="sf_pokemon_name scarlet">Roaring Moon* (S)</p>
+                    </div>
+                    <div class="az_pokemon fighting fairy">
+                        <img src="images/pokemon_images/1006.png" alt="Iron Valiant">
+                        <p class="sf_pokemon_name violet">Iron Valiant* (V)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sandwich-credit-con" class="grid-con">
+        <div id="sandwich-credit" class="col-span-full">
+            <p>Data and area names for this webpage is sourced from Bulbapedia. Attribution can be found <a href="refs.html">here</a></p>
         </div>
     </section>
         
     <section id="bottom" class="full-width-grid-con">
         <div id="footer-info" class="grid-con">
             <h2 class="hidden">Copyright Information</h2>
-            <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>© 2025 Pokémon. © 1995–2025 Nintendo/Creatures Inc./GAME FREAK inc.</p>
+            <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
         </div>       
     </section>
 
@@ -928,6 +1104,20 @@
             <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>
             <a class="header-link" href="guess_who.html">Guess Who</a>
             <a class="header-link" href="pokemon_fight.html">Pokemon Fight Prompt Generator</a>
+        </div>
+
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
+
+    <section id="area-info-lightbox" class="full-width-grid-con">
+        <h1 class="hidden">Area Zero Information Lightbox</h1>
+        <div id="area-info-con" class="col-start-2 col-span-1">
+            <h3 id="az-title"></h3>
+            <img id="az-pic">
+            <p id="az-desc"></p>
+            <p id="az-teleporter"></p>
         </div>
 
         <div class="col-span-1 mobile-close">

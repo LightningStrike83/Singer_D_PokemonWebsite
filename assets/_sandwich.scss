@@ -39,7 +39,8 @@
 
 #legend_info {
     display: none;
-    border: 1px solid c.$white;
+    border: 1px solid c.$black;
+    background-color: c.$white;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 30px;
@@ -47,8 +48,9 @@
     margin-bottom: 20px;
 }
 
-#legend_info p:not(:last-of-type) {
-    padding-bottom: 10px;
+#legend_info p {
+    color: c.$black;
+    padding-bottom: 7px;
 }
 
 #grassy, #rocky, #watery, #caves, #underground, #hidden {
@@ -59,8 +61,9 @@
 
 #area_names {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-direction: row;
+    font-size: 18px;
+    flex-wrap: wrap;
 }
 
 #area_names p {
@@ -83,23 +86,23 @@
     text-shadow: 1px 1px c.$black;
 }
 
-#location_table {
+#type_table {
     border-top: 1px solid c.$white;
     border-left: 1px solid c.$white;
     border-right: 1px solid c.$white;
 }
 
-.location_box {
+.type_box {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid c.$white;
 }
 
-.location_name {
+.type_name {
     text-shadow: 1px 1px c.$black;
 }
 
-.location_title {
+.type_title {
     max-width: 100px;
     text-align: center;
     border-right: 1px solid c.$white;
@@ -126,89 +129,26 @@
     margin-right: 10px;
 }
 
-.az_pokemon {
-    width: 130px;
-    display: none;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
 .sf_pokemon_name {
     text-shadow: 0 1px c.$black;
     color: white;
 }
 
-.location_title p:not(.location-button) {
+.type_title p {
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+.venomoth, .masquerain, .volcarona, .lokix, .slither_wing, .umbreon, .sneasel, .murkrow, .sableye, .honchkrow, .weavile, .bisharp, .zweilous, .brute_bonnet, .iron_jugulis, .roaring_moon, .altaria, .gible, .gabite, .dreepy, .drakloak, .sandy_shocks, .pawmi, .pawmo, .iron_hands, .iron_thorns, .raichu, .tadbulb, .bellibolt, .iron_valiant, .floette, .scream_tail, .flutter_mane, .meditite, .medicham, .flamigo, .hawlucha, .great_tusk, .talonflame, .iron_moth, .jumpluff, .braviary, .corviknight, .golduck, .vaporeon, .espeon, .buizel, .floatzel, .iron_bundle, .greavard, .houndstone, .iron_treads, .gogoat, .phanpy, .donphan, .dugtrio, .girafarig, .chansey, .farigiraf, .dunsparce, .dudunsparce, .glimmora, .glimmet, .espathra, .lycanroc, .lycanroc_m, .nacli, .naclstack, .garganacl, .cufant, .copperajah {
+    display: none;
+}
+
+.grassy_show, .rocky_show, .watery_show, .caves_show, .depths_show, .hidden_show {
+    display: block;
 }
 
 .area_checkbox {
     width: 33%;
     display: flex;
     align-items: baseline;
-}
-
-.sf_pokemon_name {
-    font-size: 16px;
-}
-
-.location-button {
-    cursor: pointer;
-    font-size: 12px;
-    border: 1.5px solid white;
-    border-radius: 20px;
-    padding: 7px;
-    text-shadow: none;
-    margin-bottom: 5px;
-    line-height: normal;
-    transition: all ease 0.5s;
-    &:hover {
-        background-color: white;
-        color: red;
-    }
-}
-
-#area-info-lightbox {
-    height: 100vh;
-    position: fixed;
-    background-color: c.$transparentblack;
-    top: 0;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: all ease-in-out 0.5s;
-}
-
-#area-info-con {
-    display: flex;
-    flex-direction: column;
-}
-
-#az-title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-#az-pic {
-    align-self: center;
-    margin-bottom: 10px;
-}
-
-#az-desc {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-#az-teleporter {
-    text-align: center;
-}
-
-#sandwich-credit-con {
-    margin-top: 20px;
-    text-align: center;
-    a {
-        text-decoration: underline;
-    }
 }

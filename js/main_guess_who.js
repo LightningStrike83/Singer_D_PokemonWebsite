@@ -56,9 +56,9 @@ function generateBoard() {
             key.setAttribute("class", "gw-key")
 
             if (shinyCheck.checked === true) {
-                img.src = `images/custom_pokedex/shiny_forms/${response[number].number}.png`
+                img.src = `images/pokemon_images/shiny_forms/${response[number].number}.png`
             } else {
-                img.src = `images/custom_pokedex/${response[number].number}.png`
+                img.src = `images/pokemon_images/${response[number].number}.png`
             }
 
             name.textContent = response[number].name
@@ -110,9 +110,9 @@ function imageSelect() {
     const selectedValue = yourName.value
     
     if (shinyText.textContent === "y") {
-        selectImage.src = `images/custom_pokedex/shiny_forms/${selectedValue}.png`
+        selectImage.src = `images/pokemon_images/shiny_forms/${selectedValue}.png`
     } else {
-        selectImage.src = `images/custom_pokedex/${selectedValue}.png`
+        selectImage.src = `images/pokemon_images/${selectedValue}.png`
     }
 
     selectImage.setAttribute("alt", `Your Selected Pokemon: Pokemon Number ${selectedValue}`)
@@ -245,9 +245,9 @@ function loadGame() {
                 key.setAttribute("class", "gw-key");
 
                 if (response.shiny === "y") {
-                    img.src = `images/custom_pokedex/shiny_forms/${pokemonData.number}.png`;
+                    img.src = `images/pokemon_images/shiny_forms/${pokemonData.number}.png`;
                 } else {
-                    img.src = `images/custom_pokedex/${pokemonData.number}.png`;
+                    img.src = `images/pokemon_images/${pokemonData.number}.png`;
                 }
 
                 name.textContent = pokemonData.name;

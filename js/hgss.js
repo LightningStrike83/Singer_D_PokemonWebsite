@@ -1623,7 +1623,7 @@ function showHGSSImages(trainerId) {
     trainerPicture.innerHTML = "";
 
     var imgTrainer = document.createElement("img");
-    imgTrainer.src = "images/trainers/hgss/" + trainerId + ".png";
+    imgTrainer.src = "images/trainer_data_images/trainers/hgss/" + trainerId + ".png";
     imgTrainer.setAttribute("alt", `Image of ${trainerId}`)
     trainerPicture.appendChild(imgTrainer);
 }
@@ -1650,12 +1650,12 @@ function showPokemonHGSSImages(trainerId) {
     pokemon6Picture.innerHTML = "";
 
     
-    imgPokemon1.src = "images/pokemon/hgss/" + trainerId + "_1.png";
-    imgPokemon2.src = "images/pokemon/hgss/" + trainerId + "_2.png";
-    imgPokemon3.src = "images/pokemon/hgss/" + trainerId + "_3.png";
-    imgPokemon4.src = "images/pokemon/hgss/" + trainerId + "_4.png";
-    imgPokemon5.src = "images/pokemon/hgss/" + trainerId + "_5.png";
-    imgPokemon6.src = "images/pokemon/hgss/" + trainerId + "_6.png";
+    imgPokemon1.src = "images/trainer_data_images/pokemon/hgss/" + trainerId + "_1.png";
+    imgPokemon2.src = "images/trainer_data_images/pokemon/hgss/" + trainerId + "_2.png";
+    imgPokemon3.src = "images/trainer_data_images/pokemon/hgss/" + trainerId + "_3.png";
+    imgPokemon4.src = "images/trainer_data_images/pokemon/hgss/" + trainerId + "_4.png";
+    imgPokemon5.src = "images/trainer_data_images/pokemon/hgss/" + trainerId + "_5.png";
+    imgPokemon6.src = "images/trainer_data_images/pokemon/hgss/" + trainerId + "_6.png";
     imgPokemon1.setAttribute("alt", `Image of Pokemon 1`)
     imgPokemon2.setAttribute("alt", `Image of Pokemon 2`)
     imgPokemon3.setAttribute("alt", `Image of Pokemon 3`)
@@ -1664,27 +1664,27 @@ function showPokemonHGSSImages(trainerId) {
     imgPokemon6.setAttribute("alt", `Image of Pokemon 6`)
 
     imgPokemon1.onerror = function() {
-        imgPokemon1.src = "images/pokemon/blank.png"; 
+        imgPokemon1.src = "images/trainer_data_images/pokemon/blank.png"; 
     };
 
     imgPokemon2.onerror = function() {
-        imgPokemon2.src = "images/pokemon/blank.png";
+        imgPokemon2.src = "images/trainer_data_images/pokemon/blank.png";
     };
 
     imgPokemon3.onerror = function() {
-        imgPokemon3.src = "images/pokemon/blank.png";
+        imgPokemon3.src = "images/trainer_data_images/pokemon/blank.png";
     };
 
     imgPokemon4.onerror = function() {
-        imgPokemon4.src = "images/pokemon/blank.png";
+        imgPokemon4.src = "images/trainer_data_images/pokemon/blank.png";
     };
 
     imgPokemon5.onerror = function() {
-        imgPokemon5.src = "images/pokemon/blank.png";
+        imgPokemon5.src = "images/trainer_data_images/pokemon/blank.png";
     };
 
     imgPokemon6.onerror = function() {
-        imgPokemon6.src = "images/pokemon/blank.png";
+        imgPokemon6.src = "images/trainer_data_images/pokemon/blank.png";
     };
 
     pokemon1Picture.appendChild(imgPokemon1);

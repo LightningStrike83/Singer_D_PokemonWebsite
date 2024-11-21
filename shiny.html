@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon Usage- Littleroot Dreams</title>
+    <title>Shiny Pokemon Counter- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    <script defer src="js/main_usage.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lz-string@1.4.4/libs/lz-string.min.js"></script>
+    <script defer src="js/main_shiny.js"></script>
     <script defer src="js/main.js"></script>
 </head>
 <body>
@@ -18,7 +20,7 @@
         <div id="full-length" class="full-width-grid-con">
             <header id="main_header" class="grid-con">
                 <div id="logo-con" class="col-start-2 col-end-4 m-col-span-full">
-                  <a href="index.html"><svg id="main-logo" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.81 68.22">
+                    <a href="index.html"><svg id="main-logo" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.81 68.22">
                     <g id="Layer_2-2" data-name="Layer 2">
                       <g>
                         <path d="M3.68,25.76v-1.38l2.46-.94c.15-.05.29-.14.41-.26.12-.12.18-.3.18-.54V5.89c0-.22-.06-.39-.18-.5-.12-.11-.26-.19-.42-.25l-2.46-.94v-1.38h11.46v1.38l-2.46.94c-.17.06-.32.15-.45.26s-.19.27-.19.49v17.17h7.62c.17,0,.32-.06.44-.18.12-.12.21-.29.25-.49l1.01-4.7h2.16v8.08H3.68Z"/>
@@ -108,37 +110,34 @@
             </header>
     </div>
 
-    <section id="title-usage" class="grid-con">
-        <div id="main_title" class="col-span-full">
-            <h3>Trainer Usage Data</h3>
+    <section id="title-pokedex" class="grid-con">
+        <div class="col-span-full" id="title">
+            <h2 id="main_title">Shiny Pokemon Counter</h2>
         </div>
     </section>
 
-    <section id="instructions-usage" class="grid-con">
-      <h1 class="hidden">Pokemon Usage Instructions</h1>
-        <div id="instructions" class="col-span-full">
-            <p id="instructions_text">Curious how many times a Pokemon line has been used by notable trainers? Look no further! Select a Pokemon line on the left and it will display how many times each line has been used in non-optional fights by every gym leader, rival, champion, etc. in the main series games.</p>
+    <section id="instructions-pokedex" class="grid-con">
+        <div class="col-span-full" id="instructions">
+            <h2 class="hidden">Instructions</h2>
+            <p id="instructions_text">On the hunt for some Shiny Pokemon? Use this nifty tracker to keep track what ones you've caught and how many! Plus use the handy-dandy tracker to help keep track of your hunts or spawns!</p>
         </div>
     </section>
 
-    <section class="grid-con">
-        <div id="line-home" class="col-span-1 m-col-span-3">
-            <select id="usage-select">
-                <option value="main">Story Fights Only</option>
-                <option value="main-orre">Story Fights + Orre Story Fights</option>
-                <option value="all">All Notable Uses</option>
-                <option value="all-orre">All Notable Uses + Notable Orre Uses</option>
-            </select>
-            <ul id="line-selection"></ul>
+    <section id="active-hunt-con" class="grid-con">
+        <h3 id="active-hunt-title" class="col-span-full">Active Hunt (s)</h3>
+        <p class="col-span-full" id="hunt-indicator">-No Active Hunts-</p>
+        <div id="active-hunt" class="col-span-full"></div>
+    </section>
+
+    <section id="shiny-bank-con" class="grid-con">
+        <div id="pokemon-list" class="col-span-full m-col-span-6">
+            <h3 id="bank-title">List of Pokemon</h3>
+            <div id="shiny-bank"></div>
         </div>
 
-        <div id="display-usage-con" class="col-span-3 m-col-span-9">
-            <div id="usage-info">
-                <img id="usage-icon" src="" alt="">
-                <h3 id="usage-title">Select A Line On The Left</h3>
-            </div>
-
-            <div id="display-usage"></div>
+        <div id="collection-list" class="col-span-full m-col-span-6">
+            <h3 id="collection-title">Your Collection</h3>
+            <div id="shiny-collection"></div>
         </div>
     </section>
 
@@ -148,47 +147,49 @@
             <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
         </div>       
     </section>
-
+    </div>
+    
     <section id="main-mobile-menu" class="full-width-grid-con mobile-menu">
-      <h1 class="hidden">Mobile Menu</h1>
-      <div class="col-start-2 col-span-1 mobile-links">
-          <a class="header-link">Home</a>
-          <a class="header-link">About</a>
-          <p class="header-link gameinfo-mobile-button">Game Information ▼</p>
-          <p class="header-link activity-mobile-button">Activities ▼</p>
-          <a class="header-link" href="contact.html">Contact</a>
-      </div>
+        <h1 class="hidden">Mobile Menu</h1>
+        <div class="col-start-2 col-span-1 mobile-links">
+            <a class="header-link">Home</a>
+            <a class="header-link">About</a>
+            <p class="header-link gameinfo-mobile-button">Game Information ▼</p>
+            <p class="header-link activity-mobile-button">Activities ▼</p>
+            <a class="header-link" href="contact.html">Contact</a>
+        </div>
 
-      <div class="col-span-1 mobile-close">
-          <p class="close-button">X</p>
-      </div>
-  </section>
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
 
-  <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu">
-    <h1 class="hidden">Game Info Mobile Menu</h1>
-      <div class="col-start-2 col-span-1 mobile-links">
-          <a class="header-link" href="trainer_data.html">Trainer Data</a>
-          <a class="header-link" href="sandwich.html">Area Zero Sandwich Filter</a>
-          <a class="header-link" href="usage.html">Pokemon Usage</a>
-      </div>
+    <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu">
+        <h1 class="hidden">Game Info Mobile Menu</h1>
+        <div class="col-start-2 col-span-1 mobile-links">
+            <a class="header-link" href="trainer_data.html">Trainer Data</a>
+            <a class="header-link" href="sandwich.html">Area Zero Sandwich Filter</a>
+            <a class="header-link" href="usage.html">Pokemon Usage</a>
+        </div>
 
-      <div class="col-span-1 mobile-close">
-          <p class="close-button">X</p>
-      </div>
-  </section>
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
 
-  <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu">
-    <h1 class="hidden">Activity Mobile Menu</h1>
-      <div class="col-start-2 col-span-1 mobile-links">
-          <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>
-          <a class="header-link" href="guess_who.html">Guess Who</a>
-          <a class="header-link" href="pokemon_fight.html">Pokemon Fight Prompt Generator</a>
-          <a class="header-link" href="shiny.html">Shiny Counter</a>
-      </div>
+    <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu">
+        <h1 class="hidden">Activity Mobile Menu</h1>
+        <div class="col-start-2 col-span-1 mobile-links">
+            <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>
+            <a class="header-link" href="guess_who.html">Guess Who</a>
+            <a class="header-link" href="pokemon_fight.html">Pokemon Fight Prompt Generator</a>
+            <a class="header-link" href="shiny.html">Shiny Counter</a>
+        </div>
 
-      <div class="col-span-1 mobile-close">
-          <p class="close-button">X</p>
-      </div>
-  </section>
-</div>
+        <div class="col-span-1 mobile-close">
+            <p class="close-button">X</p>
+        </div>
+    </section>
+
 </body>
+</html>

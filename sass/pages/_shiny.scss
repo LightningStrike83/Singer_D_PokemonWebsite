@@ -1,0 +1,97 @@
+@use "../abstracts/colours" as c;
+
+#shiny-bank, #shiny-collection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shiny-div {
+    width: 20%;
+    background-color: white;
+    border: 3px solid black;
+    p {
+        text-align: center;
+        background-color: red;
+        font-size: 12px;
+    }
+}
+
+.button-div {
+    display: flex;
+    button {
+        font-size: 9px;
+        width: 50%;
+    }
+}
+
+#bank-title, #collection-title, #active-hunt-title {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+
+#bank-title, #collection-title {
+    padding-top: 10px;
+}
+
+#collection-list, #pokemon-list {
+    border: 1px solid white;
+    border-radius: 20px;
+    height: 90vh;
+    overflow: scroll;
+    margin-bottom: 20px;
+}
+
+.remove-button, .plus-button, .minus-button {
+    font-size: 9px;
+}
+
+.remove-button {
+    width: 100%;
+}
+
+.count-button-con {
+    display: flex;
+    justify-content: space-between;
+    background-color: c.$black;
+}
+
+#shiny-collection {
+    .shiny-div {
+        border: none;
+        margin-bottom: 10px;
+    }
+}
+
+.hunt-div {
+    width: 19%;
+    background-color: white;
+    border: 3px solid black;
+    margin-bottom: 10px;
+    p {
+        text-align: center;
+        background-color: red;
+        padding: 10px;
+    }
+}
+
+.hunt-remove-button {
+    width: 100%;
+}
+
+#active-hunt {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    .hunt-div {
+        border: none;
+    }
+}
+
+#hunt-indicator {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}

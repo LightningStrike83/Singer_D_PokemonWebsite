@@ -17,6 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->get("/shinies/all", "ShinyController@getAll");
+$router->get("/shinies/{id}", "ShinyController@getOne");
 $router->get("/prompts/all", "TWFPromptController@getAll");
 $router->post("/prompts/submit", "TWFSuggestionController@save");
 $router->get("/updates", "SiteUpdateController@getThree");

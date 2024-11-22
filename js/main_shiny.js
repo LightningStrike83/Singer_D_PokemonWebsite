@@ -3,6 +3,7 @@ const shinyList = document.querySelector("#shiny-collection")
 const activeHunt = document.querySelector("#active-hunt")
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const huntIndicator = document.querySelector("#hunt-indicator")
+const saveButton = document.querySelector("#shiny-save")
 
 function shinyPopulation() {
     fetch(`${baseURL}shinies/all`)
@@ -217,7 +218,7 @@ function addToHunt() {
         minusButton.innerText = "-"
         minusButton.setAttribute("class", "hunt-minus-button")
 
-        countButtonDiv.setAttribute("class", "count-button-con")
+        countButtonDiv.setAttribute("class", "hunt-count-button-con")
 
         countButtonDiv.appendChild(minusButton)
         countButtonDiv.appendChild(plusButton)
@@ -384,4 +385,88 @@ function reattachListeners() {
     })
 }
 
+function downloadCollection() {
+    const removeButton = document.querySelectorAll(".remove-button")
+    const buttonCon = document.querySelectorAll(".count-button-con")
+    const collectionList = document.querySelector("#collection-list")
+    const shinyDivs = shinyList.querySelectorAll(".shiny-div")
+    const p = document.createElement("p")
+    const title = document.createElement("h3")
+
+    debugger
+
+    removeButton.forEach(button => button.remove())
+    buttonCon.forEach(con => con.remove())
+
+    collectionList.classList.remove("m-col-span-6")
+
+    p.textContent = "Create your own at littlerootdreams.com"
+    p.setAttribute("id", "shiny-credit")
+
+    title.textContent = "My Shiny Collection"
+    title.setAttribute("id", "my-collection-title")
+
+    shinyList.appendChild(title)
+    shinyList.appendChild(p)
+
+    shinyDivs.forEach(div => {
+        div.style.border = "2px solid black"
+        div.style.width = "10%"
+        div.style.marginBottom = "0"
+    })
+
+    html2canvas(shinyList).then((canvas) => {
+        const dataUrl = canvas.toDataURL("image/png");
+
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = "my-collection.png"; 
+        link.click();
+    });
+    
+    collectionList.classList.add("m-col-span-6")
+
+    shinyDivs.forEach(div => {
+        const newButtonCon = document.createElement("div")
+        const newPlus = document.createElement("button")
+        const newMinus = document.createElement("button")
+        const newRemove = document.createElement("button")
+
+        div.style.border = "none"
+        div.style.width = "20%"
+        div.style.marginBottom = "10px"
+
+        newRemove.setAttribute("class", "remove-button")
+        newRemove.innerText = "Remove from Collection"
+
+        newButtonCon.setAttribute("class", "count-button-con")
+
+        newPlus.innerText = "+"
+        newPlus.setAttribute("class", "plus-button")
+        newMinus.innerText = "-"
+        newMinus.setAttribute("class", "minus-button")
+
+        newPlus.addEventListener("click", increaseCount)
+        newMinus.addEventListener("click", decreaseCount)
+        newRemove.addEventListener("click", removePokemon)
+
+        newButtonCon.appendChild(newMinus)
+        newButtonCon.appendChild(newPlus)
+
+        div.appendChild(newRemove)
+        div.appendChild(newButtonCon)
+    })
+
+    clearText()
+}
+
+function clearText() {
+    const shinyCredit = document.querySelector("#shiny-credit")
+    const collectionTitle = document.querySelector("#my-collection-title")
+
+    shinyCredit.remove()
+    collectionTitle.remove()
+}
+
 window.addEventListener('load', loadState);
+saveButton.addEventListener("click", downloadCollection)

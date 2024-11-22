@@ -137,9 +137,9 @@ function addPokemonImage(){
   let imgCheck = box.querySelector("img")
 
   if (imgCheck) {
-    imgCheck.src = `images/custom_pokedex/${source}.png`
+    imgCheck.src = `images/pokemon_images/${source}.png`
   } else {
-    img.src = `images/custom_pokedex/${source}.png`
+    img.src = `images/pokemon_images/${source}.png`
     box.appendChild(img)
     img.setAttribute("class", "mobile_image")
     img.setAttribute("alt", `Image of Pokemon ${source}`)

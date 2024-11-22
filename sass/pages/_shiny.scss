@@ -37,7 +37,6 @@
 
 #collection-list, #pokemon-list {
     border: 1px solid white;
-    border-radius: 20px;
     height: 90vh;
     overflow: scroll;
     margin-bottom: 20px;
@@ -51,7 +50,7 @@
     width: 100%;
 }
 
-.count-button-con {
+.count-button-con, .hunt-button-con {
     display: flex;
     justify-content: space-between;
     background-color: c.$black;
@@ -94,4 +93,26 @@
     margin-top: 10px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+#save-collection {
+    display: flex;
+    justify-content: center;
+}
+
+#shiny-credit {
+    width: 100%;
+    text-align: center;
+    color: c.$black;
+    margin-bottom: 10px;
+    order: 1;
+}
+
+#my-collection-title {
+    width: 100%;
+    text-align: center;
+    order: -1;
+    color: c.$black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

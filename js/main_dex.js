@@ -224,9 +224,28 @@ function exportDivToImage() {
   const mobileSelect = document.querySelectorAll(".mobile_select")
   const pokedexBox = document.querySelectorAll(".pokedex_box")
   const mobileImage = document.querySelectorAll(".mobile_image")
+  const pokedexArea = document.querySelector("#pokedex_area")
+  const p = document.createElement("p")
+  const title = document.createElement("h3")
+
+  pokedexArea.classList.remove("m-col-start-7")
+  pokedexArea.classList.remove("m-col-end-13")
 
   mobileSelect.forEach(list => list.remove())
   mobileImage.forEach(image => image.style.marginBottom = "0")
+
+  pokedexBox.forEach(box => {
+    box.style.width = "10%"
+  })
+
+  p.textContent = "Create your own at littlerootdreams.com"
+  p.setAttribute("id", "pokedex-credit")
+
+  title.textContent = "My Custom Pokedex"
+  title.setAttribute("id", "my-pokedex-title")
+
+  divExport.appendChild(title)
+  divExport.appendChild(p)
 
   html2canvas(divExport).then((canvas) => {
     const dataUrl = canvas.toDataURL("image/png");
@@ -295,7 +314,22 @@ function exportDivToImage() {
   mobileImage.forEach(image => image.style.marginBottom = "20px")
   })
 
+  pokedexArea.classList.add("m-col-start-7")
+  pokedexArea.classList.add("m-col-end-13")
 
+  pokedexBox.forEach(box => {
+    box.style.width = "20%"
+  })
+
+  clearText()
+}
+
+function clearText() {
+  const pokedexCredit = document.querySelector("#pokedex-credit")
+  const pokedexTitle = document.querySelector("#my-pokedex-title")
+
+  pokedexCredit.remove()
+  pokedexTitle.remove()
 }
 
 spriteArea.addEventListener("dragover", dragOver);

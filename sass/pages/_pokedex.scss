@@ -218,6 +218,24 @@
     display: none;
 }
 
+#pokedex-credit {
+    width: 100%;
+    text-align: center;
+    color: c.$black;
+    margin-bottom: 10px;
+    order: 1;
+    margin-top: 10px;
+}
+
+#my-pokedex-title {
+    width: 100%;
+    text-align: center;
+    order: -1;
+    color: c.$black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 @media screen and (min-width: 768px) {
 
     .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {

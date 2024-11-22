@@ -393,8 +393,6 @@ function downloadCollection() {
     const p = document.createElement("p")
     const title = document.createElement("h3")
 
-    debugger
-
     removeButton.forEach(button => button.remove())
     buttonCon.forEach(con => con.remove())
 

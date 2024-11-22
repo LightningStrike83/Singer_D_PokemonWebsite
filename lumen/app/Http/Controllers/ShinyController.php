@@ -15,7 +15,7 @@ class ShinyController extends Controller {
      */
 
      public function getAll() {
-        $shiny = Shiny::select('id', 'name', 'number')->orderBy('number', 'asc')->get();
+        $shiny = Shiny::select('id', 'name', 'number')->orderBy('number', 'asc')->where('available', '=', 'y')->get();
         return response()->json($shiny);
     }
 

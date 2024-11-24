@@ -159,3 +159,32 @@
 #submit-confirm {
     margin-top: 10px;
 }
+
+#twf-button-con {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.lb-title-home {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: c.$black;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    transition: all ease-in-out 0.5s;
+}
+
+.title-con {
+    text-align: center;
+    cursor: pointer;
+}
+
+#battle-prompts, #challenge-prompts {
+    display: none;
+    transition: all ease-out 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+}

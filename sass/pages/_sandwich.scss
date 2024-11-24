@@ -178,6 +178,7 @@
     visibility: hidden;
     opacity: 0;
     transition: all ease-in-out 0.5s;
+    z-index: 20;
 }
 
 #area-info-con {

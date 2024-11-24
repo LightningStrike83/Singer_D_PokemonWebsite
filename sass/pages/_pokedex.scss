@@ -38,6 +38,7 @@
     left: 0;
     transition: all ease-in-out 0.5s;
     background-color: c.$transparentblack;
+    z-index: 20;
 }
 
 #tips_click {
@@ -245,6 +246,7 @@
     transition: all ease-in-out 0.5s;
     visibility: hidden;
     opacity: 0;
+    z-index: 20;
 }
 
 #custom-dex-con {

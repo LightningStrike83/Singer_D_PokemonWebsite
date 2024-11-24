@@ -9,6 +9,7 @@ const challengePrompts = document.querySelector("#challenge-prompts")
 const battleHome = document.querySelector("#battle-title")
 const challengeHome = document.querySelector("#challenge-title")
 const promptClose = document.querySelector("#prompt-close")
+const tipsArea = document.querySelector("#tips_area")
 
 function displayLength() {
     const promptCount = document.querySelector("#prompt-count");
@@ -243,6 +244,18 @@ function closePrompts() {
     }
 }
 
+function openChallengeTips() {
+    const difference = document.querySelector("#difference-con")
+
+    if (difference.style.visibility === "visible") {
+        difference.style.visibility = "hidden"
+        difference.style.opacity = "0"
+    } else {
+        difference.style.visibility = "visible"
+        difference.style.opacity = "1"
+    }
+}
+
 generateButton.addEventListener("click", generatePrompt)
 challengeButton.addEventListener("click", generatePrompt)
 openListButton.addEventListener("click", openAllPrompts)
@@ -251,3 +264,4 @@ lbForm.addEventListener("submit", sendSubmission)
 battleHome.addEventListener("click", openBattlePrompts)
 challengeHome.addEventListener("click", openChallengePrompts)
 promptClose.addEventListener("click", closePrompts)
+tipsArea.addEventListener("click", openChallengeTips)

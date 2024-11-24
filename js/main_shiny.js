@@ -4,6 +4,9 @@ const activeHunt = document.querySelector("#active-hunt")
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const huntIndicator = document.querySelector("#hunt-indicator")
 const saveButton = document.querySelector("#shiny-save")
+const collectionName = document.querySelector("#collection-name-form")
+const nameForm = document.querySelector("#download-name-con")
+let finalName = ""
 
 function shinyPopulation() {
     fetch(`${baseURL}shinies/all`)
@@ -385,13 +388,19 @@ function reattachListeners() {
     })
 }
 
-function downloadCollection() {
+function downloadCollection(event) {
     const removeButton = document.querySelectorAll(".remove-button")
     const buttonCon = document.querySelectorAll(".count-button-con")
     const collectionList = document.querySelector("#collection-list")
     const shinyDivs = shinyList.querySelectorAll(".shiny-div")
     const p = document.createElement("p")
     const title = document.createElement("h3")
+    const form = document.querySelector("#collection-name")
+    let formName = form.value
+
+    event.preventDefault()
+
+    finalName = formName
 
     removeButton.forEach(button => button.remove())
     buttonCon.forEach(con => con.remove())
@@ -401,7 +410,7 @@ function downloadCollection() {
     p.textContent = "Create your own at littlerootdreams.com"
     p.setAttribute("id", "shiny-credit")
 
-    title.textContent = "My Shiny Collection"
+    title.textContent = `${finalName}`
     title.setAttribute("id", "my-collection-title")
 
     shinyList.appendChild(title)
@@ -454,6 +463,10 @@ function downloadCollection() {
         div.appendChild(newRemove)
         div.appendChild(newButtonCon)
     })
+    
+    form.value = ""
+    nameForm.style.visibility = "hidden"
+    nameForm.style.opacity = "0"
 
     clearText()
 }
@@ -466,5 +479,11 @@ function clearText() {
     collectionTitle.remove()
 }
 
+function openNameForm() {
+    nameForm.style.visibility = "visible"
+    nameForm.style.opacity = "1"
+}
+
 window.addEventListener('load', loadState);
-saveButton.addEventListener("click", downloadCollection)
+saveButton.addEventListener("click", openNameForm)
+collectionName.addEventListener("submit", downloadCollection)

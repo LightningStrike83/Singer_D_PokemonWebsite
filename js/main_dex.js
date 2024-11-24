@@ -8,6 +8,10 @@ const submitbutton = document.querySelector("#pd-submit-button")
 const downloadButton = document.querySelector("#pd-download")
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const errorHandle = document.querySelector("#error-handle")
+const dexName = document.querySelector("#custom-dex-form")
+const nameForm = document.querySelector("#download-dex-con")
+
+let finalName = ""
 let count = 0
 
 function openTips() {
@@ -26,7 +30,6 @@ function populateBoxArea() {
   const pokedexBoxArea = document.querySelector("#pokedex_display")
   const input = document.querySelector("#pd-input")
   let inputValue = parseInt(input.value)
-  const box = document.querySelectorAll(".pokedex_box")
 
   if (inputValue < count) {
     const boxesToRemove = count - inputValue;
@@ -219,7 +222,7 @@ dragImages.forEach(function (image) {
   image.addEventListener("dragend", dragEnd);
 });
 
-function exportDivToImage() {
+function exportDivToImage(event) {
   const divExport = document.querySelector("#pokedex_display");
   const mobileSelect = document.querySelectorAll(".mobile_select")
   const pokedexBox = document.querySelectorAll(".pokedex_box")
@@ -227,6 +230,13 @@ function exportDivToImage() {
   const pokedexArea = document.querySelector("#pokedex_area")
   const p = document.createElement("p")
   const title = document.createElement("h3")
+  const form = document.querySelector("#custom-dex")
+  let formName = form.value
+  
+  debugger
+
+  event.preventDefault()
+  finalName = formName
 
   pokedexArea.classList.remove("m-col-start-7")
   pokedexArea.classList.remove("m-col-end-13")
@@ -241,7 +251,7 @@ function exportDivToImage() {
   p.textContent = "Create your own at littlerootdreams.com"
   p.setAttribute("id", "pokedex-credit")
 
-  title.textContent = "My Custom Pokedex"
+  title.textContent = `${finalName}`
   title.setAttribute("id", "my-pokedex-title")
 
   divExport.appendChild(title)
@@ -321,6 +331,10 @@ function exportDivToImage() {
     box.style.width = "20%"
   })
 
+  form.value = ""
+  nameForm.style.visibility = "hidden"
+  nameForm.style.opacity = "0"
+
   clearText()
 }
 
@@ -332,10 +346,16 @@ function clearText() {
   pokedexTitle.remove()
 }
 
+function openNameForm() {
+  nameForm.style.visibility = "visible"
+  nameForm.style.opacity = "1"
+}
+
 spriteArea.addEventListener("dragover", dragOver);
 spriteArea.addEventListener("dragenter", dragEnter);
 spriteArea.addEventListener("dragleave", dragLeave);
 spriteArea.addEventListener("drop", returnToOriginalPosition);
 submitbutton.addEventListener("click", populateBoxArea)
-downloadButton.addEventListener("click", exportDivToImage)
+downloadButton.addEventListener("click", openNameForm)
+dexName.addEventListener("submit", exportDivToImage)
 tips.addEventListener("click", openTips)

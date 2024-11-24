@@ -125,7 +125,10 @@
       <h1 class="hidden">Pokemon Fight Prompt Area</h1>
         <div id="button-con" class="col-span-full">
             <p id="prompt-count"></p>
-            <button id="generate-button">Generate Prompt</button>
+            <div id="twf-button-con">
+              <button data-button="battle" id="generate-fight-button">Generate Battle Prompt</button>
+              <button data-button="challenge" id="generate-challenge-button">Generate Challenge Prompt</button>
+            </div>
         </div>
 
         <div id="prompt-generate">
@@ -211,10 +214,23 @@
     <h1 class="hidden">Full List of Prompts Lightbox</h1>
     <section class="col-start-2 col-span-1">
       <h3 class="lb-title">Full List Of Prompts</h3>
-      <div id="full-list-home"></div>
+      <div id="full-list-home">
+        <div id="battle-home" class="lb-title-home">
+          <div id="battle-title">
+            <p class="title-con">View Battle Prompts ▼</p>
+          </div>
+          <div id="battle-prompts"></div>
+        </div>
+        <div id="challenge-home" class="lb-title-home">
+          <div id="challenge-title">
+            <p class="title-con">View Challenge Prompts ▼</p>
+          </div>
+          <div id="challenge-prompts"></div>
+        </div>
+      </div>
     </section>
     <div class="col-span-1 mobile-close">
-      <p class="close-button">X</p>
+      <p id="prompt-close" class="close-button">X</p>
   </div>
   </section>
 

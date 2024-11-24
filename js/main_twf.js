@@ -1,26 +1,37 @@
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
-const generateButton = document.querySelector("#generate-button")
+const generateButton = document.querySelector("#generate-fight-button")
+const challengeButton = document.querySelector("#generate-challenge-button")
 const openListButton = document.querySelector("#open-list")
 const promptSubmit = document.querySelector("#prompt-submit")
 const lbForm = document.querySelector("#lb-form")
+const battlePrompts = document.querySelector("#battle-prompts")
+const challengePrompts = document.querySelector("#challenge-prompts")
+const battleHome = document.querySelector("#battle-title")
+const challengeHome = document.querySelector("#challenge-title")
+const promptClose = document.querySelector("#prompt-close")
 
 function displayLength() {
-    const promptCount = document.querySelector("#prompt-count")
+    const promptCount = document.querySelector("#prompt-count");
 
-    fetch(`${baseURL}/prompts/all`)
-    .then(response => response.json())
-    .then(function(response){
-        promptCount.textContent = `There is currently ${response.length} prompts in the database.`
+    Promise.all([
+        fetch(`${baseURL}battle/all`).then(response => response.json()),
+        fetch(`${baseURL}challenge/all`).then(response => response.json())
+    ])
+    .then(function(responses) {
+        promptCount.textContent = `There is currently ${responses[0].length} challenge prompts and ${responses[1].length} battle prompts in the database.`;
     })
     .catch(error => {
-        promptCount.textContent = `Sorry, something went wrong. Please refresh and try again. ${error}`
-    })
+        promptCount.textContent = `Sorry, something went wrong. Please refresh and try again. ${error}`;
+    });
 }
+
 
 displayLength()
 
 function generatePrompt() {
-    fetch(`${baseURL}/prompts/all`)
+    let target = this.dataset.button
+
+    fetch(`${baseURL}/${target}/all`)
     .then(response => response.json())
     .then(function(response){
         const promptGenerate = document.querySelector("#prompt-generate")
@@ -61,27 +72,30 @@ function generatePrompt() {
 }
 
 function openAllPrompts() {
-    fetch(`${baseURL}/prompts/all`)
-    .then(response => response.json())
-    .then(function(response){
+    Promise.all([
+        fetch(`${baseURL}battle/all`).then(response => response.json()),
+        fetch(`${baseURL}challenge/all`).then(response => response.json())
+    ])
+    .then(function(responses){
         const list = document.querySelector("#full-list-home")
         const listHome = document.querySelector("#full-list-popup-con")
-
-        list.innerHTML = ""
 
         listHome.style.display = "grid"
         listHome.style.visibility = "visible"
         listHome.style.opacity = "1"
         scrollTo(0,0)
 
-        response.forEach(prompt => {
+        battlePrompts.innerHTML = ""
+        challengePrompts.innerHTML = ""
+
+        responses[0].forEach(prompt => {
             const div = document.createElement("div")
             const title = document.createElement("h3")
             const desc = document.createElement("p")
             const credit = document.createElement("p")
             const hideDiv = document.createElement("div")
             
-            title.textContent = `${prompt.id}. ${prompt.prompt}`
+            title.textContent = `${prompt.id}. ${prompt.prompt} ▼`
             desc.innerHTML = prompt.description
             credit.textContent = `Credit: ${prompt.credit}`
 
@@ -98,7 +112,34 @@ function openAllPrompts() {
 
             div.addEventListener("click", openFullDetails)
 
-            list.appendChild(div)
+            battlePrompts.appendChild(div)
+        })
+
+        responses[1].forEach(prompt => {
+            const div = document.createElement("div")
+            const title = document.createElement("h3")
+            const desc = document.createElement("p")
+            const credit = document.createElement("p")
+            const hideDiv = document.createElement("div")
+            
+            title.textContent = `${prompt.id}. ${prompt.prompt} ▼`
+            desc.innerHTML = prompt.description
+            credit.textContent = `Credit: ${prompt.credit}`
+
+            div.setAttribute("class", "lb-prompt-home")
+            hideDiv.setAttribute("class", "extra-prompt-detail")
+            hideDiv.style.display = "none"
+            credit.setAttribute("class", "lb-credit")
+            title.setAttribute("class", "lb-prompt")
+
+            div.appendChild(title)
+            hideDiv.appendChild(desc)
+            hideDiv.appendChild(credit)
+            div.appendChild(hideDiv)
+
+            div.addEventListener("click", openFullDetails)
+
+            challengePrompts.appendChild(div)
         })
     })
     .catch(error => {
@@ -170,8 +211,43 @@ function sendSubmission(event) {
     });
 }
 
+function openBattlePrompts() {
+    if (battlePrompts.style.visibility === "visible") {
+        battlePrompts.style.visibility = "hidden"
+        battlePrompts.style.opacity = "0"
+        battlePrompts.style.display = "none"
+    } else {
+        battlePrompts.style.visibility = "visible"
+        battlePrompts.style.opacity = "1"
+        battlePrompts.style.display = "flex"
+    }
+}
+
+function openChallengePrompts() {
+    if (challengePrompts.style.visibility === "visible") {
+        challengePrompts.style.visibility = "hidden"
+        challengePrompts.style.opacity = "0"
+        challengePrompts.style.display = "none"
+    } else {
+        challengePrompts.style.visibility = "visible"
+        challengePrompts.style.opacity = "1"
+        challengePrompts.style.display = "flex"
+    }
+}
+
+function closePrompts() {
+    if (battlePrompts.style.display === "flex") {
+        battlePrompts.style.display = "none"
+    } else if (battlePrompts.style.display === "flex") {
+        challengePrompts.style.display = "none"
+    }
+}
 
 generateButton.addEventListener("click", generatePrompt)
+challengeButton.addEventListener("click", generatePrompt)
 openListButton.addEventListener("click", openAllPrompts)
 promptSubmit.addEventListener("click", openSubmissionBox)
 lbForm.addEventListener("submit", sendSubmission)
+battleHome.addEventListener("click", openBattlePrompts)
+challengeHome.addEventListener("click", openChallengePrompts)
+promptClose.addEventListener("click", closePrompts)

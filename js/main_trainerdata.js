@@ -161,7 +161,7 @@ function clearDivs() {
 
     if (image) {
       image.onload = function() {
-        if (image.getAttribute('src') === "images/pokemon/blank.png") {
+        if (image.getAttribute('src') === "images/trainer_data_images/pokemon/blank.png") {
           pDiv.style.display = "none";
         } else {
           pDiv.style.display = "flex";

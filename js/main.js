@@ -20,6 +20,8 @@ function hamBurgerClose() {
         this.parentNode.parentNode.style.opacity = "0",
         this.parentNode.parentNode.style.visibility = "hidden"
     }
+
+    hamClose.forEach(close => close.textContent = "X")
 }
 
 function openInfoMenu() {
@@ -49,11 +51,15 @@ function openActivityMenu() {
 function openGameInfoMobileMenu() {
     gameinfoMobile.style.visibility = "visible"
     gameinfoMobile.style.opacity = "1"
+
+    hamClose.forEach(close => close.textContent = "←")
 }
 
 function openActivityMobileMenu() {
     activityMobile.style.visibility = "visible"
     activityMobile.style.opacity = "1"
+
+    hamClose.forEach(close => close.textContent = "←")
 }
 
 function setDefault() {

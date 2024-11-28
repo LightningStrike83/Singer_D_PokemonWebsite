@@ -84,8 +84,20 @@ header {
     align-items: center;
 }
 
+#full-length {
+    background-image: url(../images/littleroot_town.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #main-logo {
     max-height: 60px;
+    width: 100%;
+}
+
+#nav-con {
+    grid-column: 2/3;
     width: 100%;
 }
 

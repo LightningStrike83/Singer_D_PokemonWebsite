@@ -267,6 +267,18 @@
     align-items: center;
 }
 
+.mobile_image {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 428px) {
+    .mobile_image {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+}
+
 @media screen and (min-width: 768px) {
 
     .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
@@ -287,5 +299,9 @@
 
     #sprite_area {
         display: block;
+    }
+
+    .mobile_image {
+        margin-bottom: 0;
     }
 }

@@ -6,6 +6,7 @@ const imageSelection = document.querySelector("#select-image")
 const shinyCheck = document.querySelector("#shiny-checkbox")
 const shinyCheckCon = document.querySelector("#shiny-checkbox-con")
 const shinyText = document.querySelector("#shiny-check")
+const bingoButton = document.querySelector("#bingo-button")
 
 function generateBoard() {
     const gameSelect = document.querySelector("#gw-select")
@@ -284,7 +285,23 @@ function shinyData() {
     }
 }
 
+function bingoMode() {
+    const pokemonCon = document.querySelector("#pokemon-con")
+    const boardCon = document.querySelector("#board-con")
+
+    if (bingoButton.innerText === "Activate Bingo Mode") {
+        bingoButton.innerText = "Deactivate Bingo Mode"
+        pokemonCon.style.display = "none"
+        boardCon.classList.remove("m-col-span-8")
+    } else {
+        bingoButton.innerText = "Activate Bingo Mode"
+        pokemonCon.style.display = "flex"
+        boardCon.classList.add("m-col-span-8")
+    }
+}
+
 generateButton.addEventListener("click", generateBoard)
 loadButton.addEventListener("click", loadGame)
 yourName.addEventListener("change", imageSelect)
 shinyCheckCon.addEventListener("click", shinyData)
+bingoButton.addEventListener("click", bingoMode)

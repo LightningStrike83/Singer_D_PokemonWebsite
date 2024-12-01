@@ -13,7 +13,12 @@
         text-align: center;
         background-color: red;
         font-size: 12px;
+        text-align: center;
     }
+}
+
+.shiny-amount {
+    width: 100%;
 }
 
 .button-div {
@@ -50,10 +55,10 @@
     width: 100%;
 }
 
-.count-button-con, .hunt-button-con {
+.count-button-con, .hunt-count-button-con {
     display: flex;
     justify-content: space-between;
-    background-color: c.$black;
+    background-color: c.$red;
 }
 
 #shiny-collection {
@@ -64,7 +69,7 @@
 }
 
 .hunt-div {
-    width: 19%;
+    width: 30%;
     background-color: white;
     border: 3px solid black;
     margin-bottom: 10px;
@@ -145,4 +150,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .hunt-div {
+        width: 19%;
+    }
 }

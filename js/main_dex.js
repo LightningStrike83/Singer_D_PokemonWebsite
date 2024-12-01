@@ -53,7 +53,7 @@ function populateBoxArea() {
             }
           }
         }
-        pokedexBoxArea.removeChild(lastBox); // Remove the last child
+        pokedexBoxArea.removeChild(lastBox); 
       }
     }
     count = inputValue; 
@@ -63,10 +63,6 @@ function populateBoxArea() {
   for (let n = count + 1; n <= inputValue; n++) {
     const div = document.createElement("div")
     const p = document.createElement("p")
-    const mobileList = document.createElement("select")
-    const blankOption = document.createElement("option")
-    const allOption = document.createElement("option")
-    const regionalOption = document.createElement("option")
 
     div.setAttribute("class", "pokedex_box")
     p.setAttribute("class", "pokedex_number")
@@ -79,64 +75,83 @@ function populateBoxArea() {
     div.addEventListener("dragenter", dragEnter);
     div.addEventListener("dragleave", dragLeave);
     div.addEventListener("drop", drop);
-
-    allOption.disabled = true
-    regionalOption.disabled = true
-    allOption.selected = true
-
-    allOption.innerHTML = "--Select A Pokemon--"
-    regionalOption.innerHTML = "--Regional Forms--"
-
-    mobileList.setAttribute("class", "mobile_select")
-
-    Promise.all([
-      fetch(`${baseURL}gen/all-no-alt/dex`)
-      .then(response => response.json()),
-      fetch(`${baseURL}custom/regional`)
-      .then(response => response.json())
-    ]).then(([allData, regionalData]) => {
-      errorHandle.textContent = ""
-
-      mobileList.appendChild(allOption)
-
-      allData.forEach(pokemon => {
-          const mobileBaseOption = document.createElement("option");
-          mobileBaseOption.textContent = pokemon.name;
-          mobileBaseOption.value = pokemon.number;
-
-          mobileList.appendChild(mobileBaseOption);
-      });
-
-      mobileList.appendChild(blankOption)
-      mobileList.appendChild(regionalOption)
-
-      regionalData.forEach(pokemon => {
-          const mobileRegionalOption = document.createElement("option");
-          mobileRegionalOption.textContent = pokemon.name;
-          mobileRegionalOption.value = pokemon.number;
-          mobileList.appendChild(mobileRegionalOption);
-      });
-
-      div.appendChild(mobileList);
-
-      mobileList.addEventListener("change", addPokemonImage);
-      })
-      .catch(error => {
-        const p = document.createElement("p")
-
-        p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
-
-        errorHandle.appendChild(p)
-      });
   }
 
   count = inputValue;
+  mobileList()
+}
+
+async function mobileList() {
+  const pokedexBox = document.querySelectorAll(".pokedex_box");
+
+  for (const box of pokedexBox) {
+    const mobileList = document.createElement("select");
+    const blankOption = document.createElement("option");
+    const allOption = document.createElement("option");
+    const regionalOption = document.createElement("option");
+
+    allOption.disabled = true;
+    regionalOption.disabled = true;
+    allOption.selected = true;
+
+    allOption.innerHTML = "--Select A Pokemon--";
+    regionalOption.innerHTML = "--Regional Forms--";
+
+    mobileList.setAttribute("class", "mobile_select");
+
+    async function fetchWithRetry() {
+      while (true) {
+        try {
+          const [allData, regionalData] = await Promise.all([
+            fetch(`${baseURL}gen/all-no-alt/dex`).then(response => response.json()),
+            fetch(`${baseURL}custom/regional`).then(response => response.json())
+          ]);
+
+          // Populate the select options if successful
+          errorHandle.textContent = "";
+          mobileList.appendChild(allOption);
+
+          allData.forEach(pokemon => {
+            const mobileBaseOption = document.createElement("option");
+            mobileBaseOption.textContent = pokemon.name;
+            mobileBaseOption.value = pokemon.number;
+
+            mobileList.appendChild(mobileBaseOption);
+          });
+
+          mobileList.appendChild(blankOption);
+          mobileList.appendChild(regionalOption);
+
+          regionalData.forEach(pokemon => {
+            const mobileRegionalOption = document.createElement("option");
+            mobileRegionalOption.textContent = pokemon.name;
+            mobileRegionalOption.value = pokemon.number;
+            mobileList.appendChild(mobileRegionalOption);
+          });
+
+          box.appendChild(mobileList);
+
+          mobileList.addEventListener("change", addPokemonImage);
+          return; // Exit the loop if successful
+        } catch (error) {
+          const p = document.createElement("p")
+
+          p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+          errorHandle.appendChild(p)
+        }
+      }
+    }
+
+    await fetchWithRetry();
+  }
 }
 
 function addPokemonImage(){
   const box = this.parentNode
   const img = document.createElement("img")
   const source = this.value
+  const pokedexBoxes = document.querySelectorAll(".pokedex_box")
   let imgCheck = box.querySelector("img")
 
   if (imgCheck) {
@@ -147,6 +162,8 @@ function addPokemonImage(){
     img.setAttribute("class", "mobile_image")
     img.setAttribute("alt", `Image of Pokemon ${source}`)
   }
+
+  pokedexBoxes.forEach(box => box.style.minHeight= "fit-content")
 }
 
 
@@ -232,8 +249,8 @@ function exportDivToImage(event) {
   const title = document.createElement("h3")
   const form = document.querySelector("#custom-dex")
   let formName = form.value
-  
-  debugger
+
+  var x = window.matchMedia("(min-width: 728px)")
 
   event.preventDefault()
   finalName = formName
@@ -245,7 +262,9 @@ function exportDivToImage(event) {
   mobileImage.forEach(image => image.style.marginBottom = "0")
 
   pokedexBox.forEach(box => {
-    box.style.width = "10%"
+    if (x.matches) {
+      box.style.width = "10%"
+    }
   })
 
   p.textContent = "Create your own at littlerootdreams.com"
@@ -266,63 +285,7 @@ function exportDivToImage(event) {
     link.click();
   });
 
-  pokedexBox.forEach(box => {
-    const mobileList = document.createElement("select")
-    const blankOption = document.createElement("option")
-    const allOption = document.createElement("option")
-    const regionalOption = document.createElement("option")
-
-    allOption.disabled = true
-    regionalOption.disabled = true
-    allOption.selected = true
-
-    allOption.innerHTML = "--Select A Pokemon--"
-    regionalOption.innerHTML = "--Regional Forms--"
-
-    mobileList.setAttribute("class", "mobile_select")
-
-    Promise.all([
-      fetch(`${baseURL}gen/all-no-alt/dex`)
-      .then(response => response.json()),
-      fetch(`${baseURL}custom/regional`)
-      .then(response => response.json())
-    ]).then(([allData, regionalData]) => {
-      errorHandle.textContent = ""
-
-      mobileList.appendChild(allOption)
-
-      allData.forEach(pokemon => {
-          const mobileBaseOption = document.createElement("option");
-          mobileBaseOption.textContent = pokemon.name;
-          mobileBaseOption.value = pokemon.number;
-
-          mobileList.appendChild(mobileBaseOption);
-      });
-
-      mobileList.appendChild(blankOption)
-      mobileList.appendChild(regionalOption)
-
-      regionalData.forEach(pokemon => {
-          const mobileRegionalOption = document.createElement("option");
-          mobileRegionalOption.textContent = pokemon.name;
-          mobileRegionalOption.value = pokemon.number;
-          mobileList.appendChild(mobileRegionalOption);
-      });
-
-      box.appendChild(mobileList);
-
-      mobileList.addEventListener("change", addPokemonImage)
-    })
-    .catch(error => {
-      const p = document.createElement("p")
-
-      p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
-
-      errorHandle.appendChild(p)
-    })
-
-  mobileImage.forEach(image => image.style.marginBottom = "20px")
-  })
+  mobileList()
 
   pokedexArea.classList.add("m-col-start-7")
   pokedexArea.classList.add("m-col-end-13")
@@ -330,6 +293,8 @@ function exportDivToImage(event) {
   pokedexBox.forEach(box => {
     box.style.width = "20%"
   })
+
+  mobileImage.forEach(image => image.style.marginBottom = "20px")
 
   form.value = ""
   nameForm.style.visibility = "hidden"

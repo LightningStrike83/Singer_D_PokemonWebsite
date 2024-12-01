@@ -87,6 +87,12 @@
     align-self: center;
 }
 
+#bingo-con {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 768px) {
     .gw-name {
         font-size: 14px;

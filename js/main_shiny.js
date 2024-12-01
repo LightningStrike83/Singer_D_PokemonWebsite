@@ -94,6 +94,7 @@ function addToCollection() {
             p.setAttribute("class", "shiny-name")
 
             amount.innerHTML = 'Amount: <span class="shiny-count">1</span>'
+            amount.setAttribute("class", "shiny-amount")
 
             removeButton.setAttribute("class", "remove-button")
             removeButton.innerText = "Remove from Collection"
@@ -106,13 +107,13 @@ function addToCollection() {
             countButtonDiv.setAttribute("class", "count-button-con")
 
             countButtonDiv.appendChild(minusButton)
+            countButtonDiv.appendChild(amount)
             countButtonDiv.appendChild(plusButton)
 
-            div.appendChild(amount)
+            div.appendChild(countButtonDiv)
             div.appendChild(img)
             div.appendChild(p)
             div.appendChild(removeButton)
-            div.appendChild(countButtonDiv)
             shinyCollection.appendChild(div)
 
             if (response.number >= 1000) {
@@ -224,13 +225,13 @@ function addToHunt() {
         countButtonDiv.setAttribute("class", "hunt-count-button-con")
 
         countButtonDiv.appendChild(minusButton)
+        countButtonDiv.appendChild(amount)
         countButtonDiv.appendChild(plusButton)
 
-        div.appendChild(amount)
+        div.appendChild(countButtonDiv)
         div.appendChild(img)
         div.appendChild(p)
         div.appendChild(removeButton)
-        div.appendChild(countButtonDiv)
         activeHunt.appendChild(div)
 
         plusButton.addEventListener("click", increaseHunt)
@@ -390,8 +391,9 @@ function reattachListeners() {
 
 function downloadCollection(event) {
     const removeButton = document.querySelectorAll(".remove-button")
-    const buttonCon = document.querySelectorAll(".count-button-con")
     const collectionList = document.querySelector("#collection-list")
+    const plusButton = document.querySelectorAll(".plus-button")
+    const minusButton = document.querySelectorAll(".minus-button")
     const shinyDivs = shinyList.querySelectorAll(".shiny-div")
     const p = document.createElement("p")
     const title = document.createElement("h3")
@@ -403,7 +405,8 @@ function downloadCollection(event) {
     finalName = formName
 
     removeButton.forEach(button => button.remove())
-    buttonCon.forEach(con => con.remove())
+    plusButton.forEach(plus => plus.style.display = "none")
+    minusButton.forEach(minus => minus.style.display = "none")
 
     collectionList.classList.remove("m-col-span-6")
 
@@ -434,9 +437,6 @@ function downloadCollection(event) {
     collectionList.classList.add("m-col-span-6")
 
     shinyDivs.forEach(div => {
-        const newButtonCon = document.createElement("div")
-        const newPlus = document.createElement("button")
-        const newMinus = document.createElement("button")
         const newRemove = document.createElement("button")
 
         div.style.border = "none"
@@ -445,24 +445,13 @@ function downloadCollection(event) {
 
         newRemove.setAttribute("class", "remove-button")
         newRemove.innerText = "Remove from Collection"
-
-        newButtonCon.setAttribute("class", "count-button-con")
-
-        newPlus.innerText = "+"
-        newPlus.setAttribute("class", "plus-button")
-        newMinus.innerText = "-"
-        newMinus.setAttribute("class", "minus-button")
-
-        newPlus.addEventListener("click", increaseCount)
-        newMinus.addEventListener("click", decreaseCount)
         newRemove.addEventListener("click", removePokemon)
 
-        newButtonCon.appendChild(newMinus)
-        newButtonCon.appendChild(newPlus)
-
         div.appendChild(newRemove)
-        div.appendChild(newButtonCon)
     })
+
+    plusButton.forEach(plus => plus.style.display = "block")
+    minusButton.forEach(minus => minus.style.display = "block")
     
     form.value = ""
     nameForm.style.visibility = "hidden"
@@ -487,3 +476,5 @@ function openNameForm() {
 window.addEventListener('load', loadState);
 saveButton.addEventListener("click", openNameForm)
 collectionName.addEventListener("submit", downloadCollection)
+
+localStorage.clear()

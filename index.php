@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+
+if(!$_SESSION['username']) {
+    header('Location: ../admin/login-form.php');
+}
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login- Littleroot Dreams</title>
+    <title>Home- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/main.css">
@@ -131,6 +139,60 @@
         </div>
       </div>
     </div>
+
+    <section id="main-update" class="grid-con">
+      <div id="welcome-con" class="col-span-full m-col-span-8">
+        <h3 id="welcome-heading">Welcome to Littleroot Dreams</h3>
+        <p id="welcome-text">Welcome to Littleroot Dreams, a Pokemon fan website dedicated to delivering resources and activites that you may not find anywhere else. Get started by browsing some of our pages down below!</p>
+
+        <div id="welcome-feature-con">
+          <a class="welcome-feature" href="custom_pokedex.html">
+            <div>
+              <div class="feature-image" id="feature-custom-image"></div>
+              <div class="feature-text">
+                <h3 class="feature-title">Create Your Own Pokedex</h3>
+                <p>Create and share your very own Pokedex!</p>
+              </div>
+            </div>
+          </a>
+  
+          <a class="welcome-feature" href="guess_who.html">
+            <div>
+              <div class="feature-image" id="feature-gw-image"></div>
+              <div class="feature-text">
+                <h3 class="feature-title">Guess Who</h3>
+                <p>Play a browser based version of Guess Who with a friend!</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="welcome-feature" href="usage.html">
+            <div>
+              <div class="feature-image" id="feature-usage-image"></div>
+              <div class="feature-text">
+                <h3 class="feature-title">Pokemon Usage</h3>
+                <p>Find out how many times a Pokemon has been used in the games!</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="welcome-feature" href="trainer_data.html">
+            <div>
+              <div class="feature-image" id="feature-data-image"></div>
+              <div class="feature-text">
+                <h3 class="feature-title">Trainer Data</h3>
+                <p>Curious to see trainer teams in games? Check out this comprehensive list!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div id="update-con" class="col-span-full m-col-start-9 m-col-end-13">
+        <h3 id="main-title">Site Updates</h3>
+        <ul id="main-site-updates"></ul>
+      </div>
+    </section>
 
     <section id="bottom" class="full-width-grid-con">
         <div id="footer-info" class="grid-con">

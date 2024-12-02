@@ -6,6 +6,7 @@ const huntIndicator = document.querySelector("#hunt-indicator")
 const saveButton = document.querySelector("#shiny-save")
 const collectionName = document.querySelector("#collection-name-form")
 const nameForm = document.querySelector("#download-name-con")
+const topText = document.querySelector(".top-text")
 let finalName = ""
 
 function shinyPopulation() {
@@ -65,6 +66,12 @@ function addToCollection() {
     const bankImage = this.parentNode.parentNode.querySelector("img")
     const bankDiv = this.parentNode.parentNode
     const shinyCollection = document.querySelector("#shiny-collection")
+    var x = window.matchMedia("(min-width: 728px)")
+  
+    if (x.matches) {
+    } else {
+      gsap.to(window, { duration: 1, scrollTo: (shinyCollection)})
+    }
 
     fetch(`${baseURL}shinies/${n}`)
     .then(response => response.json())
@@ -190,6 +197,12 @@ function addToHunt() {
     let n = this.parentNode.parentNode.dataset.div
     const activeHunt = document.querySelector("#active-hunt")
     const indicator = document.querySelector("#hunt-indicator")
+    var x = window.matchMedia("(min-width: 728px)")
+  
+    if (x.matches) {
+    } else {
+      gsap.to(window, { duration: 1, scrollTo: (activeHunt)})
+    }
 
     fetch(`${baseURL}shinies/${n}`)
     .then(response => response.json())
@@ -473,8 +486,21 @@ function openNameForm() {
     nameForm.style.opacity = "1"
 }
 
+function toTop() {
+    var x = window.matchMedia("(min-width: 728px)")
+  
+    if (x.matches) {
+      gsap.to(window, { duration: 1, scrollTo: (0)})
+    } else {
+      gsap.to(window, { duration: 2.5, scrollTo: (0)})
+    }
+  }
+
 window.addEventListener('load', loadState);
 saveButton.addEventListener("click", openNameForm)
 collectionName.addEventListener("submit", downloadCollection)
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollToPlugin)});
+  topText.addEventListener("click", toTop)
 
 localStorage.clear()

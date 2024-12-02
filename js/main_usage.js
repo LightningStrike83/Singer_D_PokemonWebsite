@@ -1,5 +1,7 @@
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const usageSelect = document.querySelector("#usage-select")
+const mobileSelect = document.querySelector("#mobile-select")
+const topText = document.querySelector(".top-text")
 let request = usageSelect.value
 let savedVariable = ""
 let savedText = ""
@@ -14,12 +16,18 @@ function linePopulation() {
 
         response.forEach(line => {
             const li = document.createElement("li")
+            const option = document.createElement("option")
+
+            option.value = line.id
+            option.textContent = line.species
+            option.setAttribute("data-line", `${line.id}`)
 
             li.textContent = line.species
             li.setAttribute("data-line", `${line.id}`)
             li.setAttribute("class", "pokemon-line")
             li.addEventListener("click", displayTrainers)
             lineSelect.appendChild(li)
+            mobileSelect.appendChild(option)
         })
     })
     .catch(error => {
@@ -33,7 +41,9 @@ function linePopulation() {
 }
 
 function displayTrainers(e) {
-    const lineNumber = e?.currentTarget?.dataset?.line || savedVariable;
+    var mobileTarget = mobileSelect.value
+    const lineNumber = e?.currentTarget?.dataset?.line || savedVariable || mobileTarget;
+    var x = window.matchMedia("(min-width: 728px)")
 
     fetch(`${baseURL}trainer-lines/${request}/${lineNumber}`)
         .then(response => response.json())
@@ -41,8 +51,14 @@ function displayTrainers(e) {
             const displayUsage = document.querySelector("#display-usage");
             const ul = document.createElement("ul");
             const usageTitle = document.querySelector("#usage-title");
-            const lineName = e?.target?.textContent || savedText;
             const icon = document.querySelector("#usage-icon");
+            var x = window.matchMedia("(min-width: 728px)")
+
+            if (x.matches) {
+                lineName = e?.target?.textContent || savedText;
+              } else {
+                lineName = mobileSelect.selectedOptions[0].textContent;
+              }
 
             icon.src = `images/usage/${lineNumber}.png`; 
 
@@ -66,6 +82,11 @@ function displayTrainers(e) {
         });
 
     savedVariable = lineNumber
+
+    if (x.matches) {
+    } else {
+        gsap.to(window, { duration: 1, scrollTo: ("#display-usage-con")})
+    }
 }
 
 function newValue() {
@@ -80,4 +101,12 @@ function newValue() {
 
 linePopulation()
 
+function toTop() {
+    gsap.to(window, { duration: 1, scrollTo: (0)})
+}
+
 usageSelect.addEventListener("change", newValue)
+mobileSelect.addEventListener("change", displayTrainers)
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollToPlugin)});
+  topText.addEventListener("click", toTop)

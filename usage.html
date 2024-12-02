@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script defer src="js/main_usage.js"></script>
     <script defer src="js/main.js"></script>
 </head>
@@ -121,8 +123,8 @@
         </div>
     </section>
 
-    <section class="grid-con">
-        <div id="line-home" class="col-span-1 m-col-span-3">
+    <section id="usage-con" class="grid-con">
+        <div id="line-home" class="col-span-2 m-col-span-3">
             <select id="usage-select">
                 <option value="main">Story Fights Only</option>
                 <option value="main-orre">Story Fights + Orre Story Fights</option>
@@ -130,9 +132,12 @@
                 <option value="all-orre">All Notable Uses + Notable Orre Uses</option>
             </select>
             <ul id="line-selection"></ul>
+            <select id="mobile-select">
+              <option>Select A Pokemon Line</option>
+            </select>
         </div>
 
-        <div id="display-usage-con" class="col-span-3 m-col-span-9">
+        <div id="display-usage-con" class="col-span-2 m-col-span-9">
             <div id="usage-info">
                 <img id="usage-icon" src="" alt="">
                 <h3 id="usage-title">Select A Line On The Left</h3>
@@ -140,6 +145,12 @@
 
             <div id="display-usage"></div>
         </div>
+    </section>
+
+    <section id="td_arrow_con" class="grid-con to-top">
+      <div id="td_arrow" class="col-span-full">
+          <p class="top-text">↑ To Top</p>
+      </div>
     </section>
 
     <section id="bottom" class="full-width-grid-con">

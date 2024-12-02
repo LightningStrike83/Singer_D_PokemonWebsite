@@ -23,6 +23,8 @@ let svGame = document.querySelector("#sv");
 
 const characterDivs = document.querySelectorAll('.character_name');
 const gameDivs = document.querySelectorAll('.game')
+const gameTitle = document.querySelectorAll(".game_title")
+const topText = document.querySelector(".top-text")
 
 let currentTrainerId = null
 let lastCheckedContainer = null
@@ -171,7 +173,19 @@ function clearDivs() {
   });
 }
 
+function scrollToGame() {
+  gsap.to(window, { duration: 1, scrollTo: ("#note") });
+}
 
+function toTop() {
+  var x = window.matchMedia("(min-width: 728px)")
+
+  if (x.matches) {
+    gsap.to(window, { duration: 1, scrollTo: (0)})
+  } else {
+    gsap.to(window, { duration: 2.5, scrollTo: (0)})
+  }
+}
 
 
 rbgGame.addEventListener('click', openRBG);
@@ -210,3 +224,8 @@ characterDivs.forEach(div => {
       toggleCheckbox(checkbox);
     });
   });
+
+  gameTitle.forEach(title => title.addEventListener("click", scrollToGame))
+  document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollToPlugin)});
+  topText.addEventListener("click", toTop)

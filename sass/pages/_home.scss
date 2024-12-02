@@ -13,6 +13,7 @@
     padding-top: 10px;
     padding-bottom: 5px;
     margin-bottom: 5px;
+    font-size: 18px;
 }
 
 #update-con, #welcome-con {
@@ -25,8 +26,8 @@
     margin-left: 10px;
     margin-right: 10px;
     li {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         width: 100%;
         &:not(:last-of-type) {
             border-bottom: 3px solid white;
@@ -35,7 +36,7 @@
 }
 
 .update-title {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .update-text {
@@ -123,11 +124,35 @@
 #feature-usage-image {
     background-image: url(../images/usage.png);
     background-size: cover;
-    background-position: 5%;
 }
 
 #feature-data-image {
     background-image: url(../images/data.png);
     background-size: cover;
-    background-position: 80%;
+    background-position: 57%;
+}
+
+@media screen and (min-width: 768px) {
+    #main-site-updates {
+        li {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+
+    .update-title {
+        margin-top: 10px;
+    }
+    
+    #feature-usage-image {
+        background-position: 5%;
+    }
+    
+    #feature-data-image {
+        background-position: 80%;
+    }
+
+    #main-title, #welcome-heading {
+        font-size: 20px;
+    }
 }

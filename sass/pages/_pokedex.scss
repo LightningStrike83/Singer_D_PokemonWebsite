@@ -28,6 +28,7 @@
     padding-top: 20px;
     display: flex;
     flex-direction: column;
+    padding-left: 25px;
 }
 
 #tips_box {
@@ -63,7 +64,6 @@
 #usage_tips {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 #box_title, #pokedex_title {
@@ -186,7 +186,7 @@
     list-style: disc;
     color: white;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 #sprite_area {
@@ -272,10 +272,18 @@
     margin-bottom: 20px;
 }
 
+#pd-input {
+    margin-bottom: 10px;
+}
+
 @media screen and (min-width: 428px) {
     .mobile_image {
         margin-top: 0px;
         margin-bottom: 20px;
+    }
+
+    .pd-tip {
+        font-size: 12px!important;
     }
 }
 
@@ -303,5 +311,17 @@
 
     .mobile_image {
         margin-bottom: 0;
+    }
+
+    #tips-info-con {
+        padding-left: 35px;
+    }
+
+    .pd-tip {
+        font-size: 15px!important;
+    }
+    
+    #usage_tips {
+        margin-bottom: 20px;
     }
 }

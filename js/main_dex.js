@@ -107,7 +107,6 @@ async function mobileList() {
             fetch(`${baseURL}custom/regional`).then(response => response.json())
           ]);
 
-          // Populate the select options if successful
           errorHandle.textContent = "";
           mobileList.appendChild(allOption);
 
@@ -156,6 +155,7 @@ function addPokemonImage(){
 
   if (imgCheck) {
     imgCheck.src = `images/pokemon_images/${source}.png`
+    img.setAttribute("alt", `Image of Pokemon ${source}`)
   } else {
     img.src = `images/pokemon_images/${source}.png`
     box.appendChild(img)
@@ -163,7 +163,23 @@ function addPokemonImage(){
     img.setAttribute("alt", `Image of Pokemon ${source}`)
   }
 
-  pokedexBoxes.forEach(box => box.style.minHeight= "fit-content")
+  pokedexBoxes.forEach(pdBox => {
+    pdBox.style.minHeight = "min-content";
+  });
+  
+  resetBoxHeight()
+}
+
+function resetBoxHeight() {
+  const pokedexBoxes = document.querySelectorAll(".pokedex_box")
+  const boxesWithImages = Array.from(pokedexBoxes).filter(box => box.querySelector("img"));
+  const dynamicHeight = boxesWithImages[0].offsetHeight;
+
+  pokedexBoxes.forEach(pdBox => {
+    if (!pdBox.querySelector("img")) {
+      pdBox.style.height = `${dynamicHeight}px`; // Set the same height for boxes without images
+    }
+  });
 }
 
 

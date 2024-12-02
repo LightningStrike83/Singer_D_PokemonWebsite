@@ -239,7 +239,7 @@ function openChallengePrompts() {
 function closePrompts() {
     if (battlePrompts.style.display === "flex") {
         battlePrompts.style.display = "none"
-    } else if (battlePrompts.style.display === "flex") {
+    } else if (challengePrompts.style.display === "flex") {
         challengePrompts.style.display = "none"
     }
 }

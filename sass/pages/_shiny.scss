@@ -6,13 +6,16 @@
 }
 
 .shiny-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 20%;
     background-color: white;
     border: 3px solid black;
     p {
         text-align: center;
         background-color: red;
-        font-size: 12px;
+        font-size: 12px!important;
         text-align: center;
     }
 }
@@ -23,9 +26,11 @@
 
 .button-div {
     display: flex;
+    flex-direction: column;
     button {
-        font-size: 9px;
-        width: 50%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 9px!important;
     }
 }
 
@@ -48,7 +53,7 @@
 }
 
 .remove-button, .plus-button, .minus-button {
-    font-size: 9px;
+    font-size: 9px!important;
 }
 
 .remove-button {
@@ -63,20 +68,19 @@
 
 #shiny-collection {
     .shiny-div {
-        border: none;
+        width: 33.3%;
         margin-bottom: 10px;
     }
 }
 
 .hunt-div {
-    width: 30%;
+    width: 33%;
     background-color: white;
     border: 3px solid black;
     margin-bottom: 10px;
     p {
         text-align: center;
         background-color: red;
-        padding: 10px;
     }
 }
 
@@ -89,9 +93,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    .hunt-div {
-        border: none;
-    }
 }
 
 #hunt-indicator {
@@ -152,8 +153,28 @@
     align-items: center;
 }
 
+.shiny-name {
+    line-height: 20px;
+}
+
 @media screen and (min-width: 768px) {
     .hunt-div {
         width: 19%;
+    }
+
+    #shiny-collection {
+        .shiny-div {
+            width: 20%;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .button-div {
+        flex-direction: row;
+        button {
+            width: 50%;
+        }
     }
 }

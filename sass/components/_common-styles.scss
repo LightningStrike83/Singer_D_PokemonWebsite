@@ -45,18 +45,17 @@ section {
     text-align: center;
     background-color: white;
     color: black;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    line-height: 30px;
+    padding: 15px;
+    line-height: 20px;
 }
 
 #main_title {
     font-family: 'Silkscreen';
-    font-size: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
     color: white;
     background-color: c.$red;
@@ -66,6 +65,44 @@ img {
     max-height: 250px;
 }
 
+.to-top {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.top-text {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    &:hover {
+        opacity: 70%;
+    }
+}
+
 // img:not([alt]) {
 //     border: 5px solid green;
 // }
+
+@media screen and (min-width: 768px) {
+    #main_title {
+        font-size: 25px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    #instructions_text {
+        text-align: center;
+        background-color: white;
+        color: black;
+        padding: 20px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #main_title {
+        font-size: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}

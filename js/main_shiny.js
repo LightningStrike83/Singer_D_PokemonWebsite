@@ -503,4 +503,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollToPlugin)});
   topText.addEventListener("click", toTop)
 
-localStorage.clear()
+// localStorage.clear()

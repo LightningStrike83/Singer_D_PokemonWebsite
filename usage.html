@@ -6,14 +6,14 @@
     <title>Pokemon Usage- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/main.css?version = 0.1">
+    <link rel="stylesheet" href="css/main.css?version = 0.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script defer src="js/main_usage.js?version = 0.1"></script>
-    <script defer src="js/main.js?version = 0.1"></script>
+    <script defer src="js/main_usage.js?version = 0.2"></script>
+    <script defer src="js/main.js?version = 0.2"></script>
 </head>
 <body>
     <div id="container">
@@ -119,7 +119,7 @@
     <section id="instructions-usage" class="grid-con">
       <h1 class="hidden">Pokemon Usage Instructions</h1>
         <div id="instructions" class="col-span-full">
-            <p id="instructions_text">Curious how many times a Pokemon line has been used by notable trainers? Look no further! Select a Pokemon line on the left and it will display how many times each line has been used in non-optional fights by every gym leader, rival, champion, etc. in the main series games.</p>
+            <p id="instructions_text">Curious how many times a Pokemon line has been used by notable trainers? Look no further! Select a Pokemon line and it will display how many times each line has been used by every notable trainer in the main series games.</p>
         </div>
     </section>
 
@@ -138,9 +138,16 @@
         </div>
 
         <div id="display-usage-con" class="col-span-2 m-col-span-9">
+            <div id="mode-info-con">
+              <p id="mode-info"></p>
+              <div id="usage_legend_click">
+                <span id="question_symbol">?</span>
+                <p id="usage_legend">Mode Explanations</p>
+            </div>
+            </div>
             <div id="usage-info">
                 <img id="usage-icon" src="" alt="">
-                <h3 id="usage-title">Select A Line On The Left</h3>
+                <h3 id="usage-title">Select A Line <span id="usage-direction"></span></h3>
             </div>
 
             <div id="display-usage"></div>
@@ -200,6 +207,21 @@
       <div class="col-span-1 mobile-close">
           <p class="close-button">X</p>
       </div>
+  </section>
+
+  <section id="mode-explanation-con" class="full-width-grid-con">
+    <h1 class="hidden">Mode Explanations</h1>
+    <div id="explanation-text-con" class="col-start-2 col-span-1">
+      <p class="explanation-text"><span class="explanation-heading">Story Fights Only:</span> Notable trainers that you fight before the credits roll, or before you fight Red in the Johto games, such as Gym Leaders, Elite Four, Rivals, etc.</p>
+      <p class="explanation-text"><span class="explanation-heading">Story Fights Only + Orre Story Fights:</span> Same as Story Fights Only, except notable trainers from Pokemon Colosseum and Pokemon XD: Gale of Darkness are included such as Cipher Admins. Shadow Pokemon are included.</p>
+      <p class="explanation-text"><span class="explanation-heading">All Notable Uses:</span> All instances in a main series game where a notable trainer has used the line, which includes post-game rematches. Not considered are: Battle Facility team ups, Pokemon that do not fight, and spinoff games.</p>
+      <p class="explanation-text"><span class="explanation-heading">All Notable Uses + Orre Notable Uses:</span> Same as All Notable Uses but fights in Pokemon Colosseum and Pokemon XD: Gale of Darkness are considered. Mt. Battle challenge trainers are not considered.</p>
+      <p id="explain-consider" class="explanation-text">If you want a mode such as additional spinoff games like Pokemon Masters EX and Pokemon Stadium or any other uses, such as Battle Facility teamups or non-battle partners to be considered, please <a id="explain-contact" href="contact.html">send the dev a message</a>.</p>
+    </div>
+
+    <div class="col-span-1 mobile-close">
+      <p class="close-button">X</p>
+  </div>
   </section>
 </div>
 </body>

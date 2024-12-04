@@ -67,8 +67,12 @@ h3 {
     }
 }
 
+.header-link {
+    font-size: 14px;
+}
+
 @media screen and (min-width: 428px) {
-    p, li, a {
+    p, li, a, label {
         font-size: 14px!important;
     }
 
@@ -82,7 +86,7 @@ h3 {
 }
 
 @media screen and (min-width: 768px) {
-    p, li, a {
+    p, li, a, label {
         font-size: 16px!important;
     }
 
@@ -96,7 +100,7 @@ h3 {
 }
 
 @media screen and (min-width: 1200px) {
-    p, li, a {
+    p, li, a, label {
         font-size: 18px!important;
     }
 

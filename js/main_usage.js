@@ -2,6 +2,9 @@ const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const usageSelect = document.querySelector("#usage-select")
 const mobileSelect = document.querySelector("#mobile-select")
 const topText = document.querySelector(".top-text")
+const modeInfo = document.querySelector("#mode-info")
+const usageDirection = document.querySelector("#usage-direction")
+const modeExplanation = document.querySelector("#usage_legend")
 let request = usageSelect.value
 let savedVariable = ""
 let savedText = ""
@@ -97,16 +100,43 @@ function newValue() {
         const eventStub = { currentTarget: { dataset: { line: savedVariable } } };
         displayTrainers(eventStub);
     }
-}
 
-linePopulation()
+    changeModeText()
+}
 
 function toTop() {
     gsap.to(window, { duration: 1, scrollTo: (0)})
 }
 
+function changeModeText() {
+    modeInfo.textContent = `Current Mode: ${usageSelect.options[usageSelect.selectedIndex].innerText}`
+}
+
+function directionText() {
+    console.log(usageDirection)
+    var x = window.matchMedia("(min-width: 728px)")
+
+    if (x.matches) {
+        usageDirection.textContent = "On The Left"
+    } else {
+        usageDirection.textContent = "Above"
+    }
+}
+
+function openModeExplanations() {
+    const explanationCon = document.querySelector("#mode-explanation-con")
+
+    explanationCon.style.opacity = "1"
+    explanationCon.style.visibility = "visible"
+}
+
+linePopulation()
+changeModeText()
+directionText()
+
 usageSelect.addEventListener("change", newValue)
 mobileSelect.addEventListener("change", displayTrainers)
+modeExplanation.addEventListener("click", openModeExplanations)
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollToPlugin)});
-  topText.addEventListener("click", toTop)
+topText.addEventListener("click", toTop)

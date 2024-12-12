@@ -134,6 +134,8 @@ if(!$_SESSION['username']) {
                 <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
                 <li class="horizontal-line"></li>
                 <li><a href="shiny.html">Shiny Counter</a></li>
+                <li class="horizontal-line"></li>
+                <li><a href="league-maker.html">Custom League Maker</a></li>
               </ul>
             </div>
         </div>
@@ -236,6 +238,7 @@ if(!$_SESSION['username']) {
           <a class="header-link" href="guess_who.html">Guess Who</a>
           <a class="header-link" href="pokemon_fight.html">Challenge Prompt Generator</a>
           <a class="header-link" href="shiny.html">Shiny Counter</a>
+          <a class="header-link" href="league-maker.html">Custom League Maker</a>
       </div>
 
       <div class="col-span-1 mobile-close">

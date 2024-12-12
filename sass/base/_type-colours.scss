@@ -1,0 +1,77 @@
+@use "../abstracts/colours" as c;
+
+.bug {
+    background-color: c.$bug;
+}
+
+.dark {
+    background-color: c.$dark;
+}
+
+.dragon {
+    background-color: c.$dragon;
+}
+
+.electric {
+    background-color: c.$electric;
+}
+
+.fairy {
+    background-color: c.$fairy;
+}
+
+.fighting {
+    background-color: c.$fighting;
+}
+
+.fire {
+    background-color: c.$fire;
+}
+
+.flying {
+    background-color: c.$flying;
+}
+
+.ghost {
+    background-color: c.$ghost;
+}
+
+.grass {
+    background-color: c.$grass;
+}
+
+.ground {
+    background-color: c.$ground;
+}
+
+.ice {
+    background-color: c.$ice;
+}
+
+.normal {
+    background-color: c.$normal;
+}
+
+.poison {
+    background-color: c.$poison;
+}
+
+.psychic {
+    background-color: c.$psychic;
+}
+
+.rock {
+    background-color: c.$rock;
+}
+
+.steel {
+    background-color: c.$steel;
+}
+
+.water {
+    background-color: c.$water;
+}
+
+.variety {
+    background-image: c.$variety;
+}

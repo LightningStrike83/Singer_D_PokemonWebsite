@@ -52,3 +52,8 @@ $router->get("/custom/champion", "SpeciesController@getChampion");
 $router->get("/types/{type}", "SpeciesController@getTypes");
 $router->post("/guess-who/add", "GuessWhoGameController@save");
 $router->get("/guess-who/{id}", "GuessWhoGameController@getOne");
+$router->get("/league-trainers/all", "LeagueTrainerController@getAll");
+$router->get("/league-trainers/gym", "LeagueTrainerController@getGymLeaders");
+$router->get("/league-trainers/e4", "LeagueTrainerController@getE4");
+$router->get("/league-trainers/champion", "LeagueTrainerController@getChampions");
+$router->get("/league-trainers/superboss", "LeagueTrainerController@getSuperboss");

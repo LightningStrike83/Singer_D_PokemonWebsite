@@ -7,6 +7,7 @@ const tipsArea = document.querySelector("#tips_area")
 const leagueSave = document.querySelector("#league-save")
 const downloadNameCon = document.querySelector("#download-name-con")
 const leagueForm = document.querySelector("#collection-name-form")
+const topText = document.querySelector(".top-text")
 let mode = "all"
 
 function modeSelect() {
@@ -229,7 +230,17 @@ function clearText() {
   
     leagueCredit.remove()
     leagueTitle.remove()
-  }
+}
+
+function toTop() {
+    var x = window.matchMedia("(min-width: 728px)")
+  
+    if (x.matches) {
+      gsap.to(window, { duration: 1, scrollTo: (0)})
+    } else {
+      gsap.to(window, { duration: 2.5, scrollTo: (0)})
+    }
+}
 
 modeButton.forEach(button => button.addEventListener("click", modeSelect))
 trainerSelect.forEach(select => select.addEventListener("change", inputTrainerInfomation))
@@ -238,3 +249,6 @@ createButton.addEventListener("click", openLeagueBox)
 tipsArea.addEventListener("click", openModeTips)
 leagueSave.addEventListener("click", openLeagueDownload)
 leagueForm.addEventListener("submit", downloadLeague)
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollToPlugin)});
+topText.addEventListener("click", toTop)

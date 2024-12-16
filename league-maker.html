@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script defer src="js/main_league_maker.js?version = 0.2"></script>
     <script defer src="js/main.js?version = 0.2"></script>
 </head>
@@ -120,6 +121,16 @@
             <div class="col-span-full" id="instructions">
                 <h2 class="hidden">Instructions</h2>
                 <p id="instructions_text">Ever wanted to create your own Pokemon League? Use the selections to choose from a variety of Pokemon Trainers to add to your League, select the type you want them to specialize in, then click the create button to view your league!</p>
+            </div>
+        </section>
+
+        <section id="tips-league" class="grid-con">
+            <div id="tips_area" class="col-start-2 col-end-5 m-col-start-9 m-col-end-13">
+                <h2 class="hidden">Challenge Tip Area</h2>
+                <div id="tips_click">
+                    <span id="question_symbol">?</span>
+                    <p id="tips">What's the Difference?</p>
+                </div>
             </div>
         </section>
 
@@ -706,8 +717,38 @@
                         <p id="superboss-name" class="trainer-name"></p>
                     </div>
                 </div>
+
+                <div id="save-league" class="col-span-full">
+                    <button id="league-save">Download League</button>
+                </div>
             </div>
 
+            <div class="col-span-1 mobile-close">
+                <p class="close-button">X</p>
+            </div>
+        </section>
+
+        <section id="difference-con" class="full-width-grid-con">
+            <h1 class="hidden">What's the Difference Explanation</h1>
+            <section id="difference-text" class="col-start-2 col-span-1">
+              <p><span class="prompt-explanation">Simple:</span> This mode contains trainers that are presently, or have a history, with the respective trainer role section.<br><br>
+              <span class="prompt-explanation">All Trainers:</span> This mode includes all notable trainers across the series and some side games. As well, some fan favourite generic NPCs are included. Sometimes you may want a Top Percentage Rattata trainer as the main champion!</p>
+            </section>
+            <div class="col-span-1 mobile-close">
+              <p class="close-button">X</p>
+            </div>
+        </section>
+
+        <section id="download-name-con" class="full-width-grid-con">
+            <h1 class="hidden">League Name</h1>
+            <div id="collection-name-con" class="col-start-2 col-span-1">
+                <form id="collection-name-form">
+                    <label for="name">Please name the League:</label><br>
+                    <input required id="league-name" name="name" type="text">
+                    <button id="submit-name" type="submit">Submit</button>
+                </form>
+            </div>
+    
             <div class="col-span-1 mobile-close">
                 <p class="close-button">X</p>
             </div>

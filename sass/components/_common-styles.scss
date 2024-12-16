@@ -5,8 +5,9 @@
 }
 
 body {
-    background-color: c.$black;
-    scroll-behavior: smooth;
+    background-image: url(../images/tile.png);
+    background-size: 40px;
+    background-position: 0 7px;
 }
 
 #container {

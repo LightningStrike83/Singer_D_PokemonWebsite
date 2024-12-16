@@ -7,7 +7,7 @@
 
 #main-title, #welcome-heading {
     text-align: center;
-    background-color: c.$red;
+    background: linear-gradient(#D6B67E 0%, #A68954 100%);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding-top: 10px;
@@ -17,9 +17,10 @@
 }
 
 #update-con, #welcome-con {
-    border: 2px solid white;
+    border: 2px solid #7E5A32;
     border-radius: 10px;
     height: min-content;
+    background-color: c.$rhea-wood;
 }
 
 #main-site-updates {
@@ -30,7 +31,7 @@
         padding-bottom: 10px;
         width: 100%;
         &:not(:last-of-type) {
-            border-bottom: 3px solid white;
+            border-bottom: 3px solid #D6B67E;
         }
     }
 }
@@ -88,10 +89,11 @@
 .welcome-feature {
     width: 45%;
     display: flex;
-    border: 1px solid white;
+    border: 2px solid #7E5A32;
     padding: 10px;
     border-radius: 10px;
-    background-color: c.$red;
+    background: linear-gradient(#D6B67E 0%, #A68954 100%);
+    // background-image: linear-gradient(#F2E2C4, #E5B472, #D18E5D);
     margin-top: 10px;
     &:hover {
         text-decoration: none;
@@ -100,7 +102,7 @@
 
 .feature-image {
     height: 200px;
-    border: 1px solid white;
+    border: 2px solid #7E5A32;
     margin-bottom: 5px;
     background-repeat: no-repeat;
 }

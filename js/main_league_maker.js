@@ -3,6 +3,10 @@ const typeSelect = document.querySelectorAll(".type-select")
 const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
 const modeButton = document.querySelectorAll(".mode-button")
 const createButton = document.querySelector("#select-submit")
+const tipsArea = document.querySelector("#tips_area")
+const leagueSave = document.querySelector("#league-save")
+const downloadNameCon = document.querySelector("#download-name-con")
+const leagueForm = document.querySelector("#collection-name-form")
 let mode = "all"
 
 function modeSelect() {
@@ -19,11 +23,17 @@ function trainerPopulation() {
 
     trainerSelect.forEach(trainerBox => {
         const defaultOption = document.createElement("option")
+        const noneOption = document.createElement("option")
 
         defaultOption.disabled = true
         defaultOption.selected = true
         defaultOption.innerText = "--Select A Trainer--"
+
+        noneOption.innerText = "-None-"
+        noneOption.setAttribute("data-trainer", "none")
+
         trainerBox.appendChild(defaultOption)
+        trainerBox.appendChild(noneOption)
     })
 
     if (mode === "simple") {
@@ -115,10 +125,13 @@ function inputTrainerInfomation() {
     const trainerImage = divSelector.querySelector("div")
     const trainerName = divSelector.querySelector(".trainer-name")
 
-    console.log(trainerImage)
-
-    trainerImage.style.backgroundImage = `url('../images/trainer_images/${this.options[this.selectedIndex].dataset.trainer}.png')`
-    trainerName.textContent = this.options[this.selectedIndex].innerText
+    if (`${this.options[this.selectedIndex].dataset.trainer}` === 'none') {
+        divSelector.style.display = "none"
+    } else {
+        divSelector.style.display = "block"
+        trainerImage.style.backgroundImage = `url('../images/trainer_images/${this.options[this.selectedIndex].dataset.trainer}.png')`
+        trainerName.textContent = this.options[this.selectedIndex].innerText
+    }
 }
 
 function inputTypeInformation() {
@@ -145,7 +158,83 @@ function openLeagueBox() {
     leagueCon.style.display = "grid"
 }
 
+function openModeTips() {
+    const difference = document.querySelector("#difference-con")
+
+    if (difference.style.visibility === "visible") {
+        difference.style.visibility = "hidden"
+        difference.style.opacity = "0"
+    } else {
+        difference.style.visibility = "visible"
+        difference.style.opacity = "1"
+    }
+}
+
+function openLeagueDownload() {
+    downloadNameCon.style.visibility = "visible"
+    downloadNameCon.style.opacity = "1"
+}
+
+function downloadLeague(event) {
+    const divExport = document.querySelector("#league")
+    const p = document.createElement("p")
+    const title = document.createElement("h3")
+    const form = document.querySelector("#league-name")
+    let formName = form.value
+
+    event.preventDefault()
+
+    console.log(form.value)
+
+    finalName = formName
+
+    p.textContent = "Create your own at littlerootdreams.com"
+    p.setAttribute("id", "league-credit")
+
+    title.textContent = `${finalName}`
+    title.setAttribute("id", "my-league-title")
+
+    divExport.appendChild(title)
+    divExport.appendChild(p)
+    divExport.style.display = "flex"
+    divExport.style.flexDirection = "column"
+
+    divExport.style.backgroundColor = "black"
+    leagueSave.style.display = "none"
+
+    html2canvas(divExport).then((canvas) => {
+        const dataUrl = canvas.toDataURL("image/png");
+    
+        const link = document.createElement("a");
+        link.href = dataUrl;
+        link.download = "my-league.png"; 
+        link.click();
+    });
+
+    divExport.style.backgroundColor = "none"
+    divExport.style.display = "block"
+
+    form.value = ""
+    downloadNameCon.style.visibility = "hidden"
+    downloadNameCon.style.opacity = "0"
+
+    leagueSave.style.display = "block"
+
+    clearText()
+}
+
+function clearText() {
+    const leagueCredit = document.querySelector("#league-credit")
+    const leagueTitle = document.querySelector("#my-league-title")
+  
+    leagueCredit.remove()
+    leagueTitle.remove()
+  }
+
 modeButton.forEach(button => button.addEventListener("click", modeSelect))
 trainerSelect.forEach(select => select.addEventListener("change", inputTrainerInfomation))
 typeSelect.forEach(select => select.addEventListener("change", inputTypeInformation))
 createButton.addEventListener("click", openLeagueBox)
+tipsArea.addEventListener("click", openModeTips)
+leagueSave.addEventListener("click", openLeagueDownload)
+leagueForm.addEventListener("submit", downloadLeague)

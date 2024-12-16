@@ -46,6 +46,10 @@
     justify-content: space-around;
 }
 
+#mode-select-con {
+    margin-top: 15px;
+}
+
 #mode-indicator {
     text-align: center;
     margin-bottom: 20px;
@@ -97,4 +101,29 @@
 
 #champion-link div, #superboss-link div {
     height: 110px;
+}
+
+#save-league {
+    display: flex;
+    justify-content: center;
+}
+
+#league-credit {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    order: 1;
+    margin-top: 10px;
+}
+
+#my-league-title {
+    width: 100%;
+    text-align: center;
+    order: -1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#submit-name {
+    margin-top: 20px;
 }

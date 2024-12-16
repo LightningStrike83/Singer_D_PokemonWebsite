@@ -256,7 +256,7 @@ dragImages.forEach(function (image) {
 });
 
 function exportDivToImage(event) {
-  const divExport = document.querySelector("#pokedex_display");
+  const divExport = document.querySelector("#pokedex_display")
   const mobileSelect = document.querySelectorAll(".mobile_select")
   const pokedexBox = document.querySelectorAll(".pokedex_box")
   const mobileImage = document.querySelectorAll(".mobile_image")

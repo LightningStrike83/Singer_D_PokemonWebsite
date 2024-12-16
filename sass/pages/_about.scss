@@ -2,7 +2,6 @@
 
 #about_site {
     text-align: center;
-    background-color: c.$black;
     margin-top: 10px;
 }
 
@@ -20,13 +19,12 @@
     font-family: 'Silkscreen';
     font-size: 20px;
     text-align: center;
-    color: white;
 }
 
 #about_title, #dev_title {
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: c.$red;
+    background-image: c.$wood;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     margin-bottom: 10px;
@@ -45,9 +43,8 @@
 #site_con, #dev_con {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 2px solid white;
+    border: 2px solid c.$dark-wood;
     border-radius: 20px;
-    background-color: c.$black;
 }
 
 #lightning_div, #flan_div {

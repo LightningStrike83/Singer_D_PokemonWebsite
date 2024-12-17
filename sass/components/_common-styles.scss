@@ -5,9 +5,13 @@
 }
 
 body {
-    background-image: url(../images/tile.png);
+    background-image: url(../images/tile.jpg);
     background-size: 40px;
     background-position: 0 7px;
+}
+
+body.dark-mode {
+    background-image: url(../images/tile-dark.jpg);
 }
 
 #container {

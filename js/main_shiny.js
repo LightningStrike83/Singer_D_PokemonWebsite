@@ -87,7 +87,7 @@ function addToCollection() {
 
         if (bankImage.style.opacity !== "0.4") {
             bankImage.style.opacity = "40%"
-            bankDiv.style.backgroundColor = "black"
+            bankDiv.style.backgroundColor = "#4E3524"
 
             div.setAttribute("class", "shiny-div")
             div.setAttribute("data-div", response.id)

@@ -95,6 +95,7 @@
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid c.$dark-wood;
+    background-color: c.$body-wood;
 }
 
 // .location_name {
@@ -133,11 +134,16 @@
     display: none;
     flex-direction: column;
     justify-content: flex-end;
+    background-color: transparent!important;
 }
 
 .sf_pokemon_name {
     // text-shadow: 0 1px c.$black;
     color: white;
+}
+
+.sf_pokemon_name.scarlet, .sf_pokemon_name.violet {
+    text-shadow: 0.5px 0.5px black;
 }
 
 .location_title p:not(.location-button) {

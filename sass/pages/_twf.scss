@@ -213,3 +213,11 @@
 .prompt-explanation {
     font-weight: bolder;
 }
+
+#challenge-house {
+    background-color: c.$body-wood;
+    border: 2px solid c.$dark-wood;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

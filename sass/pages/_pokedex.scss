@@ -68,15 +68,20 @@
 
 #box_title, #pokedex_title {
     text-align: center;
-    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
     text-decoration: underline;
+    background-image: c.$wood;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .pokedex_box {
-    border: 1px solid c.$black;
+    border: 2px solid c.$dark-wood;
     min-height: 130px;
     width: 25%;
-    background-color: c.$white;
+    background-image: c.$white-gradient;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -96,13 +101,14 @@
 }
 
 .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
-    border: 1px solid c.$black;
+    border: 2px solid c.$dark-wood;
     text-align: center;
     width: 33.3%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    background-color: c.$white;
+    background-image: c.$white-gradient;
+    padding-top: 5px;
 }
 
 .pokemon_name {
@@ -118,14 +124,17 @@
 .pokedex_number {
     font-size: 16px;
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 10px;
     color: c.$black;
     line-height: 10px;
 }
 
 #regional {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
+    background-image: c.$wood;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .regional_text {
@@ -161,6 +170,9 @@
     margin-bottom: 10px;
     font-size: 18px;
     flex-wrap: wrap;
+    background-color: c.$body-wood;
+    padding-left: 15px;
+    border-top-left-radius: 20px;
 }
 
 #filter p {
@@ -200,7 +212,6 @@
 #filter {
     position: sticky;
     top: -1px;
-    background-color: c.$black;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -276,6 +287,15 @@
     margin-bottom: 10px;
 }
 
+#pokedex-area {
+    background-color: c.$body-wood;
+    border: 2px solid c.$dark-wood;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    grid-column-gap: 0;
+    padding: 0;
+}
+
 @media screen and (min-width: 428px) {
     .mobile_image {
         margin-top: 0px;
@@ -323,5 +343,17 @@
     
     #usage_tips {
         margin-bottom: 20px;
+    }
+
+    .pokedex_box {
+        width: 20%;
+    }
+
+    #box_title {
+        border-top-right-radius: 0;
+    }
+    
+    #pokedex_title {
+        border-top-left-radius: 0;
     }
 }

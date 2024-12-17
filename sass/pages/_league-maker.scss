@@ -11,8 +11,10 @@
 
 .league-title {
     text-align: center;
-    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
+    background-image: c.$wood;
 }
 
 #selection-con {
@@ -23,6 +25,24 @@
 
 #gym-leader-con, #e4-con, #champion-con {
     border-bottom: 1px solid white;
+}
+
+#gym-leader-con, #e4-con, #champion-con, #superboss-con {
+    background-color: c.$body-wood;
+}
+
+#gym-leader-con {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    h3 {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}
+
+#superboss-con {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 #select-submit-con {

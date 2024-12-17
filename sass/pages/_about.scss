@@ -48,6 +48,10 @@
     background-color: c.$body-wood;
 }
 
+#site_con.dark-mode, #dev_con.dark-mode {
+    background-color: c.$night-wood;
+}
+
 #lightning_div, #flan_div {
     display: flex;
     flex-direction: column;

@@ -10,12 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="js/main_darkmode.js?version = 0.2"></script>
     <script defer src="js/main_sandwich.js?version = 0.2"></script>
     <script defer src="js/main.js?version = 0.2"></script>
 </head>
-<body>
+<body class="dm">
     <div id="container">
-        <div id="full-length" class="full-width-grid-con">
+        <div id="theme-mode-con" class="full-width-grid-con dm">
+            <div id="theme-enable">
+              <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+              <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+            </div>
+          </div>
+        <div id="full-length" class="full-width-grid-con dm">
             <header id="main_header" class="grid-con">
                 <div id="logo-con" class="col-start-2 col-end-4 m-col-span-full">
                     <a href="index.html"><svg id="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.92 65.92">
@@ -102,7 +109,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
     
-                    <div id="game-info-menu">
+                    <div id="game-info-menu" class="dm">
                       <ul id="info-links">
                         <li><a href="trainer_data.html">Trainer Data</a></li>
                         <li class="horizontal-line"></li>
@@ -112,7 +119,7 @@
                       </ul>
                     </div>
     
-                    <div id="activity-menu">
+                    <div id="activity-menu" class="dm">
                       <ul id="activity-links">
                         <li><a href="custom_pokedex.html">Create Your Own Pokedex</a></li>
                         <li class="horizontal-line"></li>
@@ -187,7 +194,7 @@
     <section id="grid-sandwich" class="grid-con">
         <div id="location_table" class="col-span-full">
             <h2 class="hidden">Type Tables</h2>
-            <div class="location_box" id="location_1">
+            <div class="location_box dm" id="location_1">
                 <div class="location_title">
                     <p class="location_name" id="upper_field_prarie">Upper Field Prarie</p>
                     <p data-button="0" class="location-button">Location?</p>
@@ -276,7 +283,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_2">
+            <div class="location_box dm" id="location_2">
                 <div class="location_title">
                     <p class="location_name" id="upper_field_riverside">Upper Field Riverside</p>
                     <p data-button="1" class="location-button">Location?</p>
@@ -321,7 +328,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_3">
+            <div class="location_box dm" id="location_3">
                 <div class="location_title">
                     <p class="location_name" id="upperfield_rocky">Upper Field Rocky Area</p>
                     <p data-button="2" class="location-button">Location?</p>
@@ -398,7 +405,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_4">
+            <div class="location_box dm" id="location_4">
                 <div class="location_title">
                     <p class="location_name" id="lower_field_prarie">Lower Field Prarie</p>
                     <p data-button="3" class="location-button">Location?</p>
@@ -471,7 +478,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_5">
+            <div class="location_box dm" id="location_5">
                 <div class="location_title">
                     <p class="location_name" id="lower_field_riverside">Lower Field Riverside</p>
                     <p data-button="4" class="location-button">Location?</p>
@@ -536,7 +543,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_6">
+            <div class="location_box dm" id="location_6">
                 <div class="location_title">
                     <p class="location_name" id="lower_field_rocky">Lower Field Rocky Area</p>
                     <p data-button="5" class="location-button">Location?</p>
@@ -613,7 +620,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_7">
+            <div class="location_box dm" id="location_7">
                 <div class="location_title">
                     <p class="location_name" id="small_cave">Small Cave</p>
                     <p data-button="6" class="location-button">Location?</p>
@@ -698,7 +705,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_8">
+            <div class="location_box dm" id="location_8">
                 <div class="location_title">
                     <p class="location_name" id="station_3_cave">Station 3 Cave</p>
                     <p data-button="7" class="location-button">Location?</p>
@@ -795,7 +802,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_9">
+            <div class="location_box dm" id="location_9">
                 <div class="location_title">
                     <p class="location_name" id="waterfall_cave">Waterfall Cave</p>
                     <p data-button="8" class="location-button">Location?</p>
@@ -868,7 +875,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_10">
+            <div class="location_box dm" id="location_10">
                 <div class="location_title">
                     <p class="location_name" id="grassy_cave">Hidden Grassy Cave</p>
                     <p data-button="9" class="location-button">Location?</p>
@@ -981,7 +988,7 @@
                 </div>
             </div>
 
-            <div class="location_box" id="location_11">
+            <div class="location_box dm" id="location_11">
                 <div class="location_title">
                     <p class="location_name" id="depths">Area Zero Depths</p>
                     <p data-button="10" class="location-button">Location?</p>
@@ -1086,14 +1093,14 @@
         </div>
     </section>
         
-    <section id="bottom" class="full-width-grid-con">
+    <section id="bottom" class="full-width-grid-con dm">
         <div id="footer-info" class="grid-con">
             <h2 class="hidden">Copyright Information</h2>
             <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
         </div>       
     </section>
 
-    <section id="main-mobile-menu" class="full-width-grid-con mobile-menu">
+    <section id="main-mobile-menu" class="full-width-grid-con mobile-menu dm">
         <h1 class="hidden">Mobile Menu</h1>
         <div class="col-start-2 col-span-1 mobile-links">
             <a class="header-link" href="index.html">Home</a>
@@ -1108,7 +1115,7 @@
         </div>
     </section>
 
-    <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu">
+    <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu dm">
         <h1 class="hidden">Game Info Mobile Menu</h1>
         <div class="col-start-2 col-span-1 mobile-links">
             <a class="header-link" href="trainer_data.html">Trainer Data</a>
@@ -1121,7 +1128,7 @@
         </div>
     </section>
 
-    <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu">
+    <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu dm">
         <h1 class="hidden">Activity Mobile Menu</h1>
         <div class="col-start-2 col-span-1 mobile-links">
             <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>

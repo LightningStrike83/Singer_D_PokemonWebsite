@@ -9,6 +9,10 @@
     margin-bottom: 10px;
 }
 
+#ref-con.dark-mode {
+    background-color: c.$night-wood;
+}
+
 #ref-list, #pic-list {
     display: flex;
     flex-direction: column;
@@ -23,6 +27,10 @@
     background-color: c.$body-wood;
     border: 2px solid c.$dark-wood;
     border-radius: 20px;
+}
+
+#image-credit-con.dark-mode {
+    background-color: c.$night-wood;
 }
 
 .ref-credit {

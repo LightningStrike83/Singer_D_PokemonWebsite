@@ -10,6 +10,10 @@ body {
     background-position: 0 7px;
 }
 
+body.dark-mode {
+    background-image: url(../images/tile-dark.jpg);
+}
+
 #container {
     margin: 0 auto;
     min-height: 100vh;

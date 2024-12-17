@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <script defer src="js/main_darkmode.js?version = 0.2"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
     <script defer src="js/rbg.js?version = 0.2"></script>
@@ -35,9 +36,15 @@
     <script defer src="js/main_trainerdata.js?version = 0.2"></script>
     <script defer src="js/main.js?version = 0.2"></script>
 </head>
-<body>
+<body class="dm">
     <div id="container">
-        <div id="full-length" class="full-width-grid-con">
+        <div id="theme-mode-con" class="full-width-grid-con dm">
+            <div id="theme-enable">
+              <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+              <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+            </div>
+          </div>
+        <div id="full-length" class="full-width-grid-con dm">
             <header id="main_header" class="grid-con">
                 <div id="logo-con" class="col-start-2 col-end-4 m-col-span-full">
                     <a href="index.html"><svg id="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.92 65.92">
@@ -124,7 +131,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
     
-                    <div id="game-info-menu">
+                    <div id="game-info-menu" class="dm">
                       <ul id="info-links">
                         <li><a href="trainer_data.html">Trainer Data</a></li>
                         <li class="horizontal-line"></li>
@@ -134,7 +141,7 @@
                       </ul>
                     </div>
     
-                    <div id="activity-menu">
+                    <div id="activity-menu" class="dm">
                       <ul id="activity-links">
                         <li><a href="custom_pokedex.html">Create Your Own Pokedex</a></li>
                         <li class="horizontal-line"></li>
@@ -164,7 +171,7 @@
         </div>
     </section>
 
-    <section id="games-trainer" class="grid-con">
+    <section id="games-trainer" class="grid-con dm">
         <h1 class="hidden">Game Checkboxes</h1>
         <div id="games" class="col-span-full">
             <h3 id="td_title">Games</h3>
@@ -196,7 +203,7 @@
             <p>*Note: Stats for Omega Ruby, Alpha Sapphire, SV's Starmobiles, and some BW trainers is currently unavailable.*</p>
         </div>
 
-        <div id="rbg_chars" class="col-span-full characters">
+        <div id="rbg_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="brock1"><input type="checkbox" class="custom_checkbox"><p>Brock</p></div>
             <div class="character_name" data-member="1" id="misty1"><input type="checkbox" class="custom_checkbox"><p>Misty</p></div>
             <div class="character_name" data-member="2" id="ltsurge1"><input type="checkbox"  class="custom_checkbox"><p>Lt. Surge</p></div>
@@ -214,7 +221,7 @@
             <div class="character_name" data-member="14" id="blue1_w"><input type="checkbox" class="custom_checkbox"><p>Blue (Champion w/Blastoise)</p></div>
         </div>
 
-        <div id="y_chars" class="col-span-full characters">
+        <div id="y_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="brock2"><input type="checkbox" class="custom_checkbox"><p>Brock</p></div>
             <div class="character_name" data-member="1" id="misty2"><input type="checkbox" class="custom_checkbox"><p>Misty</p></div>
             <div class="character_name" data-member="2" id="ltsurge2"><input type="checkbox" class="custom_checkbox"><p>Lt. Surge</p></div>
@@ -232,7 +239,7 @@
             <div class="character_name" data-member="14" id="blue2_f"><input type="checkbox" class="custom_checkbox"><p>Blue (Champion w/Flareon)</p></div>
         </div>
 
-        <div id="gsc_chars" class="col-span-full characters">
+        <div id="gsc_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="falkner1"><input type="checkbox" class="custom_checkbox"><p>Falkner</p></div>
             <div class="character_name" data-member="1" id="bugsy1"><input type="checkbox" class="custom_checkbox"><p>Bugsy</p></div>
             <div class="character_name" data-member="2" id="whitney1"><input type="checkbox" class="custom_checkbox"><p>Whitney</p></div>
@@ -258,7 +265,7 @@
         </div>
 
 
-        <div id="rs_chars" class="col-span-full characters">
+        <div id="rs_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="roxanne1"><input type="checkbox" class="custom_checkbox"><p>Roxanne</p></div>
             <div class="character_name" data-member="1" id="brawly1"><input type="checkbox" class="custom_checkbox"><p>Brawly</p></div>
             <div class="character_name" data-member="2" id="wattson1"><input type="checkbox" class="custom_checkbox"><p>Wattson</p></div>
@@ -275,7 +282,7 @@
             <div class="character_name" data-member="13" id="steven1"><input type="checkbox" class="custom_checkbox"><p>Steven</p></div>
         </div>
 
-        <div id="frlg_chars" class="col-span-full characters">
+        <div id="frlg_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="brock4"><input type="checkbox" class="custom_checkbox"><p>Brock</p></div>
             <div class="character_name" data-member="1" id="misty4"><input type="checkbox" class="custom_checkbox"><p>Misty</p></div>
             <div class="character_name" data-member="2" id="ltsurge4"><input type="checkbox" class="custom_checkbox"><p>Lt. Surge</p></div>
@@ -293,7 +300,7 @@
             <div class="character_name" data-member="14" id="blue4_w"><input type="checkbox" class="custom_checkbox"><p>Blue (Champion w/Blastoise)</p></div>
         </div>
 
-        <div id="e_chars" class="col-span-full characters">
+        <div id="e_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="roxanne2"><input type="checkbox" class="custom_checkbox"><p>Roxanne</p></div>
             <div class="character_name" data-member="1" id="brawly2"><input type="checkbox" class="custom_checkbox"><p>Brawly</p></div>
             <div class="character_name" data-member="2" id="wattson2"><input type="checkbox" class="custom_checkbox"><p>Wattson</p></div>
@@ -311,7 +318,7 @@
             <div class="character_name" data-member="14" id="steven2"><input type="checkbox" class="custom_checkbox"><p>Steven</p></div>
         </div>
 
-        <div id="dp_chars" class="col-span-full characters">
+        <div id="dp_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="roark1"><input type="checkbox" class="custom_checkbox"><p>Roark</p></div>
             <div class="character_name" data-member="1" id="mars1"><input type="checkbox" class="custom_checkbox"><p>Mars (Windworks)</p></div>
             <div class="character_name" data-member="2" id="gardenia1"><input type="checkbox" class="custom_checkbox"><p>Gardenia</p></div>
@@ -330,7 +337,7 @@
             <div class="character_name" data-member="15" id="cynthia1"><input type="checkbox" class="custom_checkbox"><p>Cynthia</p></div>
         </div>
 
-        <div id="pt_chars" class="col-span-full characters">
+        <div id="pt_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="roark2"><input type="checkbox" class="custom_checkbox"><p>Roark</p></div>
             <div class="character_name" data-member="1" id="mars2"><input type="checkbox" class="custom_checkbox"><p>Mars (Windworks)</p></div>
             <div class="character_name" data-member="2" id="gardenia2"><input type="checkbox" class="custom_checkbox"><p>Gardenia</p></div>
@@ -349,7 +356,7 @@
             <div class="character_name" data-member="15" id="cynthia2"><input type="checkbox" class="custom_checkbox"><p>Cynthia</p></div>
         </div>
 
-        <div id="hgss_chars" class="col-span-full characters">
+        <div id="hgss_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="falkner2"><input type="checkbox" class="custom_checkbox"><p>Falkner</p></div>
             <div class="character_name" data-member="1" id="bugsy2"><input type="checkbox" class="custom_checkbox"><p>Bugsy</p></div>
             <div class="character_name" data-member="2" id="whitney2"><input type="checkbox" class="custom_checkbox"><p>Whitney</p></div>
@@ -374,7 +381,7 @@
             <div class="character_name" data-member="21" id="red2"><input type="checkbox" class="custom_checkbox"><p>Red</p></div>
         </div>
 
-        <div id="bw_chars" class="col-span-full characters">
+        <div id="bw_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="cilan1"><input type="checkbox" class="custom_checkbox"><p>Cilan</p></div>
             <div class="character_name" data-member="1" id="chili1"><input type="checkbox" class="custom_checkbox"><p>Chili</p></div>
             <div class="character_name" data-member="2" id="cress1"><input type="checkbox" class="custom_checkbox"><p>Cress</p></div>
@@ -395,7 +402,7 @@
             <div class="character_name" data-member="17" id="ghetsis1"><input type="checkbox" class="custom_checkbox"><p>Ghetsis</p></div>
         </div>
 
-        <div id="b2w2_chars" class="col-span-full characters">
+        <div id="b2w2_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="cheren1"><input type="checkbox" class="custom_checkbox"><p>Cheren</p></div>
             <div class="character_name" data-member="1" id="roxie1"><input type="checkbox" class="custom_checkbox"><p>Roxie</p></div>
             <div class="character_name" data-member="2" id="burgh2"><input type="checkbox" class="custom_checkbox"><p>Burgh</p></div>
@@ -412,7 +419,7 @@
             <div class="character_name" data-member="13" id="iris2"><input type="checkbox" class="custom_checkbox"><p>Iris</p></div>
         </div>
 
-        <div id="b2w2c_chars" class="col-span-full characters">
+        <div id="b2w2c_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="cheren2"><input type="checkbox" class="custom_checkbox"><p>Cheren</p></div>
             <div class="character_name" data-member="1" id="roxie2"><input type="checkbox" class="custom_checkbox"><p>Roxie</p></div>
             <div class="character_name" data-member="2" id="burgh3"><input type="checkbox" class="custom_checkbox"><p>Burgh</p></div>
@@ -429,7 +436,7 @@
             <div class="character_name" data-member="13" id="iris3"><input type="checkbox" class="custom_checkbox"><p>Iris</p></div>
         </div>
 
-        <div id="xy_chars" class="col-span-full characters">
+        <div id="xy_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="viola1"><input type="checkbox" class="custom_checkbox"><p>Viola</p></div>
             <div class="character_name" data-member="1" id="grant1"><input type="checkbox" class="custom_checkbox"><p>Grant</p></div>
             <div class="character_name" data-member="2" id="korrina1"><input type="checkbox" class="custom_checkbox"><p>Korrina</p></div>
@@ -446,7 +453,7 @@
             <div class="character_name" data-member="13" id="diantha1"><input type="checkbox" class="custom_checkbox"><p>Diantha</p></div>
         </div>
 
-        <div id="oras_chars" class="col-span-full characters">
+        <div id="oras_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="roxanne3"><input type="checkbox" class="custom_checkbox"><p>Roxanne</p></div>
             <div class="character_name" data-member="1" id="brawly3"><input type="checkbox" class="custom_checkbox"><p>Brawly</p></div>
             <div class="character_name" data-member="2" id="wattson3"><input type="checkbox" class="custom_checkbox"><p>Wattson</p></div>
@@ -466,7 +473,7 @@
             <div class="character_name" data-member="16" id="zinnia1"><input type="checkbox" class="custom_checkbox"><p>Zinnia (Sky Pillar)</p></div>
         </div>
 
-        <div id="sm_chars" class="col-span-full characters">
+        <div id="sm_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="hala1"><input type="checkbox" class="custom_checkbox"><p>Hala</p></div>
             <div class="character_name" data-member="1" id="olivia1"><input type="checkbox" class="custom_checkbox"><p>Olivia</p></div>
             <div class="character_name" data-member="2" id="guzma1"><input type="checkbox" class="custom_checkbox"><p>Guzma (Shady House)</p></div>
@@ -487,7 +494,7 @@
             <div class="character_name" data-member="17" id="kukui1_w"><input type="checkbox" class="custom_checkbox"><p>Professor Kukui (Champion w/Primarina)</p></div>
         </div>
 
-        <div id="usum_chars" class="col-span-full characters">
+        <div id="usum_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="hala3"><input type="checkbox" class="custom_checkbox"><p>Hala</p></div>
             <div class="character_name" data-member="1" id="olivia3"><input type="checkbox" class="custom_checkbox"><p>Olivia</p></div>
             <div class="character_name" data-member="2" id="guzma3"><input type="checkbox" class="custom_checkbox"><p>Guzma (Shady House)</p></div>
@@ -517,7 +524,7 @@
             <div class="character_name" data-member="26" id="giovanni4_um"><input type="checkbox" class="custom_checkbox"><p>Giovanni (Ultra Moon)</p></div>
         </div>
 
-        <div id="lgpe_chars" class="col-span-full characters">
+        <div id="lgpe_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="brock6"><input type="checkbox" class="custom_checkbox"><p>Brock</p></div>
             <div class="character_name" data-member="1" id="misty6"><input type="checkbox" class="custom_checkbox"><p>Misty</p></div>
             <div class="character_name" data-member="2" id="ltsurge6"><input type="checkbox" class="custom_checkbox"><p>Lt. Surge</p></div>
@@ -534,7 +541,7 @@
             <div class="character_name" data-member="13" id="trace1_e"><input type="checkbox" class="custom_checkbox"><p>Trace (Champion- Let's Go Eevee)</p></div>
         </div>
 
-        <div id="swsh_chars" class="col-span-full characters">
+        <div id="swsh_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="milo1"><input type="checkbox" class="custom_checkbox"><p>Milo</p></div>
             <div class="character_name" data-member="1" id="nessa1"><input type="checkbox" class="custom_checkbox"><p>Nessa</p></div>
             <div class="character_name" data-member="2" id="kabu1"><input type="checkbox" class="custom_checkbox"><p>Kabu</p></div>
@@ -561,7 +568,7 @@
             <div class="character_name" data-member="23" id="leon1_w"><input type="checkbox" class="custom_checkbox"><p>Leon (w/Inteleon)</p></div>
         </div>
 
-        <div id="bdsp_chars" class="col-span-full characters">
+        <div id="bdsp_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="roark3"><input type="checkbox" class="custom_checkbox"><p>Roark</p></div>
             <div class="character_name" data-member="1" id="mars3"><input type="checkbox" class="custom_checkbox"><p>Mars (Windworks)</p></div>
             <div class="character_name" data-member="2" id="gardenia3"><input type="checkbox" class="custom_checkbox"><p>Gardenia</p></div>
@@ -580,7 +587,7 @@
             <div class="character_name" data-member="15" id="cynthia3"><input type="checkbox" class="custom_checkbox"><p>Cynthia</p></div>
         </div>
 
-        <div id="sv_chars" class="col-span-full characters">
+        <div id="sv_chars" class="col-span-full characters dm">
             <div class="character_name" data-member="0" id="katy1"><input type="checkbox" class="custom_checkbox"><p>Katy</p></div>
             <div class="character_name" data-member="1" id="brassius1"><input type="checkbox" class="custom_checkbox"><p>Brassius</p></div>
             <div class="character_name" data-member="2" id="iono1"><input type="checkbox" class="custom_checkbox"><p>Iono</p></div>
@@ -622,119 +629,119 @@
     <section id="grid-trainer" class="grid-con">
         <h1 class="hidden">Trainer Data Table</h1>
         <div id="table" class="col-span-full">
-            <div id="trainer_image"></div>
+            <div id="trainer_image" class="dm"></div>
             <div id="pokemon_1" class="pokemon">
-                <div class="pokemon_image" id="pokemon_1_image"></div>
-                <div class="text"><p id="name1"></p></div>
-                <div class="text"><p id="level1"></p></div>
-                <div class="text"><p id="type1"></p></div>
-                <div class="text"><p id="ability1"></p></div>
-                <div class="text"><p id="item1"></p></div>
-                <div class="text"><p id="hp1"></p></div>
-                <div class="text"><p id="atk1"></p></div>
-                <div class="text"><p id="def1"></p></div>
-                <div class="text"><p id="spatk1"></p></div>
-                <div class="text"><p id="spdef1"></p></div>
-                <div class="text"><p id="spd1"></p></div>
-                <div class="text"><p id="move1_1"></p></div>
-                <div class="text"><p id="move2_1"></p></div>
-                <div class="text"><p id="move3_1"></p></div>
-                <div class="text"><p id="move4_1"></p></div>
+                <div class="pokemon_image dm" id="pokemon_1_image"></div>
+                <div class="text dm"><p id="name1"></p></div>
+                <div class="text dm"><p id="level1"></p></div>
+                <div class="text dm"><p id="type1"></p></div>
+                <div class="text dm"><p id="ability1"></p></div>
+                <div class="text dm"><p id="item1"></p></div>
+                <div class="text dm"><p id="hp1"></p></div>
+                <div class="text dm"><p id="atk1"></p></div>
+                <div class="text dm"><p id="def1"></p></div>
+                <div class="text dm"><p id="spatk1"></p></div>
+                <div class="text dm"><p id="spdef1"></p></div>
+                <div class="text dm"><p id="spd1"></p></div>
+                <div class="text dm"><p id="move1_1"></p></div>
+                <div class="text dm"><p id="move2_1"></p></div>
+                <div class="text dm"><p id="move3_1"></p></div>
+                <div class="text dm"><p id="move4_1"></p></div>
             </div>
 
             <div id="pokemon_2" class="pokemon">
-                <div class="pokemon_image" id="pokemon_2_image"></div>
-                <div class="text"><p id="name2"></p></div>
-                <div class="text"><p id="level2"></p></div>
-                <div class="text"><p id="type2"></p></div>
-                <div class="text"><p id="ability2"></p></div>
-                <div class="text"><p id="item2"></p></div>
-                <div class="text"><p id="hp2"></p></div>
-                <div class="text"><p id="atk2"></p></div>
-                <div class="text"><p id="def2"></p></div>
-                <div class="text"><p id="spatk2"></p></div>
-                <div class="text"><p id="spdef2"></p></div>
-                <div class="text"><p id="spd2"></p></div>
-                <div class="text"><p id="move1_2"></p></div>
-                <div class="text"><p id="move2_2"></p></div>
-                <div class="text"><p id="move3_2"></p></div>
-                <div class="text"><p id="move4_2"></p></div>
+                <div class="pokemon_image dm" id="pokemon_2_image"></div>
+                <div class="text dm"><p id="name2"></p></div>
+                <div class="text dm"><p id="level2"></p></div>
+                <div class="text dm"><p id="type2"></p></div>
+                <div class="text dm"><p id="ability2"></p></div>
+                <div class="text dm"><p id="item2"></p></div>
+                <div class="text dm"><p id="hp2"></p></div>
+                <div class="text dm"><p id="atk2"></p></div>
+                <div class="text dm"><p id="def2"></p></div>
+                <div class="text dm"><p id="spatk2"></p></div>
+                <div class="text dm"><p id="spdef2"></p></div>
+                <div class="text dm"><p id="spd2"></p></div>
+                <div class="text dm"><p id="move1_2"></p></div>
+                <div class="text dm"><p id="move2_2"></p></div>
+                <div class="text dm"><p id="move3_2"></p></div>
+                <div class="text dm"><p id="move4_2"></p></div>
             </div>
 
             <div id="pokemon_3" class="pokemon">
-                <div class="pokemon_image" id="pokemon_3_image"></div>
-                <div class="text"><p id="name3"></p></div>
-                <div class="text"><p id="level3"></p></div>
-                <div class="text"><p id="type3"></p></div>
-                <div class="text"><p id="ability3"></p></div>
-                <div class="text"><p id="item3"></p></div>
-                <div class="text"><p id="hp3"></p></div>
-                <div class="text"><p id="atk3"></p></div>
-                <div class="text"><p id="def3"></p></div>
-                <div class="text"><p id="spatk3"></p></div>
-                <div class="text"><p id="spdef3"></p></div>
-                <div class="text"><p id="spd3"></p></div>
-                <div class="text"><p id="move1_3"></p></div>
-                <div class="text"><p id="move2_3"></p></div>
-                <div class="text"><p id="move3_3"></p></div>
-                <div class="text"><p id="move4_3"></p></div>
+                <div class="pokemon_image dm" id="pokemon_3_image"></div>
+                <div class="text dm"><p id="name3"></p></div>
+                <div class="text dm"><p id="level3"></p></div>
+                <div class="text dm"><p id="type3"></p></div>
+                <div class="text dm"><p id="ability3"></p></div>
+                <div class="text dm"><p id="item3"></p></div>
+                <div class="text dm"><p id="hp3"></p></div>
+                <div class="text dm"><p id="atk3"></p></div>
+                <div class="text dm"><p id="def3"></p></div>
+                <div class="text dm"><p id="spatk3"></p></div>
+                <div class="text dm"><p id="spdef3"></p></div>
+                <div class="text dm"><p id="spd3"></p></div>
+                <div class="text dm"><p id="move1_3"></p></div>
+                <div class="text dm"><p id="move2_3"></p></div>
+                <div class="text dm"><p id="move3_3"></p></div>
+                <div class="text dm"><p id="move4_3"></p></div>
             </div>
 
             <div id="pokemon_4" class="pokemon">
-                <div class="pokemon_image" id="pokemon_4_image"></div>
-                <div class="text"><p id="name4"></p></div>
-                <div class="text"><p id="level4"></p></div>
-                <div class="text"><p id="type4"></p></div>
-                <div class="text"><p id="ability4"></p></div>
-                <div class="text"><p id="item4"></p></div>
-                <div class="text"><p id="hp4"></p></div>
-                <div class="text"><p id="atk4"></p></div>
-                <div class="text"><p id="def4"></p></div>
-                <div class="text"><p id="spatk4"></p></div>
-                <div class="text"><p id="spdef4"></p></div>
-                <div class="text"><p id="spd4"></p></div>
-                <div class="text"><p id="move1_4"></p></div>
-                <div class="text"><p id="move2_4"></p></div>
-                <div class="text"><p id="move3_4"></p></div>
-                <div class="text"><p id="move4_4"></p></div>
+                <div class="pokemon_image dm" id="pokemon_4_image"></div>
+                <div class="text dm"><p id="name4"></p></div>
+                <div class="text dm"><p id="level4"></p></div>
+                <div class="text dm"><p id="type4"></p></div>
+                <div class="text dm"><p id="ability4"></p></div>
+                <div class="text dm"><p id="item4"></p></div>
+                <div class="text dm"><p id="hp4"></p></div>
+                <div class="text dm"><p id="atk4"></p></div>
+                <div class="text dm"><p id="def4"></p></div>
+                <div class="text dm"><p id="spatk4"></p></div>
+                <div class="text dm"><p id="spdef4"></p></div>
+                <div class="text dm"><p id="spd4"></p></div>
+                <div class="text dm"><p id="move1_4"></p></div>
+                <div class="text dm"><p id="move2_4"></p></div>
+                <div class="text dm"><p id="move3_4"></p></div>
+                <div class="text dm"><p id="move4_4"></p></div>
             </div>
 
             <div id="pokemon_5" class="pokemon">
-                <div class="pokemon_image" id="pokemon_5_image"></div>
-                <div class="text"><p id="name5"></p></div>
-                <div class="text"><p id="level5"></p></div>
-                <div class="text"><p id="type5"></p></div>
-                <div class="text"><p id="ability5"></p></div>
-                <div class="text"><p id="item5"></p></div>
-                <div class="text"><p id="hp5"></p></div>
-                <div class="text"><p id="atk5"></p></div>
-                <div class="text"><p id="def5"></p></div>
-                <div class="text"><p id="spatk5"></p></div>
-                <div class="text"><p id="spdef5"></p></div>
-                <div class="text"><p id="spd5"></p></div>
-                <div class="text"><p id="move1_5"></p></div>
-                <div class="text"><p id="move2_5"></p></div>
-                <div class="text"><p id="move3_5"></p></div>
-                <div class="text"><p id="move4_5"></p></div>
+                <div class="pokemon_image dm" id="pokemon_5_image"></div>
+                <div class="text dm"><p id="name5"></p></div>
+                <div class="text dm"><p id="level5"></p></div>
+                <div class="text dm"><p id="type5"></p></div>
+                <div class="text dm"><p id="ability5"></p></div>
+                <div class="text dm"><p id="item5"></p></div>
+                <div class="text dm"><p id="hp5"></p></div>
+                <div class="text dm"><p id="atk5"></p></div>
+                <div class="text dm"><p id="def5"></p></div>
+                <div class="text dm"><p id="spatk5"></p></div>
+                <div class="text dm"><p id="spdef5"></p></div>
+                <div class="text dm"><p id="spd5"></p></div>
+                <div class="text dm"><p id="move1_5"></p></div>
+                <div class="text dm"><p id="move2_5"></p></div>
+                <div class="text dm"><p id="move3_5"></p></div>
+                <div class="text dm"><p id="move4_5"></p></div>
             </div>
 
             <div id="pokemon_6" class="pokemon">
-                <div class="pokemon_image" id="pokemon_6_image"></div>
-                <div class="text"><p id="name6"></p></div>
-                <div class="text"><p id="level6"></p></div>
-                <div class="text"><p id="type6"></p></div>
-                <div class="text"><p id="ability6"></p></div>
-                <div class="text"><p id="item6"></p></div>
-                <div class="text"><p id="hp6"></p></div>
-                <div class="text"><p id="atk6"></p></div>
-                <div class="text"><p id="def6"></p></div>
-                <div class="text"><p id="spatk6"></p></div>
-                <div class="text"><p id="spdef6"></p></div>
-                <div class="text"><p id="spd6"></p></div>
-                <div class="text"><p id="move1_6"></p></div>
-                <div class="text"><p id="move2_6"></p></div>
-                <div class="text"><p id="move3_6"></p></div>
-                <div class="text"><p id="move4_6"></p></div>
+                <div class="pokemon_image dm" id="pokemon_6_image"></div>
+                <div class="text dm"><p id="name6"></p></div>
+                <div class="text dm"><p id="level6"></p></div>
+                <div class="text dm"><p id="type6"></p></div>
+                <div class="text dm"><p id="ability6"></p></div>
+                <div class="text dm"><p id="item6"></p></div>
+                <div class="text dm"><p id="hp6"></p></div>
+                <div class="text dm"><p id="atk6"></p></div>
+                <div class="text dm"><p id="def6"></p></div>
+                <div class="text dm"><p id="spatk6"></p></div>
+                <div class="text dm"><p id="spdef6"></p></div>
+                <div class="text dm"><p id="spd6"></p></div>
+                <div class="text dm"><p id="move1_6"></p></div>
+                <div class="text dm"><p id="move2_6"></p></div>
+                <div class="text dm"><p id="move3_6"></p></div>
+                <div class="text dm"><p id="move4_6"></p></div>
             </div>
         </div>
     </section>
@@ -753,14 +760,14 @@
         </div>
     </section>
 
-        <section id="bottom" class="full-width-grid-con">
+        <section id="bottom" class="full-width-grid-con dm">
             <div id="footer-info" class="grid-con">
                 <h2 class="hidden">Copyright Information</h2>
                 <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
             </div>       
         </section>
 
-        <section id="main-mobile-menu" class="full-width-grid-con mobile-menu">
+        <section id="main-mobile-menu" class="full-width-grid-con mobile-menu dm">
             <h1 class="hidden">Mobile Menu</h1>
             <div class="col-start-2 col-span-1 mobile-links">
                 <a class="header-link" href="index.html">Home</a>
@@ -775,7 +782,7 @@
             </div>
         </section>
     
-        <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu">
+        <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu dm">
             <h1 class="hidden">Game Info Mobile Menu</h1>
             <div class="col-start-2 col-span-1 mobile-links">
                 <a class="header-link" href="trainer_data.html">Trainer Data</a>
@@ -788,7 +795,7 @@
             </div>
         </section>
     
-        <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu">
+        <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu dm">
             <h1 class="hidden">Activity Mobile Menu</h1>
             <div class="col-start-2 col-span-1 mobile-links">
                 <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>

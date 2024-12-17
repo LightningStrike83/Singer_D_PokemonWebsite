@@ -86,17 +86,21 @@
 // }
 
 #location_table {
-    border-top: 1px solid c.$dark-wood;
-    border-left: 1px solid c.$dark-wood;
-    border-right: 1px solid c.$dark-wood;
+    border-top: 2px solid c.$dark-wood;
+    border-left: 2px solid c.$dark-wood;
+    border-right: 2px solid c.$dark-wood;
 }
 
 .location_box {
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid c.$dark-wood;
+    border-bottom: 2px solid c.$dark-wood;
     background-color: c.$body-wood;
 }
+
+// .location_box.dark-mode {
+//     background-color: c.$night-wood;
+// }
 
 // .location_name {
 //     text-shadow: 1px 1px c.$black;
@@ -105,7 +109,7 @@
 .location_title {
     max-width: 100px;
     text-align: center;
-    border-right: 1px solid c.$dark-wood;
+    border-right: 2px solid c.$dark-wood;
     font-size: 20px;
     display: flex;
     flex-wrap: wrap;

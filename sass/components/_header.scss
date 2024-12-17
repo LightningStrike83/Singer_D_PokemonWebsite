@@ -73,6 +73,10 @@ header {
     }
 }
 
+#activity-menu.dark-mode, #game-info-menu.dark-mode {
+    background-color: c.$night-sky;
+}
+
 #activity-links, #info-links {
     display: flex;
     flex-direction: column;
@@ -86,10 +90,12 @@ header {
 
 #full-length {
     background-image: linear-gradient(#319dff, #70afe2);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     border-bottom: 4px solid white;
+    transition: all ease-in-out 0.5s!important;
+}
+
+#full-length.dark-mode {
+    background-image: linear-gradient(#091a2e, #074f77);
 }
 
 #nav-con-full {

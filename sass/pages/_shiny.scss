@@ -56,6 +56,10 @@
     background-color: c.$body-wood;
 }
 
+#collection-list.dark-mode, #pokemon-list.dark-mode {
+    background-color: c.$night-wood;
+}
+
 .remove-button, .plus-button, .minus-button {
     font-size: 9px!important;
 }
@@ -105,6 +109,10 @@
     border: 2px solid c.$dark-wood;
     margin-bottom: 20px;
     padding: 0;
+}
+
+#active-hunt-con.dark-mode {
+    background-color: c.$night-wood;
 }
 
 #hunt-indicator {

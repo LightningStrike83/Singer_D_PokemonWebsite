@@ -31,6 +31,10 @@
     background-color: c.$body-wood;
 }
 
+#gym-leader-con.dark-mode, #e4-con.dark-mode, #champion-con.dark-mode, #superboss-con.dark-mode {
+    background-color: c.$night-wood;
+}
+
 #gym-leader-con {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;

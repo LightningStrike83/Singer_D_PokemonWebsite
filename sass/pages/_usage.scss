@@ -110,6 +110,10 @@
     grid-column-gap: 0!important;
 }
 
+#usage-con.dark-mode {
+    background-color: c.$night-wood;
+}
+
 #mode-explanation-con {
     position: fixed;
     top: 0;

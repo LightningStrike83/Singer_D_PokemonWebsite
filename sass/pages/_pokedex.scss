@@ -87,6 +87,11 @@
     position: relative;
 }
 
+.pokedex_box.dark-mode {
+    background-image: none;
+    background-color: c.$black;
+}
+
 #pokedex_display {
     display: flex;
     flex-direction: row;
@@ -111,6 +116,12 @@
     padding-top: 5px;
 }
 
+
+// .kanto.dark-mode, .johto.dark-mode, .hoenn.dark-mode, .sinnoh.dark-mode, .unova.dark-mode, .kalos.dark-mode, .alola.dark-mode, .galar.dark-mode, .hisui.dark-mode, .paldea.dark-mode, .regionals.dark-mode {
+//     background-image: none;
+//     background-color: c.$black;
+// }
+
 .pokemon_name {
     font-size: 16px;
     margin-top: 10px;
@@ -118,8 +129,12 @@
     padding-left: 4px;
     padding-right: 4px;
     order: 2;
-    color: c.$black;
+    color: black;
 }
+
+// .pokemon_name.dark-mode {
+//     color: white;
+// }
 
 .pokedex_number {
     font-size: 16px;
@@ -173,6 +188,10 @@
     background-color: c.$body-wood;
     padding-left: 15px;
     border-top-left-radius: 20px;
+}
+
+#filter.dark-mode {
+    background-color: c.$night-wood;
 }
 
 #filter p {
@@ -294,6 +313,10 @@
     padding-bottom: 20px;
     grid-column-gap: 0;
     padding: 0;
+}
+
+#pokedex-area.dark-mode {
+    background-color: c.$night-wood;
 }
 
 @media screen and (min-width: 428px) {

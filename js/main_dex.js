@@ -292,6 +292,8 @@ function exportDivToImage(event) {
   divExport.appendChild(title)
   divExport.appendChild(p)
 
+  divExport.style.backgroundImage = "linear-gradient(#319dff, #70afe2)"
+  
   html2canvas(divExport).then((canvas) => {
     const dataUrl = canvas.toDataURL("image/png");
 
@@ -315,6 +317,8 @@ function exportDivToImage(event) {
   form.value = ""
   nameForm.style.visibility = "hidden"
   nameForm.style.opacity = "0"
+
+  divExport.style.backgroundImage = "none"
 
   clearText()
 }

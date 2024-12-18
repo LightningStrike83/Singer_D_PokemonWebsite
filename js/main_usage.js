@@ -45,7 +45,7 @@ function linePopulation() {
 
 function displayTrainers(e) {
     var mobileTarget = mobileSelect.value
-    const lineNumber = e?.currentTarget?.dataset?.line || savedVariable || mobileTarget;
+    const lineNumber = e?.currentTarget?.dataset?.line || mobileTarget || savedVariable;
     var x = window.matchMedia("(min-width: 728px)")
 
     fetch(`${baseURL}trainer-lines/${request}/${lineNumber}`)

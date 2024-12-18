@@ -130,7 +130,7 @@ function inputTrainerInfomation() {
         divSelector.style.display = "none"
     } else {
         divSelector.style.display = "block"
-        trainerImage.style.backgroundImage = `url('../images/trainer_images/${this.options[this.selectedIndex].dataset.trainer}.png')`
+        trainerImage.style.backgroundImage = `url('../images/trainer_images/${this.options[this.selectedIndex].dataset.trainer}.png'), linear-gradient(#fff, #ededed)`
         trainerName.textContent = this.options[this.selectedIndex].innerText
     }
 }
@@ -200,7 +200,7 @@ function downloadLeague(event) {
     divExport.style.display = "flex"
     divExport.style.flexDirection = "column"
 
-    divExport.style.backgroundColor = "black"
+    divExport.style.backgroundImage = "linear-gradient(#319dff, #70afe2)"
     leagueSave.style.display = "none"
 
     html2canvas(divExport).then((canvas) => {
@@ -212,7 +212,7 @@ function downloadLeague(event) {
         link.click();
     });
 
-    divExport.style.backgroundColor = "none"
+    divExport.style.backgroundImage = "none"
     divExport.style.display = "block"
 
     form.value = ""

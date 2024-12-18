@@ -38,8 +38,15 @@
     list-style-type: disc;
     a {
         text-decoration: underline;
-        font-size: 14px!important;
     }
+}
 
-    font-size: 14px!important;
+@media screen  {
+    .ref-credit {
+        a {
+            font-size: 12px!important;
+        }
+    
+        font-size: 12px!important;
+    }
 }

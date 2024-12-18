@@ -60,12 +60,66 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: rgb(42, 42, 42);
     visibility: 0;
     opacity: 0;
     display: none;
     transition: all ease-in-out 0.5s;
     overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+  
+     &::-webkit-scrollbar-thumb {
+        background: c.$dark-wood;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+        background: c.$rhea-wood;
+    }
+
+    &::-webkit-scrollbar-button {
+        background-color: c.$dark-wood!important;
+    }
+  
+    &::-webkit-scrollbar-button:vertical:decrement {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><polygon points="8,2 14,10 2,10" fill="white"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 9px;
+    }
+    
+    &::-webkit-scrollbar-button:vertical:increment {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><polygon points="2,6 14,6 8,14" fill="white"/></svg>') no-repeat center center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 9px;
+    }
+
+    &::-webkit-scrollbar-button:horizontal:decrement {
+        background: url('data:image/svg+xml,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2216%22 height%3D%2216%22%3E%3Cpolygon points%3D%222%2C8 10%2C2 10%2C14%22 fill%3D%22white%22/%3E%3C/svg%3E') no-repeat center center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 9px;
+    }
+    
+    &::-webkit-scrollbar-button:horizontal:increment {
+        background: url('data:image/svg+xml,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 width%3D%2216%22 height%3D%2216%22%3E%3Cpolygon points%3D%226%2C2 14%2C8 6%2C14%22 fill%3D%22white%22/%3E%3C/svg%3E') no-repeat center center;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 9px;
+    }
+
+    &::-webkit-scrollbar-button:end:decrement,
+    &::-webkit-scrollbar-button:start:increment {
+        display: none;
+    }
 }
 
 #mode-select {
@@ -111,15 +165,21 @@
     line-height: 15px;
 }
 
+.trainer-type {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
 .trainer-type.variety, .trainer-name.variety {
     text-shadow: 1px 1px black;
 }
 
 .gym-div div, .e4-div div, #champion-link div, #superboss-link div {
-    vertical-align: bottom;
-    background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
+    vertical-align: bottom, bottom;
+    background-position: bottom, bottom;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    // background-color: rgb(237, 237, 237);
 }
 
 .gym-div div {
@@ -137,6 +197,7 @@
 #save-league {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 #league-credit {
@@ -170,20 +231,20 @@
 
 .gym-div {
     width: 29%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .e4-div {
     width: 46%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 #champion-link, #superboss-link {
     width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 @media screen and (min-width: 768px) {

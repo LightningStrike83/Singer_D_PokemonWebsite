@@ -14,7 +14,7 @@
     background-color: c.$body-wood;
     border: 2px solid c.$dark-wood;
     border-radius: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -29,6 +29,16 @@
         text-align: center;
         margin-bottom: 10px;
     }
+}
+
+#board-con {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+#pokemon-con {
+    order: 1;
 }
 
 .board-piece {
@@ -105,5 +115,19 @@
 @media screen and (min-width: 768px) {
     .gw-name {
         font-size: 14px;
+    }
+
+    #pokemon-con {
+        order: 0;
+    }
+
+    #guess-who-area {
+        padding-top: 20px;
+    }
+
+    #board-con {
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        border-bottom: none;
     }
 }

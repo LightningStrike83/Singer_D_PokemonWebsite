@@ -432,6 +432,8 @@ function downloadCollection(event) {
     shinyList.appendChild(title)
     shinyList.appendChild(p)
 
+    shinyList.style.backgroundImage = "linear-gradient(#319dff, #70afe2)"
+
     shinyDivs.forEach(div => {
         div.style.border = "2px solid black"
         div.style.width = "10%"
@@ -469,6 +471,8 @@ function downloadCollection(event) {
     form.value = ""
     nameForm.style.visibility = "hidden"
     nameForm.style.opacity = "0"
+
+    shinyList.style.backgroundImage = "none"
 
     clearText()
 }

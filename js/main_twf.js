@@ -10,6 +10,7 @@ const battleHome = document.querySelector("#battle-title")
 const challengeHome = document.querySelector("#challenge-title")
 const promptClose = document.querySelector("#prompt-close")
 const tipsArea = document.querySelector("#tips_area")
+let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading...</p></div><p id="submit-confirm"></p>`
 
 function displayLength() {
     const promptCount = document.querySelector("#prompt-count");
@@ -73,6 +74,9 @@ function generatePrompt() {
 }
 
 function openAllPrompts() {
+    battlePrompts.innerHTML = spinner
+    challengePrompts.innerHTML = spinner
+
     Promise.all([
         fetch(`${baseURL}battle/all`).then(response => response.json()),
         fetch(`${baseURL}challenge/all`).then(response => response.json())
@@ -175,8 +179,10 @@ function openSubmissionBox() {
 }
 
 function sendSubmission(event) {
+    const submitCon = document.querySelector("#submit-con")
     event.preventDefault();
-    console.log("hi");
+
+    submitCon.innerHTML = spinner
 
     const formData = {
         prompt: this.elements.prompt.value,
@@ -195,19 +201,23 @@ function sendSubmission(event) {
     })
     .then(response => response.json())
     .then(function(response) {
-        const submitConfirm = document.querySelector("#submit-confirm")
+        const spinnerCon = document.querySelector("#spinner-con")
         const lbField = document.querySelectorAll(".lb-prompt-field")
-        console.log(response)
+        const submitConfirm = document.querySelector("#submit-confirm")
 
         submitConfirm.textContent = "Thank you the suggestion! It has been submitted successfully!"
 
         lbField.forEach(field => {
             field.value = ""
         })
+
+        spinnerCon.remove()
     })
     .catch(function(error) {
+        const spinnerCon = document.querySelector("#spinner-con")
         const submitConfirm = document.querySelector("#submit-confirm")
 
+        spinnerCon.remove()
         submitConfirm.textContent = `Sorry, something went wrong. Please refresh and try again. ${error}`
     });
 }

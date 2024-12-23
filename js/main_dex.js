@@ -82,67 +82,83 @@ function populateBoxArea() {
 }
 
 async function mobileList() {
-  const pokedexBox = document.querySelectorAll(".pokedex_box");
+  var x = window.matchMedia("(min-width: 768px)")
 
-  for (const box of pokedexBox) {
-    const mobileList = document.createElement("select");
-    const blankOption = document.createElement("option");
-    const allOption = document.createElement("option");
-    const regionalOption = document.createElement("option");
+  if (x.matches) {
 
-    allOption.disabled = true;
-    regionalOption.disabled = true;
-    allOption.selected = true;
+  } else {
+    const pokedexBox = document.querySelectorAll(".pokedex_box");
 
-    allOption.innerHTML = "--Select A Pokemon--";
-    regionalOption.innerHTML = "--Regional Forms--";
+    pokedexBox.forEach(box => {
+      const spinner = document.createElement("div")
 
-    mobileList.setAttribute("class", "mobile_select");
+      spinner.setAttribute("id", "spinner")
+      box.appendChild(spinner)
+    })
 
-    async function fetchWithRetry() {
-      while (true) {
-        try {
-          const [allData, regionalData] = await Promise.all([
-            fetch(`${baseURL}gen/all-no-alt/dex`).then(response => response.json()),
-            fetch(`${baseURL}custom/regional`).then(response => response.json())
-          ]);
+    for (const box of pokedexBox) {
+      const mobileList = document.createElement("select");
+      const blankOption = document.createElement("option");
+      const allOption = document.createElement("option");
+      const regionalOption = document.createElement("option");
 
-          errorHandle.textContent = "";
-          mobileList.appendChild(allOption);
+      allOption.disabled = true;
+      regionalOption.disabled = true;
+      allOption.selected = true;
 
-          allData.forEach(pokemon => {
-            const mobileBaseOption = document.createElement("option");
-            mobileBaseOption.textContent = pokemon.name;
-            mobileBaseOption.value = pokemon.number;
+      allOption.innerHTML = "--Select A Pokemon--";
+      regionalOption.innerHTML = "--Regional Forms--";
 
-            mobileList.appendChild(mobileBaseOption);
-          });
+      mobileList.setAttribute("class", "mobile_select");
 
-          mobileList.appendChild(blankOption);
-          mobileList.appendChild(regionalOption);
+      async function fetchWithRetry() {
+        while (true) {
+          try {
+            const [allData, regionalData] = await Promise.all([
+              fetch(`${baseURL}gen/all-no-alt/dex`).then(response => response.json()),
+              fetch(`${baseURL}custom/regional`).then(response => response.json())
+            ]);
 
-          regionalData.forEach(pokemon => {
-            const mobileRegionalOption = document.createElement("option");
-            mobileRegionalOption.textContent = pokemon.name;
-            mobileRegionalOption.value = pokemon.number;
-            mobileList.appendChild(mobileRegionalOption);
-          });
+            errorHandle.textContent = "";
+            mobileList.appendChild(allOption);
 
-          box.appendChild(mobileList);
+            allData.forEach(pokemon => {
+              const mobileBaseOption = document.createElement("option");
+              mobileBaseOption.textContent = pokemon.name;
+              mobileBaseOption.value = pokemon.number;
 
-          mobileList.addEventListener("change", addPokemonImage);
-          return; // Exit the loop if successful
-        } catch (error) {
-          const p = document.createElement("p")
+              mobileList.appendChild(mobileBaseOption);
+            });
 
-          p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+            mobileList.appendChild(blankOption);
+            mobileList.appendChild(regionalOption);
 
-          errorHandle.appendChild(p)
+            regionalData.forEach(pokemon => {
+              const mobileRegionalOption = document.createElement("option");
+              mobileRegionalOption.textContent = pokemon.name;
+              mobileRegionalOption.value = pokemon.number;
+              mobileList.appendChild(mobileRegionalOption);
+            });
+
+            box.appendChild(mobileList);
+
+            let spinnerFind = box.querySelector("#spinner")
+            spinnerFind.remove()
+
+            mobileList.addEventListener("change", addPokemonImage);
+            return; // Exit the loop if successful
+          } catch (error) {
+            const p = document.createElement("p")
+
+            p.textContent = `Sorry, something went wrong. Please refresh the page and try again. ${error}`
+
+            errorHandle.appendChild(p)
+          }
         }
       }
-    }
 
-    await fetchWithRetry();
+      await fetchWithRetry();
+    }
   }
 }
 
@@ -266,7 +282,7 @@ function exportDivToImage(event) {
   const form = document.querySelector("#custom-dex")
   let formName = form.value
 
-  var x = window.matchMedia("(min-width: 728px)")
+  var x = window.matchMedia("(min-width: 768px)")
 
   event.preventDefault()
   finalName = formName

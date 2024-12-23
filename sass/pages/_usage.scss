@@ -61,6 +61,10 @@
     &::-webkit-scrollbar-button:start:increment {
         display: none;
     }
+
+    #spinner {
+        align-self: center;
+    }
 }
 
 .pokemon-line {

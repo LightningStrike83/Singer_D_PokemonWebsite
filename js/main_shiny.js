@@ -8,8 +8,11 @@ const collectionName = document.querySelector("#collection-name-form")
 const nameForm = document.querySelector("#download-name-con")
 const topText = document.querySelector(".top-text")
 let finalName = ""
+let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading...</p></div>`
 
 function shinyPopulation() {
+    shinyBank.innerHTML = spinner
+
     fetch(`${baseURL}shinies/all`)
     .then(response => response.json())
     .then(function(response){
@@ -54,7 +57,7 @@ function shinyPopulation() {
                 div.style.order = "2"
             }
 
-            if ((shiny.number === "1017c") || (shiny.number === "1017w") || (shiny.number === "1017h")) {
+            if ((shiny.number === "1017c") || (shiny.number === "1017w") || (shiny.number === "1017h") || (shiny.number === "1012a") || (shiny.number === "1013a")) {
                 div.style.order = "2"
             }
         })
@@ -507,4 +510,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollToPlugin)});
   topText.addEventListener("click", toTop)
 
-// localStorage.clear()
+localStorage.clear()

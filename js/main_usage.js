@@ -8,12 +8,15 @@ const modeExplanation = document.querySelector("#usage_legend")
 let request = usageSelect.value
 let savedVariable = ""
 let savedText = ""
+let spinner = `<img id="spinner" src="../images/spinner.gif"><br> <p id="spinner-text">Loading...</p>`
 
 function linePopulation() {
+    const lineSelect = document.querySelector("#line-selection")
+    lineSelect.innerHTML = spinner
+
     fetch(`${baseURL}lines`)
     .then(response => response.json())
     .then(function(response){
-        const lineSelect = document.querySelector("#line-selection")
 
         lineSelect.innerHTML = ""
 

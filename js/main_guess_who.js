@@ -7,6 +7,8 @@ const shinyCheck = document.querySelector("#shiny-checkbox")
 const shinyCheckCon = document.querySelector("#shiny-checkbox-con")
 const shinyText = document.querySelector("#shiny-check")
 const bingoButton = document.querySelector("#bingo-button")
+const gwBoard = document.querySelector("#gw-board");
+let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading...</p></div>`
 
 function generateBoard() {
     const gameSelect = document.querySelector("#gw-select")
@@ -15,12 +17,13 @@ function generateBoard() {
     imageSelection.src = ""
     imageSelection.setAttribute("alt", "")
 
+    gwBoard.innerHTML = spinner
+
     fetch(`${baseURL}${selectValue}`)
     .then(response => response.json())
     .then(function(response){
         let n = Math.min(response.length, 25);
         let usedCharacters = new Set();
-        const gwBoard = document.querySelector("#gw-board");
 
         gwBoard.innerHTML = ""
 
@@ -197,6 +200,7 @@ function loadGame() {
     const game = document.querySelector("#gw-input");
     const gameNumber = game.value;
 
+    gwBoard.innerHTML = spinner
     imageSelection.src = ""
 
     fetch(`${baseURL}guess-who/${gameNumber}`)

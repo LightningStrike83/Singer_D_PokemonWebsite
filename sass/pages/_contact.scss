@@ -63,6 +63,13 @@
     margin-top: 10px;
 }
 
+#other-errors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 768px) {
     #contact-form input:not(#submit-contact) {
         width: 50%;

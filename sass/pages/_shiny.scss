@@ -55,7 +55,7 @@
 }
 
 #collection-list, #pokemon-list {
-    border: 1px solid white;
+    border: 2px solid c.$dark-wood;
     height: 90vh;
     overflow: scroll;
     margin-bottom: 20px;
@@ -160,7 +160,8 @@
 
 #active-hunt-con {
     background-color: c.$body-wood;
-    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     border: 2px solid c.$dark-wood;
     margin-bottom: 20px;
     padding: 0;

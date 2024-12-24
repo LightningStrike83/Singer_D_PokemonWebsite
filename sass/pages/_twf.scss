@@ -1,5 +1,17 @@
 @use "../abstracts/colours" as c;
 
+#fight-con {
+    background-color: c.$body-wood;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 2px solid c.$dark-wood;
+    border-radius: 20px;
+}
+
+#fight-con.dark-mode {
+    background-color: c.$night-wood;
+}
+
 #prompt-area {
     display: flex;
     justify-content: center;
@@ -34,7 +46,7 @@
 }
 
 #prompt-submit {
-    border: 2px solid c.$dark-wood;
+    border: 1px solid c.$dark-wood;
     text-align: center;
     padding: 10px;
     border-radius: 10px;
@@ -70,7 +82,7 @@
 }
 
 #prompt-generate {
-    border: 2px solid c.$dark-wood;
+    border: 1px solid c.$dark-wood;
     padding: 20px;
     background-image: c.$wood;
 }

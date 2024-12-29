@@ -223,6 +223,11 @@
 }
 
 #sandwich-credit-con {
+    background-image: c.$wood;
+    border: 2px solid c.$dark-wood;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
     margin-top: 20px;
     text-align: center;
     a {

@@ -9,6 +9,7 @@ const downloadNameCon = document.querySelector("#download-name-con")
 const leagueForm = document.querySelector("#collection-name-form")
 const topText = document.querySelector(".top-text")
 let mode = "all"
+let spinner = `<div id="spinner-con" class="col-span-full"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading Trainers...</p></div>`
 
 function modeSelect() {
     const modeDisplay = document.querySelector("#mode-display")
@@ -20,103 +21,131 @@ function modeSelect() {
 }
 
 function trainerPopulation() {
-    trainerSelect.forEach(trainerBox => trainerBox.innerHTML = "")
+    const spinnerLoad = document.querySelector("#spinner-load");
+    spinnerLoad.innerHTML = spinner;
+    spinnerLoad.style.marginBottom = "20px"
+
+    trainerSelect.forEach(trainerBox => trainerBox.innerHTML = "");
 
     trainerSelect.forEach(trainerBox => {
-        const defaultOption = document.createElement("option")
-        const noneOption = document.createElement("option")
+        const defaultOption = document.createElement("option");
+        const noneOption = document.createElement("option");
 
-        defaultOption.disabled = true
-        defaultOption.selected = true
-        defaultOption.innerText = "--Select A Trainer--"
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        defaultOption.innerText = "--Select A Trainer--";
 
-        noneOption.innerText = "-None-"
-        noneOption.setAttribute("data-trainer", "none")
+        noneOption.innerText = "-None-";
+        noneOption.setAttribute("data-trainer", "none");
 
-        trainerBox.appendChild(defaultOption)
-        trainerBox.appendChild(noneOption)
-    })
+        trainerBox.appendChild(defaultOption);
+        trainerBox.appendChild(noneOption);
+    });
 
     if (mode === "simple") {
-        const gymSelect = document.querySelectorAll(".gym-select")
-        const e4Select = document.querySelectorAll(".e4-select")
-        const championSelect = document.querySelector("#champion")
-        const superbossSelect = document.querySelector("#superboss")
+        const gymSelect = document.querySelectorAll(".gym-select");
+        const e4Select = document.querySelectorAll(".e4-select");
+        const championSelect = document.querySelector("#champion");
+        const superbossSelect = document.querySelector("#superboss");
+
+        const fetchPromises = [];
 
         gymSelect.forEach(gym => {
-            fetch(`${baseURL}league-trainers/gym`)
-                .then(response => response.json())
-                .then(function(response) {
-                    response.forEach(trainer => {
-                        const option = document.createElement("option")
+            fetchPromises.push(
+                fetch(`${baseURL}league-trainers/gym`)
+                    .then(response => response.json())
+                    .then(response => {
+                        response.forEach(trainer => {
+                            const option = document.createElement("option");
 
-                        option.setAttribute("data-trainer", `${trainer.id}`)
-                        option.innerText = `${trainer.name}`
+                            option.setAttribute("data-trainer", `${trainer.id}`);
+                            option.innerText = `${trainer.name}`;
 
-                        gym.appendChild(option)
+                            gym.appendChild(option);
+                        });
                     })
-                })
-        })
+            );
+        });
 
         e4Select.forEach(e4 => {
-            fetch(`${baseURL}league-trainers/e4`)
-                .then(response => response.json())
-                .then(function(response) {
-                    response.forEach(trainer => {
-                        const option = document.createElement("option")
+            fetchPromises.push(
+                fetch(`${baseURL}league-trainers/e4`)
+                    .then(response => response.json())
+                    .then(response => {
+                        response.forEach(trainer => {
+                            const option = document.createElement("option");
 
-                        option.setAttribute("data-trainer", `${trainer.id}`)
-                        option.innerText = `${trainer.name}`
+                            option.setAttribute("data-trainer", `${trainer.id}`);
+                            option.innerText = `${trainer.name}`;
 
-                        e4.appendChild(option)
+                            e4.appendChild(option);
+                        });
                     })
+            );
+        });
+
+        fetchPromises.push(
+            fetch(`${baseURL}league-trainers/champion`)
+                .then(response => response.json())
+                .then(response => {
+                    response.forEach(trainer => {
+                        const option = document.createElement("option");
+
+                        option.setAttribute("data-trainer", `${trainer.id}`);
+                        option.innerText = `${trainer.name}`;
+
+                        championSelect.appendChild(option);
+                    });
                 })
-        })
+        );
 
-        fetch(`${baseURL}league-trainers/champion`)
-        .then(response => response.json())
-        .then(function(response) {
-            response.forEach(trainer => {
-                const option = document.createElement("option")
+        fetchPromises.push(
+            fetch(`${baseURL}league-trainers/superboss`)
+                .then(response => response.json())
+                .then(response => {
+                    response.forEach(trainer => {
+                        const option = document.createElement("option");
 
-                option.setAttribute("data-trainer", `${trainer.id}`)
-                option.innerText = `${trainer.name}`
+                        option.setAttribute("data-trainer", `${trainer.id}`);
+                        option.innerText = `${trainer.name}`;
 
-                championSelect.appendChild(option)
-            })
-        })
+                        superbossSelect.appendChild(option);
+                    });
+                })
+        );
 
-        fetch(`${baseURL}league-trainers/superboss`)
-        .then(response => response.json())
-        .then(function(response) {
-            response.forEach(trainer => {
-                const option = document.createElement("option")
-
-                option.setAttribute("data-trainer", `${trainer.id}`)
-                option.innerText = `${trainer.name}`
-
-                superbossSelect.appendChild(option)
-            })
-        })
+        Promise.all(fetchPromises).then(() => {
+            spinnerLoad.innerHTML = "";
+            spinnerLoad.style.marginBottom = "0px"
+        });
 
     } else if (mode === "all") {
+        const fetchPromises = [];
         trainerSelect.forEach(trainerBox => {
-            fetch(`${baseURL}league-trainers/${mode}`)
-            .then(response => response.json())
-            .then(function(response) {
-                
-                response.forEach(trainer => {
-                    const option = document.createElement("option")
+            fetchPromises.push(
+                fetch(`${baseURL}league-trainers/${mode}`)
+                    .then(response => response.json())
+                    .then(response => {
+                        response.forEach(trainer => {
+                            const option = document.createElement("option");
 
-                    option.setAttribute("data-trainer", `${trainer.id}`)
-                    option.innerText = `${trainer.name}`
+                            option.setAttribute("data-trainer", `${trainer.id}`);
+                            option.innerText = `${trainer.name}`;
 
-                    trainerBox.appendChild(option)
-                })
-            })
-        })
+                            trainerBox.appendChild(option);
+                        });
+                    })
+            );
+        });
+
+
+        Promise.all(fetchPromises).then(() => {
+            spinnerLoad.innerHTML = "";
+            spinnerLoad.style.marginBottom = "0px"
+        });
     }
 }
+
 
 trainerPopulation()
 

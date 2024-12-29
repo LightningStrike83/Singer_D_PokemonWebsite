@@ -88,9 +88,10 @@ function addToCollection() {
         const plusButton = document.createElement("button")
         const countButtonDiv = document.createElement("div")
 
-        if (bankImage.style.opacity !== "0.4") {
-            bankImage.style.opacity = "40%"
-            bankDiv.style.backgroundColor = "#4E3524"
+        if (bankImage.style.opacity !== "0.2") {
+            bankImage.style.opacity = "20%"
+            bankDiv.style.backgroundImage = "none"
+            bankDiv.style.backgroundColor = "#4E3524ae"
 
             div.setAttribute("class", "shiny-div")
             div.setAttribute("data-div", response.id)
@@ -510,4 +511,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollToPlugin)});
   topText.addEventListener("click", toTop)
 
-localStorage.clear()
+// localStorage.clear()

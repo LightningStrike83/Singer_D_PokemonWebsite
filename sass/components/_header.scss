@@ -26,7 +26,7 @@
         text-decoration: none;
         transition: all ease-in-out 0.5s;
         &:hover {
-            color: c.$blue;
+            opacity: 50%;
             text-decoration: underline;
         }
     }

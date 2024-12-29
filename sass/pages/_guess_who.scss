@@ -3,6 +3,15 @@
 #code-con {
     display: flex;
     justify-content: center;
+    background-color: c.$body-wood;
+    border: 2px solid c.$dark-wood;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+
+#code-con.dark-mode {
+    background-color: c.$night-wood;
 }
 
 #code-text {

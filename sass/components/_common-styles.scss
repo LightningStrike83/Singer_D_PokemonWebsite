@@ -91,12 +91,14 @@ img {
 }
 
 .top-text {
-    text-decoration: underline;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
     &:hover {
         opacity: 70%;
     }
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50px!important;
 }
 
 #spinner {
@@ -111,10 +113,43 @@ img {
 #spinner-con {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 button {
-    
+    background-color: transparent;
+    color: white;
+    // background-image: c.$wood;
+    background-color: c.$rhea-wood;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+    padding: 5px;
+    &:hover {
+        color: c.$rhea-wood;
+        background-color: rgb(235, 235, 235);
+    }
+    &:not(.collection-button, .hunt-button, .hunt-remove-button, .hunt-plus-button, .hunt-minus-button, .remove-button, .plus-button, .minus-button) {
+        // border: 2px solid c.$dark-wood;
+        border-radius: 5px;
+    }
+}
+
+select {
+    border: 1px solid c.$dark-wood;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#tips_area, #legend_area {
+    padding-top: 10px;
+    background-image: c.$wood;
+    // background-color: c.$rhea-wood;
+    border: 2px solid c.$dark-wood;
+    border-radius: 50px;
+}
+
+select, button, input {
+    font-family: 'Roboto Slab', 'Noto Serif', Arial, Helvetica, sans-serif;
 }
 
 // img:not([alt]) {
@@ -138,7 +173,5 @@ button {
 @media screen and (min-width: 1200px) {
     #main_title {
         font-size: 30px;
-        padding-top: 30px;
-        padding-bottom: 30px;
     }
 }

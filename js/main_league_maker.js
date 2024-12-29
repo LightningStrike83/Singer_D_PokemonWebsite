@@ -9,7 +9,7 @@ const downloadNameCon = document.querySelector("#download-name-con")
 const leagueForm = document.querySelector("#collection-name-form")
 const topText = document.querySelector(".top-text")
 let mode = "all"
-let spinner = `<div id="spinner-con" class="col-span-full"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading Trainers...</p></div>`
+let spinner = `<div id="spinner-con" class="col-span-full"><img id="spinner" src="../images/spinner.gif" alt="Loading spinner"> <p id="spinner-text">Loading Trainers...</p></div>`
 
 function modeSelect() {
     const modeDisplay = document.querySelector("#mode-display")
@@ -172,8 +172,6 @@ function inputTypeInformation() {
     const trainerImage = divSelector.querySelector("div")
     divClass = divSelector.className
 
-    console.log(divClass)
-
     trainerType.textContent = `Type: ${this.options[this.selectedIndex].innerText}`
     trainerType.className = `trainer-type ${this.options[this.selectedIndex].value}`
     trainerName.className = `trainer-name ${this.options[this.selectedIndex].value}`
@@ -213,8 +211,6 @@ function downloadLeague(event) {
     let formName = form.value
 
     event.preventDefault()
-
-    console.log(form.value)
 
     finalName = formName
 

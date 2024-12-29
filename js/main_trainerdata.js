@@ -1,5 +1,3 @@
-console.log('Welcome to the world of Pokemon!')
-
 let rbgGame = document.querySelector("#rbg");
 let yGame = document.querySelector("#y");
 let gscGame = document.querySelector("#gsc");
@@ -154,11 +152,9 @@ function uncheckAllGameCheckboxes() {
 }
 
 function clearDivs() {
-  console.log("Starting clearDivs");
   const pokemonDivs = document.querySelectorAll(".pokemon");
 
   pokemonDivs.forEach(pDiv => {
-    console.log("Checking div:", pDiv);
     const image = pDiv.querySelector("img");
 
     if (image) {

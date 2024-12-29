@@ -1,5 +1,3 @@
-console.log('Welcome to the world of Pokemon!');
-
 const tips = document.querySelector("#tips_click");
 const pokemonSprites = document.querySelector("#pokemon_sprites");
 const spriteArea = document.querySelector("#sprite_area")
@@ -93,6 +91,7 @@ async function mobileList() {
       const spinner = document.createElement("div")
 
       spinner.setAttribute("id", "spinner")
+      spinner.setAttribute("alt", "Loading spinner")
       box.appendChild(spinner)
     })
 

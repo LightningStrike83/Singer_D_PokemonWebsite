@@ -8,7 +8,7 @@ const shinyCheckCon = document.querySelector("#shiny-checkbox-con")
 const shinyText = document.querySelector("#shiny-check")
 const bingoButton = document.querySelector("#bingo-button")
 const gwBoard = document.querySelector("#gw-board");
-let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading...</p></div>`
+let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif" alt="Loading spinner"> <p id="spinner-text">Loading...</p></div>`
 
 function generateBoard() {
     const gameSelect = document.querySelector("#gw-select")
@@ -154,8 +154,6 @@ function saveGame() {
         pokemon25: number[24].innerHTML,
     }
 
-    console.log(gameData)
-
     fetch (`${baseURL}guess-who/add`, {
         method: "POST",
         headers: {
@@ -176,7 +174,6 @@ function saveGame() {
         gameToken.appendChild(p)
     })
     .catch(error => {
-        console.log(error)
         const gameToken = document.querySelector("#gw-token")
 
         gameToken.innerHTML = ""

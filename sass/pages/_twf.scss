@@ -1,14 +1,16 @@
 @use "../abstracts/colours" as c;
 
-#fight-con {
+#fight-con, #twf-submit-area {
     background-color: c.$body-wood;
-    padding-top: 20px;
+    padding: 0;
     padding-bottom: 20px;
     border: 2px solid c.$dark-wood;
     border-radius: 20px;
+    margin-top: 10px;
+    width: 100%;
 }
 
-#fight-con.dark-mode {
+#fight-con.dark-mode, #twf-submit-area.dark-mode {
     background-color: c.$night-wood;
 }
 
@@ -41,7 +43,6 @@
 }
 
 #prompt-submit-con {
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -85,6 +86,8 @@
     border: 1px solid c.$dark-wood;
     padding: 20px;
     background-image: c.$wood;
+    width: 80%;
+    align-self: center;
 }
 
 #redirect {
@@ -233,4 +236,20 @@
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.twf-title {
+    background-image: c.$wood;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    // border-bottom: 2px solid c.$dark-wood;
+}
+
+#disclaimer p {
+    margin-left: 3%;
+    margin-right: 3%;
 }

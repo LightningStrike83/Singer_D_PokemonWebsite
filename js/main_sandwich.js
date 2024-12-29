@@ -2,6 +2,7 @@ const selectSandwich = document.querySelector("#active-sandwich")
 const azPokemon = document.querySelectorAll(".az_pokemon")
 const sandwichLegend = document.querySelector("#legend_click")
 const locationButton = document.querySelectorAll(".location-button")
+const topText = document.querySelector(".top-text")
 
 let areaInfo = [
     {
@@ -116,6 +117,19 @@ function openLocationDetails() {
     azTeleporter.textContent = areaInfo[n].teleporter
 }
 
+function toTop() {
+    var x = window.matchMedia("(min-width: 728px)")
+  
+    if (x.matches) {
+      gsap.to(window, { duration: 1.5, scrollTo: (0)})
+    } else {
+      gsap.to(window, { duration: 2.5, scrollTo: (0)})
+    }
+  }
+
 selectSandwich.addEventListener("change", displayAZMons)
 sandwichLegend.addEventListener("click", toggleSandwichDisplay)
 locationButton.forEach(button => button.addEventListener("click", openLocationDetails))
+document.addEventListener("DOMContentLoaded", (event) => {
+    gsap.registerPlugin(ScrollToPlugin)});
+  topText.addEventListener("click", toTop)

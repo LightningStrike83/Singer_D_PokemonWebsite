@@ -1,7 +1,7 @@
 @use "../abstracts/colours" as c;
 
 p, a, label, li:not(#usage_tips li, #pokedex_tips li) {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab', 'Noto Serif', Arial, Helvetica, sans-serif;
     color: white;
     font-size: 12px;
     line-height: 25px;
@@ -17,8 +17,7 @@ a:visited {
 }
 
 a:hover {
-    color: c.$blue;
-    opacity: 70%;
+    opacity: 50%;
     transition: ease-in-out all 0.5s;
     text-decoration: underline;
 }
@@ -30,7 +29,7 @@ li {
 }
 
 li p {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab', 'Noto Serif', Arial, Helvetica, sans-serif;
     color: white;
     text-decoration: underline;
     cursor: pointer;
@@ -54,7 +53,7 @@ h2 {
 }
 
 h3 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab', 'Noto Serif', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     color: c.$white;

@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
@@ -170,12 +172,14 @@
 
         <section id="mode-select-con" class="grid-con">
             <div id="mode-select" class="col-span-full">
-                <button class="mode-button" data-button="simple">Simple</button>
-                <button class="mode-button" data-button="all">All Trainers</button>
+                <button class="mode-button" data-button="simple">Activate Simple Mode</button>
+                <button class="mode-button" data-button="all">Activate All Trainers Mode</button>
             </div>
             
             <p id="mode-indicator" class="col-span-full">Current Mode: <span id="mode-display">All Trainers</span></p>
         </section>
+
+        <section id="spinner-load" class="grid-con"></section>
 
         <section id="selection-con" class="grid-con">
             <div id="gym-leader-con" class="col-span-full dm">
@@ -590,15 +594,15 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="select-submit-con" class="grid-con">
-            <button class="col-span-full" id="select-submit">Create</button>
+            <section id="select-submit-con" class="col-span-full dm">
+                <button id="select-submit">Create</button>
+            </section>
         </section>
 
         <section id="td_arrow_con" class="grid-con to-top">
             <div id="td_arrow" class="col-span-full">
-                <p class="top-text">↑ To Top</p>
+                <button class="top-text">↑ To Top</button>
             </div>
         </section>
 

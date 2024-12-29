@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="../images/favicon/favicon.ico" />
@@ -155,19 +157,20 @@
         </div>
     </section>
 
-    <div id="fight-con" class="grid-con dm">
-      <section id="tips-challenge" class="col-start-2 col-end-5 m-col-start-9 m-col-end-13">
-        <div id="tips_area">
-            <h2 class="hidden">Challenge Tip Area</h2>
-            <div id="tips_click">
-                <span id="question_symbol">?</span>
-                <p id="tips">What's the Difference?</p>
-            </div>
-        </div>
-      </section>
+    <section id="tips-challenge" class="grid-con">
+      <div id="tips_area" class="col-start-2 col-end-5 m-col-start-9 m-col-end-13">
+          <h2 class="hidden">Challenge Tip Area</h2>
+          <div id="tips_click">
+              <span id="question_symbol">?</span>
+              <p id="tips">What's the Difference?</p>
+          </div>
+      </div>
+    </section>
 
-      <section id="prompt-area"  class="col-span-full">
+    <div id="fight-con" class="grid-con dm">
+      <section id="prompt-area" class="col-span-full">
         <h1 class="hidden">Challenge Prompt Area</h1>
+        <h3 class="twf-title">Prompt Generation</h3>
           <div id="button-con">
               <p id="prompt-count"></p>
               <div id="twf-button-con">
@@ -183,16 +186,12 @@
 
       <section id="full-list-con" class="col-span-full">
         <h1 class="hidden">Full List Open</h1>
-          <div>
-              <p id="full-list">Tired of random prompts? View the full list <a class="outsource" id="open-list">here</a>!</p>
-          </div>
+        <p id="full-list">Tired of random prompts? View the full list <a class="outsource" id="open-list">here</a>!</p>
       </section>
+    </div>
 
-      <section class="col-span-full">
-        <h1 class="hidden">Section Break</h1>
-          <div class="horizontal-line"></div>
-      </section>
-
+    <div id="twf-submit-area" class="grid-con dm">
+      <h3 class="twf-title col-span-full">Prompt Submission</h3>
       <section id="prompt-submit-con" class="col-span-full m-col-start-5 m-col-end-9">
         <h1 class="hidden">Submit A Prompt</h1>
           <div id="prompt-submit">

@@ -1,7 +1,7 @@
 const form = document.querySelector("#contact-form")
 const errorMessage = document.querySelector("#error-text")
 const errorCon = document.querySelector("#other-errors")
-let spinner = `<img id="spinner" src="../images/spinner.gif"><br> <p id="spinner-text">Sending...</p>`
+let spinner = `<img id="spinner" src="../images/spinner.gif" alt="Loading spinner"><br> <p id="spinner-text">Sending...</p>`
 
 function submitForm(event) {
     event.preventDefault()

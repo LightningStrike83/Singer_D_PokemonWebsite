@@ -8,61 +8,66 @@ const collectionName = document.querySelector("#collection-name-form")
 const nameForm = document.querySelector("#download-name-con")
 const topText = document.querySelector(".top-text")
 let finalName = ""
-let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading...</p></div>`
+let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif" alt="Loading spinner"> <p id="spinner-text">Loading...</p></div>`
 
-function shinyPopulation() {
-    shinyBank.innerHTML = spinner
+async function shinyPopulation() {
+    shinyBank.innerHTML = spinner;
 
-    fetch(`${baseURL}shinies/all`)
-    .then(response => response.json())
-    .then(function(response){
-        shinyBank.innerHTML = ""
-        
-        response.forEach(shiny => {
-            const div = document.createElement("div")
-            const img = document.createElement("img")
-            const p = document.createElement("p")
-            const buttonDiv = document.createElement("div")
-            const collectionButton = document.createElement("button")
-            const huntButton = document.createElement("button")
+    try {
+        const response = await fetch(`${baseURL}shinies/all`);
+        const data = await response.json();
 
-            div.setAttribute("class", "shiny-div")
-            div.setAttribute("data-div", shiny.id)
+        shinyBank.innerHTML = "";
 
-            img.src = `images/pokemon_images/shiny_forms/${shiny.number}.png`
-            img.setAttribute("class", "shiny-image")
-            img.setAttribute("alt", `Image of Shiny ${shiny.name}`)
+        data.forEach(shiny => {
+            const div = document.createElement("div");
+            const img = document.createElement("img");
+            const p = document.createElement("p");
+            const buttonDiv = document.createElement("div");
+            const collectionButton = document.createElement("button");
+            const huntButton = document.createElement("button");
 
-            p.textContent = `${shiny.name}`
-            p.setAttribute("class", "shiny-name")
+            div.setAttribute("class", "shiny-div");
+            div.setAttribute("data-div", shiny.id);
 
-            huntButton.innerText = "Add to Hunting"
-            huntButton.setAttribute("class", "hunt-button")
-            collectionButton.innerText = "Add to Collection"
-            collectionButton.setAttribute("class", "collection-button")
+            img.src = `images/pokemon_images/shiny_forms/${shiny.number}.png`;
+            img.setAttribute("class", "shiny-image");
+            img.setAttribute("alt", `Image of Shiny ${shiny.name}`);
 
-            buttonDiv.setAttribute("class", "button-div")
+            p.textContent = `${shiny.name}`;
+            p.setAttribute("class", "shiny-name");
 
-            collectionButton.addEventListener("click", addToCollection)
-            huntButton.addEventListener("click", addToHunt)
+            huntButton.innerText = "Add to Hunting";
+            huntButton.setAttribute("class", "hunt-button");
+            collectionButton.innerText = "Add to Collection";
+            collectionButton.setAttribute("class", "collection-button");
 
-            div.appendChild(img)
-            div.appendChild(p)
-            buttonDiv.appendChild(collectionButton)
-            buttonDiv.appendChild(huntButton)
-            div.appendChild(buttonDiv)
-            shinyBank.appendChild(div)
+            buttonDiv.setAttribute("class", "button-div");
+
+            collectionButton.addEventListener("click", addToCollection);
+            huntButton.addEventListener("click", addToHunt);
+
+            div.appendChild(img);
+            div.appendChild(p);
+            buttonDiv.appendChild(collectionButton);
+            buttonDiv.appendChild(huntButton);
+            div.appendChild(buttonDiv);
+            shinyBank.appendChild(div);
 
             if (shiny.number >= 1000) {
-                div.style.order = "2"
+                div.style.order = "2";
             }
 
             if ((shiny.number === "1017c") || (shiny.number === "1017w") || (shiny.number === "1017h") || (shiny.number === "1012a") || (shiny.number === "1013a")) {
-                div.style.order = "2"
+                div.style.order = "2";
             }
-        })
-    })
+        });
+    } catch (error) {
+        console.error("Error fetching shiny data:", error);
+        shinyBank.innerHTML = `<p>Sorry, something went wrong! ${error}</p>`;
+    }
 }
+
 
 function addToCollection() {
     let n = this.parentNode.parentNode.dataset.div
@@ -144,6 +149,9 @@ function addToCollection() {
             saveState()
         }
     })
+    .catch(error => {
+        shinyList.innerHTML = `<p>Sorry, something went wrong! ${error}</p>`
+    })
 }
 
 function sortNodes() {
@@ -188,7 +196,8 @@ function removePokemon() {
         if (original.dataset.div === thisDiv.dataset.div) {
             const originalImage = original.querySelector("img")
             originalImage.style.opacity = "100%"
-            original.style.backgroundColor = "white"
+            original.style.backgroundColor = "none"
+            original.style.backgroundImage = "linear-gradient(#fff, #ededed)"
         }
     })
 
@@ -310,57 +319,66 @@ function removeHunt() {
 }
 
 function saveState() {
-    const bankString = shinyBank.innerHTML;
     const listString = shinyList.innerHTML;
     const huntString = activeHunt.innerHTML;
     const huntText = huntIndicator.textContent;
 
-    const bankCompressed = LZString.compress(bankString);
     const listCompressed = LZString.compress(listString);
     const huntCompressed = LZString.compress(huntString);
     const huntTextCompressed = LZString.compress(huntText)
 
-    localStorage.setItem('bank', bankCompressed);
     localStorage.setItem('list', listCompressed);
     localStorage.setItem('hunt', huntCompressed);
     localStorage.setItem('text', huntTextCompressed)
 }
 
 
-function loadState() {
-    const bankString = localStorage.getItem('bank')
-    const listString = localStorage.getItem('list')
-    const huntString = localStorage.getItem('hunt')
-    const textString = localStorage.getItem('text')
+async function loadState() {
+    const listString = localStorage.getItem('list');
+    const huntString = localStorage.getItem('hunt');
+    const textString = localStorage.getItem('text');
 
-    if (bankString) {
-        const decompressedBank = LZString.decompress(bankString)
-
-        shinyBank.innerHTML = decompressedBank;
-        reattachListeners()
-    } else {
-        shinyPopulation()
-    }
+    // Wait for shinyPopulation to finish before proceeding
+    await shinyPopulation();
 
     if (listString) {
-        const decompressedList = LZString.decompress(listString)
-
+        const decompressedList = LZString.decompress(listString);
         shinyList.innerHTML = decompressedList;
-        reattachListeners()
+        reattachListeners();
+        reapplySettings();
     }
 
     if (huntString) {
-        const decompressedHunt = LZString.decompress(huntString)
-
+        const decompressedHunt = LZString.decompress(huntString);
         activeHunt.innerHTML = decompressedHunt;
-        reattachListeners()
+        reattachListeners();
     }
 
     if (textString) {
-        const decompressedText = LZString.decompress(textString)
-
-        huntIndicator.textContent = decompressedText
+        const decompressedText = LZString.decompress(textString);
+        huntIndicator.textContent = decompressedText;
     }
+}
+
+function reapplySettings() {
+    const listDiv = shinyList.querySelectorAll(".shiny-div");
+    
+    listDiv.forEach(list => {
+        const listData = list.dataset.div;
+        const bankDiv = shinyBank.querySelectorAll(".shiny-div");
+
+        bankDiv.forEach(bank => {
+            const bankData = bank.dataset.div;
+
+            if (listData === bankData) {
+                const bankImage = bank.querySelector("img")
+
+                bankImage.style.opacity = "20%"
+                bank.style.backgroundImage = "none"
+                bank.style.backgroundColor = "#4E3524ae"
+            }
+        });
+    });
 }
 
 function reattachListeners() {

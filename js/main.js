@@ -1,3 +1,5 @@
+console.log('Welcome to the world of Pokemon!')
+
 const hamClose = document.querySelectorAll(".close-button")
 const infoMenu = document.querySelector("#game-info-menu")
 const activityMenu = document.querySelector("#activity-menu")

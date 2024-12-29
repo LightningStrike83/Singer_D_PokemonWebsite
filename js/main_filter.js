@@ -4,7 +4,6 @@ function showSelection() {
     const sprites = document.querySelectorAll(".sprite_item")
     const regionalText = document.querySelectorAll(".filter_text")
     const filterSelection = filter.value
-    console.log(filterSelection)
 
     regionalText.forEach(text => {
       text.classList.add("hidden")

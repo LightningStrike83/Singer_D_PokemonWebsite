@@ -8,7 +8,7 @@ const modeExplanation = document.querySelector("#usage_legend")
 let request = usageSelect.value
 let savedVariable = ""
 let savedText = ""
-let spinner = `<img id="spinner" src="../images/spinner.gif"><br> <p id="spinner-text">Loading...</p>`
+let spinner = `<img id="spinner" src="../images/spinner.gif" alt="Loading spinner"><br> <p id="spinner-text">Loading...</p>`
 
 function linePopulation() {
     const lineSelect = document.querySelector("#line-selection")
@@ -116,7 +116,6 @@ function changeModeText() {
 }
 
 function directionText() {
-    console.log(usageDirection)
     var x = window.matchMedia("(min-width: 728px)")
 
     if (x.matches) {

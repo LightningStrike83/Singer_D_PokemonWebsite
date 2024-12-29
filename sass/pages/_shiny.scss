@@ -19,7 +19,7 @@
     p {
         text-align: center;
         background-image: c.$wood;
-        font-size: 12px!important;
+        font-size: 9px!important;
         text-align: center;
         padding-left: 5px;
         padding-right: 5px;
@@ -237,6 +237,14 @@
     background-image: c.$wood;
 }
 
+@media screen and (min-width: 428px) {
+    .shiny-div {
+        p {
+            font-size: 10px!important;
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     .hunt-div {
         width: 19%;
@@ -252,6 +260,7 @@
         p {
             padding-left: 0px;
             padding-right: 0px;
+            font-size: 11px!important;
         }
     }
 }
@@ -267,6 +276,12 @@
     #shiny-collection {
         .shiny-div {
             width: 20%;
+        }
+    }
+
+    .shiny-div {
+        p {
+            font-size: 12px!important;
         }
     }
 }

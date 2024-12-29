@@ -10,7 +10,7 @@ const battleHome = document.querySelector("#battle-title")
 const challengeHome = document.querySelector("#challenge-title")
 const promptClose = document.querySelector("#prompt-close")
 const tipsArea = document.querySelector("#tips_area")
-let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif"> <p id="spinner-text">Loading...</p></div><p id="submit-confirm"></p>`
+let spinner = `<div id="spinner-con"><img id="spinner" src="../images/spinner.gif" alt="Loading spinner"> <p id="spinner-text">Loading...</p></div><p id="submit-confirm"></p>`
 
 function displayLength() {
     const promptCount = document.querySelector("#prompt-count");
@@ -189,8 +189,6 @@ function sendSubmission(event) {
         description: this.elements.description.value,
         submitter: this.elements.submitter.value
     };
-
-    console.log(formData)
 
     fetch(`${baseURL}prompts/submit`, {
         method: "POST",

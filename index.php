@@ -14,16 +14,31 @@ if(!$_SESSION['username']) {
     <title>Home- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/main.css?version = 0.2">
+    <link rel="stylesheet" href="css/main.css?version=0.4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    <script defer src="js/main_home.js?version = 0.2"></script>
-    <script defer src="js/main.js?version = 0.2"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="../images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="MyWebSite">
+    <link rel="manifest" href="../images/favicon/site.webmanifest">
+    <script defer src="js/main_darkmode.js?version=0.4"></script>
+    <script defer src="js/main_home.js?version=0.4"></script>
+    <script defer src="js/main.js?version=0.4"></script>
 </head>
-<body>
+<body class="dm">
     <div id="container">
-        <div id="full-length" class="full-width-grid-con">
+      <div id="theme-mode-con" class="full-width-grid-con dm">
+        <div id="theme-enable">
+          <img id="theme-image" src="images/dark-icon.png" alt="Theme Icon">
+          <p id="theme-enable-text">Enable <span id="theme-text">Dark</span> Mode</p>
+        </div>
+      </div>
+        <div id="full-length" class="full-width-grid-con dm">
             <header id="main_header" class="grid-con">
             <div id="logo-con" class="col-start-2 col-end-4 m-col-span-full">
               <a href="index.html"><svg id="main-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.92 65.92">
@@ -96,54 +111,51 @@ if(!$_SESSION['username']) {
                     <line class="cls-1" y1="21" x2="51.83" y2="21"/>
                   </g>
                 </svg>
-          </div>
-        </header>
-    </div>
-
-    <div class="full-width-grid-con">
-      <div id="nav-con" class="grid-con">
-        <div id="nav-menu" class="col-start-4 col-end-5 m-col-span-full">
-            <ul id="header_links">
-                <li><a href="index.html">Home</a></li>
-                <li class="line-spacer"></li>
-                <li><a href="about_page.html">About</a></li>
-                <li class="line-spacer"></li>
-                <li id="game-info-button"><p>Game Information ▼</p></li>
-                <li class="line-spacer"></li>
-                <li id="activity-button"><p>Activities ▼</p></li>
-                <li class="line-spacer"></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <div id="game-info-menu">
-              <ul id="info-links">
-                <li><a href="trainer_data.html">Trainer Data</a></li>
-                <li class="horizontal-line"></li>
-                <li><a href="sandwich.html">Area Zero Sandwich Filter</a></li>
-                <li class="horizontal-line"></li>
-                <li><a href="usage.html">Pokemon Usage</a></li>
-              </ul>
-            </div>
-
-            <div id="activity-menu">
-              <ul id="activity-links">
-                <li><a href="custom_pokedex.html">Create Your Own Pokedex</a></li>
-                <li class="horizontal-line"></li>
-                <li><a href="guess_who.html">Guess Who</a></li>
-                <li class="horizontal-line"></li>
-                <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
-                <li class="horizontal-line"></li>
-                <li><a href="shiny.html">Shiny Counter</a></li>
-                <li class="horizontal-line"></li>
-                <li><a href="league-maker.html">Custom League Maker</a></li>
-              </ul>
-            </div>
-        </div>
+          
+              </div>
+              <div id="nav-menu" class="col-start-4 col-end-5 m-col-span-full">
+                  <ul id="header_links">
+                      <li><a href="index.html">Home</a></li>
+                      <li class="line-spacer"></li>
+                      <li><a href="about_page.html">About</a></li>
+                      <li class="line-spacer"></li>
+                      <li id="game-info-button"><p>Game Information ▼</p></li>
+                      <li class="line-spacer"></li>
+                      <li id="activity-button"><p>Activities ▼</p></li>
+                      <li class="line-spacer"></li>
+                      <li><a href="contact.html">Contact</a></li>
+                  </ul>
+  
+                  <div id="game-info-menu" class="dm">
+                    <ul id="info-links">
+                      <li><a href="trainer_data.html">Trainer Data</a></li>
+                      <li class="horizontal-line"></li>
+                      <li><a href="sandwich.html">Area Zero Sandwich Filter</a></li>
+                      <li class="horizontal-line"></li>
+                      <li><a href="usage.html">Pokemon Usage</a></li>
+                    </ul>
+                  </div>
+  
+                  <div id="activity-menu" class="dm">
+                    <ul id="activity-links">
+                      <li><a href="custom_pokedex.html">Create Your Own Pokedex</a></li>
+                      <li class="horizontal-line"></li>
+                      <li><a href="guess_who.html">Guess Who</a></li>
+                      <li class="horizontal-line"></li>
+                      <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
+                      <li class="horizontal-line"></li>
+                      <li><a href="shiny.html">Shiny Counter</a></li>
+                      <li class="horizontal-line"></li>
+                      <li><a href="league-maker.html">Custom League Maker</a></li>
+                    </ul>
+                  </div>
+              </div>
+          </header>
       </div>
-    </div>
+    
 
     <section id="main-update" class="grid-con">
-      <div id="welcome-con" class="col-span-full m-col-span-8">
+      <div id="welcome-con" class="col-span-full m-col-span-8 dm">
         <h3 id="welcome-heading">Welcome to Littleroot Dreams</h3>
         <p id="welcome-text">Welcome to Littleroot Dreams, a Pokemon fan website dedicated to delivering resources and activites that you may not find anywhere else. Get started by browsing some of our pages down below!</p>
 
@@ -178,32 +190,32 @@ if(!$_SESSION['username']) {
             </div>
           </a>
 
-          <a class="welcome-feature" href="trainer_data.html">
+          <a class="welcome-feature" href="league-maker.html">
             <div>
-              <div class="feature-image" id="feature-data-image"></div>
+              <div class="feature-image" id="feature-league-image"></div>
               <div class="feature-text">
-                <h3 class="feature-title">Trainer Data</h3>
-                <p>Curious to see trainer teams in games? Check out this comprehensive list!</p>
+                <h3 class="feature-title">Custom League Maker</h3>
+                <p>Create your own Pokemon League to share!</p>
               </div>
             </div>
           </a>
         </div>
       </div>
 
-      <div id="update-con" class="col-span-full m-col-start-9 m-col-end-13">
+      <div id="update-con" class="col-span-full m-col-start-9 m-col-end-13 dm">
         <h3 id="main-title">Site Updates</h3>
         <ul id="main-site-updates"></ul>
       </div>
     </section>
 
-    <section id="bottom" class="full-width-grid-con">
+    <section id="bottom" class="full-width-grid-con dm">
         <div id="footer-info" class="grid-con">
             <h2 class="hidden">Copyright Information</h2>
             <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
         </div>       
     </section>
 
-    <section id="main-mobile-menu" class="full-width-grid-con mobile-menu">
+    <section id="main-mobile-menu" class="full-width-grid-con mobile-menu dm">
       <h1 class="hidden">Mobile Menu</h1>
       <div class="col-start-2 col-span-1 mobile-links">
           <a class="header-link" href="index.html">Home</a>
@@ -218,7 +230,7 @@ if(!$_SESSION['username']) {
       </div>
   </section>
 
-  <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu">
+  <section id="gameinfo-mobile-menu" class="full-width-grid-con mobile-menu dm">
     <h1 class="hidden">Game Info Mobile Menu</h1>
       <div class="col-start-2 col-span-1 mobile-links">
           <a class="header-link" href="trainer_data.html">Trainer Data</a>
@@ -231,7 +243,7 @@ if(!$_SESSION['username']) {
       </div>
   </section>
 
-  <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu">
+  <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu dm">
     <h1 class="hidden">Activity Mobile Menu</h1>
       <div class="col-start-2 col-span-1 mobile-links">
           <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>

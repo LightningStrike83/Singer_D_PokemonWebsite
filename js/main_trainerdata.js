@@ -173,6 +173,10 @@ function scrollToGame() {
   gsap.to(window, { duration: 1, scrollTo: ("#note") });
 }
 
+function ScrollToTrainer() {
+  gsap.to(window, { duration: 1, scrollTo: ("#trainer_image") });
+}
+
 function toTop() {
   var x = window.matchMedia("(min-width: 728px)")
 
@@ -225,3 +229,4 @@ characterDivs.forEach(div => {
   document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollToPlugin)});
   topText.addEventListener("click", toTop)
+  characterDivs.forEach(div => div.addEventListener("click", ScrollToTrainer))

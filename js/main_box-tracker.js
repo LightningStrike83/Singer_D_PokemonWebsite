@@ -27,14 +27,14 @@ function changeBoxName() {
     } else if (nameChange) {
         nameChange.textContent = "▼"
     }
+
+    saveState()
 }
 
 function displayNameChange() {
     const nameParent = this.parentNode.parentNode
     const contentDiv = nameParent.querySelector(".change-con")
     const arrow = this
-
-    console.log(nameParent)
 
     if (contentDiv.style.display !== "flex") {
         contentDiv.style.display = "flex"
@@ -155,8 +155,6 @@ function addToBox() {
 
     attachNicknameEvents()
 
-    console.log(order)
-
     if (this.classList.contains("usable-button")) {
         this.parentNode.remove()
     }
@@ -204,8 +202,6 @@ function movePokeRight() {
     const closestRightDiv = allDivs
         .filter(div => parseFloat(div.style.order) > orderValue)
         .sort((a, b) => parseFloat(a.style.order) - parseFloat(b.style.order))[0];
-
-    console.log(allDivs)
 
     if (closestRightDiv) {
         const closestRightOrder = parseFloat(closestRightDiv.style.order);

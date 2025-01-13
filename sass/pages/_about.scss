@@ -111,6 +111,10 @@
     padding-bottom: 10px;
 }
 
+#lightning_image {
+    margin-bottom: 10px;
+}
+
 @media screen and (min-width: 428px) {
     img {
         max-height: 275px;
@@ -157,6 +161,16 @@
 
     .champion-title {
         font-size: 18px!important;
+    }
+
+    #lightning_image {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #lightning_pic {
+        width: 100%;
     }
 }
 

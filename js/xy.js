@@ -999,6 +999,9 @@ function showPokemonXYImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "wartab"
+    refCredit.href = "https://www.speedrun.com/pkmnxy/guides/2afgl"
 }
 
 violaXY.addEventListener('click', displayXYTrainers);

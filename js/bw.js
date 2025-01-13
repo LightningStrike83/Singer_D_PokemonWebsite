@@ -1252,6 +1252,14 @@ function showPokemonBWImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    if (event.target.parentNode.id === "cress1") {
+        refCredit.textContent = "JTMagicman"
+        refCredit.href = "https://www.dropbox.com/s/vfy5xok1knq069a/Pokemon%20Black%20-%20Game%20Information%20(Tepig).xlsx?dl=0"
+    } else {
+        refCredit.textContent = "Human"
+        refCredit.href = "https://drive.google.com/file/d/1l7SBH1yeJvEYxml5DpARCNuC5yDf_7cu/view"
+    }
 }
 
 cilanBW.addEventListener('click', displayBWTrainers);

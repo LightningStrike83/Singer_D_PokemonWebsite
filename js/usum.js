@@ -2270,6 +2270,9 @@ function showPokemonUSUMImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "SCIRESM"
+    refCredit.href = "https://pastebin.com/9WdFYnLi"
 }
 
 halaUSUM.addEventListener('click', displayUSUMTrainers);

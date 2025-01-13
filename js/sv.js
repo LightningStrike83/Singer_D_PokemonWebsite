@@ -3046,6 +3046,24 @@ function showPokemonSVImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    console.log(event.target.parentNode.dataset.member)
+
+    if (event.target.parentNode.dataset.member === "28" ||
+        event.target.parentNode.dataset.member === "29") {
+        refCredit.textContent = "Hematite/HemaH20's"
+        refCredit.href = "https://docs.google.com/spreadsheets/d/1gyFwKzf8a3kTmBEhqISTF0qnPdSmNBNQR2fMBQk-nfU/edit?gid=1606508293#gid=1606508293"
+    } else if (event.target.parentNode.dataset.member === "30" ||
+        event.target.parentNode.dataset.member === "31" ||
+        event.target.parentNode.dataset.member === "32" ||
+        event.target.parentNode.dataset.member === "33" ||
+        event.target.parentNode.dataset.member === "34") {
+        refCredit.textContent = "sora10pls"
+        refCredit.href = "https://gist.github.com/sora10pls/b12d9a1cf1b4696585ba04281a016b61"
+    } else {
+        refCredit.textContent = "Hematite/HemaH20's"
+        refCredit.href = "https://docs.google.com/spreadsheets/d/16XSoEjfAyWhvqUV8t2TZR_RD8Qceb4RVYbR5njS8aHk/htmlview"
+    }
 }
 
 katySV.addEventListener('click', displaySVTrainers);

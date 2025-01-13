@@ -1166,6 +1166,9 @@ function showPokemonRBGImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "zerokid"
+    refCredit.href = "https://gamefaqs.gamespot.com/gameboy/367023-pokemon-red-version/faqs/64175/introduction"
 }
 
 brockRBG.addEventListener('click', displayRBGTrainers);

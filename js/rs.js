@@ -1112,6 +1112,9 @@ function showPokemonRSImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "roushmore"
+    refCredit.href = "https://docs.google.com/spreadsheets/d/1frqW2CeHop4o0NP6Ja_TAAPPkGIrvxkeQJBfyxFggyk/edit#gid=1064630895"
 }
 
 roxanneRS.addEventListener('click', displayRSTrainers);

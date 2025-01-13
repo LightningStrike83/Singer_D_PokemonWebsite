@@ -172,13 +172,20 @@
     text-align: center;
     background-image: c.$wood;
     border: 2px solid c.$dark-wood;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     border-radius: 20px;
 }
 
 .game p {
     line-height: 15px;
+}
+
+.td_ref_text {
+    margin-bottom: 10px;
+}
+
+#td_ref_credit {
+    text-decoration: underline;
 }
 
 #trainer-contact {

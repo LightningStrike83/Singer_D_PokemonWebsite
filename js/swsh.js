@@ -1989,6 +1989,14 @@ function showPokemonSWSHImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    if (event.target.parentNode.id === "piers1") {
+        refCredit.textContent = "doipy hooves"
+        refCredit.href = "https://www.smogon.com/forums/threads/pokemon-sword-and-shield-datamine-thread.3656143/page-71"
+    } else {
+        refCredit.textContent = "zu"
+        refCredit.href = "https://pastebin.com/iN1UKaz0"
+    }
 }
 
 miloSWSH.addEventListener('click', displaySWSHTrainers);

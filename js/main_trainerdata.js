@@ -23,6 +23,7 @@ const characterDivs = document.querySelectorAll('.character_name');
 const gameDivs = document.querySelectorAll('.game')
 const gameTitle = document.querySelectorAll(".game_title")
 const topText = document.querySelector(".top-text")
+const refCredit = document.querySelector("#td_ref_credit")
 
 let currentTrainerId = null
 let lastCheckedContainer = null
@@ -174,7 +175,13 @@ function scrollToGame() {
 }
 
 function ScrollToTrainer() {
-  gsap.to(window, { duration: 1, scrollTo: ("#trainer_image") });
+  var x = window.matchMedia("(min-width: 728px)")
+
+  if (x.matches) {
+
+  } else {
+    gsap.to(window, { duration: 1, scrollTo: ("#trainer_image") });
+  }
 }
 
 function toTop() {
@@ -186,7 +193,6 @@ function toTop() {
     gsap.to(window, { duration: 2.5, scrollTo: (0)})
   }
 }
-
 
 rbgGame.addEventListener('click', openRBG);
 yGame.addEventListener('click', openY);

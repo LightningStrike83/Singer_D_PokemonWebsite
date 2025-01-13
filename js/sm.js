@@ -1507,6 +1507,9 @@ function showPokemonSMImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "SCIRESM"
+    refCredit.href = "https://pastebin.com/vkaZNTra"
 }
 
 halaSM.addEventListener('click', displaySMTrainers);

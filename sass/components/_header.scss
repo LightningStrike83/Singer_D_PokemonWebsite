@@ -112,6 +112,10 @@ header {
     width: 100%;
 }
 
+#info-links li:first-of-type, #activity-links li:first-of-type {
+    margin-top: 5px;
+}
+
 @media screen and (min-width: 768px) {
     #logo-con {
         padding-top: 10px;

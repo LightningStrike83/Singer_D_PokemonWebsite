@@ -1,4 +1,4 @@
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const generateButton = document.querySelector("#gw-generate")
 const loadButton = document.querySelector("#gw-submit")
 const yourName = document.querySelector("#gw-pokemon-name")

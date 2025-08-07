@@ -1161,6 +1161,9 @@ function showPokemonLGPEImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "eddaket"
+    refCredit.href = "https://docs.google.com/spreadsheets/d/1zlvzKZAF6m7V3xSsf1md4HGge9CzlnJypIacnQ4fKqs/edit#gid=1454927861"
 }
 
 brockLGPE.addEventListener('click', displayLGPETrainers);

@@ -1,4 +1,4 @@
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const siteUpdate = document.querySelector("#main-site-updates")
 
 function updatePopulation() {

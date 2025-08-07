@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>About- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/main.css?version=0.3">
+    <link rel="stylesheet" href="css/main.css?version=1.1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
@@ -18,8 +21,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="MyWebSite">
     <link rel="manifest" href="../images/favicon/site.webmanifest">
-    <script defer src="js/main_darkmode.js?version=0.3"></script>
-    <script defer src="js/main.js?version=0.3"></script>
+    <script defer src="js/main_darkmode.js?version=1.0"></script>
+    <script defer src="js/main.js?version=1.0"></script>
 </head>
 <body class="dm">
     <div id="container">
@@ -132,11 +135,13 @@
                         <li class="horizontal-line"></li>
                         <li><a href="guess_who.html">Guess Who</a></li>
                         <li class="horizontal-line"></li>
-                        <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
+                        <li><a href="league-maker.html">Custom League Maker</a></li>
                         <li class="horizontal-line"></li>
                         <li><a href="shiny.html">Shiny Counter</a></li>
                         <li class="horizontal-line"></li>
-                        <li><a href="league-maker.html">Custom League Maker</a></li>
+                        <li><a href="box-tracker.html">Box Tracker</a></li>
+                        <li class="horizontal-line"></li>
+                        <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
                       </ul>
                     </div>
                 </div>
@@ -158,10 +163,10 @@
                 <h3 class="dev_name col-span-full">Lightning</h3>
                 <div id="lightning_div">
                     <div id="lightning_pic">
-                        <img src="images/about/lightning_champ.png" alt="Dev Lightning in her Champion outfit">
+                        <img id="lightning_image" src="images/about/lightning_champ.png" alt="Dev Lightning in her Champion outfit">
                     </div>
                     <div id="lightning_text">
-                        <p>Lightning has been an avid Pokemon fan, ever since she was young. Her first game was Pokemon Colosseum for the Gamecube, with Pokemon Emerald being her first mainline game. Pokemon has been her main source of inspiration, as well as one of the main sources of her strength. She has dabbled into many aspects of Pokemon, including competitive, shiny hunting, and creating art. She loves Pokemon for the potential the entire Pokemon world has, and the happiness it brings to others as well.</p>
+                        <p>Lightning has been an avid Pokemon fan ever since she was young. Her first game was Pokemon Colosseum for the Gamecube, with Pokemon Emerald being her first mainline game. Pokemon has been her main source of inspiration, as well as one of the main sources of her strength. She has dabbled into many aspects of Pokemon, including competitive, shiny hunting, and creating art. She loves Pokemon for the potential the entire Pokemon world has, and the happiness it brings to others as well.</p>
 
                     <ul class="trainer_favs">
                         <li>Favourite Pokemon: Eevee</li>
@@ -185,10 +190,27 @@
             </div>
         </section>
 
+        <section id="about_thanks" class="grid-con">
+          <div id="special_thanks_con" class="col-span-full dm">
+            <h3 id="thanks_title">Special Thanks</h3>
+            <p id="thanks_text">Littleroot Dreams would like to specially thank these lovely people. Without their encouragement, patience, and kind hearts, this website wouldn't exist.</p>
+
+            <ul id="special_thanks_list">
+              <li><a href="https://www.tumblr.com/ducessaeva">• DucessaEva (Design Consultant)</a></li>
+              <li>• gardenofglass (Beta Tester + Consultant)</a></li>
+              <li>• Sophia (Design Consultant)</li>
+              <li><a href="https://sunbiscuit.carrd.co/">• sunbiscuit (Encouragement)</a></li>
+              <li>• TwistedTempoGaming (Encouragement)</a></li>
+              <li><a href="https://archiveofourown.org/users/Yumi_chan_Hamano/pseuds/Yumi_chan_Hamano">• Yumichan216 (Design Consultant)</li></a>
+            </ul>
+          </div>
+        </section>
+
         <section id="bottom" class="full-width-grid-con dm">
             <div id="footer-info" class="grid-con">
                 <h2 class="hidden">Copyright Information</h2>
                 <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
+                <p class="col-span-full"><a class="footer-link" href="privacy.html">Privacy Policy</a> | <a class="footer-link" href="contact.html">Contact</a></p>
             </div>       
         </section>
 
@@ -225,9 +247,10 @@
             <div class="col-start-2 col-span-1 mobile-links">
                 <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>
                 <a class="header-link" href="guess_who.html">Guess Who</a>
-                <a class="header-link" href="pokemon_fight.html">Challenge Prompt Generator</a>
-                <a class="header-link" href="shiny.html">Shiny Counter</a>
                 <a class="header-link" href="league-maker.html">Custom League Maker</a>
+                <a class="header-link" href="shiny.html">Shiny Counter</a>
+                <a class="header-link" href="box-tracker.html">Box Tracker</a>
+                <a class="header-link" href="pokemon_fight.html">Challenge Prompt Generator</a>
             </div>
     
             <div class="col-span-1 mobile-close">

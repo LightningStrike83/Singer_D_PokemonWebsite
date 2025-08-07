@@ -1,4 +1,4 @@
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const usageSelect = document.querySelector("#usage-select")
 const mobileSelect = document.querySelector("#mobile-select")
 const topText = document.querySelector(".top-text")

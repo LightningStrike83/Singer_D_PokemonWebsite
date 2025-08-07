@@ -4,7 +4,7 @@ const spriteArea = document.querySelector("#sprite_area")
 const dragImages = document.querySelectorAll(".sprite_item img");
 const submitbutton = document.querySelector("#pd-submit-button")
 const downloadButton = document.querySelector("#pd-download")
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const errorHandle = document.querySelector("#error-handle")
 const dexName = document.querySelector("#custom-dex-form")
 const nameForm = document.querySelector("#download-dex-con")
@@ -80,7 +80,7 @@ function populateBoxArea() {
 }
 
 async function mobileList() {
-  var x = window.matchMedia("(min-width: 768px)")
+  var x = window.matchMedia("(min-width: 1024px)")
 
   if (x.matches) {
 
@@ -192,7 +192,7 @@ function resetBoxHeight() {
 
   pokedexBoxes.forEach(pdBox => {
     if (!pdBox.querySelector("img")) {
-      pdBox.style.height = `${dynamicHeight}px`; // Set the same height for boxes without images
+      pdBox.style.height = `${dynamicHeight}px`;
     }
   });
 }
@@ -224,32 +224,84 @@ function dragLeave(event) {
 }
 
 function drop(event) {
-    event.preventDefault();
-    const targetDropArea = event.target.closest(".pokedex_box");
-    const draggedPokemon = document.querySelector(".dragging");
-  
-    if (!targetDropArea) {
-      return;
-    }
-  
-    if (draggedPokemon) {
-      const currentDropArea = draggedPokemon.parentNode;
-  
-      if (currentDropArea !== targetDropArea) {
-        const existingImage = targetDropArea.querySelector("img");
-        
-        if (existingImage) {
-          return;
-        }
+  event.preventDefault();
+  const targetDropArea = event.target.closest(".pokedex_box");
+  const draggedPokemon = document.querySelector(".dragging");
 
-        currentDropArea.removeChild(draggedPokemon);
-        targetDropArea.appendChild(draggedPokemon);
-      }
-      draggedPokemon.classList.remove("dragging");
-    }
-  
-    event.target.classList.remove("drag-enter");
+  if (!targetDropArea || !draggedPokemon) {
+    return;
   }
+
+  const currentDropArea = draggedPokemon.parentNode;
+
+  if (currentDropArea.classList.contains("pokedex_box") && targetDropArea.classList.contains("pokedex_box")) {
+    const currentImage = currentDropArea.querySelector("img");
+    const targetImage = targetDropArea.querySelector("img");
+
+    if (!targetImage) {
+      targetDropArea.appendChild(currentImage)
+    }
+
+    if (currentImage && targetImage) {
+      currentDropArea.appendChild(targetImage);
+      targetDropArea.appendChild(currentImage);
+    }
+  } else {
+    let existingImage = targetDropArea.querySelector("img");
+
+    if (existingImage) {
+      let nextDropArea = targetDropArea.nextElementSibling;
+
+      while (nextDropArea) {
+        if (nextDropArea.classList.contains("pokedex_box")) {
+          let tempImage = nextDropArea.querySelector("img");
+
+          nextDropArea.appendChild(existingImage);
+
+          if (!tempImage) break;
+
+          existingImage = tempImage;
+        }
+        nextDropArea = nextDropArea.nextElementSibling;
+      }
+
+      if (!nextDropArea) {
+        const targetImageBox = document.querySelector(".pokedex_box:last-child");
+        const targetImage = targetImageBox.querySelector("img");
+        const targetText = targetImageBox.querySelector("p");
+        let inputValue = parseInt(targetText.textContent);
+        const pdInput = document.querySelector("#pd-input")
+        const home = document.querySelector("#pokedex_display");
+        const newBox = document.createElement("div");
+        const number = document.createElement("p");
+
+        newBox.setAttribute("class", "pokedex_box");
+
+        number.textContent = inputValue + 1;
+        number.setAttribute("class", "pokedex_number");
+
+        count = inputValue + 1;
+
+        pdInput.value = count
+
+        newBox.addEventListener("dragover", dragOver);
+        newBox.addEventListener("dragenter", dragEnter);
+        newBox.addEventListener("dragleave", dragLeave);
+        newBox.addEventListener("drop", drop);
+
+        newBox.appendChild(number);
+        newBox.appendChild(targetImage);
+        home.appendChild(newBox);
+      }
+    }
+
+    currentDropArea.removeChild(draggedPokemon);
+    targetDropArea.appendChild(draggedPokemon);
+  }
+
+  draggedPokemon.classList.remove("dragging");
+  event.target.classList.remove("drag-enter");
+}
 
 function returnToOriginalPosition(event) {
     event.preventDefault();
@@ -281,7 +333,7 @@ function exportDivToImage(event) {
   const form = document.querySelector("#custom-dex")
   let formName = form.value
 
-  var x = window.matchMedia("(min-width: 768px)")
+  var x = window.matchMedia("(min-width: 1024px)")
 
   event.preventDefault()
   finalName = formName
@@ -295,6 +347,7 @@ function exportDivToImage(event) {
   pokedexBox.forEach(box => {
     if (x.matches) {
       box.style.width = "10%"
+      box.style.minHeight = "min-content"
     }
   })
 

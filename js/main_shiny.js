@@ -1,7 +1,7 @@
 const shinyBank = document.querySelector("#shiny-bank")
 const shinyList = document.querySelector("#shiny-collection")
 const activeHunt = document.querySelector("#active-hunt")
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const huntIndicator = document.querySelector("#hunt-indicator")
 const saveButton = document.querySelector("#shiny-save")
 const collectionName = document.querySelector("#collection-name-form")
@@ -447,6 +447,7 @@ function downloadCollection(event) {
 
     p.textContent = "Create your own at littlerootdreams.com"
     p.setAttribute("id", "shiny-credit")
+    p.style.order = "100"
 
     title.textContent = `${finalName}`
     title.setAttribute("id", "my-collection-title")
@@ -454,7 +455,8 @@ function downloadCollection(event) {
     shinyList.appendChild(title)
     shinyList.appendChild(p)
 
-    shinyList.style.backgroundImage = "linear-gradient(#319dff, #70afe2)"
+    shinyList.style.backgroundImage = "linear-gradient(rgba(49, 155, 255, 0.85),rgba(112, 175, 226, 0.85))"
+    shinyList.style.backgroundColor = "rgb(42, 42, 42)"
 
     shinyDivs.forEach(div => {
         div.style.border = "2px solid black"
@@ -495,6 +497,7 @@ function downloadCollection(event) {
     nameForm.style.opacity = "0"
 
     shinyList.style.backgroundImage = "none"
+    shinyList.style.backgroundColor = "transparent"
 
     clearText()
 }

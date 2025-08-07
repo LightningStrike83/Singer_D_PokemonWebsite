@@ -17,7 +17,7 @@
 }
 
 #legend {
-    font-size: 18px!important;
+    font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
     text-decoration: underline;
@@ -46,6 +46,10 @@
     padding-bottom: 10px;
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 20px;
+}
+
+#legend_area {
     margin-bottom: 20px;
 }
 
@@ -244,6 +248,7 @@
 @media screen and (min-width: 428px) {
     #legend {
         margin-right: 0px;
+        font-size: 16px!important;
     }
 
     .az_pokemon {
@@ -255,6 +260,12 @@
     }
 }
 
+@media screen and (min-width: 550px) {
+    #legend_area {
+        grid-column: 4/5;
+    }
+}
+
 @media screen and (min-width: 768px) {
     #az-title {
         margin-bottom: 15px;
@@ -263,6 +274,10 @@
 
     #az-pic {
         margin-bottom: 15px;
+    }
+
+    #legend_area {
+        grid-column: 11/13;
     }
 }
 

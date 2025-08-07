@@ -1,4 +1,4 @@
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const generateButton = document.querySelector("#generate-fight-button")
 const challengeButton = document.querySelector("#generate-challenge-button")
 const openListButton = document.querySelector("#open-list")
@@ -20,7 +20,7 @@ function displayLength() {
         fetch(`${baseURL}challenge/all`).then(response => response.json())
     ])
     .then(function(responses) {
-        promptCount.textContent = `There is currently ${responses[0].length} challenge prompts and ${responses[1].length} battle prompts in the database.`;
+        promptCount.textContent = `There is currently ${responses[0].length} battle prompts and ${responses[1].length} challenge prompts in the database.`;
     })
     .catch(error => {
         promptCount.textContent = `Sorry, something went wrong. Please refresh and try again. ${error}`;

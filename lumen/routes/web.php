@@ -19,9 +19,9 @@ $router->get('/', function () use ($router) {
 
 $router->get("/shinies/all", "ShinyController@getAll");
 $router->get("/shinies/{id}", "ShinyController@getOne");
-$router->get("/battle/all", "TWFPromptController@getAll");
-$router->get("/challenge/all", "TWFChallengeController@getAll");
-$router->post("/prompts/submit", "TWFSuggestionController@save");
+$router->get("/battle/all", "twfPromptController@getAll");
+$router->get("/challenge/all", "twfChallengeController@getAll");
+$router->post("/prompts/submit", "twfSuggestionController@save");
 $router->get("/updates", "SiteUpdateController@getThree");
 $router->get("/lines", "LineController@getAll");
 $router->get("/lines/{id}", "LineController@getOne");
@@ -39,6 +39,7 @@ $router->get("/gen/all-no-alt/dex", "SpeciesController@getAllNoAltDex");
 $router->get("/game/sw-sh", "SpeciesController@getSWSH");
 $router->get("/game/la", "SpeciesController@getLA");
 $router->get("/game/scar-vio", "SpeciesController@getScarVio");
+$router->get("/game/za", "SpeciesController@getZA");
 $router->get("/custom/regional", "SpeciesController@getRegionals");
 $router->get("/custom/starter", "SpeciesController@getStarters");
 $router->get("/custom/legendary", "SpeciesController@getLegendaries");

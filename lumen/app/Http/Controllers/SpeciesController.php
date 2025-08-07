@@ -43,6 +43,11 @@ class SpeciesController extends Species {
         $species = Species::select('number', 'name')->where('in_ScarVio', '=', 'y')->orderBy('number', 'asc')->get();
         return response()->json($species);
     }
+    
+    public function getZA() {
+        $species = Species::select('number', 'name')->where('in_ZA', '=', 'y')->orderBy('number', 'asc')->get();
+        return response()->json($species);
+    }
 
     public function getRegionals() {
         $species = Species::select('number', 'name')->where('is_regional', '=', 'y')->orderBy('number', 'asc')->get();

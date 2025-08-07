@@ -1,7 +1,7 @@
 @use "../abstracts/colours" as c;
 
 #tips {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
     text-decoration: underline;
@@ -286,10 +286,7 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-}
-
-.mobile_image {
-    margin-bottom: 20px;
+    border-radius: 0;
 }
 
 #cd_desktop_tablet {
@@ -346,7 +343,7 @@
 
 .mobile_image {
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 #pd-input {
@@ -382,7 +379,6 @@
 @media screen and (min-width: 428px) {
     .mobile_image {
         margin-top: 0px;
-        margin-bottom: 20px;
     }
 
     .pd-tip {
@@ -390,7 +386,19 @@
     }
 }
 
+@media screen and (min-width: 550px) {
+    #tips-pokedex #tips_area {
+        grid-column: 4/5;
+    }
+}
+
 @media screen and (min-width: 768px) {
+    #tips-pokedex #tips_area {
+        grid-column: 11/13;
+    }
+}
+
+@media screen and (min-width: 1024px) {
 
     .kanto, .johto, .hoenn, .sinnoh, .unova, .kalos, .alola, .galar, .hisui, .paldea, .regionals {
         width: 20%;
@@ -438,5 +446,9 @@
     
     #pokedex_title {
         border-top-left-radius: 0;
+    }
+
+    #tips-pokedex #tips_area {
+        grid-column: 11/13;
     }
 }

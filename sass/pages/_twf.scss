@@ -60,9 +60,9 @@
 }
 
 #fill {
+    text-decoration: underline;
     &:hover {
         cursor: pointer;
-        text-decoration: underline;
     }
 }
 
@@ -152,7 +152,7 @@
 }
 
 .lb-prompt-field {
-    width: 50%;
+    width: 90%;
 }
 
 #lb-desc {
@@ -252,4 +252,10 @@
 #disclaimer p {
     margin-left: 3%;
     margin-right: 3%;
+}
+
+@media screen and (min-width: 768px) {
+    .lb-prompt-field {
+        width: 50%;
+    }
 }

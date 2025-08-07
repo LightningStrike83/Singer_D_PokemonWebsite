@@ -1225,6 +1225,9 @@ function showPokemonB2W2CImages(trainerId) {
     pokemon6Picture.appendChild(imgPokemon6);
 
     clearDivs()
+
+    refCredit.textContent = "sheepscope"
+    refCredit.href = "https://www.tapatalk.com/groups/nuzlocke_forum/official-natures-movesets-and-stats-t3452.html#p1630226"
 }
 
 cherenB2W2C.addEventListener('click', displayB2W2CTrainers);

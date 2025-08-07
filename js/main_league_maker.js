@@ -1,6 +1,6 @@
 const trainerSelect = document.querySelectorAll(".trainer-select")
 const typeSelect = document.querySelectorAll(".type-select")
-const baseURL = "http://localhost/Singer_D_PokemonWebsite/lumen/public/"
+const baseURL = "https://littlerootdreams.com/lumen/public/"
 const modeButton = document.querySelectorAll(".mode-button")
 const createButton = document.querySelector("#select-submit")
 const tipsArea = document.querySelector("#tips_area")
@@ -225,7 +225,8 @@ function downloadLeague(event) {
     divExport.style.display = "flex"
     divExport.style.flexDirection = "column"
 
-    divExport.style.backgroundImage = "linear-gradient(#319dff, #70afe2)"
+    divExport.style.backgroundImage = "linear-gradient(rgba(49, 155, 255, 0.85),rgba(112, 175, 226, 0.85))"
+    divExport.style.backgroundColor = "rgb(42, 42, 42)"
     leagueSave.style.display = "none"
 
     html2canvas(divExport).then((canvas) => {

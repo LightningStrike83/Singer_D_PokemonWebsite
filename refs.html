@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
     <title>Home- Littleroot Dreams</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
-    <link rel="stylesheet" href="css/main.css?version=0.3">
+    <link rel="stylesheet" href="css/main.css?version=1.1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
@@ -18,9 +21,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="MyWebSite">
     <link rel="manifest" href="../images/favicon/site.webmanifest">
-    <script defer src="js/main_darkmode.js?version=0.3"></script>
-    <script defer src="js/main_home.js?version=0.3"></script>
-    <script defer src="js/main.js?version=0.3"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script defer src="js/main_refs.js?version=1.0"></script>
+    <script defer src="js/main_darkmode.js?version=1.0"></script>
+    <script defer src="js/main_home.js?version=1.0"></script>
+    <script defer src="js/main.js?version=1.0"></script>
 </head>
 <body class="dm">
     <div id="container">
@@ -133,11 +139,13 @@
                     <li class="horizontal-line"></li>
                     <li><a href="guess_who.html">Guess Who</a></li>
                     <li class="horizontal-line"></li>
-                    <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
+                    <li><a href="league-maker.html">Custom League Maker</a></li>
                     <li class="horizontal-line"></li>
                     <li><a href="shiny.html">Shiny Counter</a></li>
                     <li class="horizontal-line"></li>
-                    <li><a href="league-maker.html">Custom League Maker</a></li>
+                    <li><a href="box-tracker.html">Box Tracker</a></li>
+                    <li class="horizontal-line"></li>
+                    <li><a href="pokemon_fight.html">Challenge Prompt Generator</a></li>
                   </ul>
                 </div>
             </div>
@@ -157,14 +165,14 @@
                 <li class="ref-credit">Ruby, Sapphire, Emerald, LeafGreen, and FireRed data from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1frqW2CeHop4o0NP6Ja_TAAPPkGIrvxkeQJBfyxFggyk/edit#gid=1064630895">roushmore</a></li>
                 <li class="ref-credit">Diamond and Pearl data from <a target="_blank" href="https://www.dropbox.com/s/utieptnrxl64ka3/Pearl%20Trainer%20data.xlsx ">werster</a></li>
                 <li class="ref-credit">Platinum data calculated from <a target="_blank" href="https://www.dropbox.com/sh/9tfr2gxm9tabxjk/AAA-K8XULd16TQf_uLfSQaFda?preview=Pok%C3%A9mon+Platinum+-+Script+File+(Piplup).xlsx">MoneyHypeMike and majorkatsuragi's</a> data</li>
-                <li class="ref-credit">HeartGold and SoulSilver data from <a target="_blank" href="https://www.speedrun.com/pkmnhgss/guides/k2zij ">JTMagicMan</a></li>
+                <li class="ref-credit">HeartGold and SoulSilver data from <a target="_blank" href="https://www.speedrun.com/pkmnhgss/guides/k2zij ">JTMagicman</a></li>
                 <li class="ref-credit">Black and White data from <a target="_blank" href="https://drive.google.com/file/d/1l7SBH1yeJvEYxml5DpARCNuC5yDf_7cu/view">Human</a></li>
-                <li class="ref-credit">Black and White Cress data from <a target="_blank" href="https://www.dropbox.com/s/vfy5xok1knq069a/Pokemon%20Black%20-%20Game%20Information%20(Tepig).xlsx?dl=0">JTMagicMan</a></li>
+                <li class="ref-credit">Black and White Cress data from <a target="_blank" href="https://www.dropbox.com/s/vfy5xok1knq069a/Pokemon%20Black%20-%20Game%20Information%20(Tepig).xlsx?dl=0">JTMagicman</a></li>
                 <li class="ref-credit">Black 2 and White 2 data calculated from <a target="_blank" href="https://www.tapatalk.com/groups/nuzlocke_forum/official-natures-movesets-and-stats-t3452.html#p1630226">sheepscope's</a> data</li>
                 <li class="ref-credit">X and Y data from <a target="_blank" href="https://www.speedrun.com/pkmnxy/guides/2afgl">wartab</a></li>
                 <li class="ref-credit">OmegaRuby and AlphaSapphire information from <a target="_blank" href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">bulbapedia</a></li>
                 <li class="ref-credit">Sun and Moon data calculated from <a target="_blank" href="https://pastebin.com/vkaZNTra">SCIRESM</a></li>
-                <li class="ref-credit">UltraSun and UltraMoon data calculated from <a target="_blank" href="https://pastebin.com/9WdFYnLi ">SCIRESM</a></li>
+                <li class="ref-credit">Ultra Sun and Ultra Moon data calculated from <a target="_blank" href="https://pastebin.com/9WdFYnLi ">SCIRESM</a></li>
                 <li class="ref-credit">Let's Go Pikachu and Let's Go Eevee data from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1zlvzKZAF6m7V3xSsf1md4HGge9CzlnJypIacnQ4fKqs/edit#gid=1454927861">eddaket</a></li>
                 <li class="ref-credit">Sword and Shield data calculated from <a target="_blank" href="https://pastebin.com/iN1UKaz0">zu</a></li>
                 <li class="ref-credit">Sword and Shield Piers data calculated from <a target="_blank" href="https://www.smogon.com/forums/threads/pokemon-sword-and-shield-datamine-thread.3656143/page-71">doipy hooves</a></li>
@@ -193,8 +201,8 @@
                 <li class="ref-credit">XY, ORAS, SM, USUM, LGPE, SWSH, BDSP, SV Pokemon images on Trainer Data page from <a target="_blank" href="https://www.serebii.net/index2.shtml">Serebii</a></li>
                 <li class="ref-credit">RBG, Y, GSC, RS, FRLG, E, DP, PT, HGSS, BW, B2W2 Pokemon and Trainer images on Trainer Data page and Pokemon icons on Usage page from <a target="_blank" href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">bulbapedia</a></li>
                 <li class="ref-credit">Dark and Stellar icons from <a target="_blank" href="https://bulbapedia.bulbagarden.net/wiki/Type">bulbapedia</a></li>
-                <li class="ref-credit">Guess Who, Sandwich Filter, and Custom Dex images from <a target="_blank" href="https://www.spriters-resource.com/nintendo_switch/pokemonhome/"></a>Spriter's Resource</li>
-                <li class="ref-credit">Pokeball image on About page from <a target="_blank" href="https://sophiawestrop.com/">Sophia Westrop</a></li>
+                <li class="ref-credit">Guess Who, Sandwich Filter, and Custom Dex images from <a target="_blank" href="https://www.spriters-resource.com/nintendo_switch/pokemonhome/">Spriter's Resource</a></li>
+                <li class="ref-credit">Pokeball image on About page from Sophia</li>
                 <li class="ref-credit">Lightning image on About page from <a target="_blank" href="https://ducessaeva.tumblr.com/">DucessaEva</a></li>
                 <li class="ref-credit">Area Zero pictures from website creator Lightning</li>
                 <li class="ref-credit">Background picture recreated from Pokemon Emerald box wallpaper</li>
@@ -202,10 +210,18 @@
         </div>
     </section>
 
+    <section id="td_arrow_con" class="grid-con to-top">
+      <h1 class="hidden">To Top Arrow Button</h1>
+      <div id="td_arrow" class="col-span-full">
+          <button class="top-text">↑ To Top</button>
+      </div>
+    </section>
+
     <section id="bottom" class="full-width-grid-con dm">
         <div id="footer-info" class="grid-con">
             <h2 class="hidden">Copyright Information</h2>
             <p class="col-span-full footer-credit">All images used are used for a transformative work and nonprofit. The images are copyrighted or is a registered trademark. The contributor claims fair use. No copyright infringement is intended.<br>Certain materials are included under fair use exemption of the U.S. Copyright Law and are restricted from further use.<br>Littleroot Dream is a fansite and are not official in any shape or form, nor affiliated, sponsored, or endorsed by Nintendo, Creatures, GAMEFREAK, or TPCi.<br>Pokémon and All Respective Names are Trademark & © of Nintendo 1996-2025</p>
+            <p class="col-span-full"><a class="footer-link" href="privacy.html">Privacy Policy</a> | <a class="footer-link" href="contact.html">Contact</a></p>
         </div>       
     </section>
 
@@ -240,11 +256,12 @@
   <section id="activity-mobile-menu" class="full-width-grid-con mobile-menu dm">
     <h1 class="hidden">Activity Mobile Menu</h1>
       <div class="col-start-2 col-span-1 mobile-links">
-          <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>
-          <a class="header-link" href="guess_who.html">Guess Who</a>
-          <a class="header-link" href="pokemon_fight.html">Challenge Prompt Generator</a>
-          <a class="header-link" href="shiny.html">Shiny Counter</a>
-          <a class="header-link" href="league-maker.html">Custom League Maker</a>
+        <a class="header-link" href="custom_pokedex.html">Create Your Own Pokedex</a>
+        <a class="header-link" href="guess_who.html">Guess Who</a>
+        <a class="header-link" href="league-maker.html">Custom League Maker</a>
+        <a class="header-link" href="shiny.html">Shiny Counter</a>
+        <a class="header-link" href="box-tracker.html">Box Tracker</a>
+        <a class="header-link" href="pokemon_fight.html">Challenge Prompt Generator</a>
       </div>
 
       <div class="col-span-1 mobile-close">

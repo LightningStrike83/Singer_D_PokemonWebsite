@@ -33,20 +33,15 @@
     background-color: c.$night-wood;
 }
 
+#ref-instructions, #image-instructions {
+    margin-bottom: 20px;
+}
+
 .ref-credit {
     margin-left: 20px;
     list-style-type: disc;
+    padding-bottom: 20px;
     a {
         text-decoration: underline;
-    }
-}
-
-@media screen  {
-    .ref-credit {
-        a {
-            font-size: 12px!important;
-        }
-    
-        font-size: 12px!important;
     }
 }
